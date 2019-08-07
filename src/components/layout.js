@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import { Bars, ChevronUp } from "./icon"
 
 import { rhythm, scale } from "../utils/typography"
 
@@ -61,6 +62,8 @@ class Layout extends React.Component {
         }}
       >
         <header>{header}</header>
+        <Bars />
+        <ChevronUp />
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
