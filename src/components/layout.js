@@ -1,9 +1,15 @@
 import React, { Fragment } from "react"
 import { Link } from "gatsby"
-import { Bars, ChevronUp, PaperPlane, Github, Linkedin, Facebook, Rss } from "./icon"
-import "../styles/all.scss"
-
-import { rhythm, scale } from "../utils/typography"
+import {
+  Bars,
+  ChevronUp,
+  PaperPlane,
+  Github,
+  Linkedin,
+  Facebook,
+  Rss,
+} from "./icon"
+import "./layout.scss"
 
 class Layout extends React.Component {
   render() {
@@ -13,7 +19,9 @@ class Layout extends React.Component {
       <Fragment>
         <header>
           <div className="logo">
-            Tony<span>.</span>
+            <Link to="/">
+              Tony<span>.</span>
+            </Link>
           </div>
           <Bars />
         </header>
@@ -25,9 +33,9 @@ class Layout extends React.Component {
         </div>
         <PaperPlane />
         <main>{children}</main>
-        <footer>
+        {/* <footer>
           © {new Date().getFullYear()} Tony Prokop
-        </footer>
+        </footer> */}
       </Fragment>
     )
   }

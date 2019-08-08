@@ -1,0 +1,87 @@
+@import "../utils/shared.scss";
+
+html {
+    color: $black;
+    font-size: 24px;
+    padding: 1rem;
+}
+
+a {
+    color: $black;
+    text-decoration: underline;
+    text-decoration-color: $red;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+.callToActionLink {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+
+    svg[data-icon="chevron-right"] {
+        margin-left: 0.5rem;
+    }
+}
+
+svg[data-icon="chevron-up"], svg[data-icon="chevron-down"], svg[data-icon="chevron-left"], svg[data-icon="chevron-right"] {
+    color: $red;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+
+    .logo {
+        font-size: 1.5rem;
+        
+        a {
+            text-decoration: none;
+        }
+        
+        span {
+            color: $red;
+        }
+    }
+}
+
+.quickLinks {
+    position: fixed;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+
+    svg {
+        margin-bottom: 1rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+svg[data-icon="bars"] {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+}
+
+svg[data-icon="paper-plane"] {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+}
