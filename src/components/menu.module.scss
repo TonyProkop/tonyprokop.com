@@ -1,0 +1,35 @@
+@import "../utils/shared.scss";
+
+svg[data-icon="bars"], svg[data-icon="times"] {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    cursor: pointer;
+    z-index: 1;
+}
+
+svg[data-icon="times"] {
+    color: white;
+}
+
+.menuContainer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $black;
+    color: white;
+
+    a {
+        color: white;
+        display: block;
+    }
+}
+
+.myLinks {
+
+}
+
+.menuLinks {
+
+}

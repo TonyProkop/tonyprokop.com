@@ -1,14 +1,13 @@
 import React, { Fragment } from "react"
 import { Link } from "gatsby"
 import {
-  Bars,
-  ChevronUp,
   PaperPlane,
   Github,
   Linkedin,
   Facebook,
   Rss,
 } from "./icon"
+import Menu from "./menu"
 import "./layout.scss"
 
 class Layout extends React.Component {
@@ -23,7 +22,7 @@ class Layout extends React.Component {
               Tony<span>.</span>
             </Link>
           </div>
-          <Bars />
+          <Menu />
         </header>
         <div className="quickLinks">
           <Github />

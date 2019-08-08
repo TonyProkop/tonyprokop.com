@@ -64,6 +64,8 @@ svg[data-icon="chevron-right"] {
 header {
   display: flex;
   justify-content: space-between;
+  z-index: 1;
+  position: relative;
 
   .logo {
     font-size: 1.5rem;
@@ -86,6 +88,7 @@ header {
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
+  z-index: 1;
 
   svg {
     margin-bottom: 1rem;
@@ -94,11 +97,6 @@ header {
       margin-bottom: 0;
     }
   }
-}
-
-svg[data-icon="bars"] {
-  width: 1.5rem !important;
-  height: 1.5rem !important;
 }
 
 svg[data-icon="paper-plane"] {

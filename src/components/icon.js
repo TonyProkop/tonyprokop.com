@@ -9,7 +9,8 @@ import {
     faChevronRight,
     faBars,
     faPaperPlane,
-    faRss
+    faRss,
+    faTimes
  } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -20,7 +21,8 @@ library.add(fab,
     faChevronLeft,
     faChevronRight,
     faBars,
-    faPaperPlane)
+    faPaperPlane,
+    faTimes)
 
 export const ChevronUp = () => (
     <FontAwesomeIcon icon="chevron-up" className="icon" />
@@ -38,8 +40,12 @@ export const ChevronRight = () => (
     <FontAwesomeIcon icon="chevron-right" className="icon" />
 )
 
-export const Bars = () => (
-    <FontAwesomeIcon icon="bars" className="icon" />
+export const Bars = ({ onClick }) => (
+    <FontAwesomeIcon icon="bars" className="icon" onClick={onClick} />
+)
+
+export const Times = ({ onClick }) => (
+    <FontAwesomeIcon icon="times" className="icon" onClick={onClick} />
 )
 
 export const PaperPlane = () => (
