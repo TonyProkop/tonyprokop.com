@@ -2,7 +2,6 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
 import { ChevronDown, ChevronRight } from "../components/icon"
 import styles from "./index.module.scss"
 
