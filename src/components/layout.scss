@@ -16,17 +16,40 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: 0 1rem;
+}
+
+main {
+  max-width: $pageWidth;
+  margin: 1rem auto 1rem;
 }
 
 a {
   color: $color-black;
-  text-decoration: underline;
-  text-decoration-color: $color-red;
+  text-decoration: none;
 
   &:hover {
     color: $color-red;
   }
+}
+
+p a {
+  text-decoration: underline;
+  text-decoration-color: $color-red;
+  font-style: italic;
+
+  &:hover {
+    color: $color-red;
+  }
+}
+
+p {
+  margin: 2rem auto;
+}
+
+.content {
+  max-width: $contentWidth;
+  margin: 0 auto 5rem;
 }
 
 h1,
@@ -41,6 +64,8 @@ h6 {
 h1 {
   font-size: 2rem;
   font-family: "Merriweather-Bold";
+  text-align: center;
+  margin-top: 5rem;
 }
 
 h2 {
@@ -56,7 +81,6 @@ h3 {
   font-size: 0.75rem;
   font-weight: bold;
   text-transform: uppercase;
-  text-decoration: none;
 
   svg[data-icon="chevron-right"] {
     margin-left: 0.5rem;
@@ -100,10 +124,6 @@ svg[data-icon="rss"]:hover {
   left: 1rem;
   font-size: 1.5rem;
   font-family: "Merriweather-Bold";
-
-  a {
-    text-decoration: none;
-  }
 
   span {
     color: $color-red;

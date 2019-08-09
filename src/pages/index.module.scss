@@ -20,8 +20,7 @@
 }
 
 .heading {
-    max-width: $maxWidth;
-    text-align: center;
+    max-width: $pageWidth;
     margin: 0;
     padding: 0 2rem;
     font-size: 2rem;
@@ -32,7 +31,7 @@
 }
 
 .writingContainer {
-    max-width: $maxWidth;
+    max-width: $pageWidth;
     margin: 100vh auto 0;
 }
 
