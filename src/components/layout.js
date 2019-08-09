@@ -16,15 +16,13 @@ class Layout extends React.Component {
 
     return (
       <Fragment>
-        <header>
-          <div className="logo">
-            <Link to="/">
-              Tony<span>.</span>
-            </Link>
-          </div>
-          <Menu />
-        </header>
-        <div className="quickLinks">
+        <div className="logo">
+          <Link to="/">
+            Tony<span>.</span>
+          </Link>
+        </div>
+        <Menu />
+        <div className="socialLinks">
           <Github />
           <Linkedin />
           <Facebook />

@@ -12,14 +12,21 @@
 html {
   color: $black;
   font-size: 24px;
-  padding: 1rem;
   font-family: Arial;
+}
+
+body {
+  margin: 0;
 }
 
 a {
   color: $black;
   text-decoration: underline;
   text-decoration-color: $red;
+
+  &:hover {
+    color: $red;
+  }
 }
 
 h1,
@@ -33,12 +40,12 @@ h6 {
 
 h1 {
   font-size: 2rem;
-  font-family: 'Merriweather-Bold';
+  font-family: "Merriweather-Bold";
 }
 
 h2 {
   font-size: 1.5rem;
-  font-family: 'Merriweather-Bold';
+  font-family: "Merriweather-Bold";
 }
 
 h3 {
@@ -47,7 +54,9 @@ h3 {
 
 .callToActionLink {
   font-size: 0.75rem;
+  font-weight: bold;
   text-transform: uppercase;
+  text-decoration: none;
 
   svg[data-icon="chevron-right"] {
     margin-left: 0.5rem;
@@ -61,27 +70,23 @@ svg[data-icon="chevron-right"] {
   color: $red;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  z-index: 1;
-  position: relative;
+.logo {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.5rem;
+  font-family: "Merriweather-Bold";
 
-  .logo {
-    font-size: 1.5rem;
-    font-family: 'Merriweather-Bold';
+  a {
+    text-decoration: none;
+  }
 
-    a {
-      text-decoration: none;
-    }
-
-    span {
-      color: $red;
-    }
+  span {
+    color: $red;
   }
 }
 
-.quickLinks {
+.socialLinks {
   position: fixed;
   left: 1rem;
   top: 50%;
