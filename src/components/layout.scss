@@ -10,7 +10,7 @@
 }
 
 html {
-  color: $black;
+  color: $color-black;
   font-size: 24px;
   font-family: Arial;
 }
@@ -20,12 +20,12 @@ body {
 }
 
 a {
-  color: $black;
+  color: $color-black;
   text-decoration: underline;
-  text-decoration-color: $red;
+  text-decoration-color: $color-red;
 
   &:hover {
-    color: $red;
+    color: $color-red;
   }
 }
 
@@ -67,7 +67,31 @@ svg[data-icon="chevron-up"],
 svg[data-icon="chevron-down"],
 svg[data-icon="chevron-left"],
 svg[data-icon="chevron-right"] {
-  color: $red;
+  color: $color-red;
+}
+
+svg[data-icon="envelope"]:hover {
+  color: $color-email;
+}
+
+svg[data-icon="phone"]:hover {
+  color: $color-phone;
+}
+
+svg[data-icon="linkedin"]:hover {
+  color: $color-linkedin;
+}
+
+svg[data-icon="github"]:hover {
+  color: $color-github;
+}
+
+svg[data-icon="facebook"]:hover {
+  color: $color-facebook;
+}
+
+svg[data-icon="rss"]:hover {
+  color: $color-rss;
 }
 
 .logo {
@@ -82,30 +106,6 @@ svg[data-icon="chevron-right"] {
   }
 
   span {
-    color: $red;
+    color: $color-red;
   }
-}
-
-.socialLinks {
-  position: fixed;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  z-index: 1;
-
-  svg {
-    margin-bottom: 1rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-}
-
-svg[data-icon="paper-plane"] {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
 }

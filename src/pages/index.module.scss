@@ -27,7 +27,7 @@
     font-size: 2rem;
 
     span {
-        color: $red;
+        color: $color-red;
     }
 }
 
@@ -39,7 +39,7 @@
 .writingHeader {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid $black;
+    border-bottom: 1px solid $color-black;
 }
 
 .post {

@@ -16,7 +16,7 @@ class BlogIndex extends React.Component {
         <SEO title="All posts" />
         <div className={styles.banner}>
           <h1 className={styles.heading}>
-            I'm <span>passionate</span> about <br /> building clean experiences.
+            Thoughts from a web <br /> developer <span>passionate</span> about building <br /> clean, intuitive experiences.
           </h1>
           <ChevronDown />
         </div>

@@ -1,71 +1,48 @@
 @import "../utils/shared.scss";
 
-svg[data-icon="bars"], svg[data-icon="times"] {
-    width: 1.5rem !important;
-    height: 1.5rem !important;
-    z-index: 1;
-    cursor: pointer;
-}
-
-svg[data-icon="bars"] {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-}
-
-svg[data-icon="times"] {
-    color: white;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-}
-
 .menuContainer {
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 1;
-    background-color: $black;
-    color: white;
     font-size: 1.5rem;
+
+    &.active {
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        background-color: $color-black;
+        color: white;
+    }
 
     a {
         color: white;
+        text-decoration: none;
+    }
+
+    svg[data-icon="bars"], svg[data-icon="times"] {
+        width: 1.5rem !important;
+        height: 1.5rem !important;
+        z-index: 1;
+        cursor: pointer;
+    }
+    
+    svg[data-icon="bars"] {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+    }
+    
+    svg[data-icon="times"] {
+        color: white;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
     }
 }
 
-.profilePic {
-    width: 150px;
-    height: auto;
-    border-radius: 50%;
-    margin: 3rem auto 0;
-}
-
-.myLinks {
+.menuLinks, .externalLinks {
     display: flex;
     flex-direction: column;
-    text-align: center;
 
-    img, a {
-        margin-bottom: 1rem;
-    }
-}
-
-.externalLinks a {
-    margin: 0 1rem;
-}
-
-.menuLinks {
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-    width: 50%;
-    height: 50%;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    padding-right: 4rem;
 
     a {
         margin-bottom: 1rem;
@@ -73,5 +50,31 @@ svg[data-icon="times"] {
         &:last-child {
             margin-bottom: 0;
         }
+    }
+}
+
+.menuLinks {
+    position: absolute;
+    right: 4rem;
+    bottom: 4rem;
+    text-align: right;
+}
+
+.externalLinks {
+    position: absolute;
+    left: 4rem;
+    bottom: 4rem;
+    text-align: left;
+}
+
+@media (max-width: 600px) {
+    .menuLinks {
+        right: 1rem;
+        bottom: 1rem;
+    }
+    
+    .externalLinks {
+        left: 1rem;
+        bottom: 1rem;
     }
 }
