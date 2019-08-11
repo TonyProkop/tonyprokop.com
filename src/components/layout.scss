@@ -15,13 +15,20 @@ html {
   font-family: Arial;
 }
 
+@media (max-width: 600px) {
+  html {
+    font-size: 16px;
+  }
+}
+
 body {
-  margin: 0 1rem;
+  margin: 0 auto;
 }
 
 main {
   max-width: $pageWidth;
   margin: 1rem auto 1rem;
+  padding: 1rem;
 }
 
 a {
