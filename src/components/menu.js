@@ -33,7 +33,7 @@ const Menu = () => {
           <Link to="/work">My Work</Link>
           <Link to="/blog">Blog</Link>
           <Link to="/resume">Resumé</Link>
-          <Link to="/about">About</Link>
+          <Link to="/about">About me</Link>
           <Link to="/contact">Contact</Link>
         </div>
       </div>
