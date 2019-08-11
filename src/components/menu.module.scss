@@ -5,6 +5,7 @@
 
     &.active {
         height: 100vh;
+        height: -webkit-fill-available;
         width: 100%;
         position: fixed;
         top: 0;
