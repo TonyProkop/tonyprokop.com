@@ -15,6 +15,7 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import styles from "./icon.module.scss"
 
 library.add(
   fab,
@@ -29,62 +30,78 @@ library.add(
   faPhone
 )
 
-export const ChevronUp = () => (
-  <FontAwesomeIcon icon="chevron-up" className="icon" />
+export const ChevronUp = ({ onClick }) => (
+  <FontAwesomeIcon
+    icon="chevron-up"
+    className={styles.icon}
+    onClick={onClick}
+  />
 )
 
-export const ChevronDown = () => (
-  <FontAwesomeIcon icon="chevron-down" className="icon" />
+export const ChevronDown = ({ onClick }) => (
+  <FontAwesomeIcon
+    icon="chevron-down"
+    className={styles.icon}
+    onClick={onClick}
+  />
 )
 
-export const ChevronLeft = () => (
-  <FontAwesomeIcon icon="chevron-left" className="icon" />
+export const ChevronLeft = ({ onClick }) => (
+  <FontAwesomeIcon
+    icon="chevron-left"
+    className={styles.icon}
+    onClick={onClick}
+  />
 )
 
-export const ChevronRight = () => (
-  <FontAwesomeIcon icon="chevron-right" className="icon" />
+export const ChevronRight = ({ onClick }) => (
+  <FontAwesomeIcon
+    icon="chevron-right"
+    className={styles.icon}
+    onClick={onClick}
+  />
 )
 
 export const Bars = ({ onClick }) => (
-  <FontAwesomeIcon icon="bars" className="icon" onClick={onClick} />
+  <FontAwesomeIcon icon="bars" className={styles.icon} onClick={onClick} />
 )
 
 export const Times = ({ onClick }) => (
-  <FontAwesomeIcon icon="times" className="icon" onClick={onClick} />
+  <FontAwesomeIcon icon="times" className={styles.icon} onClick={onClick} />
 )
 
 export const Rss = () => (
   <Link to="/" target="_blank">
-    <FontAwesomeIcon icon="rss" className="icon" />
+    <FontAwesomeIcon icon="rss" className={styles.icon} />
   </Link>
 )
 
 export const Github = () => (
   <a href={githubUrl} target="_blank">
-    <FontAwesomeIcon icon={["fab", "github"]} className="icon" />
+    <FontAwesomeIcon icon={["fab", "github"]} className={styles.icon} />
   </a>
 )
 
 export const Linkedin = () => (
   <a href={linkedinUrl} target="_blank">
-    <FontAwesomeIcon icon={["fab", "linkedin"]} className="icon" />
+    <FontAwesomeIcon icon={["fab", "linkedin"]} className={styles.icon} />
   </a>
 )
 
 export const Facebook = () => (
   <a href={facebookUrl} target="_blank">
-    <FontAwesomeIcon icon={["fab", "facebook"]} className="icon" />
+    <FontAwesomeIcon icon={["fab", "facebook"]} className={styles.icon} />
   </a>
 )
 
 export const Email = () => (
   <a href={`mailto:prokop.tony@gmail.com`}>
-    <FontAwesomeIcon icon="envelope" className="icon" />
+    <FontAwesomeIcon icon="envelope" className={styles.icon} />
   </a>
 )
 
 export const Phone = () => (
   <a href="tel:+14029888222">
-    <FontAwesomeIcon icon="phone" className="icon" />
+    <FontAwesomeIcon icon="phone" className={styles.icon} />
   </a>
 )

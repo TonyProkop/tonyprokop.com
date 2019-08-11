@@ -18,7 +18,7 @@ class BlogIndex extends React.Component {
           <h1 className={styles.heading}>
             Thoughts from a web <br /> developer <span>passionate</span> about building <br /> clean, intuitive experiences.
           </h1>
-          <ChevronDown />
+          <ChevronDown onClick={() => window.scrollTo({top: document.body.scrollHeight, behavior: "smooth"})} />
         </div>
         <div className={styles.writingContainer}>
           <div className={styles.writingHeader}>
