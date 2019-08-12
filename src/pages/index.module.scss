@@ -1,47 +1,47 @@
 @import "../utils/shared.scss";
 
 .banner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100vh;
-    height: -webkit-fill-available;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  height: -webkit-fill-available;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    svg[data-icon="chevron-down"] {
-        position: absolute;
-        bottom: 1rem;
-        margin: auto;
-        width: 40px;
-        height: 40px;
-    }
+  svg[data-icon="chevron-down"] {
+    position: absolute;
+    bottom: 1rem;
+    margin: auto;
+    width: 40px !important;
+    height: 40px !important;
+  }
 }
 
 .heading {
-    max-width: $pageWidth;
-    margin: 0;
-    padding: 0 2rem;
-    font-size: 2rem;
+  max-width: $pageWidth;
+  margin: 0;
+  padding: 0 2rem;
+  font-size: 2rem;
 
-    span {
-        color: $color-red;
-    }
+  span {
+    color: $color-red;
+  }
 }
 
 .writingContainer {
-    max-width: $pageWidth;
-    margin: 100vh auto 0;
+  max-width: $pageWidth;
+  margin: 100vh auto 0;
 }
 
 .writingHeader {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid $color-black;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $color-black;
 }
 
 .post {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }

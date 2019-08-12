@@ -12,6 +12,7 @@ exports.createPages = async ({ graphql, actions }) => {
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
         ) {
+          group(field: frontmatter)
           edges {
             node {
               fields {

@@ -1,0 +1,32 @@
+@import "../utils/shared.scss";
+
+.archiveContainer {
+  margin-top: 3rem;
+}
+
+.year {
+  font-family: "Merriweather";
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.postList {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.post {
+  padding-left: 1rem;
+  text-indent: -1rem;
+  margin-bottom: 1rem;
+
+  &:before {
+    content: "• ";
+    color: $color-red;
+  }
+
+  a {
+    margin-left: 1rem;
+  }
+}

@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    title: `Tony Prokop's Blog`,
+    author: `Tony Prokop`,
+    description: `Tony Prokop`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
       twitter: `kylemathews`,
@@ -10,7 +10,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-sass`
+      resolve: `gatsby-plugin-sass`,
     },
     {
       resolve: `gatsby-source-filesystem`,

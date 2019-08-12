@@ -17,7 +17,7 @@ const About = () => (
       <img src={profilePic} className={styles.profilePic} />
       <div className="content">
         <p>
-          I'm a Web Developer based in Omaha, NE, currently excited about React,
+          I'm a web developer based in Omaha, NE, currently excited about React,
           static site generators, and Netlify.
         </p>
         <p>
