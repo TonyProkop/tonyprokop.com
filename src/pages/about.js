@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 import { ChevronRight } from "../components/icon"
@@ -26,8 +26,8 @@ const About = () => (
             Speedway Motors
           </a>{" "}
           ecommerce platform, which supplys street and performance automotive
-          parts to car enthusiasts around the world. At Speedway, I lead a
-          team currently focused on implementing a website redesign.
+          parts to car enthusiasts around the world. At Speedway, I lead a team
+          currently focused on implementing a website redesign.
         </p>
         <p>
           In my free time you might find me writing for this blog, camping, or

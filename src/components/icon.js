@@ -77,31 +77,31 @@ export const Rss = () => (
 )
 
 export const Github = () => (
-  <a href={githubUrl} target="_blank">
+  <a href={githubUrl} target="_blank" rel="noopener noreferrer">
     <FontAwesomeIcon icon={["fab", "github"]} className={styles.icon} />
   </a>
 )
 
 export const Linkedin = () => (
-  <a href={linkedinUrl} target="_blank">
+  <a href={linkedinUrl} target="_blank" rel="noopener noreferrer">
     <FontAwesomeIcon icon={["fab", "linkedin"]} className={styles.icon} />
   </a>
 )
 
 export const Facebook = () => (
-  <a href={facebookUrl} target="_blank">
+  <a href={facebookUrl} target="_blank" rel="noopener noreferrer">
     <FontAwesomeIcon icon={["fab", "facebook"]} className={styles.icon} />
   </a>
 )
 
 export const Email = () => (
-  <a href={`mailto:prokop.tony@gmail.com`}>
+  <a href={`mailto:prokop.tony@gmail.com`} rel="noopener noreferrer">
     <FontAwesomeIcon icon="envelope" className={styles.icon} />
   </a>
 )
 
 export const Phone = () => (
-  <a href="tel:+14029888222">
+  <a href="tel:+14029888222" rel="noopener noreferrer">
     <FontAwesomeIcon icon="phone" className={styles.icon} />
   </a>
 )
