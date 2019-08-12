@@ -20,7 +20,7 @@ class Blog extends React.Component {
     return (
       <Layout>
         <div className="content">
-          <h1>The Archive</h1>
+          <h1>The Archive.</h1>
           <div className={styles.archiveContainer}>
             {years.map(year => {
               const renderedPosts = postsGroupedByYear[year].map(p => (

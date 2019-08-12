@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
+import { IS_MY_WORK_ENABLED, IS_RESUME_ENABLED } from "../utils/config"
 import {
   Bars,
   Times,
@@ -20,21 +21,41 @@ const Menu = () => {
     return (
       <div className={`${styles.menuContainer} ${styles.active}`}>
         <Times onClick={() => setIsMenuActive(false)} />
-          <div className={styles.externalLinks}>
-            <Email />
-            <Phone />
-            <Linkedin />
-            <Github />
-            <Facebook />
-            <Rss />
-          </div>
+        <div className={styles.externalLinks}>
+          <Email />
+          <Phone />
+          <Linkedin />
+          <Github />
+          <Facebook />
+          <Rss />
+        </div>
         <div className={styles.menuLinks}>
-          <Link to="/">Home</Link>
-          <Link to="/work">My Work</Link>
-          <Link to="/blog">Blog</Link>
-          <Link to="/resume">Resumé</Link>
-          <Link to="/about">About me</Link>
-          <Link to="/contact">Contact</Link>
+          <div>
+            <Link to="/">Home</Link>
+          </div>
+          {IS_MY_WORK_ENABLED ? (
+            <div>
+              <Link to="/work">My Work</Link>
+            </div>
+          ) : (
+            false
+          )}
+          <div>
+            <Link to="/blog">Blog</Link>
+          </div>
+          {IS_RESUME_ENABLED ? (
+            <div>
+              <Link to="/resume">Resumé</Link>
+            </div>
+          ) : (
+            false
+          )}
+          <div>
+            <Link to="/about">About me</Link>
+          </div>
+          <div>
+            <Link to="/contact">Contact</Link>
+          </div>
         </div>
       </div>
     )

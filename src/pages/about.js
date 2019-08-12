@@ -9,7 +9,7 @@ import styles from "./about.module.scss"
 const About = () => (
   <Layout title="About Me">
     <div className={styles.aboutContainer}>
-      <h1>Hi, I'm Tony Prokop</h1>
+      <h1>Hi, I'm Tony Prokop.</h1>
       <Link to="/contact" className={`${styles.getInTouch} callToActionLink`}>
         Get in touch
         <ChevronRight />

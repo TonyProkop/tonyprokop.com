@@ -27,7 +27,7 @@ body {
 
 main {
   max-width: $pageWidth;
-  margin: 1rem auto 1rem;
+  margin: 0 auto 0;
   padding: 1rem;
 }
 
@@ -86,11 +86,13 @@ h3 {
 
 .callToActionLink {
   font-size: 0.75rem;
+  font-family: "Merriweather";
   font-weight: bold;
-  text-transform: uppercase;
 
-  svg[data-icon="chevron-right"] {
-    margin-left: 0.5rem;
+  svg {
+    width: 0.75rem !important;
+    height: 0.75rem !important;
+    margin-left: 0.25rem;
   }
 }
 
@@ -131,6 +133,7 @@ svg[data-icon="rss"]:hover {
   left: 1rem;
   font-size: 1.5rem;
   font-family: "Merriweather-Bold";
+  z-index: 1;
 
   span {
     color: $color-red;

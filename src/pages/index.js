@@ -14,39 +14,47 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
-        <div className={styles.banner}>
-          <h1 className={styles.heading}>
-            Thoughts from a web <br /> developer <span>passionate</span> about building <br /> clean, intuitive experiences.
-          </h1>
-          <ChevronDown onClick={() => window.scrollTo({top: document.body.scrollHeight, behavior: "smooth"})} />
-        </div>
-        <div className={styles.writingContainer}>
-          <div className={styles.writingHeader}>
-            <h2>Writing</h2>
-            <Link to="/blog" className="callToActionLink">
-              View Archives
-              <ChevronRight />
-            </Link>
+        <div className="content">
+          <div className={styles.banner}>
+            <h1 className={styles.heading}>
+              Thoughts from a web <br /> developer <span>passionate</span> about
+              building <br /> clean, intuitive experiences.
+            </h1>
+            <ChevronDown
+              onClick={() =>
+                window.scrollTo({
+                  top: document.body.scrollHeight,
+                  behavior: "smooth",
+                })
+              }
+            />
           </div>
+          <div className={styles.writingContainer}>
+            <div className={styles.writingHeader}>
+              <h2>Writing</h2>
+              <Link to="/blog" className="callToActionLink">
+                View Archives
+                <ChevronRight />
+              </Link>
+            </div>
 
-          {posts.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug
-            return (
-              <div key={node.fields.slug}>
-                <h3 className={styles.post}>
-                  <Link to={node.fields.slug}>
-                    {title}
-                  </Link>
-                </h3>
-                {/* <small>{node.frontmatter.date}</small> */}
-                {/* <p
+            {posts.map(({ node }) => {
+              const title = node.frontmatter.title || node.fields.slug
+              return (
+                <div key={node.fields.slug}>
+                  <h3 className={styles.post}>
+                    <Link to={node.fields.slug}>{title}</Link>
+                  </h3>
+                  {/* <small>{node.frontmatter.date}</small> */}
+                  {/* <p
                   dangerouslySetInnerHTML={{
                     __html: node.frontmatter.description || node.excerpt,
                   }}
                 /> */}
-              </div>
-            )
-          })}
+                </div>
+              )
+            })}
+          </div>
         </div>
       </Layout>
     )
