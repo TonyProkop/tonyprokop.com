@@ -13,8 +13,8 @@ const Resume = () => (
     <div className={styles.sidebar}>
       <Contact />
       <Skills />
-      <Process />
       <Education />
+      <Process />
     </div>
   </Layout>
 )
@@ -123,6 +123,7 @@ const Process = () => (
     <div>Continuous Delivery</div>
     <div>Continuous Integration</div>
     <div>Trunk Based Development</div>
+    <div>Work In Progress Limits</div>
     <div>Pair Programming</div>
     <div>Mob Programming</div>
   </div>
