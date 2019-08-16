@@ -1,0 +1,75 @@
+.heading {
+  margin-bottom: 2rem;
+}
+
+.main {
+  width: 66.66666%;
+  padding-right: 5%;
+  box-sizing: border-box;
+  float: left;
+}
+
+.sidebar {
+  width: 33.33333%;
+  padding-left: 5%;
+  box-sizing: border-box;
+  float: right;
+}
+
+.resumeObjective,
+.experience,
+.skills,
+.process,
+.education {
+  margin-top: 2rem;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+}
+
+.contact {
+  margin-top: 2rem;
+
+  svg {
+    font-size: 0.75rem;
+  }
+
+  div {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.experience {
+  h3 {
+    font-family: "Merriweather";
+  }
+
+  ul {
+    margin-bottom: 3rem;
+  }
+}
+
+.subhead {
+  font-style: italic;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.skills {
+  div {
+    margin-top: 1rem;
+  }
+}
+
+.process {
+  div {
+    margin-top: 1rem;
+  }
+}
+
+.education {
+  div {
+    margin-top: 1rem;
+  }
+}

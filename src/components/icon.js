@@ -71,37 +71,77 @@ export const Times = ({ onClick }) => (
 )
 
 export const Rss = () => (
-  <Link to="/" target="_blank">
+  <Link to="/" target="_blank" className={styles.rssLink}>
     <FontAwesomeIcon icon="rss" className={styles.icon} />
   </Link>
 )
 
 export const Github = () => (
-  <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+  <a
+    href={githubUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    className={styles.githubLink}
+  >
     <FontAwesomeIcon icon={["fab", "github"]} className={styles.icon} />
   </a>
 )
 
-export const Linkedin = () => (
-  <a href={linkedinUrl} target="_blank" rel="noopener noreferrer">
+export const Linkedin = ({ includeText }) => (
+  <a
+    href={linkedinUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    className={styles.linkedinLink}
+  >
     <FontAwesomeIcon icon={["fab", "linkedin"]} className={styles.icon} />
+    {includeText ? (
+      <span className={styles.linkText}>linkedin.com/in/tony-prokop</span>
+    ) : (
+      false
+    )}
   </a>
 )
 
 export const Facebook = () => (
-  <a href={facebookUrl} target="_blank" rel="noopener noreferrer">
+  <a
+    href={facebookUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    className={styles.facebookLink}
+  >
     <FontAwesomeIcon icon={["fab", "facebook"]} className={styles.icon} />
   </a>
 )
 
-export const Email = () => (
-  <a href={`mailto:prokop.tony@gmail.com`} rel="noopener noreferrer">
+export const Email = ({ includeText }) => (
+  <a
+    href={`mailto:prokop.tony@gmail.com`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className={styles.emailLink}
+  >
     <FontAwesomeIcon icon="envelope" className={styles.icon} />
+    {includeText ? (
+      <span className={styles.linkText}>prokop.tony@gmail.com</span>
+    ) : (
+      false
+    )}
   </a>
 )
 
-export const Phone = () => (
-  <a href="tel:+14029888222" rel="noopener noreferrer">
+export const Phone = ({ includeText }) => (
+  <a
+    href="tel:+14029888222"
+    target="_blank"
+    rel="noopener noreferrer"
+    className={styles.phoneLink}
+  >
     <FontAwesomeIcon icon="phone" className={styles.icon} />
+    {includeText ? (
+      <span className={styles.linkText}>(402) 988-8222</span>
+    ) : (
+      false
+    )}
   </a>
 )

@@ -1,4 +1,41 @@
+@import "../utils/shared.scss";
+
 .icon {
   cursor: pointer;
   width: 1rem !important;
+}
+
+svg[data-icon="chevron-up"],
+svg[data-icon="chevron-down"],
+svg[data-icon="chevron-left"],
+svg[data-icon="chevron-right"] {
+  color: $color-red;
+}
+
+.emailLink:hover {
+  color: $color-email;
+}
+
+.phoneLink:hover {
+  color: $color-phone;
+}
+
+.linkedinLink:hover {
+  color: $color-linkedin;
+}
+
+.githubLink:hover {
+  color: $color-github;
+}
+
+.facebookLink:hover {
+  color: $color-facebook;
+}
+
+.rssLink:hover {
+  color: $color-rss;
+}
+
+.linkText {
+  margin-left: 0.5rem;
 }

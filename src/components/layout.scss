@@ -11,14 +11,8 @@
 
 html {
   color: $color-black;
-  font-size: 24px;
+  font-size: 20px;
   font-family: Arial;
-}
-
-@media (max-width: 600px) {
-  html {
-    font-size: 16px;
-  }
 }
 
 body {
@@ -84,6 +78,22 @@ h3 {
   font-size: 1rem;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+li {
+  margin-bottom: 1rem;
+
+  &:before {
+    content: "• ";
+    color: $color-red;
+    padding-right: 0.5rem;
+  }
+}
+
 .callToActionLink {
   font-size: 0.75rem;
   font-family: "Merriweather";
@@ -94,37 +104,6 @@ h3 {
     height: 0.75rem !important;
     margin-left: 0.25rem;
   }
-}
-
-svg[data-icon="chevron-up"],
-svg[data-icon="chevron-down"],
-svg[data-icon="chevron-left"],
-svg[data-icon="chevron-right"] {
-  color: $color-red;
-}
-
-svg[data-icon="envelope"]:hover {
-  color: $color-email;
-}
-
-svg[data-icon="phone"]:hover {
-  color: $color-phone;
-}
-
-svg[data-icon="linkedin"]:hover {
-  color: $color-linkedin;
-}
-
-svg[data-icon="github"]:hover {
-  color: $color-github;
-}
-
-svg[data-icon="facebook"]:hover {
-  color: $color-facebook;
-}
-
-svg[data-icon="rss"]:hover {
-  color: $color-rss;
 }
 
 .logo {
@@ -138,4 +117,8 @@ svg[data-icon="rss"]:hover {
   span {
     color: $color-red;
   }
+}
+
+.bold {
+  font-weight: bold;
 }
