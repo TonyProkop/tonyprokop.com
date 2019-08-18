@@ -70,11 +70,11 @@ export const Times = ({ onClick }) => (
   <FontAwesomeIcon icon="times" className={styles.icon} onClick={onClick} />
 )
 
-export const Rss = () => (
-  <Link to="/" target="_blank" className={styles.rssLink}>
-    <FontAwesomeIcon icon="rss" className={styles.icon} />
-  </Link>
-)
+// Commented out until I setup the rss feed.
+export const Rss = () => false
+// <Link to="/" target="_blank" className={styles.rssLink}>
+//   <FontAwesomeIcon icon="rss" className={styles.icon} />
+// </Link>
 
 export const Github = () => (
   <a
