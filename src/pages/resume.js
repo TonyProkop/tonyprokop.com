@@ -7,7 +7,7 @@ const Resume = () => (
   <Layout>
     <h1 className={styles.heading}>Tony Prokop</h1>
     <div className={styles.main}>
-      <ResumeObjective />
+      {/* <ResumeObjective /> */}
       <Experience />
     </div>
     <div className={styles.sidebar}>
@@ -39,7 +39,16 @@ const Experience = () => (
       Speedway Motors, Lincoln, NE / January 2019 - Present
     </div>
     <ul>
-      <li>TODO</li>
+      <li>Lead a small team focused on implementing a full website redesign</li>
+      <li>Maintain a healthy sense of urgency to ship value to production several times a week</li>
+      <li>Communicate with stakeholders to gather requirements and align on goals</li>
+      <li>Focus on minimum viable product to reduce opportunity cost</li>
+      <li>Use webpack, service workers, and React to build a front end focused on performance, accessibility, and user experience</li>
+      <li>Deliver code safely through test driven development, writing unit tests, and using feature flags</li>
+      <li>Make data driven decisions based on a/b tests</li>
+      <li>Plan sprints</li>
+      <li>Lead meetings such as morning stand up, retrospective, and decomposition</li>
+      <li>Provide feedback to reports ask for feedback in return</li>
     </ul>
     <h3>Web Developer</h3>
     <div className={styles.subhead}>
@@ -47,15 +56,14 @@ const Experience = () => (
     </div>
     <ul>
       <li>
-        Develop and maintain internal and external MVC website applications
+        Develop and maintain internal and external .NET MVC website applications
       </li>
-      <li>Use Agile Scrum development methodologies</li>
+      <li>Practice Agile Scrum development methodologies</li>
       <li>Participate in application design and solution architecture</li>
       <li>
         Decompose feature and improvement requests into small, manageable
         development tasks
       </li>
-      <li>Follow IDesign architecture (managers, engines, accessors)</li>
     </ul>
     <h3>Senior Design Project Development Lead</h3>
     <div className={styles.subhead}>
@@ -64,7 +72,7 @@ const Experience = () => (
     <ul>
       <li>Managed issue tracking, deliverables and deadlines</li>
       <li>
-        Was held responsible for the technical integrity of the senior design
+        Held responsible for the technical integrity of the senior design
         project{" "}
       </li>
       <li>Performed code reviews for all pull requests</li>
@@ -111,6 +119,7 @@ const Skills = () => (
     <div>jQuery</div>
     <div>C#</div>
     <div>SQL</div>
+    <div>AWS</div>
     <div>Elasticsearch</div>
   </div>
 )
@@ -126,6 +135,9 @@ const Process = () => (
     <div>Work In Progress Limits</div>
     <div>Pair Programming</div>
     <div>Mob Programming</div>
+    <div>Feature Flags</div>
+    <div>A/B Tests</div>
+    <div>Unit Tests</div>
   </div>
 )
 

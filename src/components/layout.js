@@ -15,10 +15,10 @@ class Layout extends React.Component {
           </Link>
         </div>
         <Menu />
-        <main>{children}</main>
-        {/* <footer>
-          © {new Date().getFullYear()} Tony Prokop
-        </footer> */}
+        <main className="clearfix">{children}</main>
+        <footer>
+          {/* © {new Date().getFullYear()} Tony Prokop */}
+        </footer>
       </Fragment>
     )
   }
