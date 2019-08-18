@@ -60,11 +60,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Tony Prokop`,
+        short_name: `Tony Prokop`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
+        background_color: `#15121E`,
+        theme_color: `#15121E`,
         display: `minimal-ui`,
         icon: `content/assets/gatsby-icon.png`,
       },

@@ -40,14 +40,23 @@ const Experience = () => (
     </div>
     <ul>
       <li>Lead a small team focused on implementing a full website redesign</li>
-      <li>Maintain a healthy sense of urgency to ship value to production several times a week</li>
-      <li>Communicate with stakeholders to gather requirements and align on goals</li>
+      <li>
+        Maintain a healthy sense of urgency to ship value to production several
+        times a week
+      </li>
+      <li>
+        Communicate with stakeholders to gather requirements and align on goals
+      </li>
       <li>Focus on minimum viable product to reduce opportunity cost</li>
-      <li>Use webpack, service workers, and React to build a front end focused on performance, accessibility, and user experience</li>
-      <li>Deliver code safely through test driven development, writing unit tests, and using feature flags</li>
+      <li>
+        Deliver code safely with test driven development, unit tests, and
+        feature flags
+      </li>
       <li>Make data driven decisions based on a/b tests</li>
+      <li>
+        Lead meetings such as morning stand up, retrospective, and decomposition
+      </li>
       <li>Plan sprints</li>
-      <li>Lead meetings such as morning stand up, retrospective, and decomposition</li>
       <li>Provide feedback to reports ask for feedback in return</li>
     </ul>
     <h3>Web Developer</h3>
@@ -56,7 +65,12 @@ const Experience = () => (
     </div>
     <ul>
       <li>
-        Develop and maintain internal and external .NET MVC website applications
+        Develop and maintain internal and external .NET MVC website
+        applications, as well as client applications built with React and Redux
+      </li>
+      <li>
+        Advocate for performance, user experience, and accessibility best
+        practices
       </li>
       <li>Practice Agile Scrum development methodologies</li>
       <li>Participate in application design and solution architecture</li>

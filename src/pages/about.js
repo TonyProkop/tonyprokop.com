@@ -27,7 +27,7 @@ const About = () => (
           </a>{" "}
           ecommerce platform, which supplys street and performance automotive
           parts to car enthusiasts around the world. At Speedway, I lead a team
-          currently focused on implementing a website redesign.
+          focused on implementing a website redesign.
         </p>
         <p>
           In my free time you might find me writing for this blog, camping, or
@@ -38,7 +38,7 @@ const About = () => (
           in 2020! 🎉
         </p>
         <p>
-          I'm currently available for side projects,{" "}
+          I'm available for side projects,{" "}
           <Link to="/contact">give me a shout!</Link>
         </p>
       </div>
