@@ -7,6 +7,10 @@
   padding-right: 5%;
   box-sizing: border-box;
   float: left;
+
+  .contact {
+    display: none;
+  }
 }
 
 .sidebar {
@@ -14,6 +18,25 @@
   padding-left: 5%;
   box-sizing: border-box;
   float: right;
+}
+
+@media (max-width: 1020px) {
+  .main,
+  .sidebar {
+    width: 100%;
+    float: none;
+    padding: 0;
+  }
+
+  .main {
+    .contact {
+      display: block;
+    }
+  }
+
+  .sidebar .contact {
+    display: none;
+  }
 }
 
 .resumeObjective,

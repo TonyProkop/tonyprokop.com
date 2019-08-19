@@ -7,6 +7,7 @@ const Resume = () => (
   <Layout>
     <h1 className={styles.heading}>Tony Prokop</h1>
     <div className={styles.main}>
+      <Contact />
       {/* <ResumeObjective /> */}
       <Experience />
     </div>
