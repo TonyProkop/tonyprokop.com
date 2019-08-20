@@ -36,30 +36,42 @@ const Menu = () => {
         </div>
         <div className={styles.menuLinks}>
           <div>
-            <Link to="/">Home</Link>
+            <Link to="/" onClick={() => setIsMenuActive(false)}>
+              Home
+            </Link>
           </div>
           {IS_MY_WORK_ENABLED ? (
             <div>
-              <Link to="/work">My Work</Link>
+              <Link to="/work" onClick={() => setIsMenuActive(false)}>
+                My Work
+              </Link>
             </div>
           ) : (
             false
           )}
           <div>
-            <Link to="/blog">Blog</Link>
+            <Link to="/blog" onClick={() => setIsMenuActive(false)}>
+              Blog
+            </Link>
           </div>
           {IS_RESUME_ENABLED ? (
             <div>
-              <Link to="/resume">Resumé</Link>
+              <Link to="/resume" onClick={() => setIsMenuActive(false)}>
+                Resumé
+              </Link>
             </div>
           ) : (
             false
           )}
           <div>
-            <Link to="/about">About me</Link>
+            <Link to="/about" onClick={() => setIsMenuActive(false)}>
+              About me
+            </Link>
           </div>
           <div>
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact" onClick={() => setIsMenuActive(false)}>
+              Contact
+            </Link>
           </div>
         </div>
       </div>
