@@ -23,7 +23,6 @@
   svg[data-icon="times"] {
     width: 1.5rem !important;
     height: 1.5rem !important;
-    z-index: 1;
     cursor: pointer;
   }
 
@@ -31,6 +30,7 @@
     position: fixed;
     top: 1rem;
     right: 1rem;
+    z-index: 1;
     background-color: white;
   }
 
@@ -38,6 +38,7 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
+    z-index: 1;
 
     svg {
       color: white;
