@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { githubUrl, facebookUrl, linkedinUrl } from "../utils/config"
 import { fab } from "@fortawesome/free-brands-svg-icons"
@@ -13,6 +12,7 @@ import {
   faTimes,
   faEnvelope,
   faPhone,
+  faDownload,
 } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import styles from "./icon.module.scss"
@@ -27,7 +27,8 @@ library.add(
   faBars,
   faTimes,
   faEnvelope,
-  faPhone
+  faPhone,
+  faDownload
 )
 
 export const ChevronUp = ({ onClick }) => (
@@ -145,3 +146,5 @@ export const Phone = ({ includeText }) => (
     )}
   </a>
 )
+
+export const Download = () => <FontAwesomeIcon icon="download" />

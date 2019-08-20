@@ -27,17 +27,21 @@
     cursor: pointer;
   }
 
-  svg[data-icon="bars"] {
+  .openMenu {
     position: fixed;
     top: 1rem;
     right: 1rem;
+    background-color: white;
   }
 
-  svg[data-icon="times"] {
-    color: white;
+  .closeMenu {
     position: absolute;
     top: 1rem;
     right: 1rem;
+
+    svg {
+      color: white;
+    }
   }
 }
 

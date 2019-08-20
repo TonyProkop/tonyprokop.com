@@ -19,8 +19,13 @@ const Menu = () => {
 
   if (isMenuActive) {
     return (
-      <div className={`${styles.menuContainer} ${styles.active}`}>
-        <Times onClick={() => setIsMenuActive(false)} />
+      <div className={`menu ${styles.menuContainer} ${styles.active}`}>
+        <button
+          className={styles.closeMenu}
+          onClick={() => setIsMenuActive(false)}
+        >
+          <Times />
+        </button>
         <div className={styles.externalLinks}>
           <Email />
           <Phone />
@@ -61,8 +66,13 @@ const Menu = () => {
     )
   } else {
     return (
-      <div className={styles.menuContainer}>
-        <Bars onClick={() => setIsMenuActive(true)} />
+      <div className={`menu ${styles.menuContainer}`}>
+        <button
+          className={styles.openMenu}
+          onClick={() => setIsMenuActive(true)}
+        >
+          <Bars />
+        </button>
       </div>
     )
   }

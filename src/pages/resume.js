@@ -1,22 +1,29 @@
 import React from "react"
 import Layout from "../components/layout"
-import { Email, Phone, Linkedin } from "../components/icon"
+import { Email, Phone, Linkedin, Download } from "../components/icon"
 import styles from "./resume.module.scss"
+import "./resume.print.scss"
 
 const Resume = () => (
   <Layout>
     <h1 className={styles.heading}>Tony Prokop</h1>
-    <div className={styles.main}>
+    <div className={`main ${styles.main}`}>
       <Contact />
       {/* <ResumeObjective /> */}
       <Experience />
     </div>
-    <div className={styles.sidebar}>
+    <div className={`sidebar ${styles.sidebar}`}>
       <Contact />
       <Skills />
       <Education />
       <Process />
     </div>
+    <button
+      className={`downloadButton ${styles.downloadButton}`}
+      onClick={() => window.print()}
+    >
+      <Download />
+    </button>
   </Layout>
 )
 
@@ -58,7 +65,7 @@ const Experience = () => (
         Lead meetings such as morning stand up, retrospective, and decomposition
       </li>
       <li>Plan sprints</li>
-      <li>Provide feedback to reports ask for feedback in return</li>
+      <li>Provide feedback to reports and ask for feedback in return</li>
     </ul>
     <h3>Web Developer</h3>
     <div className={styles.subhead}>
@@ -66,17 +73,17 @@ const Experience = () => (
     </div>
     <ul>
       <li>
-        Develop and maintain internal and external .NET MVC website
+        Developed and maintained internal and external .NET MVC website
         applications, as well as client applications built with React and Redux
       </li>
       <li>
-        Advocate for performance, user experience, and accessibility best
+        Advocated for performance, user experience, and accessibility best
         practices
       </li>
-      <li>Practice Agile Scrum development methodologies</li>
-      <li>Participate in application design and solution architecture</li>
+      <li>Practiced Agile Scrum development methodologies</li>
+      <li>Participated in application design and solution architecture</li>
       <li>
-        Decompose feature and improvement requests into small, manageable
+        Decomposed feature and improvement requests into small, manageable
         development tasks
       </li>
     </ul>
@@ -87,11 +94,10 @@ const Experience = () => (
     <ul>
       <li>Managed issue tracking, deliverables and deadlines</li>
       <li>
-        Held responsible for the technical integrity of the senior design
-        project{" "}
+        Was responsible for the technical integrity of the senior design project{" "}
       </li>
       <li>Performed code reviews for all pull requests</li>
-      <li>Answer teammates’ technical questions </li>
+      <li>Answered teammates’ technical questions </li>
       <li>Followed IDesign architecture (managers, engines, accessors)</li>
     </ul>
     <h3>Compute Science Teacher’s Assistant</h3>

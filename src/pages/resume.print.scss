@@ -1,0 +1,26 @@
+@media print {
+  @page {
+    margin: 0;
+  }
+
+  html {
+    font-size: 13px;
+  }
+
+  body {
+    padding: 3rem 5rem 0;
+  }
+
+  h1 {
+    margin-top: 3rem;
+  }
+
+  .logo,
+  .menu {
+    display: none;
+  }
+
+  .downloadButton {
+    display: none;
+  }
+}
