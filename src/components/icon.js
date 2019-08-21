@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Fragment } from "react"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { githubUrl, facebookUrl, linkedinUrl } from "../utils/config"
 import { fab } from "@fortawesome/free-brands-svg-icons"
@@ -13,6 +13,7 @@ import {
   faEnvelope,
   faPhone,
   faDownload,
+  faGlobe,
 } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import styles from "./icon.module.scss"
@@ -28,7 +29,8 @@ library.add(
   faTimes,
   faEnvelope,
   faPhone,
-  faDownload
+  faDownload,
+  faGlobe
 )
 
 export const ChevronUp = ({ onClick }) => (
@@ -148,3 +150,14 @@ export const Phone = ({ includeText }) => (
 )
 
 export const Download = () => <FontAwesomeIcon icon="download" />
+
+export const Globe = ({ includeText }) => (
+  <Fragment>
+    <FontAwesomeIcon icon="globe" className={styles.icon} />
+    {includeText ? (
+      <span className={styles.linkText}>tonyprokop.com</span>
+    ) : (
+      false
+    )}
+  </Fragment>
+)

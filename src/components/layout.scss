@@ -105,6 +105,11 @@ button {
   outline: none;
 }
 
+::selection {
+  background-color: $color-black;
+  color: white;
+}
+
 .callToActionLink {
   font-size: 0.75rem;
   font-family: "Merriweather";

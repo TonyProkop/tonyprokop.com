@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import { Email, Phone, Linkedin, Download } from "../components/icon"
+import { Email, Phone, Linkedin, Download, Globe } from "../components/icon"
 import styles from "./resume.module.scss"
 import "./resume.print.scss"
 
@@ -115,6 +115,9 @@ const Experience = () => (
 
 const Contact = () => (
   <div className={styles.contact}>
+    <div className={`website ${styles.website}`}>
+      <Globe includeText={true} />
+    </div>
     <div>
       <Email includeText={true} />
     </div>
@@ -131,7 +134,7 @@ const Skills = () => (
   <div className={styles.skills}>
     <h2>Skills</h2>
     <div>HTML</div>
-    <div>CSS</div>
+    <div>CSS / SASS</div>
     <div>Javascript</div>
     <div>React</div>
     <div>Redux</div>
@@ -142,6 +145,7 @@ const Skills = () => (
     <div>SQL</div>
     <div>AWS</div>
     <div>Elasticsearch</div>
+    <div>Google Analytics</div>
   </div>
 )
 
@@ -150,8 +154,8 @@ const Process = () => (
     <h2>Process</h2>
     <div>Agile</div>
     <div>Scrum</div>
-    <div>Continuous Delivery</div>
     <div>Continuous Integration</div>
+    <div>Continuous Delivery</div>
     <div>Trunk Based Development</div>
     <div>Work In Progress Limits</div>
     <div>Pair Programming</div>
