@@ -25,7 +25,7 @@ const About = () => (
           <a href={speedwayMotorsUrl} target="_blank" rel="noopener noreferrer">
             Speedway Motors
           </a>{" "}
-          ecommerce platform, which supplys street and performance automotive
+          ecommerce platform, which supplies street and performance automotive
           parts to car enthusiasts around the world. At Speedway, I lead a team
           focused on implementing a website redesign.
         </p>
