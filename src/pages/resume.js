@@ -66,6 +66,7 @@ const Experience = () => (
       </li>
       <li>Plan sprints</li>
       <li>Provide feedback to reports and ask for feedback in return</li>
+      <li>Work remote two days a week</li>
     </ul>
     <h3>Web Developer</h3>
     <div className={styles.subhead}>
@@ -139,6 +140,7 @@ const Skills = () => (
     <div>React</div>
     <div>Redux</div>
     <div>Webpack</div>
+    <div>Jest / Enzyme</div>
     <div>Service worker</div>
     <div>jQuery</div>
     <div>C#</div>

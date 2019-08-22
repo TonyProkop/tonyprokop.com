@@ -75,9 +75,9 @@ export const Times = ({ onClick }) => (
 )
 
 export const Rss = () => (
-  <Link to="/rss.xml" target="_blank" className={styles.rssLink}>
+  <a href="/rss.xml" target="_blank" className={styles.rssLink}>
     <FontAwesomeIcon icon="rss" className={styles.icon} />
-  </Link>
+  </a>
 )
 
 export const Github = () => (
