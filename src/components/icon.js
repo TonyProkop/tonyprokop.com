@@ -107,16 +107,17 @@ export const Linkedin = ({ includeText }) => (
   </a>
 )
 
-export const Facebook = () => (
-  <a
-    href={facebookUrl}
-    target="_blank"
-    rel="noopener noreferrer"
-    className={styles.facebookLink}
-  >
-    <FontAwesomeIcon icon={["fab", "facebook"]} className={styles.icon} />
-  </a>
-)
+export const Facebook = () => false
+//   export const Facebook = () => (
+//   <a
+//     href={facebookUrl}
+//     target="_blank"
+//     rel="noopener noreferrer"
+//     className={styles.facebookLink}
+//   >
+//     <FontAwesomeIcon icon={["fab", "facebook"]} className={styles.icon} />
+//   </a>
+// )
 
 export const Email = ({ includeText }) => (
   <a

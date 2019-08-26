@@ -67,6 +67,8 @@ const Experience = () => (
       <li>Plan sprints</li>
       <li>Provide feedback to reports and ask for feedback in return</li>
       <li>Work remote two days a week</li>
+      <li>Part of a weekly on-call rotation</li>
+      <li>Handled deployments and monitoring</li>
     </ul>
     <h3>Web Developer</h3>
     <div className={styles.subhead}>
@@ -87,6 +89,7 @@ const Experience = () => (
         Decomposed feature and improvement requests into small, manageable
         development tasks
       </li>
+      <li>Part of a weekly on-call rotation</li>
     </ul>
     <h3>Senior Design Project Development Lead</h3>
     <div className={styles.subhead}>
@@ -136,18 +139,24 @@ const Skills = () => (
     <h2>Skills</h2>
     <div>HTML</div>
     <div>CSS / SASS</div>
-    <div>Javascript</div>
+    <div>Javascript (ES6)</div>
     <div>React</div>
     <div>Redux</div>
     <div>Webpack</div>
     <div>Jest / Enzyme</div>
-    <div>Service worker</div>
+    <div>Progressive Web Apps (PWA)</div>
+    <div>Service Worker</div>
+    <div>Page Load Performance</div>
+    <div>Accessibility</div>
+    <div>Bootstrap</div>
     <div>jQuery</div>
     <div>C#</div>
     <div>SQL</div>
     <div>AWS</div>
+    <div>Redis</div>
     <div>Elasticsearch</div>
     <div>Google Analytics</div>
+    <div>Search Engine Optimization (SEO)</div>
   </div>
 )
 
@@ -164,7 +173,7 @@ const Process = () => (
     <div>Mob Programming</div>
     <div>Feature Flags</div>
     <div>A/B Tests</div>
-    <div>Unit Tests</div>
+    <div>Unit / Integration Tests</div>
   </div>
 )
 
