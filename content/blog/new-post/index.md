@@ -46,6 +46,8 @@ There isn't anything too exciting going on with the menu, it uses the three bar 
 
 ### Home Page
 
+
+
 - Home page having one powerful statement about myself to intrigue the user, with the most important word highlighted in the accent color.
 - Down arrow to scroll down the page is common.
 
