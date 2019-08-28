@@ -28,13 +28,26 @@ I looked at countless Dribbble shots and top 25 blogs to get a feel for what I w
 
 ## Time to Design
 
-- Needed the following pages: home, menu, archive, blog post, about, contact, resume
-- Mobile first design, even on desktop. Having a "hamburger menu" button on desktop is common
+After being inspired and having a clear picture of what I was trying to build, it was time to open Figma and work through the details.
+
+### Color
+
+Color is difficult. I tried many different palletes from the internet and was even inspired by my [North Face Stormbreaker 3 Tent](https://www.rei.com/product/129203/the-north-face-stormbreak-3-tent). Nothing seemed to work. I learned that color is coupled to the layout and features of a site and you can't take *any* color pallete expect it to fit. This was the pitfall I ran into, I was trying to iron out the colors too early in the process. I waited until the layout was more established, only then realizing that I don't need more than two colors. The design is so minimal that forcing more than three colors into it made it feel akward. I ended up with a base color black and a red accent color. The accent color is used to draw attention to areas of focus and interaction. Two colors keep it minimal, focused on content, and easy to implement.
+
+### Font
+
+I tried using just one font for performance reasons, but that's too boring. A common pattern is to use font to differentiate headings and body text. I'm using Merriweather for the headings and Arial for body text. Arial is a system font, which is great because it doesn't need to be loaded over the network. Using system fonts is a great way to be performance focused, but not compromise design.
+
+### Header
+
+Instead of going down the rabbit hole of designing a logo, I opted to just have the text *"Tony."*. This is in the same font as the headings, and uses the accent color for the period. I feel this is as good as I can get without an actual logo, and establishes the brand / style / theme of the website in a concise way. As an aside, the favicon for the website follows a similar line of thinking. It is just the letter "T" followed by a period in the accent color.
+
+There isn't anything too exciting going on with the menu, it uses the three bar icon everyone is used to. A common pattern is for the menu icon to transform into links on desktop, where there is more space. I opted to leave it an icon, which keeps the design simple and mobile first.
+
+### Home Page
+
 - Home page having one powerful statement about myself to intrigue the user, with the most important word highlighted in the accent color.
 - Down arrow to scroll down the page is common.
-- Using color as a repeated theme. Its pretty simple on this site, there are only two colors. Red is repeatedly used to indicate action.
-- The logo with the red period is pretty good for branding I think.
-- Font pairings
 
 ## Future Improvements
 
