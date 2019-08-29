@@ -3,11 +3,13 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import { ChevronRight } from "../components/icon"
 import profilePic from "../../content/assets/profile-pic.jpg"
+import SEO from "../components/seo"
 import { speedwayMotorsUrl, myWeddingUrl } from "../utils/config"
 import styles from "./about.module.scss"
 
 const About = () => (
   <Layout title="About Me">
+    <SEO title="About Me" />
     <div className={styles.aboutContainer}>
       <h1>Hi, I'm Tony Prokop.</h1>
       <Link to="/contact" className={`${styles.getInTouch} callToActionLink`}>

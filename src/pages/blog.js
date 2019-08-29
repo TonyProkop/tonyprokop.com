@@ -1,6 +1,7 @@
 import React, { Fragment } from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import styles from "./blog.module.scss"
 
 class Blog extends React.Component {
@@ -19,6 +20,7 @@ class Blog extends React.Component {
 
     return (
       <Layout>
+        <SEO title="The Archive" />
         <div className="content">
           <h1>The Archive.</h1>
           <div className={styles.archiveContainer}>

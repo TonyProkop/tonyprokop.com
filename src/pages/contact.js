@@ -1,10 +1,12 @@
 import React from "react"
 import { Github, Linkedin, Facebook, Rss } from "../components/icon"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import styles from "./contact.module.scss"
 
 const Contact = () => (
-  <Layout>
+  <Layout title="Contact">
+    <SEO title="Contact" />
     <div class="content">
       <h1>Let's Talk.</h1>
       <div className={styles.externalLinks}>

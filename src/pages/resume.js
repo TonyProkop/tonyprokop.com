@@ -1,11 +1,13 @@
 import React from "react"
 import Layout from "../components/layout"
 import { Email, Phone, Linkedin, Download, Globe } from "../components/icon"
+import SEO from "../components/seo"
 import styles from "./resume.module.scss"
 import "./resume.print.scss"
 
 const Resume = () => (
-  <Layout>
+  <Layout title="Resume">
+    <SEO title="Resume" />
     <h1 className={styles.heading}>Tony Prokop</h1>
     <div className={`main ${styles.main}`}>
       <Contact />
