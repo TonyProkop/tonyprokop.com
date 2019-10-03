@@ -4,10 +4,6 @@ import { library } from "@fortawesome/fontawesome-svg-core"
 import { githubUrl, facebookUrl, linkedinUrl } from "../utils/config"
 import { fab } from "@fortawesome/free-brands-svg-icons"
 import {
-  faChevronUp,
-  faChevronDown,
-  faChevronLeft,
-  faChevronRight,
   faBars,
   faRss,
   faTimes,
@@ -15,6 +11,10 @@ import {
   faPhone,
   faDownload,
   faGlobe,
+  faArrowUp,
+  faArrowDown,
+  faArrowLeft,
+  faArrowRight,
 } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import styles from "./icon.module.scss"
@@ -22,45 +22,41 @@ import styles from "./icon.module.scss"
 library.add(
   fab,
   faRss,
-  faChevronUp,
-  faChevronDown,
-  faChevronLeft,
-  faChevronRight,
   faBars,
   faTimes,
   faEnvelope,
   faPhone,
   faDownload,
-  faGlobe
+  faGlobe,
+  faArrowUp,
+  faArrowDown,
+  faArrowLeft,
+  faArrowRight
 )
 
-export const ChevronUp = ({ onClick }) => (
+export const ArrowUp = ({ onClick }) => (
+  <FontAwesomeIcon icon="arrow-up" className={styles.icon} onClick={onClick} />
+)
+
+export const ArrowDown = ({ onClick }) => (
   <FontAwesomeIcon
-    icon="chevron-up"
+    icon="arrow-down"
     className={styles.icon}
     onClick={onClick}
   />
 )
 
-export const ChevronDown = ({ onClick }) => (
+export const ArrowLeft = ({ onClick }) => (
   <FontAwesomeIcon
-    icon="chevron-down"
+    icon="arrow-left"
     className={styles.icon}
     onClick={onClick}
   />
 )
 
-export const ChevronLeft = ({ onClick }) => (
+export const ArrowRight = ({ onClick }) => (
   <FontAwesomeIcon
-    icon="chevron-left"
-    className={styles.icon}
-    onClick={onClick}
-  />
-)
-
-export const ChevronRight = ({ onClick }) => (
-  <FontAwesomeIcon
-    icon="chevron-right"
+    icon="arrow-right"
     className={styles.icon}
     onClick={onClick}
   />

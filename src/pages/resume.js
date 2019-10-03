@@ -106,7 +106,7 @@ const Experience = () => (
       <li>Answered teammates’ technical questions </li>
       <li>Followed IDesign architecture (managers, engines, accessors)</li>
     </ul>
-    <h3>Compute Science Teacher’s Assistant</h3>
+    <h3>Computer Science Teacher’s Assistant</h3>
     <div className={styles.subhead}>
       University of Nebraska-Lincoln, Lincoln, NE / August 2014 - March 2015
     </div>
@@ -142,7 +142,6 @@ const Skills = () => (
     <div>HTML</div>
     <div>CSS / SASS</div>
     <div>Javascript (ES6)</div>
-    <div>React</div>
     <div>Redux</div>
     <div>Webpack</div>
     <div>Jest / Enzyme</div>
@@ -171,8 +170,7 @@ const Process = () => (
     <div>Continuous Delivery</div>
     <div>Trunk Based Development</div>
     <div>Work In Progress Limits</div>
-    <div>Pair Programming</div>
-    <div>Mob Programming</div>
+    <div>Pair / Mob Programming</div>
     <div>Feature Flags</div>
     <div>A/B Tests</div>
     <div>Unit / Integration Tests</div>

@@ -3,6 +3,8 @@
 .menuContainer {
   font-size: 1.5rem;
   font-family: "Merriweather";
+  position: relative;
+  z-index: 10;
 
   &.active {
     height: 100vh;
@@ -10,7 +12,6 @@
     width: 100%;
     position: fixed;
     top: 0;
-    z-index: 1;
     background-color: $color-black;
     color: white;
   }
@@ -24,25 +25,19 @@
     width: 1.5rem !important;
     height: 1.5rem !important;
     cursor: pointer;
+    color: white;
   }
 
   .openMenu {
     position: fixed;
     top: 1rem;
     right: 1rem;
-    z-index: 1;
-    background-color: white;
   }
 
   .closeMenu {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    z-index: 1;
-
-    svg {
-      color: white;
-    }
   }
 }
 

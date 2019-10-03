@@ -10,15 +10,11 @@ class Layout extends React.Component {
     return (
       <Fragment>
         <div className="logo">
-          <Link to="/">
-            Tony<span>.</span>
-          </Link>
+          <Link to="/">Tony.</Link>
         </div>
         <Menu />
         <main className="clearfix">{children}</main>
-        <footer>
-          {/* © {new Date().getFullYear()} Tony Prokop */}
-        </footer>
+        <footer>{/* © {new Date().getFullYear()} Tony Prokop */}</footer>
       </Fragment>
     )
   }

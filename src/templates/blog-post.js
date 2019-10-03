@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
-import { ChevronRight } from "../components/icon"
+import { ArrowRight } from "../components/icon"
 import SEO from "../components/seo"
 import styles from "./blog-post.module.scss"
 
@@ -22,7 +22,7 @@ class BlogPostTemplate extends React.Component {
           <div className={styles.next}>
             <Link to={next.fields.slug} rel="next" className="callToActionLink">
               Next Post
-              <ChevronRight />
+              <ArrowRight />
             </Link>
           </div>
         )}
