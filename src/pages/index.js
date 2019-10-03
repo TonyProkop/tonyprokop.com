@@ -1,8 +1,9 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Particles from "react-particles-js"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { ChevronDown, ChevronRight } from "../components/icon"
+import { ArrowDown, ArrowRight } from "../components/icon"
 import styles from "./index.module.scss"
 
 class BlogIndex extends React.Component {
@@ -17,10 +18,10 @@ class BlogIndex extends React.Component {
         <div className="content">
           <div className={styles.banner}>
             <h1 className={styles.heading}>
-              Thoughts from a web <br /> developer <span>passionate</span> about
-              building <br /> clean, intuitive experiences.
+              I'm Tony Prokop, <br /> a full-stack web developer.
             </h1>
-            <ChevronDown
+            <button>Let's Talk!</button>
+            <ArrowDown
               onClick={() =>
                 window.scrollTo({
                   top: document.body.scrollHeight,
@@ -28,13 +29,59 @@ class BlogIndex extends React.Component {
                 })
               }
             />
+            <Particles
+              canvasClassName={styles.particlesContainer}
+              params={{
+                particles: {
+                  number: {
+                    value: 60,
+                    density: {
+                      enable: true,
+                      value_area: 1500,
+                    },
+                  },
+                  line_linked: {
+                    enable: true,
+                    opacity: 0.02,
+                  },
+                  move: {
+                    direction: "right",
+                    speed: 0.05,
+                  },
+                  size: {
+                    value: 2,
+                  },
+                  opacity: {
+                    anim: {
+                      enable: true,
+                      speed: 1,
+                      opacity_min: 0.05,
+                    },
+                  },
+                },
+                interactivity: {
+                  events: {
+                    onclick: {
+                      enable: true,
+                      mode: "push",
+                    },
+                  },
+                  modes: {
+                    push: {
+                      particles_nb: 1,
+                    },
+                  },
+                },
+                retina_detect: true,
+              }}
+            />
           </div>
           <div className={styles.writingContainer}>
             <div className={styles.writingHeader}>
               <h2>Writing</h2>
               <Link to="/blog" className="callToActionLink">
                 View Archives
-                <ChevronRight />
+                <ArrowRight />
               </Link>
             </div>
 
