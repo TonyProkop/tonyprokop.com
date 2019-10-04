@@ -4,6 +4,7 @@ import Particles from "react-particles-js"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { ArrowDown, ArrowRight } from "../components/icon"
+import * as Button from "../components/button"
 import styles from "./index.module.scss"
 
 class BlogIndex extends React.Component {
@@ -17,10 +18,12 @@ class BlogIndex extends React.Component {
         <SEO title="Home" />
         <div className="content">
           <div className={styles.banner}>
-            <h1 className={styles.heading}>
-              I'm Tony Prokop, <br /> a full-stack web developer.
-            </h1>
-            <button>Let's Talk!</button>
+            <div className={styles.bannerText}>
+              <h1 className={styles.heading}>
+                I'm Tony Prokop, <br /> a full-stack web developer.
+              </h1>
+              <Button.White>Let's Talk!</Button.White>
+            </div>
             <ArrowDown
               onClick={() =>
                 window.scrollTo({
@@ -31,49 +34,7 @@ class BlogIndex extends React.Component {
             />
             <Particles
               canvasClassName={styles.particlesContainer}
-              params={{
-                particles: {
-                  number: {
-                    value: 60,
-                    density: {
-                      enable: true,
-                      value_area: 1500,
-                    },
-                  },
-                  line_linked: {
-                    enable: true,
-                    opacity: 0.02,
-                  },
-                  move: {
-                    direction: "right",
-                    speed: 0.05,
-                  },
-                  size: {
-                    value: 2,
-                  },
-                  opacity: {
-                    anim: {
-                      enable: true,
-                      speed: 1,
-                      opacity_min: 0.05,
-                    },
-                  },
-                },
-                interactivity: {
-                  events: {
-                    onclick: {
-                      enable: true,
-                      mode: "push",
-                    },
-                  },
-                  modes: {
-                    push: {
-                      particles_nb: 1,
-                    },
-                  },
-                },
-                retina_detect: true,
-              }}
+              params={particlesConfig}
             />
           </div>
           <div className={styles.writingContainer}>
@@ -106,6 +67,50 @@ class BlogIndex extends React.Component {
       </Layout>
     )
   }
+}
+
+const particlesConfig = {
+  particles: {
+    number: {
+      value: 60,
+      density: {
+        enable: true,
+        value_area: 1500,
+      },
+    },
+    line_linked: {
+      enable: true,
+      opacity: 0.02,
+    },
+    move: {
+      direction: "right",
+      speed: 0.05,
+    },
+    size: {
+      value: 2,
+    },
+    opacity: {
+      anim: {
+        enable: true,
+        speed: 1,
+        opacity_min: 0.05,
+      },
+    },
+  },
+  interactivity: {
+    events: {
+      onclick: {
+        enable: true,
+        mode: "push",
+      },
+    },
+    modes: {
+      push: {
+        particles_nb: 1,
+      },
+    },
+  },
+  retina_detect: true,
 }
 
 export default BlogIndex

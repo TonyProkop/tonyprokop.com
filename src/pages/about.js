@@ -16,7 +16,7 @@ const About = () => (
         Get in touch
         <ArrowRight />
       </Link>
-      <img src={profilePic} className={styles.profilePic} />
+      <img src={profilePic} alt="Tony Prokop" className={styles.profilePic} />
       <div className="content">
         <p>
           I'm a web developer based in Omaha, NE, currently excited about React,

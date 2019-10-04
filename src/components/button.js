@@ -6,10 +6,9 @@ const TYPES = {
   WHITE: "white",
 }
 
-const Button = ({ buttonType }) => {
-  return (
-    <button className={(classNames = styles[buttonType])}>{children}</button>
-  )
+const Button = ({ buttonType, children }) => {
+  const className = classnames(styles.button, styles[buttonType])
+  return <button className={className}>{children}</button>
 }
 
 export const White = props => (
