@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { ArrowDown, ArrowRight } from "../components/icon"
 import * as Button from "../components/button"
+import { Service, COLORS } from "../components/service"
 import styles from "./index.module.scss"
 
 class BlogIndex extends React.Component {
@@ -22,7 +23,10 @@ class BlogIndex extends React.Component {
               <h1 className={styles.heading}>
                 I'm Tony Prokop, <br /> a full-stack web developer.
               </h1>
-              <Button.White>Let's Talk!</Button.White>
+              <Button.White to="/contact">Let's Talk!</Button.White>
+            </div>
+            <div className={styles.availability}>
+              Available for new projects
             </div>
             <ArrowDown
               onClick={() =>
@@ -32,12 +36,43 @@ class BlogIndex extends React.Component {
                 })
               }
             />
-            <Particles
-              canvasClassName={styles.particlesContainer}
-              params={particlesConfig}
-            />
+            <div className={styles.particlesContainer}>
+              <Particles
+                canvasClassName={styles.particles}
+                params={particlesConfig}
+              />
+            </div>
           </div>
+
           <div className={styles.writingContainer}>
+            <div className={styles.servicesContainer}>
+              <Service
+                color={COLORS.PURPLE}
+                name="Responsive"
+                description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+              ></Service>
+              <Service
+                color={COLORS.ORANGE}
+                name="Performant"
+                description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+              ></Service>
+              <Service
+                color={COLORS.GREEN}
+                name="Accessible"
+                description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+              ></Service>
+              <Service
+                color={COLORS.BLUE}
+                name="Discoverable"
+                description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+              ></Service>
+              <Service
+                color={COLORS.RED}
+                name="Secure"
+                description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+              ></Service>
+            </div>
+
             <div className={styles.writingHeader}>
               <h2>Writing</h2>
               <Link to="/blog" className="callToActionLink">

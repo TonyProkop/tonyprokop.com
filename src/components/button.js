@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import classnames from "classnames"
 import styles from "./button.module.scss"
 
@@ -6,9 +7,13 @@ const TYPES = {
   WHITE: "white",
 }
 
-const Button = ({ buttonType, children }) => {
+const Button = ({ to, buttonType, children }) => {
   const className = classnames(styles.button, styles[buttonType])
-  return <button className={className}>{children}</button>
+  return (
+    <Link to={to} className={className}>
+      {children}
+    </Link>
+  )
 }
 
 export const White = props => (

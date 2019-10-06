@@ -1,0 +1,56 @@
+.service {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 33.33333%;
+  text-align: center;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+
+  h3 {
+    font-family: "Merriweather-Bold";
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  p {
+    font-family: "Merriweather-Light";
+    margin: 0;
+  }
+}
+
+.symbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+
+  svg {
+    color: white;
+    width: 2rem !important;
+    height: auto !important;
+  }
+}
+
+.purple {
+  background: linear-gradient(120deg, #9f44d3, #e2b0ff);
+}
+
+.red {
+  background: linear-gradient(120deg, #ea5455, #feb692);
+}
+
+.green {
+  background: linear-gradient(120deg, #28c76f, #81fbb8);
+}
+
+.blue {
+  background: linear-gradient(120deg, #0396ff, #abdcff);
+}
+
+.orange {
+  background: linear-gradient(120deg, #f55555, #fccf31);
+}

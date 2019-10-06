@@ -15,6 +15,11 @@ import {
   faArrowDown,
   faArrowLeft,
   faArrowRight,
+  faMobileAlt,
+  faBolt,
+  faLowVision,
+  faSearch,
+  faLock,
 } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import styles from "./icon.module.scss"
@@ -31,7 +36,12 @@ library.add(
   faArrowUp,
   faArrowDown,
   faArrowLeft,
-  faArrowRight
+  faArrowRight,
+  faMobileAlt,
+  faBolt,
+  faLowVision,
+  faSearch,
+  faLock
 )
 
 export const ArrowUp = ({ onClick }) => (
@@ -159,3 +169,13 @@ export const Globe = ({ includeText }) => (
     )}
   </Fragment>
 )
+
+export const MobilePhone = () => <FontAwesomeIcon icon="mobile-alt" />
+
+export const LightningBolt = () => <FontAwesomeIcon icon="bolt" />
+
+export const LowVision = () => <FontAwesomeIcon icon="low-vision" />
+
+export const Search = () => <FontAwesomeIcon icon="search" />
+
+export const Lock = () => <FontAwesomeIcon icon="lock" />

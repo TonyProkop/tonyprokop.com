@@ -7,7 +7,7 @@
   right: 0;
   height: 100vh;
   height: -webkit-fill-available;
-  background: linear-gradient(120deg, #43cbff, #9708cc);
+  background: linear-gradient(120deg, $color-teal, $color-purple);
   color: white;
   display: flex;
   align-items: center;
@@ -15,23 +15,57 @@
 
   svg[data-icon="arrow-down"] {
     position: absolute;
-    bottom: 1rem;
+    bottom: 3rem;
     margin: auto;
     width: 40px !important;
     height: 40px !important;
     color: white;
+    z-index: 1;
   }
 }
 
-.bannerText button {
-  margin: 0 auto;
-  display: block;
+.bannerText {
+  z-index: 1;
+  text-align: center;
+
+  button {
+    margin: 0 auto;
+    display: block;
+  }
 }
 
 .heading {
   max-width: $pageWidth;
   margin: 0 0 1rem;
   padding: 0 2rem;
+}
+
+.availability {
+  color: white;
+  font-family: "Raleway";
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    border-radius: 100%;
+    background-color: #0cbe08;
+    width: 10px;
+    height: 10px;
+    margin-right: 0.5rem;
+    border: 1px solid white;
+    box-shadow: 0 0 5px #ffffff;
+  }
+}
+
+.servicesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .writingContainer {
@@ -53,9 +87,13 @@
 }
 
 .particlesContainer {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  z-index: 0;
+
+  .particles {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 }
