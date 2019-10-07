@@ -17,6 +17,7 @@
   p {
     font-family: "Merriweather-Light";
     margin: 0;
+    color: #555555;
   }
 }
 
@@ -30,8 +31,10 @@
 
   svg {
     color: white;
-    width: 2rem !important;
-    height: auto !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 3rem !important;
+    max-height: 3rem !important;
   }
 }
 

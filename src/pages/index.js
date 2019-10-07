@@ -1,21 +1,17 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
 import Particles from "react-particles-js"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { ArrowDown, ArrowRight } from "../components/icon"
+import { ArrowDown } from "../components/icon"
 import * as Button from "../components/button"
-import { Service, COLORS } from "../components/service"
+import { Service, COLORS, SYMBOLS } from "../components/service"
+import Heading from "../components/heading"
 import styles from "./index.module.scss"
 
 class BlogIndex extends React.Component {
   render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
-
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout location={this.props.location} title="Home">
         <SEO title="Home" />
         <div className="content">
           <div className={styles.banner}>
@@ -43,60 +39,39 @@ class BlogIndex extends React.Component {
               />
             </div>
           </div>
-
-          <div className={styles.writingContainer}>
-            <div className={styles.servicesContainer}>
-              <Service
-                color={COLORS.PURPLE}
-                name="Responsive"
-                description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-              ></Service>
-              <Service
-                color={COLORS.ORANGE}
-                name="Performant"
-                description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-              ></Service>
-              <Service
-                color={COLORS.GREEN}
-                name="Accessible"
-                description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-              ></Service>
-              <Service
-                color={COLORS.BLUE}
-                name="Discoverable"
-                description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-              ></Service>
-              <Service
-                color={COLORS.RED}
-                name="Secure"
-                description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-              ></Service>
-            </div>
-
-            <div className={styles.writingHeader}>
-              <h2>Writing</h2>
-              <Link to="/blog" className="callToActionLink">
-                View Archives
-                <ArrowRight />
-              </Link>
-            </div>
-
-            {posts.map(({ node }) => {
-              const title = node.frontmatter.title || node.fields.slug
-              return (
-                <div key={node.fields.slug}>
-                  <h3 className={styles.post}>
-                    <Link to={node.fields.slug}>{title}</Link>
-                  </h3>
-                  {/* <small>{node.frontmatter.date}</small> */}
-                  {/* <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
-                  }}
-                /> */}
-                </div>
-              )
-            })}
+          <div className={styles.divider}></div>
+          <Heading title="Services" subhead="I build websites that are..." />
+          <div className={styles.servicesContainer}>
+            <Service
+              color={COLORS.PURPLE}
+              icon={SYMBOLS.PHONE}
+              name="Responsive"
+              description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            />
+            <Service
+              color={COLORS.ORANGE}
+              icon={SYMBOLS.BOLT}
+              name="Performant"
+              description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            />
+            <Service
+              color={COLORS.GREEN}
+              icon={SYMBOLS.LOWVISION}
+              name="Accessible"
+              description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            />
+            <Service
+              color={COLORS.BLUE}
+              icon={SYMBOLS.SEARCH}
+              name="Discoverable"
+              description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            />
+            <Service
+              color={COLORS.RED}
+              icon={SYMBOLS.LOCK}
+              name="Secure"
+              description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            />
           </div>
         </div>
       </Layout>
@@ -149,28 +124,3 @@ const particlesConfig = {
 }
 
 export default BlogIndex
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-          }
-        }
-      }
-    }
-  }
-`
