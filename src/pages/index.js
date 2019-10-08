@@ -43,19 +43,19 @@ class BlogIndex extends React.Component {
           <Heading title="Services" subhead="I build websites that are..." />
           <div className={styles.servicesContainer}>
             <Service
-              color={COLORS.PURPLE}
-              icon={SYMBOLS.PHONE}
-              name="Responsive"
-              description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-            />
-            <Service
               color={COLORS.ORANGE}
               icon={SYMBOLS.BOLT}
               name="Performant"
               description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             />
             <Service
-              color={COLORS.GREEN}
+              color={COLORS.PURPLE}
+              icon={SYMBOLS.PHONE}
+              name="Responsive"
+              description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            />
+            <Service
+              color={COLORS.RED}
               icon={SYMBOLS.LOWVISION}
               name="Accessible"
               description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
@@ -67,7 +67,7 @@ class BlogIndex extends React.Component {
               description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             />
             <Service
-              color={COLORS.RED}
+              color={COLORS.GREEN}
               icon={SYMBOLS.LOCK}
               name="Secure"
               description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."

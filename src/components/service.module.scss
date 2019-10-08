@@ -4,18 +4,21 @@
   flex-direction: column;
   flex-wrap: wrap;
   max-width: 33.33333%;
+  min-width: 250px;
   text-align: center;
   padding: 2rem 1rem;
   box-sizing: border-box;
 
   h3 {
-    font-family: "Merriweather-Bold";
+    font-family: "Merriweather";
+    font-weight: normal;
     font-size: 1.5rem;
     margin: 1rem 0;
   }
 
   p {
-    font-family: "Merriweather-Light";
+    font-family: "Merriweather";
+    font-weight: 100;
     margin: 0;
     color: #555555;
   }

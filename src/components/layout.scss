@@ -1,14 +1,5 @@
 @import "../utils/shared.scss";
 
-@font-face {
-  font-family: "Merriweather-Bold";
-
-  src: url("../../static/fonts/Merriweather-Bold.woff") format("woff"),
-    url("../../static/fonts/Merriweather-Bold.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-
 html {
   color: $color-black;
   font-size: 12px;
@@ -66,19 +57,22 @@ h6 {
 
 h1 {
   font-size: 4rem;
-  font-family: "Merriweather-Bold";
+  font-family: "Merriweather";
+  font-weight: bold;
   text-align: center;
   margin-top: 5rem;
 }
 
 h2 {
   font-size: 4rem;
-  font-family: "Merriweather-Bold";
+  font-family: "Merriweather";
+  font-weight: bold;
 }
 
 h3 {
   font-size: 1.5rem;
-  font-family: "Merriweather-Bold";
+  font-family: "Merriweather";
+  font-weight: bold;
 }
 
 ul {
@@ -132,7 +126,8 @@ button {
   top: 1rem;
   left: 1rem;
   font-size: 2rem;
-  font-family: "Merriweather-Bold";
+  font-family: "Merriweather";
+  font-weight: bold;
   z-index: 1;
 
   a {
