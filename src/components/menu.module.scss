@@ -1,7 +1,7 @@
 @import "../utils/shared.scss";
 
 .menuContainer {
-  font-size: 2rem;
+  font-size: 3rem;
   font-family: "Merriweather";
   position: relative;
   z-index: 10;
@@ -22,8 +22,8 @@
 
   svg[data-icon="bars"],
   svg[data-icon="times"] {
-    width: 2rem !important;
-    height: 2rem !important;
+    width: 3rem !important;
+    height: 3rem !important;
     cursor: pointer;
     color: white;
   }

@@ -27,7 +27,7 @@ class BlogIndex extends React.Component {
             <ArrowDown
               onClick={() =>
                 window.scrollTo({
-                  top: document.body.scrollHeight,
+                  top: window.innerHeight,
                   behavior: "smooth",
                 })
               }
@@ -72,6 +72,7 @@ class BlogIndex extends React.Component {
               name="Secure"
               description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             />
+            <Heading title="Recent Work" />
           </div>
         </div>
       </Layout>

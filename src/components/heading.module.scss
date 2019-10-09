@@ -2,7 +2,8 @@
 
 .heading {
   text-align: center;
-  margin: 3rem auto;
+  margin: 5rem auto 3rem;
+  width: 100%;
 
   &:after {
     content: "";
@@ -11,10 +12,6 @@
     width: 100px;
     height: 3px;
     background: $primary-gradient;
-  }
-
-  h2 {
-    font-size: 4rem;
   }
 
   p {
