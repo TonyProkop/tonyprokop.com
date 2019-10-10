@@ -1,3 +1,5 @@
+@import "../utils/shared.scss";
+
 .service {
   display: flex;
   align-items: center;
@@ -42,21 +44,21 @@
 }
 
 .purple {
-  background: linear-gradient(120deg, #9f44d3, #e2b0ff);
+  background: $purple-gradient;
 }
 
 .red {
-  background: linear-gradient(120deg, #ea5455, #feb692);
+  background: $red-gradient;
 }
 
 .green {
-  background: linear-gradient(120deg, #28c76f, #81fbb8);
+  background: $green-gradient;
 }
 
 .blue {
-  background: linear-gradient(120deg, #0396ff, #abdcff);
+  background: $blue-gradient;
 }
 
 .orange {
-  background: linear-gradient(120deg, #f55555, #fccf31);
+  background: $orange-gradient;
 }
