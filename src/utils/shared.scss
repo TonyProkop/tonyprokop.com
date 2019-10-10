@@ -1,3 +1,6 @@
+$pageWidth: 2000px;
+$contentWidth: 1000px;
+
 $color-black: #15121e;
 $color-gray: #5f5a63;
 $color-lightGray: #aaabac;
@@ -9,15 +12,86 @@ $color-linkedin: #0077b5;
 $color-github: #6cc644;
 $color-rss: #f26522;
 
-$color-purple: #9708cc;
-$color-teal: #43cbff;
-$primary-gradient: linear-gradient(120deg, #43cbff, #9708cc);
+// Primary Colors.
+$color-primary-purple: #9708cc;
+$color-primary-teal: #43cbff;
+$gradient-primary-teal-to-purple: linear-gradient(
+  120deg,
+  $color-primary-teal,
+  $color-primary-purple
+);
+$gradient-primary-purple-to-teal: linear-gradient(
+  120deg,
+  $color-primary-purple,
+  $color-primary-teal
+);
 
-$purple-gradient: linear-gradient(120deg, #9f44d3, #e2b0ff);
-$red-gradient: linear-gradient(120deg, #ea5455, #feb692);
-$green-gradient: linear-gradient(120deg, #28c76f, #81fbb8);
-$blue-gradient: linear-gradient(120deg, #0396ff, #abdcff);
-$orange-gradient: linear-gradient(120deg, #f55555, #fccf31);
+// Purple.
+$color-purple-light: #e2b0ff;
+$color-purple-dark: #9f44d3;
+$gradient-purple-light-to-dark: linear-gradient(
+  120deg,
+  $color-purple-light,
+  $color-purple-dark
+);
+$gradient-purple-dark-to-light: linear-gradient(
+  120deg,
+  $color-purple-dark,
+  $color-purple-light
+);
 
-$pageWidth: 2000px;
-$contentWidth: 1000px;
+// Red.
+$color-red-light: #feb692;
+$color-red-dark: #ea5455;
+$gradient-red-dark-to-light: linear-gradient(
+  120deg,
+  $color-red-dark,
+  $color-red-light
+);
+$gradient-red-light-to-dark: linear-gradient(
+  120deg,
+  $color-red-light,
+  $color-red-dark
+);
+
+// Green.
+$color-green-light: #81fbb8;
+$color-green-dark: #28c76f;
+$gradient-green-dark-to-light: linear-gradient(
+  120deg,
+  $color-green-dark,
+  $color-green-light
+);
+$gradient-green-light-to-dark: linear-gradient(
+  120deg,
+  $color-green-light,
+  $color-green-dark
+);
+
+// Blue.
+$color-blue-light: #abdcff;
+$color-blue-dark: #0396ff;
+$gradient-blue-dark-to-light: linear-gradient(
+  120deg,
+  $color-blue-dark,
+  $color-blue-light
+);
+$gradient-blue-light-to-dark: linear-gradient(
+  120deg,
+  $color-blue-light,
+  $color-blue-dark
+);
+
+// Orange.
+$color-orange-light: #fccf31;
+$color-orange-dark: #f55555;
+$gradient-orange-dark-to-light: linear-gradient(
+  120deg,
+  $color-orange-dark,
+  $color-orange-light
+);
+$gradient-orange-light-to-dark: linear-gradient(
+  120deg,
+  $color-orange-light,
+  $color-orange-dark
+);

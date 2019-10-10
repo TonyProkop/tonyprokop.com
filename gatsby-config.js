@@ -26,6 +26,14 @@ module.exports = {
         name: `assets`,
       },
     },
+    "gatsby-transformer-json",
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/data/`,
+        name: `data`,
+      },
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {

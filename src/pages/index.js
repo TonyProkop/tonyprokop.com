@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 import Particles from "react-particles-js"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -73,6 +74,15 @@ class BlogIndex extends React.Component {
               description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             />
             <Heading title="Recent Work" />
+            <div className={styles.workContainer}>
+              {this.props.data.allWorkJson.edges.map(x => (
+                <div className={styles.work}>
+                  <img src={x.node.image.publicURL} />
+                  <p>{x.node.technologies.join(", ")}</p>
+                  <Button.Purple>View Project</Button.Purple>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </Layout>
@@ -125,3 +135,23 @@ const particlesConfig = {
 }
 
 export default BlogIndex
+
+export const pageQuery = graphql`
+  {
+    allWorkJson {
+      edges {
+        node {
+          name
+          about
+          mission
+          role
+          technologies
+          url
+          image {
+            publicURL
+          }
+        }
+      }
+    }
+  }
+`

@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Speedway Motors",
+    "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "mission": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "role": "Full-Stack Web Development",
+    "technologies": ["React", "Redux", "Html", "CSS", "C#", "SQL"],
+    "url": "https://www.speedwaymotors.com",
+    "image": "../../content/assets/laptop-speedway.png"
+  }
+]
