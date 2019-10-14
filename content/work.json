@@ -1,0 +1,24 @@
+[
+  {
+    "slug": "speedway-motors",
+    "name": "Speedway Motors",
+    "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "missionSlogan": "Lorem Ipsum Dummy",
+    "mission": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "role": "Full-Stack Web Development",
+    "technologies": ["React", "Redux", "Html", "CSS", "jQuery", "C#", "SQL"],
+    "url": "https://www.speedwaymotors.com",
+    "image": "./assets/laptop-speedway.png"
+  },
+  {
+    "slug": "wedding",
+    "name": "Personal Wedding Website",
+    "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "missionSlogan": "Lorem Ipsum Dummy",
+    "mission": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "role": "Web Design and Development",
+    "technologies": ["React", "Gatsby.js static site generator", "Netlify"],
+    "url": "https://romantic-kare-10dfb7.netlify.com/",
+    "image": "./assets/laptop-wedding.png"
+  }
+]

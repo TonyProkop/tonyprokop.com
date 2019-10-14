@@ -5,6 +5,7 @@ import styles from "./button.module.scss"
 
 const TYPES = {
   WHITE: "white",
+  PRIMARY: "primary",
   PURPLE: "purple",
   RED: "red",
   GREEN: "green",
@@ -23,6 +24,10 @@ const Button = ({ to, buttonType, children }) => {
 
 export const White = props => (
   <Button {...props} buttonType={TYPES.WHITE}></Button>
+)
+
+export const Primary = props => (
+  <Button {...props} buttonType={TYPES.PRIMARY}></Button>
 )
 
 export const Purple = props => (
