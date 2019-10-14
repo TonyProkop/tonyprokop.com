@@ -79,7 +79,9 @@ class BlogIndex extends React.Component {
                 <div className={styles.work}>
                   <img src={x.node.image.publicURL} alt={x.node.name} />
                   <p>{x.node.technologies.join(", ")}</p>
-                  <Button.Purple>View Project</Button.Purple>
+                  <Button.Purple to={`work/${x.node.slug}`}>
+                    View Project
+                  </Button.Purple>
                 </div>
               ))}
             </div>
@@ -141,6 +143,7 @@ export const pageQuery = graphql`
     allWorkJson {
       edges {
         node {
+          slug
           name
           about
           mission
