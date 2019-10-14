@@ -77,8 +77,7 @@ exports.createPages = async ({ graphql, actions }) => {
     throw allWork.errors
   }
 
-  allWork.data.allWorkJson.edges.forEach((work, index) => {
-    console.log(work)
+  allWork.data.allWorkJson.edges.forEach(work => {
     createPage({
       path: `work/${work.node.slug}`,
       component: workTemplate,

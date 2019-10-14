@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import * as Button from "../components/button"
@@ -26,7 +27,7 @@ const WorkTemplate = ({ data, location }) => {
           View Project
           <ArrowDown />
         </Button.Primary>
-        <img src={image.publicURL}></img>
+        <img src={image.publicURL} alt={name}></img>
       </div>
       <div>
         <h2>Mission</h2>
@@ -45,7 +46,7 @@ const WorkTemplate = ({ data, location }) => {
         <div>
           <h2>Live Website</h2>
           <h3>
-            <a href={url} target="_blank">
+            <a href={url} target="_blank" rel="noopener noreferrer">
               {url}
             </a>
           </h3>
