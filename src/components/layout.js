@@ -15,18 +15,8 @@ class Layout extends React.Component {
           <Link to="/">Tony.</Link>
         </div>
         <Menu />
-        <main className="clearfix">{children}</main>
-        <footer>
-          <h2>How can I help you?</h2>
-          <Button.White to="/contact">Let's Talk!</Button.White>
-          <div>
-            <Email />
-            <Phone />
-            <Linkedin />
-            <Github />
-            <Facebook />
-          </div>
-        </footer>
+        <main>{children}</main>
+        <footer></footer>
       </Fragment>
     )
   }

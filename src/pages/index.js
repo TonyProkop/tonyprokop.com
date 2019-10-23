@@ -1,11 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Particles from "react-particles-js"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { ArrowDown } from "../components/icon"
 import * as Button from "../components/button"
-import { Service, COLORS, SYMBOLS } from "../components/service"
+import { Service, SYMBOLS } from "../components/service"
 import Heading from "../components/heading"
 import styles from "./index.module.scss"
 
@@ -18,25 +17,23 @@ class BlogIndex extends React.Component {
           <div className={styles.banner}>
             <div className={styles.bannerText}>
               <h1 className={styles.heading}>
-                I'm Tony Prokop, <br /> a full-stack web developer.
+                I'm Tony Prokop, a <br /> full-stack web developer.
               </h1>
-              <Button.White to="/contact">Let's Talk!</Button.White>
-            </div>
-            <div className={styles.availability}>
-              Available for new projects
-            </div>
-            <ArrowDown
-              onClick={() =>
-                window.scrollTo({
-                  top: window.innerHeight,
-                  behavior: "smooth",
-                })
-              }
-            />
-            <div className={styles.particlesContainer}>
-              <Particles
-                canvasClassName={styles.particles}
-                params={particlesConfig}
+              <p>Experienced in React, .NET, and Ecommerce.</p>
+              <p>Have a project you'd like to discuss?</p>
+              <p>
+                Let's chat:{" "}
+                <a href="mailto:prokop.tony@gmail.com">
+                  prokop.tony@gmail.com.
+                </a>
+              </p>
+              <ArrowDown
+                onClick={() =>
+                  window.scrollTo({
+                    top: window.innerHeight,
+                    behavior: "smooth",
+                  })
+                }
               />
             </div>
           </div>
@@ -44,34 +41,34 @@ class BlogIndex extends React.Component {
           <Heading title="Services" subhead="I build websites that are..." />
           <div className={styles.servicesContainer}>
             <Service
-              color={COLORS.ORANGE}
               icon={SYMBOLS.BOLT}
               name="Performant"
-              description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+              description="Blazing fast page load speeds, even on 3G networks and outdated hardware."
             />
             <Service
-              color={COLORS.PURPLE}
               icon={SYMBOLS.PHONE}
               name="Responsive"
-              description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+              description="My designs function on any device mobile, tablet, and desktop."
             />
             <Service
-              color={COLORS.RED}
               icon={SYMBOLS.LOWVISION}
               name="Accessible"
-              description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+              description="Keyboard friendly and conforming to WCAG AAA color contrast standards."
             />
             <Service
-              color={COLORS.BLUE}
               icon={SYMBOLS.SEARCH}
               name="Discoverable"
-              description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+              description="Sitemaps, webmaster tools, and keywords - show up in Google and Bing search results."
             />
             <Service
-              color={COLORS.GREEN}
               icon={SYMBOLS.LOCK}
               name="Secure"
-              description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+              description="OWASP practices reduce vulnerabilities like cross site scripting, sql injection, sensitive data exposure, etc."
+            />
+            <Service
+              icon={SYMBOLS.LOCK}
+              name="Reliable"
+              description="Unit, integration, and end-to-end tests ensure new changes don’t introduce bugs."
             />
             <Heading title="Recent Work" />
             <div className={styles.workContainer}>
@@ -90,50 +87,6 @@ class BlogIndex extends React.Component {
       </Layout>
     )
   }
-}
-
-const particlesConfig = {
-  particles: {
-    number: {
-      value: 60,
-      density: {
-        enable: true,
-        value_area: 1500,
-      },
-    },
-    line_linked: {
-      enable: true,
-      opacity: 0.02,
-    },
-    move: {
-      direction: "right",
-      speed: 0.05,
-    },
-    size: {
-      value: 2,
-    },
-    opacity: {
-      anim: {
-        enable: true,
-        speed: 1,
-        opacity_min: 0.05,
-      },
-    },
-  },
-  interactivity: {
-    events: {
-      onclick: {
-        enable: true,
-        mode: "push",
-      },
-    },
-    modes: {
-      push: {
-        particles_nb: 1,
-      },
-    },
-  },
-  retina_detect: true,
 }
 
 export default BlogIndex

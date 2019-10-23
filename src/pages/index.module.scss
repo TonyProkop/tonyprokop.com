@@ -7,12 +7,6 @@
   right: 0;
   height: 100vh;
   height: -webkit-fill-available;
-  background: linear-gradient(
-    120deg,
-    $color-primary-teal,
-    $color-primary-purple
-  );
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,7 +17,6 @@
     margin: auto;
     width: 40px !important;
     height: 40px !important;
-    color: white;
     z-index: 1;
   }
 }
@@ -44,29 +37,6 @@
   padding: 0 2rem;
 }
 
-.availability {
-  color: white;
-  font-family: "Raleway";
-  font-weight: bold;
-  position: absolute;
-  top: 2.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-
-  &:before {
-    content: "";
-    display: inline-block;
-    border-radius: 100%;
-    background-color: #0cbe08;
-    width: 10px;
-    height: 10px;
-    margin-right: 0.5rem;
-    border: 1px solid white;
-    box-shadow: 0 0 5px #ffffff;
-  }
-}
-
 .divider {
   height: 100vh;
   width: 100%;
@@ -76,22 +46,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  background-color: $color-gray-dark;
 }
 
 .workContainer {
   .work {
     text-align: center;
-  }
-}
-
-.particlesContainer {
-  z-index: 0;
-
-  .particles {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
   }
 }
