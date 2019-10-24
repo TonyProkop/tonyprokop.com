@@ -10,16 +10,17 @@
   justify-content: center;
   font-size: 2rem;
 
+  h1 {
+    font-size: 5rem;
+    font-weight: 500;
+  }
+
   svg[data-icon="arrow-down"] {
     margin: auto;
     width: 40px !important;
     height: 40px !important;
     z-index: 1;
   }
-}
-
-.heading {
-  font-size: 5rem;
 }
 
 .servicesContainer {
@@ -39,6 +40,7 @@
     width: 100%;
     font-size: 4rem;
     margin: 4rem 0;
+    font-weight: 500;
   }
 }
 
@@ -50,9 +52,29 @@
 
 .work {
   background-color: $color-gray-light;
+  padding: 5rem;
+  margin: 5rem;
+  max-width: 500px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+
+  .name {
+    font-size: 3rem;
+    font-weight: 500;
+  }
+
+  a {
+    text-transform: uppercase;
+    font-weight: 900;
+    text-decoration: none;
+    font-size: 1.5rem;
+  }
 
   img {
     width: 100%;
     max-width: 300px;
+    margin-right: -25%;
   }
 }

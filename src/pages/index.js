@@ -72,11 +72,13 @@ class BlogIndex extends React.Component {
         <div className={styles.workContainer}>
           {this.props.data.allWorkJson.edges.map(x => (
             <div className={styles.work}>
+              <div>
+                <div className={styles.name}>{x.node.name}</div>
+                <Link to={`work/${x.node.slug}`}>
+                  View Work <ArrowRight />
+                </Link>
+              </div>
               <img src={x.node.image.publicURL} alt={x.node.name} />
-              <p>{x.node.technologies.join(", ")}</p>
-              <Link to={`work/${x.node.slug}`}>
-                View Project <ArrowRight />
-              </Link>
             </div>
           ))}
         </div>
