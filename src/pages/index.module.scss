@@ -1,19 +1,16 @@
 @import "../utils/shared.scss";
 
-.banner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+.hero {
+  width: 100%;
+  max-width: $contentWidth;
   height: 100vh;
-  height: -webkit-fill-available;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-size: 2rem;
 
   svg[data-icon="arrow-down"] {
-    position: absolute;
-    bottom: 3rem;
     margin: auto;
     width: 40px !important;
     height: 40px !important;
@@ -21,36 +18,41 @@
   }
 }
 
-.bannerText {
-  z-index: 1;
-  text-align: center;
-
-  button {
-    margin: 0 auto;
-    display: block;
-  }
-}
-
 .heading {
-  max-width: $pageWidth;
-  margin: 0 0 2rem;
-  padding: 0 2rem;
-}
-
-.divider {
-  height: 100vh;
-  width: 100%;
+  font-size: 5rem;
 }
 
 .servicesContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   background-color: $color-gray-dark;
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin: -5rem auto 0;
+  }
+
+  h2 {
+    color: white;
+    width: 100%;
+    font-size: 4rem;
+    margin: 4rem 0;
+  }
 }
 
-.workContainer {
-  .work {
-    text-align: center;
+.services {
+  width: 100%;
+  max-width: $contentWidth;
+  margin: 0 auto;
+}
+
+.work {
+  background-color: $color-gray-light;
+
+  img {
+    width: 100%;
+    max-width: 300px;
   }
 }

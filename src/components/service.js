@@ -41,7 +41,7 @@ export const Service = ({ icon, name, description }) => {
   return (
     <div className={styles.service}>
       <div className={styles.symbol}>{symbol}</div>
-      <div>
+      <div className={styles.text}>
         <h3>{name}</h3>
         <p>{description}</p>
       </div>

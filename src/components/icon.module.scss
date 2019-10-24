@@ -5,13 +5,6 @@
   width: 2rem !important;
 }
 
-svg[data-icon="arrow-up"],
-svg[data-icon="arrow-down"],
-svg[data-icon="arrow-left"],
-svg[data-icon="arrow-right"] {
-  color: $color-red;
-}
-
 .emailLink:hover {
   color: $color-email;
 }
