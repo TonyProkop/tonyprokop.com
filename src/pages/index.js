@@ -1,10 +1,9 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { ArrowDown, ArrowRight } from "../components/icon"
-import * as Button from "../components/button"
-import { Service, SYMBOLS } from "../components/service"
+import Layout from "../components/Layout"
+import SEO from "../components/SEO"
+import { ArrowDown, ArrowRight } from "../components/Icon"
+import Service, { SYMBOLS } from "../components/Service"
 import styles from "./index.module.scss"
 
 class BlogIndex extends React.Component {

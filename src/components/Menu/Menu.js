@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
-import { IS_MY_WORK_ENABLED, IS_RESUME_ENABLED } from "../utils/config"
+import { IS_MY_WORK_ENABLED, IS_RESUME_ENABLED } from "../../utils/config"
 import {
   Bars,
   Times,
@@ -10,7 +10,7 @@ import {
   Rss,
   Email,
   Phone,
-} from "./icon"
+} from "../Icon"
 
 import styles from "./menu.module.scss"
 

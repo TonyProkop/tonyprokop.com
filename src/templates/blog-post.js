@@ -1,8 +1,8 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Layout from "../components/layout"
-import { ArrowRight } from "../components/icon"
-import SEO from "../components/seo"
+import Layout from "../components/Layout"
+import { ArrowRight } from "../components/Icon"
+import SEO from "../components/SEO"
 import styles from "./blog-post.module.scss"
 
 class BlogPostTemplate extends React.Component {

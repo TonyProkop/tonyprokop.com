@@ -1,8 +1,8 @@
 import React, { Fragment } from "react"
 import { Link } from "gatsby"
-import Menu from "./menu"
-import Footer from "./footer"
-import "./layout.scss"
+import Menu from "../Menu"
+import Footer from "../Footer"
+import "./Layout.scss"
 
 class Layout extends React.Component {
   render() {

@@ -1,12 +1,6 @@
 import React from "react"
-import {
-  MobilePhone,
-  LightningBolt,
-  LowVision,
-  Search,
-  Lock,
-} from "../components/icon"
-import styles from "./service.module.scss"
+import { MobilePhone, LightningBolt, LowVision, Search, Lock } from "../Icon"
+import styles from "./Service.module.scss"
 
 export const SYMBOLS = {
   PHONE: "phone",
@@ -16,7 +10,7 @@ export const SYMBOLS = {
   LOCK: "lock",
 }
 
-export const Service = ({ icon, name, description }) => {
+const Service = ({ icon, name, description }) => {
   let symbol = <MobilePhone />
   switch (icon) {
     case SYMBOLS.PHONE:
@@ -46,3 +40,5 @@ export const Service = ({ icon, name, description }) => {
     </div>
   )
 }
+
+export default Service

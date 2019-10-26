@@ -1,7 +1,7 @@
 import React from "react"
-import { Github, Linkedin } from "./icon"
-import { githubUrl, linkedinUrl } from "../utils/config"
-import styles from "./footer.module.scss"
+import { Github, Linkedin } from "../Icon"
+import { githubUrl, linkedinUrl } from "../../utils/config"
+import styles from "./Footer.module.scss"
 
 const Footer = () => {
   return (
