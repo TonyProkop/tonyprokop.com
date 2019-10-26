@@ -25,7 +25,14 @@
     width: 3rem !important;
     height: 3rem !important;
     cursor: pointer;
+  }
+
+  svg[data-icon="times"] {
     color: white;
+  }
+
+  svg[data-icon="bars"] {
+    color: $color-gray-dark;
   }
 
   .openMenu {

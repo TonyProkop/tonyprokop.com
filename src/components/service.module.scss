@@ -1,46 +1,38 @@
 @import "../utils/shared.scss";
 
 .service {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-column-gap: 2rem;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
   box-sizing: border-box;
   padding: 1rem;
 
   h3 {
-    font-family: "Merriweather";
     font-weight: normal;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: 0;
     color: white;
+    grid-column-start: 2;
   }
 
   p {
-    font-family: "Merriweather";
-    font-weight: 100;
-    margin: 1rem 0 0;
+    font-size: 1.5rem;
     color: $color-gray;
-    max-width: 300px;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    margin: 1rem 0;
   }
 }
 
 .symbol {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 100%;
-  width: 100px;
-  height: 100px;
+  grid-row: span 2;
 
   svg {
     color: white;
+    max-width: 4rem;
+    max-height: 4rem;
     width: 100% !important;
     height: 100% !important;
-    max-width: 3rem !important;
-    max-height: 3rem !important;
   }
-}
-
-.text {
-  max-width: 300px;
 }

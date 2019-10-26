@@ -1,0 +1,38 @@
+@import "../utils/shared.scss";
+
+.footer {
+  background-color: $color-gray-dark;
+  color: white;
+  padding: 4rem 0;
+}
+
+.footerContentContainer {
+  max-width: $contentWidth;
+  margin: 0 auto;
+
+  h2 {
+    margin: 0;
+    font-size: 4rem;
+  }
+}
+
+.email {
+  font-size: 2rem;
+  margin: 1rem 0 4rem;
+}
+
+.linkedin,
+.github {
+  display: block;
+  text-transform: uppercase;
+  color: $color-red;
+  font-weight: 900;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  text-decoration: none;
+
+  svg {
+    color: $color-gray;
+    margin-right: 1rem;
+  }
+}
