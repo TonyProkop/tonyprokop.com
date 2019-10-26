@@ -10,7 +10,11 @@ const Footer = () => {
         <h2>Let's Work Together.</h2>
         <p className={styles.email}>
           Send me an email:{" "}
-          <a href="mailto:prokop.tony@gmail.com" target="_blank">
+          <a
+            href="mailto:prokop.tony@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             prokop.tony@gmail.com.
           </a>
         </p>

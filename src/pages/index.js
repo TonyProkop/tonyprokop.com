@@ -20,7 +20,11 @@ class BlogIndex extends React.Component {
             <p>Have a project you'd like to discuss?</p>
             <p>
               Let's chat:{" "}
-              <a href="mailto:prokop.tony@gmail.com" target="_blank">
+              <a
+                href="mailto:prokop.tony@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 prokop.tony@gmail.com.
               </a>
             </p>
@@ -36,7 +40,10 @@ class BlogIndex extends React.Component {
         </div>
         <div className={styles.servicesContainer}>
           <div className={styles.servicesContent}>
-            <img src="https://www.photoblog.com/learn/wp-content/uploads/2018/12/rule-of-thirds-male-pose.jpg" />
+            <img
+              src="https://www.photoblog.com/learn/wp-content/uploads/2018/12/rule-of-thirds-male-pose.jpg"
+              alt="Tony Prokop"
+            />
             <h2>I build websites that are...</h2>
             <div className={styles.services}>
               <Service
