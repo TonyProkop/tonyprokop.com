@@ -1,13 +1,14 @@
 import React from "react"
 import { Github, Linkedin } from "../Icon"
 import { githubUrl, linkedinUrl } from "../../utils/config"
+import classnames from "classnames"
 import styles from "./Footer.module.scss"
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
-      <div className={styles.footerContentContainer}>
-        <h2>Let's Work Together.</h2>
+    <footer className={classnames(styles.footer, "section")}>
+      <div className="contentContainer">
+        <h2 className={styles.footerTitle}>Let's Work Together.</h2>
         <p className={styles.email}>
           Send me an email:{" "}
           <a
@@ -27,6 +28,7 @@ const Footer = () => {
           <Linkedin />
           <span>Connect on Linkedin</span>
         </a>
+        <br />
         <a
           href={githubUrl}
           target="_blank"

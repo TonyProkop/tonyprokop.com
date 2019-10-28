@@ -2,8 +2,30 @@
 
 html {
   color: $color-gray-dark;
-  font-size: 12px;
   font-family: Lato, sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 12px;
+}
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 760px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body {
@@ -41,17 +63,16 @@ button {
   color: white;
 }
 
-.logo {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  font-size: 3rem;
-  font-weight: bold;
-  z-index: 1;
-  text-decoration: none;
-  color: $color-gray-dark;
+.contentContainer {
+  display: block;
+  width: 100%;
+  max-width: $contentWidth;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 $contentWhiteSpace;
 }
 
-.bold {
-  font-weight: bold;
+.section {
+  padding-top: $sectionWhiteSpace;
+  padding-bottom: $sectionWhiteSpace;
 }

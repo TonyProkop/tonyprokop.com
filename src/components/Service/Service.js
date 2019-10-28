@@ -1,5 +1,12 @@
 import React from "react"
-import { MobilePhone, LightningBolt, LowVision, Search, Lock } from "../Icon"
+import {
+  MobilePhone,
+  LightningBolt,
+  LowVision,
+  Search,
+  Lock,
+  Shield,
+} from "../Icon"
 import styles from "./Service.module.scss"
 
 export const SYMBOLS = {
@@ -8,6 +15,7 @@ export const SYMBOLS = {
   LOWVISION: "lowvision",
   SEARCH: "search",
   LOCK: "lock",
+  SHIELD: "shield-alt",
 }
 
 const Service = ({ icon, name, description }) => {
@@ -27,6 +35,9 @@ const Service = ({ icon, name, description }) => {
       break
     case SYMBOLS.LOCK:
       symbol = <Lock />
+      break
+    case SYMBOLS.SHIELD:
+      symbol = <Shield />
       break
     default:
       symbol = <MobilePhone />

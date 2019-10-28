@@ -18,4 +18,5 @@ export {
   LowVision,
   Search,
   Lock,
+  Shield,
 } from "./Icon"

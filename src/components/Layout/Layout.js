@@ -2,6 +2,7 @@ import React, { Fragment } from "react"
 import { Link } from "gatsby"
 import Menu from "../Menu"
 import Footer from "../Footer"
+import styles from "./Layout.module.scss"
 import "./Layout.scss"
 
 class Layout extends React.Component {
@@ -10,7 +11,7 @@ class Layout extends React.Component {
 
     return (
       <Fragment>
-        <Link to="/" className="logo">
+        <Link to="/" className={styles.logo}>
           Tony.
         </Link>
         <Menu />
