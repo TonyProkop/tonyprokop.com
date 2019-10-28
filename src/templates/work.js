@@ -1,9 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
+import classnames from "classnames"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
-import * as Button from "../components/Button/Button"
+import RecentWork from "../components/RecentWork"
 import { ArrowDown } from "../components/Icon"
+import styles from "./work.module.scss"
 
 const WorkTemplate = ({ data, location }) => {
   const {
@@ -20,38 +22,45 @@ const WorkTemplate = ({ data, location }) => {
   return (
     <Layout location={location} title={name}>
       <SEO title={name} description={about} />
-      <div>
-        <h1>{name}</h1>
-        <p>{about}</p>
-        <Button.Primary>
-          View Project
+      <div className={classnames(styles.hero, "contentContainer")}>
+        <div className={styles.heroText}>
+          <h1>{name}</h1>
+          <p>{about}</p>
           <ArrowDown />
-        </Button.Primary>
+        </div>
         <img src={image.publicURL} alt={name}></img>
       </div>
-      <div>
-        <h2>Mission</h2>
-        <h3>{missionSlogan}</h3>
-        <p>{mission}</p>
+      <div className={classnames(styles.workDetailsContainer, "section")}>
+        <div
+          className={classnames(
+            styles.workDetailsContentContainer,
+            "contentContainer"
+          )}
+        >
+          <div className={styles.missionContainer}>
+            <h2 className={styles.label}>Mission</h2>
+            <h3>{missionSlogan}</h3>
+            <p>{mission}</p>
+          </div>
+          <div className={styles.detailsSidebarContainer}>
+            <div className={styles.sidebarSection}>
+              <h2 className={styles.label}>Role</h2>
+              <h3>{role}</h3>
+            </div>
+            <div className={styles.sidebarSection}>
+              <h2 className={styles.label}>Technology</h2>
+              <h3>{technologies.join(", ")}</h3>
+            </div>
+            <div className={styles.sidebarSection}>
+              <h2 className={styles.label}>Live Website</h2>
+              <a href={url} target="_blank" rel="noopener noreferrer">
+                <h3>{url}</h3>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <div>
-          <h2>Role</h2>
-          <h3>{role}</h3>
-        </div>
-        <div>
-          <h2>Technology</h2>
-          <h3>{technologies.join(", ")}</h3>
-        </div>
-        <div>
-          <h2>Live Website</h2>
-          <h3>
-            <a href={url} target="_blank" rel="noopener noreferrer">
-              {url}
-            </a>
-          </h3>
-        </div>
-      </div>
+      <RecentWork />
     </Layout>
   )
 }

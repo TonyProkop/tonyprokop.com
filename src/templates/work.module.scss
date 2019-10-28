@@ -1,0 +1,91 @@
+@import "../utils/shared.scss";
+
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  .heroText,
+  img {
+    max-width: 50%;
+  }
+}
+
+.heroText {
+  h1 {
+    font-size: 5rem;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 2rem;
+  }
+
+  svg {
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
+
+.workDetailsContainer {
+  background-color: $color-gray-dark;
+}
+
+.workDetailsContentContainer {
+  display: flex;
+  font-size: 1.5rem;
+  color: white;
+
+  h2,
+  h3,
+  p {
+    margin: 1rem 0;
+  }
+}
+
+.missionContainer {
+  width: 60%;
+  padding-right: $contentWhiteSpace;
+
+  h3 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin: 2rem 0;
+  }
+
+  p {
+    line-height: 2.5rem;
+  }
+}
+
+.detailsSidebarContainer {
+  width: 40%;
+  padding-left: $contentWhiteSpace;
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+
+  .sidebarSection {
+    padding: $contentWhiteSpace 0;
+    border-top: 1px solid $color-gray;
+
+    &:first-child {
+      padding-top: 0;
+      border-top: none;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.label {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  color: $color-gray;
+}
