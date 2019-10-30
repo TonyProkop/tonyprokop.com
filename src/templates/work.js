@@ -27,7 +27,14 @@ const WorkTemplate = ({ data, location }) => {
         <div className={styles.heroText}>
           <h1>{name}</h1>
           <p>{about}</p>
-          <ArrowDown />
+          <ArrowDown
+            onClick={() =>
+              window.scrollTo({
+                top: window.innerHeight,
+                behavior: "smooth",
+              })
+            }
+          />
         </div>
         <img src={image.publicURL} alt={name}></img>
       </div>
