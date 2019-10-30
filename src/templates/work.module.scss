@@ -81,6 +81,12 @@
     &:last-child {
       padding-bottom: 0;
     }
+
+    h3 {
+      display: inline;
+      margin-right: 1rem;
+      word-wrap: break-word;
+    }
   }
 }
 

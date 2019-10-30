@@ -19,6 +19,7 @@ import {
   faSearch,
   faLock,
   faShieldAlt,
+  faExternalLinkAlt,
 } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import styles from "./icon.module.scss"
@@ -41,7 +42,8 @@ library.add(
   faLowVision,
   faSearch,
   faLock,
-  faShieldAlt
+  faShieldAlt,
+  faExternalLinkAlt
 )
 
 export const ArrowUp = ({ onClick }) => (
@@ -131,3 +133,5 @@ export const Search = () => <FontAwesomeIcon icon="search" />
 export const Lock = () => <FontAwesomeIcon icon="lock" />
 
 export const Shield = () => <FontAwesomeIcon icon="shield-alt" />
+
+export const ExternalLink = () => <FontAwesomeIcon icon="external-link-alt" />

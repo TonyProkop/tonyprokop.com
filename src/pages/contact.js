@@ -1,7 +1,7 @@
 import React from "react"
-import { Github, Linkedin, Facebook, Rss } from "../../components/Icon"
-import Layout from "../../components/Layout"
-import SEO from "../../components/SEO"
+import { Github, Linkedin, Facebook, Rss } from "../components/Icon"
+import Layout from "../components/Layout"
+import SEO from "../components/SEO"
 import styles from "./Contact.module.scss"
 
 const Contact = () => (

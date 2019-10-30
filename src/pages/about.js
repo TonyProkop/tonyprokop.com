@@ -1,10 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
-import Layout from "../../components/Layout"
-import { ArrowRight } from "../../components/Icon"
-import profilePic from "../../../content/assets/profile-pic.jpg"
-import SEO from "../../components/SEO"
-import { speedwayMotorsUrl, myWeddingUrl } from "../../utils/config"
+import Layout from "../components/Layout"
+import { ArrowRight } from "../components/Icon"
+import profilePic from "../../content/assets/profile-pic.jpg"
+import SEO from "../components/SEO"
+import { speedwayMotorsUrl, myWeddingUrl } from "../utils/config"
 import styles from "./About.module.scss"
 
 const About = () => (

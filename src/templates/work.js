@@ -6,6 +6,7 @@ import SEO from "../components/SEO"
 import RecentWork from "../components/RecentWork"
 import { ArrowDown } from "../components/Icon"
 import styles from "./work.module.scss"
+import { ExternalLink } from "../components/Icon/Icon"
 
 const WorkTemplate = ({ data, location }) => {
   const {
@@ -55,6 +56,7 @@ const WorkTemplate = ({ data, location }) => {
               <h2 className={styles.label}>Live Website</h2>
               <a href={url} target="_blank" rel="noopener noreferrer">
                 <h3>{url}</h3>
+                <ExternalLink />
               </a>
             </div>
           </div>
