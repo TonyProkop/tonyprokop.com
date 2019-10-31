@@ -1,7 +1,7 @@
 import React from "react"
-import Layout from "../../components/Layout"
-import { Email, Phone, Linkedin, Download, Globe } from "../../components/Icon"
-import SEO from "../../components/SEO"
+import Layout from "../components/Layout"
+import { Email, Phone, Linkedin, Download, Globe } from "../components/Icon"
+import SEO from "../components/SEO"
 import styles from "./resume.module.scss"
 import "./resume.print.scss"
 

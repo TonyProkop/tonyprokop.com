@@ -1,7 +1,7 @@
 import React, { Fragment } from "react"
 import { Link, graphql } from "gatsby"
-import Layout from "../../components/Layout"
-import SEO from "../../components/SEO"
+import Layout from "../components/Layout"
+import SEO from "../components/SEO"
 import styles from "./Blog.module.scss"
 
 class Blog extends React.Component {
