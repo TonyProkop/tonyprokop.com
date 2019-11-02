@@ -1,4 +1,5 @@
 import React from "react"
+import classnames from "classnames"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { fab } from "@fortawesome/free-brands-svg-icons"
 import {
@@ -58,18 +59,18 @@ export const ArrowDown = ({ onClick }) => (
   />
 )
 
-export const ArrowLeft = ({ onClick }) => (
+export const ArrowLeft = ({ className, onClick }) => (
   <FontAwesomeIcon
     icon="arrow-left"
-    className={styles.icon}
+    className={classnames(className, styles.icon)}
     onClick={onClick}
   />
 )
 
-export const ArrowRight = ({ onClick }) => (
+export const ArrowRight = ({ className, onClick }) => (
   <FontAwesomeIcon
     icon="arrow-right"
-    className={styles.icon}
+    className={classnames(className, styles.icon)}
     onClick={onClick}
   />
 )

@@ -7,6 +7,7 @@ import RecentWork from "../components/RecentWork"
 import { ArrowDown } from "../components/Icon"
 import styles from "./work.module.scss"
 import { ExternalLink } from "../components/Icon/Icon"
+import ImageCarousel from "../components/ImageCarousel/ImageCarousel"
 
 const WorkTemplate = ({ data, location }) => {
   const {
@@ -69,6 +70,7 @@ const WorkTemplate = ({ data, location }) => {
           </div>
         </div>
       </div>
+      <ImageCarousel className={classnames("section")} />
       <RecentWork />
     </Layout>
   )
