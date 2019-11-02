@@ -12,7 +12,7 @@ import {
   Phone,
 } from "../Icon"
 
-import styles from "./menu.module.scss"
+import styles from "./Menu.module.scss"
 
 const Menu = () => {
   const [isMenuActive, setIsMenuActive] = useState(false)

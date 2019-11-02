@@ -22,7 +22,7 @@ import {
   faExternalLinkAlt,
 } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import styles from "./icon.module.scss"
+import styles from "./Icon.module.scss"
 
 library.add(
   fab,

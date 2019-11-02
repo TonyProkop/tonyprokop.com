@@ -5,7 +5,7 @@ import { ArrowRight } from "../components/Icon"
 import profilePic from "../../content/assets/profile-pic.jpg"
 import SEO from "../components/SEO"
 import { speedwayMotorsUrl, myWeddingUrl } from "../utils/config"
-import styles from "./About.module.scss"
+import styles from "./about.module.scss"
 
 const About = () => (
   <Layout title="About Me">
