@@ -63,7 +63,7 @@ exports.createPages = async ({ graphql, actions }) => {
               role
               technologies
               url
-              image {
+              primaryImage {
                 publicURL
               }
             }

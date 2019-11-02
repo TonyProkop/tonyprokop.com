@@ -18,7 +18,8 @@ const WorkTemplate = ({ data, location }) => {
     role,
     technologies,
     url,
-    image,
+    primaryImage,
+    images,
   } = data.workJson
 
   return (
@@ -37,7 +38,7 @@ const WorkTemplate = ({ data, location }) => {
             }
           />
         </div>
-        <img src={image.publicURL} alt={name}></img>
+        <img src={primaryImage.publicURL} alt={name}></img>
       </div>
       <div className={classnames(styles.workDetailsContainer, "section")}>
         <div
@@ -70,7 +71,7 @@ const WorkTemplate = ({ data, location }) => {
           </div>
         </div>
       </div>
-      <ImageCarousel className={classnames("section")} />
+      <ImageCarousel className={classnames("section")} images={images} />
       <RecentWork />
     </Layout>
   )
@@ -88,7 +89,10 @@ export const pageQuery = graphql`
       role
       technologies
       url
-      image {
+      primaryImage {
+        publicURL
+      }
+      images {
         publicURL
       }
     }

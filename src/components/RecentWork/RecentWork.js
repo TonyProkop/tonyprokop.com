@@ -17,7 +17,7 @@ const RecentWork = () => {
             role
             technologies
             url
-            image {
+            primaryImage {
               publicURL
             }
           }
@@ -48,7 +48,7 @@ const RecentWork = () => {
                   View Work <ArrowRight />
                 </div>
               </div>
-              <img src={x.node.image.publicURL} alt={x.node.name} />
+              <img src={x.node.primaryImage.publicURL} alt={x.node.name} />
             </Link>
           ))
         : false}
