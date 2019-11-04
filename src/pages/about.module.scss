@@ -1,18 +1,24 @@
 @import "../utils/shared.scss";
 
 .aboutContainer {
-  .getInTouch {
-    display: block;
+  img {
     width: 100%;
-    text-align: center;
-    margin-top: 0.75rem;
+    max-width: 500px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 100%;
   }
 
-  .profilePic {
-    border-radius: 50%;
-    width: 100%;
-    max-width: 300px;
-    display: block;
-    margin: 2rem auto;
+  h1 {
+    font-size: 5rem;
+  }
+
+  p {
+    font-size: 2rem;
+  }
+
+  h1,
+  p {
+    margin: $contentWhiteSpace 0;
   }
 }
