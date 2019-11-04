@@ -3,6 +3,7 @@
 .hero {
   height: 100vh;
   display: flex;
+  flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
@@ -26,6 +27,17 @@
   svg {
     width: 40px !important;
     height: 40px !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    flex-direction: column;
+
+    .heroText,
+    img {
+      max-width: 100%;
+    }
   }
 }
 
@@ -87,6 +99,23 @@
       margin-right: 1rem;
       word-wrap: break-word;
     }
+  }
+}
+
+@media (max-width: 710px) {
+  .workDetailsContentContainer {
+    flex-direction: column;
+  }
+
+  .missionContainer {
+    padding-right: 0;
+    width: 100%;
+  }
+
+  .detailsSidebarContainer {
+    padding-left: 0;
+    width: 100%;
+    padding-top: $sectionWhiteSpace;
   }
 }
 

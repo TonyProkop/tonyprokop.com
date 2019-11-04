@@ -7,9 +7,12 @@
     "mission": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     "role": "Full-Stack Web Development",
     "technologies": ["React", "Redux", "Html", "CSS", "jQuery", "C#", "SQL"],
-    "url": "https://www.speedwaymotors.com",
+    "url": "www.speedwaymotors.com",
     "primaryImage": "./assets/laptop-speedway.png",
     "images": [
+      "./assets/home.png",
+      "./assets/product results.png",
+      "./assets/product page.png",
       "./assets/cart.jpg",
       "./assets/step 1.jpg",
       "./assets/step 2.jpg",
@@ -25,14 +28,8 @@
     "mission": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     "role": "Web Design and Development",
     "technologies": ["React", "Gatsby.js static site generator", "Netlify"],
-    "url": "https://romantic-kare-10dfb7.netlify.com/",
+    "url": "romantic-kare-10dfb7.netlify.com/",
     "primaryImage": "./assets/laptop-wedding.png",
-    "images": [
-      "./assets/cart.jpg",
-      "./assets/step 1.jpg",
-      "./assets/step 2.jpg",
-      "./assets/step 3.jpg",
-      "./assets/step 4.jpg"
-    ]
+    "images": []
   }
 ]

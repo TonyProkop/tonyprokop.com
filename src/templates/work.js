@@ -26,6 +26,7 @@ const WorkTemplate = ({ data, location }) => {
     <Layout location={location} title={name}>
       <SEO title={name} description={about} />
       <div className={classnames(styles.hero, "contentContainer")}>
+        <img src={primaryImage.publicURL} alt={name}></img>
         <div className={styles.heroText}>
           <h1>{name}</h1>
           <p>{about}</p>
@@ -38,7 +39,6 @@ const WorkTemplate = ({ data, location }) => {
             }
           />
         </div>
-        <img src={primaryImage.publicURL} alt={name}></img>
       </div>
       <div className={classnames(styles.workDetailsContainer, "section")}>
         <div
