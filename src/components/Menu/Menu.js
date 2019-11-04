@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import classnames from "classnames"
+import { githubUrl, linkedinUrl } from "../../utils/config"
 import {
   Bars,
   Times,
@@ -26,31 +27,54 @@ const Menu = () => {
         >
           <Times />
         </button>
-        <div className={styles.externalLinks}>
-          <Email />
-          <Linkedin />
-          <Github />
-        </div>
-        <div className={classnames(styles.menuLinks, "contentContainer")}>
-          <div>
-            <Link to="/" onClick={() => setIsMenuActive(false)}>
-              Home
-            </Link>
+        <div
+          className={classnames(styles.activeMenuContainer, "contentContainer")}
+        >
+          <div className={classnames(styles.externalLinks)}>
+            <a
+              href="mailto:prokop.tony@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Email />
+            </a>
+            <a href={linkedinUrl} target="_blank" rel="noopener noreferrer">
+              <Linkedin />
+            </a>
+            <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+              <Github />
+            </a>
           </div>
-          <div>
-            <Link to="/work" onClick={() => setIsMenuActive(false)}>
-              My Work
-            </Link>
-          </div>
-          <div>
-            <Link to="/resume" onClick={() => setIsMenuActive(false)}>
-              Resumé
-            </Link>
-          </div>
-          <div>
-            <Link to="/about" onClick={() => setIsMenuActive(false)}>
-              About me
-            </Link>
+          <div className={classnames(styles.menuLinks)}>
+            <div>
+              <Link to="/" onClick={() => setIsMenuActive(false)}>
+                Home
+              </Link>
+            </div>
+            <div>
+              <Link to="/work" onClick={() => setIsMenuActive(false)}>
+                My Work
+              </Link>
+            </div>
+            <div>
+              <Link to="/resume" onClick={() => setIsMenuActive(false)}>
+                Resumé
+              </Link>
+            </div>
+            <div>
+              <Link to="/about" onClick={() => setIsMenuActive(false)}>
+                About me
+              </Link>
+            </div>
+            <div>
+              <a
+                href="mailto:prokop.tony@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Contact
+              </a>
+            </div>
           </div>
         </div>
       </div>
