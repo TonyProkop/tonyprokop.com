@@ -34,7 +34,7 @@ const Services = () => {
           <Service
             icon={SYMBOLS.LOWVISION}
             name="Accessible"
-            description="Keyboard friendly and conforming to WCAG AAA color contrast standards."
+            description="Keyboard friendly and conforming to WCAG color contrast standards."
           />
           <Service
             icon={SYMBOLS.SEARCH}
