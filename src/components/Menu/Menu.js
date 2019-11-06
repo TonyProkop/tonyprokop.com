@@ -2,16 +2,7 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import classnames from "classnames"
 import { githubUrl, linkedinUrl } from "../../utils/config"
-import {
-  Bars,
-  Times,
-  Github,
-  Facebook,
-  Linkedin,
-  Rss,
-  Email,
-  Phone,
-} from "../Icon"
+import { Bars, Times, Github, Linkedin, Email } from "../Icon"
 
 import styles from "./Menu.module.scss"
 
@@ -52,7 +43,7 @@ const Menu = () => {
               </Link>
             </div>
             <div>
-              <Link to="/work" onClick={() => setIsMenuActive(false)}>
+              <Link to="/#recentWork" onClick={() => setIsMenuActive(false)}>
                 My Work
               </Link>
             </div>

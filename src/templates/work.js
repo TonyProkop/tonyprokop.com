@@ -13,8 +13,8 @@ const WorkTemplate = ({ data, location }) => {
   const {
     name,
     about,
-    missionSlogan,
-    mission,
+    overviewSlogan,
+    overview,
     role,
     technologies,
     url,
@@ -47,10 +47,12 @@ const WorkTemplate = ({ data, location }) => {
             "contentContainer"
           )}
         >
-          <div className={styles.missionContainer}>
-            <h2 className={styles.label}>Mission</h2>
-            <h3>{missionSlogan}</h3>
-            <p>{mission}</p>
+          <div className={styles.overviewContainer}>
+            <h2 className={styles.label}>overview</h2>
+            <h3>{overviewSlogan}</h3>
+            {overview.map((x, i) => (
+              <p key={i}>{x}</p>
+            ))}
           </div>
           <div className={styles.detailsSidebarContainer}>
             <div className={styles.sidebarSection}>
@@ -71,7 +73,7 @@ const WorkTemplate = ({ data, location }) => {
           </div>
         </div>
       </div>
-      <ImageCarousel className={classnames("section")} images={images} />
+      <ImageCarousel images={images} />
       <RecentWork />
     </Layout>
   )
@@ -84,8 +86,8 @@ export const pageQuery = graphql`
     workJson(slug: { eq: $slug }) {
       name
       about
-      missionSlogan
-      mission
+      overviewSlogan
+      overview
       role
       technologies
       url

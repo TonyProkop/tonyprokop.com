@@ -4,7 +4,7 @@ import classnames from "classnames"
 import { ArrowRight } from "../Icon"
 import styles from "./RecentWork.module.scss"
 
-const RecentWork = () => {
+const RecentWork = ({ id }) => {
   const data = useStaticQuery(graphql`
     {
       allWorkJson {
@@ -13,7 +13,7 @@ const RecentWork = () => {
             slug
             name
             about
-            mission
+            overview
             role
             technologies
             url
@@ -28,6 +28,7 @@ const RecentWork = () => {
 
   return (
     <div
+      id={id}
       className={classnames(
         styles.workContainer,
         "contentContainer",

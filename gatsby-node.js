@@ -58,8 +58,8 @@ exports.createPages = async ({ graphql, actions }) => {
               slug
               name
               about
-              missionSlogan
-              mission
+              overviewSlogan
+              overview
               role
               technologies
               url

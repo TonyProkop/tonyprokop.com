@@ -2,12 +2,15 @@
   {
     "slug": "speedway-motors",
     "name": "Speedway Motors",
-    "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    "missionSlogan": "Lorem Ipsum Dummy",
-    "mission": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "about": "Ecommerce website selling auto parts",
+    "overviewSlogan": "What Moves You",
+    "overview": [
+      "Since 1952, Speedway Motors has been committed to providing a broad selection of high-quality, affordable automotive parts—delivered quickly, efficiently and without any hassles.",
+      "The ecommerce website is a vital part of that. For more than four years I've been a part of maintaining the web platform. My latest work includes: implementing a new checkout funnel with latest javascript technologies, building out services to calculate shipping quotes, taxes, and promotions, and gradually improving the in-house search algorithm."
+    ],
     "role": "Full-Stack Web Development",
     "technologies": ["React", "Redux", "Html", "CSS", "jQuery", "C#", "SQL"],
-    "url": "www.speedwaymotors.com",
+    "url": "https://www.speedwaymotors.com",
     "primaryImage": "./assets/laptop-speedway.png",
     "images": [
       "./assets/home.png",
@@ -23,12 +26,19 @@
   {
     "slug": "wedding",
     "name": "My Wedding",
-    "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    "missionSlogan": "Lorem Ipsum Dummy",
-    "mission": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "about": "Single page static website to provide information to guests of my wedding",
+    "overviewSlogan": "Tony and Katie's Wedding",
+    "overview": [
+      "Single page, static site to provide information to guests such as, wedding location/time, reception location/time, engagement photos, gift registry, and rsvp."
+    ],
     "role": "Web Design and Development",
-    "technologies": ["React", "Gatsby.js static site generator", "Netlify"],
-    "url": "romantic-kare-10dfb7.netlify.com/",
+    "technologies": [
+      "React",
+      "GraphQL",
+      "Gatsby.js static site generator",
+      "Netlify"
+    ],
+    "url": "https://romantic-kare-10dfb7.netlify.com/",
     "primaryImage": "./assets/laptop-wedding.png",
     "images": []
   }
