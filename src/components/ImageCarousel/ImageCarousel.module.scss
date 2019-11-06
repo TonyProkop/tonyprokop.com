@@ -15,6 +15,7 @@
   box-sizing: border-box;
   display: block;
   padding: 0 $contentWhiteSpace + $sectionWhiteSpace;
+  transition: transform 300ms;
 }
 
 .image {
@@ -48,4 +49,19 @@
 
 .arrowRight {
   right: $contentWhiteSpace;
+}
+
+@media (max-width: 800px) {
+  .imageCarousel {
+    overflow-x: scroll;
+  }
+  .slide {
+    padding: 0 $contentWhiteSpace;
+    flex-basis: 90%;
+  }
+
+  .arrowLeft,
+  .arrowRight {
+    display: none;
+  }
 }
