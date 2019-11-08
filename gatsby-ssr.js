@@ -4,6 +4,17 @@ export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
     <link
       rel="preconnect"
+      key="preconnect-google"
+      href="https://www.google.com"
+      crossOrigin
+    />,
+    <link
+      rel="dns-prefetch"
+      key="dns-prefetch-google"
+      href="https://www.google.com"
+    />,
+    <link
+      rel="preconnect"
       key="preconnect-google-analytics"
       href="https://www.google-analytics.com"
       crossOrigin
@@ -12,6 +23,17 @@ export const onRenderBody = ({ setHeadComponents }) => {
       rel="dns-prefetch"
       key="dns-prefetch-google-analytics"
       href="https://www.google-analytics.com"
+    />,
+    <link
+      rel="preconnect"
+      key="preconnect-marketingplatform-google"
+      href="https://marketingplatform.google.com"
+      crossOrigin
+    />,
+    <link
+      rel="dns-prefetch"
+      key="dns-prefetch-marketingplatform-google"
+      href="https://marketingplatform.google.com"
     />,
   ])
 }
