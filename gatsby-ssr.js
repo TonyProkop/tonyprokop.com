@@ -6,6 +6,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
       rel="preconnect"
       key="preconnect-google-analytics"
       href="https://www.google-analytics.com"
+      crossOrigin
     />,
     <link
       rel="dns-prefetch"
