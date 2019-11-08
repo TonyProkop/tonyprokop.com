@@ -2,11 +2,10 @@
   {
     "slug": "speedway-motors",
     "name": "Speedway Motors",
-    "about": "Ecommerce website selling auto parts",
+    "about": "An automotive web store",
     "overviewSlogan": "What Moves You",
     "overview": [
-      "Since 1952, Speedway Motors has been committed to providing a broad selection of high-quality, affordable automotive parts—delivered quickly, efficiently and without any hassles.",
-      "The ecommerce website is a vital part of that. For more than four years I've been a part of maintaining the web platform. My latest work includes: implementing a new checkout funnel with latest javascript technologies, building out services to calculate shipping quotes, taxes, and promotions, and gradually improving the in-house search algorithm."
+      "For more than four years I've been a vital part of maintaining the web platform. I've had a hand in developing the majority of pages on the site, the internal custom CMS, and many scheduled processes that support the company. My latest work includes: implementing a new checkout funnel with latest javascript technologies, building out services to calculate shipping quotes, taxes, and promotions, and gradually improving the in-house search algorithm."
     ],
     "role": "Full-Stack Web Development",
     "technologies": ["React", "Redux", "Html", "CSS", "jQuery", "C#", "SQL"],
@@ -29,7 +28,8 @@
     "about": "Single page static website to provide information to guests of my wedding",
     "overviewSlogan": "Tony and Katie's Wedding",
     "overview": [
-      "Single page, static site to provide information to guests such as, wedding location/time, reception location/time, engagement photos, gift registry, and rsvp."
+      "Single page, static site to provide information to guests such as, wedding location/time, reception location/time, engagement photos, gift registry, and rsvp.",
+      "Some features of the site are: parallax scrolling, clean image gallery, countdown timer, and rsvp form wired up to Netlify to avoid the need for a server."
     ],
     "role": "Web Design and Development",
     "technologies": [

@@ -18,7 +18,7 @@ class Layout extends React.Component {
         <Menu />
         <main>{children}</main>
         <Footer />
-        <FloatingContact />
+        {/* <FloatingContact /> */}
       </Fragment>
     )
   }
