@@ -12,7 +12,7 @@ const Services = () => {
     {
       file(relativePath: { eq: "me.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1000) {
+          fluid(maxWidth: 904) {
             ...GatsbyImageSharpFluid_noBase64
           }
         }
