@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 import classnames from "classnames"
 import { ArrowRight } from "../Icon"
 import styles from "./RecentWork.module.scss"
@@ -18,7 +19,11 @@ const RecentWork = ({ id }) => {
             technologies
             url
             primaryImage {
-              publicURL
+              childImageSharp {
+                fixed(width: 300) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
             }
           }
         }
@@ -49,7 +54,9 @@ const RecentWork = ({ id }) => {
                   View Work <ArrowRight />
                 </div>
               </div>
-              <img src={x.node.primaryImage.publicURL} alt={x.node.name} />
+              <div className={styles.workImage}>
+                <Img fixed={x.node.primaryImage.childImageSharp.fixed} />
+              </div>
             </Link>
           ))
         : false}

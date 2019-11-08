@@ -54,17 +54,4 @@
     font-size: 1.5rem;
     color: $color-red;
   }
-
-  img {
-    width: 300px;
-    margin-right: -25%;
-  }
-}
-
-@media (min-width: 600px) and (max-width: 750px) {
-  .work {
-    img {
-      margin-right: 0;
-    }
-  }
 }

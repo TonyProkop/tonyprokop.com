@@ -1,17 +1,30 @@
 import React from "react"
+import Img from "gatsby-image"
 import classnames from "classnames"
 import Service, { SYMBOLS } from "../Service"
 import styles from "./Services.module.scss"
-import { Link } from "gatsby"
+import { Link, useStaticQuery } from "gatsby"
 import me from "../../../content/assets/me.jpg"
 import { ArrowRight } from "../Icon"
 
 const Services = () => {
+  const data = useStaticQuery(graphql`
+    {
+      file(relativePath: { eq: "me.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
+      }
+    }
+  `)
+  console.log(data)
   return (
     <div className={classnames(styles.servicesContainer, "section")}>
       <div className="contentContainer">
         <div className={styles.aboutMeContainer}>
-          <img src={me} alt="Tony Prokop" />
+          <Img fluid={data.file.childImageSharp.fluid} alt="Tony Prokop" />
           <Link to="/about" className={styles.aboutMeLink}>
             About Me
             <ArrowRight></ArrowRight>
