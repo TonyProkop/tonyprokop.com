@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import classnames from "classnames"
 import Layout from "../components/Layout"
-import profilePic from "../../content/assets/profile-pic.jpg"
+import me from "../../content/assets/me.jpg"
 import SEO from "../components/SEO"
 import { speedwayMotorsUrl, myWeddingUrl } from "../utils/config"
 import styles from "./about.module.scss"
@@ -17,7 +17,7 @@ const About = () => (
         "contentContainer"
       )}
     >
-      <img src={profilePic} alt="Tony Prokop" className={styles.profilePic} />
+      <img src={me} alt="Tony Prokop" className={styles.profilePic} />
       <h1>Hi, I'm Tony Prokop.</h1>
       <p>
         I'm a front-end web developer based in Omaha, NE, currently excited

@@ -10,16 +10,16 @@
     "role": "Full-Stack Web Development",
     "technologies": ["React", "Redux", "Html", "CSS", "jQuery", "C#", "SQL"],
     "url": "https://www.speedwaymotors.com",
-    "primaryImage": "./assets/laptop-speedway.png",
+    "primaryImage": "./assets/speedway/laptop-speedway.png",
     "images": [
-      "./assets/home.png",
-      "./assets/product results.png",
-      "./assets/product page.png",
-      "./assets/cart.jpg",
-      "./assets/step 1.jpg",
-      "./assets/step 2.jpg",
-      "./assets/step 3.jpg",
-      "./assets/step 4.jpg"
+      "./assets/speedway/home.png",
+      "./assets/speedway/product results.png",
+      "./assets/speedway/product page.png",
+      "./assets/speedway/cart.jpg",
+      "./assets/speedway/step 1.jpg",
+      "./assets/speedway/step 2.jpg",
+      "./assets/speedway/step 3.jpg",
+      "./assets/speedway/step 4.jpg"
     ]
   },
   {
@@ -39,7 +39,7 @@
       "Netlify"
     ],
     "url": "https://romantic-kare-10dfb7.netlify.com/",
-    "primaryImage": "./assets/laptop-wedding.png",
+    "primaryImage": "./assets/wedding/laptop-wedding.png",
     "images": []
   }
 ]

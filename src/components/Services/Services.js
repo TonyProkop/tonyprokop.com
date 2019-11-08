@@ -3,6 +3,7 @@ import classnames from "classnames"
 import Service, { SYMBOLS } from "../Service"
 import styles from "./Services.module.scss"
 import { Link } from "gatsby"
+import me from "../../../content/assets/me.jpg"
 import { ArrowRight } from "../Icon"
 
 const Services = () => {
@@ -10,10 +11,7 @@ const Services = () => {
     <div className={classnames(styles.servicesContainer, "section")}>
       <div className="contentContainer">
         <div className={styles.aboutMeContainer}>
-          <img
-            src="https://previews.123rf.com/images/iakovenko/iakovenko1808/iakovenko180800775/106896192-having-fun-close-up-portrait-of-handsome-happy-guy-looking-at-camera-with-wide-smile.jpg"
-            alt="Tony Prokop"
-          />
+          <img src={me} alt="Tony Prokop" />
           <Link to="/about" className={styles.aboutMeLink}>
             About Me
             <ArrowRight></ArrowRight>

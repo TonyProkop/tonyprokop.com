@@ -15,6 +15,7 @@ const Menu = () => {
         <button
           className={styles.closeMenu}
           onClick={() => setIsMenuActive(false)}
+          title="Close Menu"
         >
           <Times />
         </button>
@@ -76,6 +77,7 @@ const Menu = () => {
         <button
           className={styles.openMenu}
           onClick={() => setIsMenuActive(true)}
+          title="Open Menu"
         >
           <Bars />
         </button>
