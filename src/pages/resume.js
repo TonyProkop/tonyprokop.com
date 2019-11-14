@@ -1,6 +1,8 @@
 import React from "react"
+import classnames from "classnames"
 import Layout from "../components/Layout"
-import { Email, Phone, Linkedin, Download, Globe } from "../components/Icon"
+import { linkedinUrl } from "../utils/config"
+import { Email, Phone, Linkedin, Globe } from "../components/Icon"
 import SEO from "../components/SEO"
 import styles from "./resume.module.scss"
 import "./resume.print.scss"
@@ -8,23 +10,26 @@ import "./resume.print.scss"
 const Resume = () => (
   <Layout title="Resume">
     <SEO title="Resume" />
-    <h1 className={styles.heading}>Tony Prokop</h1>
-    <div className={`main ${styles.main}`}>
-      <Contact />
-      <Experience />
-    </div>
-    <div className={`sidebar ${styles.sidebar}`}>
-      <Contact />
-      <Skills />
-      <Education />
-      <Process />
-    </div>
-    <button
-      className={`downloadButton ${styles.downloadButton}`}
-      onClick={() => window.print()}
+    <div
+      className={classnames(
+        styles.resumeContainer,
+        "section",
+        "contentContainer"
+      )}
     >
-      <Download />
-    </button>
+      <h1 className={styles.heading}>Tony Prokop</h1>
+      <div className={`main ${styles.main}`}>
+        <Contact />
+        <Experience />
+      </div>
+      <div className={`sidebar ${styles.sidebar}`}>
+        <Contact />
+        <Skills />
+        <Education />
+        <Process />
+      </div>
+      <div className={styles.clear}></div>
+    </div>
   </Layout>
 )
 
@@ -110,15 +115,34 @@ const Contact = () => (
   <div className={styles.contact}>
     <div className={`website ${styles.website}`}>
       <Globe includeText={true} />
+      <span>tonyprokop.com</span>
     </div>
     <div>
-      <Email includeText={true} />
+      <a
+        href="mailto:prokop.tony@gmail.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Email />
+        <span>prokop.tony@gmail.com</span>
+      </a>
     </div>
     <div>
-      <Phone includeText={true} />
+      <a href="tel:402-988-8222" target="_blank" rel="noopener noreferrer">
+        <Phone />
+        <span>(402) 988-8222</span>
+      </a>
     </div>
     <div>
-      <Linkedin includeText={true} />
+      <a
+        href={linkedinUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.linkedin}
+      >
+        <Linkedin />
+        <span>/in/tony-prokop/</span>
+      </a>
     </div>
   </div>
 )

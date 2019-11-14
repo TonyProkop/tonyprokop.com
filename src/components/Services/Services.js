@@ -4,7 +4,6 @@ import classnames from "classnames"
 import Service, { SYMBOLS } from "../Service"
 import styles from "./Services.module.scss"
 import { Link, useStaticQuery } from "gatsby"
-import me from "../../../content/assets/me.jpg"
 import { ArrowRight } from "../Icon"
 
 const Services = () => {
