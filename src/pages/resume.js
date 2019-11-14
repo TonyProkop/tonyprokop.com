@@ -68,7 +68,7 @@ const Experience = () => (
     <div className={styles.subhead}>
       Speedway Motors, Lincoln, NE / March 2015 - December 2018
     </div>
-    <ul>
+    <ul className="pagebreak">
       <li>
         Developed and maintained internal and external .NET MVC website
         applications, as well as client applications built with React and Redux
@@ -153,6 +153,7 @@ const Skills = () => (
     <div>HTML</div>
     <div>CSS / SASS</div>
     <div>Javascript (ES6)</div>
+    <div>React</div>
     <div>Redux</div>
     <div>Webpack</div>
     <div>Jest / Enzyme</div>
@@ -189,7 +190,7 @@ const Process = () => (
 )
 
 const Education = () => (
-  <div className={styles.education}>
+  <div className={classnames(styles.education, "pagebreak")}>
     <h2>Education</h2>
     <div>B.S. Computer Science</div>
     <div>University of Nebraska</div>
