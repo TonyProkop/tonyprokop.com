@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+https://thirsty-varahamihira-899094.netlify.com/* https://tonyprokop.com/:splat 301!

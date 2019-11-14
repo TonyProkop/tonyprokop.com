@@ -6,6 +6,8 @@ import styles from "./ImageCarousel.module.scss"
 const ImageCarousel = ({ className, images }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
 
+  const displayArrows = images.length > 1
+
   const goToPreviousImage = () => {
     currentIndex === 0
       ? setCurrentIndex(images.length - 1)
@@ -20,7 +22,11 @@ const ImageCarousel = ({ className, images }) => {
 
   return (
     <div className={classnames(className, styles.imageCarousel)}>
-      <ArrowLeft className={styles.arrowLeft} onClick={goToPreviousImage} />
+      {displayArrows ? (
+        <ArrowLeft className={styles.arrowLeft} onClick={goToPreviousImage} />
+      ) : (
+        false
+      )}
       {images.map((x, i) => {
         return (
           <div
@@ -34,7 +40,11 @@ const ImageCarousel = ({ className, images }) => {
           </div>
         )
       })}
-      <ArrowRight className={styles.arrowRight} onClick={goToNextImage} />
+      {displayArrows ? (
+        <ArrowRight className={styles.arrowRight} onClick={goToNextImage} />
+      ) : (
+        false
+      )}
     </div>
   )
 }
