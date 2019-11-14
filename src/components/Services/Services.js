@@ -25,7 +25,7 @@ const Services = () => {
         <div className={styles.aboutMeContainer}>
           <Img fluid={data.file.childImageSharp.fluid} alt="Tony Prokop" />
           <Link to="/about" className={styles.aboutMeLink}>
-            About Me
+            About me
             <ArrowRight></ArrowRight>
           </Link>
         </div>

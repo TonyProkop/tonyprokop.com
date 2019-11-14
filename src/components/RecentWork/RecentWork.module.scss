@@ -35,12 +35,6 @@
   color: $color-gray-dark;
   grid-column: span 1;
 
-  &:hover {
-    .viewWork {
-      text-decoration: underline;
-    }
-  }
-
   .name {
     font-size: 3rem;
     font-weight: 600;
@@ -48,10 +42,8 @@
   }
 
   .viewWork {
-    text-transform: uppercase;
-    font-weight: 900;
+    font-weight: bold;
     text-decoration: none;
     font-size: 1.5rem;
-    color: $color-red;
   }
 }

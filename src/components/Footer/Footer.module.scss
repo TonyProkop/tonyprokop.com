@@ -15,20 +15,22 @@
   font-size: 2rem;
   margin: 1rem 0 4rem;
   line-height: 3rem;
+
+  a {
+    color: $color-green;
+    text-decoration-color: $color-green;
+  }
 }
 
 .linkedin,
 .github {
   display: inline-block;
-  text-transform: uppercase;
-  color: $color-red;
-  font-weight: 900;
+  color: $color-gray;
   font-size: 1.5rem;
   margin: 1rem 0;
   text-decoration: none;
 
   svg {
-    color: $color-gray;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
   }
 }

@@ -99,6 +99,11 @@
       margin-right: 0.5rem;
       word-wrap: break-word;
     }
+
+    a {
+      color: $color-green;
+      text-decoration-color: $color-green;
+    }
   }
 }
 
