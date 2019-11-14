@@ -3,6 +3,7 @@
 .hero {
   height: 100vh;
   display: flex;
+  flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
@@ -29,6 +30,17 @@
   }
 }
 
+@media (max-width: 700px) {
+  .hero {
+    flex-direction: column;
+
+    .heroText,
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
 .workDetailsContainer {
   background-color: $color-gray-dark;
 }
@@ -45,7 +57,7 @@
   }
 }
 
-.missionContainer {
+.overviewContainer {
   width: 60%;
   padding-right: $contentWhiteSpace;
 
@@ -84,14 +96,37 @@
 
     h3 {
       display: inline;
-      margin-right: 1rem;
+      margin-right: 0.5rem;
       word-wrap: break-word;
     }
+
+    a {
+      color: $color-green;
+      text-decoration-color: $color-green;
+    }
+  }
+}
+
+@media (max-width: 710px) {
+  .workDetailsContentContainer {
+    flex-direction: column;
+  }
+
+  .overviewContainer {
+    padding-right: 0;
+    width: 100%;
+  }
+
+  .detailsSidebarContainer {
+    padding-left: 0;
+    width: 100%;
+    padding-top: $contentWhiteSpace;
   }
 }
 
 .label {
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-weight: 900;
+  font-size: 1rem;
   color: $color-gray;
 }

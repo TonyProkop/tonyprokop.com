@@ -2,7 +2,6 @@
 
 .menuContainer {
   font-size: 3rem;
-  font-family: "Merriweather";
   position: relative;
   z-index: 10;
 
@@ -12,12 +11,13 @@
     width: 100%;
     position: fixed;
     top: 0;
-    background-color: $color-black;
+    background-color: $color-gray-dark;
     color: white;
   }
 
   a {
     color: white;
+    text-decoration: none;
   }
 
   svg[data-icon="bars"],
@@ -36,7 +36,7 @@
   }
 
   .openMenu {
-    position: fixed;
+    position: absolute;
     top: 1rem;
     right: 1rem;
   }
@@ -48,30 +48,33 @@
   }
 }
 
-.externalLinks {
-  text-align: center;
-  position: absolute;
-  bottom: 2rem;
-  left: 0;
-  right: 0;
+.activeMenuContainer {
+  height: 100vh;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  a {
-    margin: 0 1rem;
+.externalLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    margin: 2rem 0;
+    width: 30px !important;
+    height: 30px !important;
   }
 }
 
 .menuLinks {
   display: flex;
   flex-direction: column;
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
+  text-align: right;
 
   div {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 
     &:last-child {
       margin-bottom: 0;

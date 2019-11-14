@@ -2,37 +2,44 @@
   {
     "slug": "speedway-motors",
     "name": "Speedway Motors",
-    "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    "missionSlogan": "Lorem Ipsum Dummy",
-    "mission": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "about": "An automotive web store",
+    "overviewSlogan": "What Moves You",
+    "overview": [
+      "For more than four years I've been a vital part of maintaining the web platform. I've had a hand in developing the majority of pages on the site, the internal custom CMS, and many scheduled processes that support the company. My latest work includes: implementing a new checkout funnel with latest javascript technologies, building out services to calculate shipping quotes, taxes, and promotions, and gradually improving the in-house search algorithm."
+    ],
     "role": "Full-Stack Web Development",
     "technologies": ["React", "Redux", "Html", "CSS", "jQuery", "C#", "SQL"],
     "url": "https://www.speedwaymotors.com",
-    "primaryImage": "./assets/laptop-speedway.png",
+    "primaryImage": "./assets/speedway/laptop-speedway.png",
     "images": [
-      "./assets/cart.jpg",
-      "./assets/step 1.jpg",
-      "./assets/step 2.jpg",
-      "./assets/step 3.jpg",
-      "./assets/step 4.jpg"
+      "./assets/speedway/home.png",
+      "./assets/speedway/product results.png",
+      "./assets/speedway/product page.png",
+      "./assets/speedway/cart.jpg",
+      "./assets/speedway/step 1.jpg",
+      "./assets/speedway/step 2.jpg",
+      "./assets/speedway/step 3.jpg",
+      "./assets/speedway/step 4.jpg"
     ]
   },
   {
     "slug": "wedding",
     "name": "My Wedding",
-    "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    "missionSlogan": "Lorem Ipsum Dummy",
-    "mission": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "about": "Single page static website to provide information to guests of my wedding",
+    "overviewSlogan": "Tony and Katie's Wedding",
+    "overview": [
+      "Single page, static site to provide information to guests such as, wedding location/time, reception location/time, engagement photos, gift registry, and rsvp.",
+      "Some features of the site are: parallax scrolling, clean image gallery, countdown timer, and rsvp form wired up to Netlify to avoid the need for a server."
+    ],
     "role": "Web Design and Development",
-    "technologies": ["React", "Gatsby.js static site generator", "Netlify"],
+    "technologies": [
+      "React",
+      "GraphQL",
+      "Gatsby.js static site generator",
+      "Netlify"
+    ],
     "url": "https://romantic-kare-10dfb7.netlify.com/",
-    "primaryImage": "./assets/laptop-wedding.png",
-    "images": [
-      "./assets/cart.jpg",
-      "./assets/step 1.jpg",
-      "./assets/step 2.jpg",
-      "./assets/step 3.jpg",
-      "./assets/step 4.jpg"
-    ]
+    "primaryImage": "./assets/wedding/laptop-wedding.png",
+    "images": []
   }
 ]

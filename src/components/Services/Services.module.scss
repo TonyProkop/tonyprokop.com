@@ -5,12 +5,6 @@
   flex-wrap: wrap;
   background-color: $color-gray-dark;
 
-  img {
-    display: block;
-    width: 100%;
-    margin: -2 * $sectionWhiteSpace auto 0;
-  }
-
   h2 {
     color: white;
     width: 100%;
@@ -28,15 +22,16 @@
   position: absolute;
   bottom: 0;
   right: 0;
+  color: $color-green;
   background-color: $color-gray-dark;
   padding: 1rem 2.5rem;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 900;
   text-transform: uppercase;
 
   svg {
-    margin-left: 1rem;
+    margin-left: 0.5rem;
   }
 }
 

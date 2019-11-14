@@ -15,12 +15,22 @@
     margin-top: 3rem;
   }
 
+  .section {
+    padding-top: 0;
+  }
+
+  .website {
+    display: block !important;
+  }
+
   .logo,
-  .menu {
+  .menu,
+  footer {
     display: none;
   }
 
-  .downloadButton {
-    display: none;
+  .pagebreak {
+    clear: both;
+    page-break-after: always;
   }
 }

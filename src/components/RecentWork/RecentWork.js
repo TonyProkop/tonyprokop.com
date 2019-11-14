@@ -1,10 +1,11 @@
 import React from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 import classnames from "classnames"
 import { ArrowRight } from "../Icon"
 import styles from "./RecentWork.module.scss"
 
-const RecentWork = () => {
+const RecentWork = ({ id }) => {
   const data = useStaticQuery(graphql`
     {
       allWorkJson {
@@ -13,12 +14,16 @@ const RecentWork = () => {
             slug
             name
             about
-            mission
+            overview
             role
             technologies
             url
             primaryImage {
-              publicURL
+              childImageSharp {
+                fixed(width: 300) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
             }
           }
         }
@@ -28,6 +33,7 @@ const RecentWork = () => {
 
   return (
     <div
+      id={id}
       className={classnames(
         styles.workContainer,
         "contentContainer",
@@ -48,7 +54,9 @@ const RecentWork = () => {
                   View Work <ArrowRight />
                 </div>
               </div>
-              <img src={x.node.primaryImage.publicURL} alt={x.node.name} />
+              <div className={styles.workImage}>
+                <Img fixed={x.node.primaryImage.childImageSharp.fixed} />
+              </div>
             </Link>
           ))
         : false}

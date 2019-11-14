@@ -4,6 +4,8 @@ import { ArrowRight, ArrowLeft } from "../Icon"
 import styles from "./ImageCarousel.module.scss"
 
 const ImageCarousel = ({ className, images }) => {
+  if (!images || !images.length) return false
+
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const displayArrows = images.length > 1

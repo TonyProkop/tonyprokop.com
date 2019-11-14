@@ -39,7 +39,7 @@ const Home = ({ location }) => {
         </div>
       </div>
       <Services />
-      <RecentWork />
+      <RecentWork id="recentWork" />
     </Layout>
   )
 }
