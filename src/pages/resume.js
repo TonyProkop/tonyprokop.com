@@ -114,7 +114,7 @@ const Experience = () => (
 const Contact = () => (
   <div className={styles.contact}>
     <div className={`website ${styles.website}`}>
-      <Globe includeText={true} />
+      <Globe />
       <span>tonyprokop.com</span>
     </div>
     <div>
