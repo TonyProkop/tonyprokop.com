@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://thirsty-varahamihira-899094.netlify.com/*"
+  to = "https://tonyprokop.com/:splat"
+  status = 301
+  force = false
