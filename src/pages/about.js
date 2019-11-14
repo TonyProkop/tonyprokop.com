@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import classnames from "classnames"
 import Layout from "../components/Layout"
 import me from "../../content/assets/me.jpg"

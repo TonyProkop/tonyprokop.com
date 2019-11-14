@@ -4,9 +4,10 @@
   position: absolute;
   top: 1rem;
   left: 1rem;
-  font-size: 3rem;
-  font-weight: bold;
   z-index: 1;
-  text-decoration: none;
-  color: $color-gray-dark;
+
+  img {
+    width: 3rem;
+    height: auto;
+  }
 }
