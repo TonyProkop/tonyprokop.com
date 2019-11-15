@@ -20,7 +20,7 @@ const RecentWork = ({ id }) => {
             url
             primaryImage {
               childImageSharp {
-                fixed(width: 300) {
+                fixed(width: 300, quality: 100) {
                   ...GatsbyImageSharpFixed
                 }
               }

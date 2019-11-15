@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Img from "gatsby-image"
 import classnames from "classnames"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
@@ -26,7 +27,9 @@ const WorkTemplate = ({ data, location }) => {
     <Layout location={location} title={name}>
       <SEO title={name} description={about} />
       <div className={classnames(styles.hero, "contentContainer")}>
-        <img src={primaryImage.publicURL} alt={name}></img>
+        <div className={styles.primaryImage}>
+          <Img fluid={primaryImage.childImageSharp.fluid} />
+        </div>
         <div className={styles.heroText}>
           <h1>{name}</h1>
           <p>{about}</p>
@@ -92,10 +95,19 @@ export const pageQuery = graphql`
       technologies
       url
       primaryImage {
-        publicURL
+        childImageSharp {
+          fluid(maxWidth: 452, quality: 100) {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
       }
       images {
         publicURL
+        childImageSharp {
+          fluid(maxWidth: 730, quality: 100) {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
       }
     }
   }

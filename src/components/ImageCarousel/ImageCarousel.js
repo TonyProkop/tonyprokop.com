@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import Img from "gatsby-image"
 import classnames from "classnames"
 import { ArrowRight, ArrowLeft } from "../Icon"
 import styles from "./ImageCarousel.module.scss"
@@ -23,7 +24,7 @@ const ImageCarousel = ({ className, images }) => {
   return (
     <div className={classnames(className, styles.imageCarousel)}>
       <ArrowLeft className={styles.arrowLeft} onClick={goToPreviousImage} />
-      {images.map((x, i) => {
+      {images.map((image, i) => {
         return (
           <div
             key={i}
@@ -32,7 +33,10 @@ const ImageCarousel = ({ className, images }) => {
               transform: `translateX(-${currentIndex * 100}%)`,
             }}
           >
-            <img className={styles.image} src={x.publicURL} key={i}></img>
+            {/* <div className={styles.image}>
+              <Img fluid={image.childImageSharp.fluid} />
+            </div> */}
+            <img className={styles.image} src={image.publicURL} key={i}></img>
           </div>
         )
       })}
