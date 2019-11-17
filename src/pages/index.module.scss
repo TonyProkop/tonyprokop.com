@@ -16,6 +16,7 @@
   }
 
   svg[data-icon="arrow-down"] {
+    @include bounce();
     margin: auto;
     width: 40px !important;
     height: 40px !important;
