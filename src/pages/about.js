@@ -32,9 +32,9 @@ const About = () => (
         focused on implementing a website redesign.
       </p>
       <p>
-        In my free time you might find me installing IoT home automation devices
-        in my house, playing Zelda: Breath of the Wild, hiking, or helping my
-        beautiful fiancé plan{" "}
+        In my free time you might find me installing IoT devices in my house,
+        playing Zelda: Breath of the Wild, hiking, or helping my beautiful
+        fiancé plan{" "}
         <a href={myWeddingUrl} target="_blank" rel="noopener noreferrer">
           our wedding
         </a>{" "}
