@@ -28,8 +28,8 @@
     "about": "Single page static website to provide information to guests of my wedding",
     "overviewSlogan": "Tony and Katie's Wedding",
     "overview": [
-      "Single page, static site to provide information to guests such as, wedding location/time, reception location/time, engagement photos, gift registry, and rsvp.",
-      "Some features of the site are: parallax scrolling, clean image gallery, countdown timer, and rsvp form wired up to Netlify to avoid the need for a server."
+      "A single-page, static site to provide information to guests such as: location and time for wedding/reception, engagement photos, gift registry, and rsvp.",
+      "Some features of the site are: parallax scrolling, image gallery, countdown timer, and Netlify rsvp form to avoid the need for a server."
     ],
     "role": "Web Design and Development",
     "technologies": [
