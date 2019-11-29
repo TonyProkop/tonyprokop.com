@@ -55,17 +55,8 @@ const Menu = () => {
             </div>
             <div>
               <Link to="/about" onClick={() => setIsMenuActive(false)}>
-                About me
+                About Me
               </Link>
-            </div>
-            <div>
-              <a
-                href="mailto:prokop.tony@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Contact
-              </a>
             </div>
           </div>
         </div>

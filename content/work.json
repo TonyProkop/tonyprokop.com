@@ -25,11 +25,11 @@
   {
     "slug": "wedding",
     "name": "My Wedding",
-    "about": "Single page static website to provide information to guests of my wedding",
+    "about": "Single page static website to provide information to our wedding guests",
     "overviewSlogan": "Tony and Katie's Wedding",
     "overview": [
-      "A single-page, static site to provide information to guests such as: location and time for wedding/reception, engagement photos, gift registry, and rsvp.",
-      "Some features of the site are: parallax scrolling, image gallery, countdown timer, and Netlify rsvp form to avoid the need for a server."
+      "A single page static site to provide information to guests such as: location and time for wedding/reception, engagement photos, gift registry, and rsvp.",
+      "This website features: parallax scrolling, image gallery, countdown timer, and Netlify RSVP form to avoid the need for a server."
     ],
     "role": "Web Design and Development",
     "technologies": [
