@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }} | Tony Prokop</title>
+    {% set css %}
+      {% include "index.css" %}
+    {% endset %}
+    <style>
+      {{ css | cssmin | safe }}
+    </style>
+  </head>
+  <body>
+    <header>
+      <ul class="menu">
+        <li>
+          <object type="image/svg+xml" data="icons/home.svg"></object>
+          <div class="menu-item-detail">
+            Home
+            <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
+          </div>
+        </li>
+        <li>
+          <object type="image/svg+xml" data="icons/briefcase.svg"></object>
+          Projects
+          <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
+        </li>
+        <li>
+          <object type="image/svg+xml" data="icons/edit-3.svg"></object>
+          Blog
+          <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
+        </li>
+        <li>
+          <object type="image/svg+xml" data="icons/user.svg"></object>
+          About
+          <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
+        </li>
+        <li>
+          <object type="image/svg+xml" data="icons/file.svg"></object>
+          Resume
+          <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
+        </li>
+        <li>
+          <object type="image/svg+xml" data="icons/message-circle.svg"></object>
+          Contact
+          <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
+        </li>
+      </ul>
+      <div>
+        <object type="image/svg+xml" data="icons/sun.svg"></object>
+      </div>
+    </header>
+    {{ content | safe }}
+  </body>
+</html>
