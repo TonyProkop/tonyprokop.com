@@ -1,0 +1,22 @@
+.menu {
+  background-color: #2a3142;
+}
+
+.top-bar {
+  background-color: #36394c;
+}
+
+.content {
+  background-color: #252735;
+}
+
+.menu,
+.top-bar,
+.content {
+  color: #f8f8fa;
+
+  a,
+  object svg {
+    color: #f8f8fa;
+  }
+}
