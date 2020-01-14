@@ -2,52 +2,96 @@
 <html>
   <head>
     <title>Home | Tony Prokop</title>
+    <link href="https://fonts.googleapis.com/css?family=Sniglet&display=swap" rel="stylesheet">
+    
     
     <style>
-      body{margin:0}.menu{list-style:none;padding:0;margin:0}.menu li{vertical-align:middle}.menu-item-detail{opacity:0;width:0;display:inline-block}
+      body{margin:0;display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto 1fr;height:100vh;font-size:12px}a{text-decoration:none}h1{font-size:4rem;font-family:Sniglet,cursive;font-weight:400}.menu{grid-column:1/2;grid-row:1/3}.menu ul{list-style:none;padding:0;margin:0}.menu li{padding:1rem;font-size:2rem}.menu li a{display:flex;align-items:center}.menu li object{width:30px;height:auto}.menu li .menu-item-text{flex-grow:1;padding:0 1rem}.top-bar{grid-column:2/3;grid-row:1/2;display:flex;flex-direction:row-reverse}.sun{padding:1rem}.content{grid-column:2/3;grid-row:2/3}
+      .menu{background-color:#2a3142}.top-bar{background-color:#36394c}.content{background-color:#252735}.content,.menu,.top-bar{color:#f8f8fa}.content a,.content object svg,.menu a,.menu object svg,.top-bar a,.top-bar object svg{color:#f8f8fa}
     </style>
   </head>
   <body>
-    <header>
-      <ul class="menu">
+    <header  class="menu">
+      <ul>
         <li>
-          <object type="image/svg+xml" data="icons/home.svg"></object>
-          <div class="menu-item-detail">
-            Home
+          <a href="/">
+            <object type="image/svg+xml" data="icons/home.svg"></object>
+            <span class="menu-item-text">Home</span>
             <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
-          </div>
+          </a>
         </li>
         <li>
-          <object type="image/svg+xml" data="icons/briefcase.svg"></object>
-          Projects
-          <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
+          <a href="/projects">
+            <object type="image/svg+xml" data="icons/briefcase.svg"></object>
+            <span class="menu-item-text">Projects</span>
+            <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
+          </a>
         </li>
         <li>
-          <object type="image/svg+xml" data="icons/edit-3.svg"></object>
-          Blog
-          <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
+          <a href="/blog">
+            <object type="image/svg+xml" data="icons/edit-3.svg"></object>
+            <span class="menu-item-text">Blog</span>
+            <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
+          </a>
         </li>
         <li>
-          <object type="image/svg+xml" data="icons/user.svg"></object>
-          About
-          <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
+          <a href="/about">
+            <object type="image/svg+xml" data="icons/user.svg"></object>
+            <span class="menu-item-text">About</span>
+            <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
+          </a>
         </li>
         <li>
-          <object type="image/svg+xml" data="icons/file.svg"></object>
-          Resume
-          <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
+          <a href="/resume">
+            <object type="image/svg+xml" data="icons/file.svg"></object>
+            <span class="menu-item-text">Resume</span>
+            <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
+          </a>
         </li>
         <li>
-          <object type="image/svg+xml" data="icons/message-circle.svg"></object>
-          Contact
-          <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
+          <a href="/contact">
+            <object type="image/svg+xml" data="icons/message-circle.svg"></object>
+            <span class="menu-item-text">Contact</span>
+            <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
+          </a>
         </li>
       </ul>
-      <div>
-        <object type="image/svg+xml" data="icons/sun.svg"></object>
-      </div>
     </header>
-    
-<div>TEST</div>
+    <div class="top-bar">
+      <object class="sun" type="image/svg+xml" data="icons/sun.svg"></object>
+    </div>
+    <div class="content">
+      
+<h1>I'm Tony Prokop, a front-end web developer.</h1>
+<p>Experienced in React, .NET, and Ecommerce.</p>
+<p>Have a project you'd like to discuss?</p>
+<p>
+    Let's chat:
+    <a href="mailto:prokop.tony@gmail.com">prokop.tony@gmail.com</a>
+</p>
+<div class="external-links">
+    <a href="mailto:prokop.tony@gmail.com">
+        <object type="image/svg+xml" data="icons/mail.svg"></object>
+    </a>
+    <a href="">
+        <object type="image/svg+xml" data="icons/linkedin.svg"></object>
+    </a>
+    <a href="">
+        <object type="image/svg+xml" data="icons/twitter.svg"></object>
+    </a>
+    <a href="">
+        <object type="image/svg+xml" data="icons/facebook.svg"></object>
+    </a>
+    <a href="">
+        <object type="image/svg+xml" data="icons/github.svg"></object>
+    </a>
+    <a href="">
+        <object type="image/svg+xml" data="icons/codepen.svg"></object>
+    </a>
+    <a href="">
+        <object type="image/svg+xml" data="icons/rss.svg"></object>
+    </a>
+</div>
+    </div>
   </body>
 </html>

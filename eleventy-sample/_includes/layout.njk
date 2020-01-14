@@ -2,53 +2,70 @@
 <html>
   <head>
     <title>{{ title }} | Tony Prokop</title>
+    <link href="https://fonts.googleapis.com/css?family=Sniglet&display=swap" rel="stylesheet">
     {% set css %}
-      {% include "index.css" %}
+    {% include "index.css" %}
+    {% endset %}
+    {% set darkTheme %}
+    {% include "dark-theme.css" %}
     {% endset %}
     <style>
-      {{ css | cssmin | safe }}
+      {{css | cssmin | safe}}
+      {{darkTheme | cssmin | safe}}
     </style>
   </head>
   <body>
-    <header>
-      <ul class="menu">
+    <header  class="menu">
+      <ul>
         <li>
-          <object type="image/svg+xml" data="icons/home.svg"></object>
-          <div class="menu-item-detail">
-            Home
+          <a href="/">
+            <object type="image/svg+xml" data="icons/home.svg"></object>
+            <span class="menu-item-text">Home</span>
             <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
-          </div>
+          </a>
         </li>
         <li>
-          <object type="image/svg+xml" data="icons/briefcase.svg"></object>
-          Projects
-          <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
+          <a href="/projects">
+            <object type="image/svg+xml" data="icons/briefcase.svg"></object>
+            <span class="menu-item-text">Projects</span>
+            <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
+          </a>
         </li>
         <li>
-          <object type="image/svg+xml" data="icons/edit-3.svg"></object>
-          Blog
-          <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
+          <a href="/blog">
+            <object type="image/svg+xml" data="icons/edit-3.svg"></object>
+            <span class="menu-item-text">Blog</span>
+            <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
+          </a>
         </li>
         <li>
-          <object type="image/svg+xml" data="icons/user.svg"></object>
-          About
-          <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
+          <a href="/about">
+            <object type="image/svg+xml" data="icons/user.svg"></object>
+            <span class="menu-item-text">About</span>
+            <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
+          </a>
         </li>
         <li>
-          <object type="image/svg+xml" data="icons/file.svg"></object>
-          Resume
-          <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
+          <a href="/resume">
+            <object type="image/svg+xml" data="icons/file.svg"></object>
+            <span class="menu-item-text">Resume</span>
+            <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
+          </a>
         </li>
         <li>
-          <object type="image/svg+xml" data="icons/message-circle.svg"></object>
-          Contact
-          <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
+          <a href="/contact">
+            <object type="image/svg+xml" data="icons/message-circle.svg"></object>
+            <span class="menu-item-text">Contact</span>
+            <object type="image/svg+xml" data="icons/chevron-right.svg"></object>
+          </a>
         </li>
       </ul>
-      <div>
-        <object type="image/svg+xml" data="icons/sun.svg"></object>
-      </div>
     </header>
-    {{ content | safe }}
+    <div class="top-bar">
+      <object class="sun" type="image/svg+xml" data="icons/sun.svg"></object>
+    </div>
+    <div class="content">
+      {{ content | safe }}
+    </div>
   </body>
 </html>
