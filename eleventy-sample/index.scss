@@ -64,4 +64,29 @@ h1 {
   grid-row: 2 / 3;
 }
 
+.home,
+.briefcase,
+.blog,
+.user,
+.file,
+.message-circle,
+.chevron-up,
+.chevron-down,
+.chevron-left,
+.chevron-right,
+.sun {
+  width: 24px;
+  height: 24px;
+}
+
 // Home Page
+.mail,
+.linkedin,
+.twitter,
+.facebook,
+.github,
+.codepen,
+.rss {
+  width: 24px;
+  height: 24px;
+}
