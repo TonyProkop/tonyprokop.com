@@ -3,47 +3,52 @@ layout: layout.njk
 title: Home
 ---
 
-<h1>I'm Tony Prokop, a front-end web developer.</h1>
+<h1>I'm Tony Prokop, a <br/> front-end web developer.</h1>
 <p>Experienced in React, .NET, and Ecommerce.</p>
 <p>Have a project you'd like to discuss?</p>
 <p>
     Let's chat:
-    <a href="mailto:prokop.tony@gmail.com">prokop.tony@gmail.com</a>
+    <a href="mailto:prokop.tony@gmail.com" class="text-link">prokop.tony@gmail.com</a>
 </p>
+
+{% set links = [
+    {
+        linkUrl: 'mailto:prokop.tony@gmail.com',
+        class: 'mail',
+        iconUrl: '/icons/mail.svg#mail'
+    }, {
+        linkUrl: 'https://www.linkedin.com/in/tony-prokop',
+        class: 'linkedin',
+        iconUrl: '/icons/linkedin.svg#linkedin'
+    }, {
+        linkUrl: 'https://twitter.com/tony_prokop',
+        class: 'twitter',
+        iconUrl: '/icons/twitter.svg#twitter'
+    }, {
+        linkUrl: 'https://www.facebook.com/tony.prokop.9',
+        class: 'facebook',
+        iconUrl: '/icons/facebook.svg#facebook'
+    }, {
+        linkUrl: 'https://github.com/TonyProkop',
+        class: 'github',
+        iconUrl: '/icons/github.svg#github'
+    }, {
+        linkUrl: '',
+        class: 'codepen',
+        iconUrl: '/icons/codepen.svg#codepen'
+    }, {
+        linkUrl: '',
+        class: 'rss',
+        iconUrl: '/icons/rss.svg#rss'
+    }
+] %}
+
 <div class="external-links">
-    <a href="mailto:prokop.tony@gmail.com">
-        <svg class="mail">
-            <use href="/icons/mail.svg#mail"/>
-        </svg>
-    </a>
-    <a href="">
-        <svg class="linkedin">
-            <use href="/icons/linkedin.svg#linkedin"/>
-        </svg>
-    </a>
-    <a href="">
-        <svg class="twitter">
-            <use href="/icons/twitter.svg#twitter"/>
-        </svg>
-    </a>
-    <a href="">
-        <svg class="facebook">
-            <use href="/icons/facebook.svg#facebook"/>
-        </svg>
-    </a>
-    <a href="">
-        <svg class="github">
-            <use href="/icons/github.svg#github"/>
-        </svg>
-    </a>
-    <a href="">
-        <svg class="codepen">
-            <use href="/icons/codepen.svg#codepen"/>
-        </svg>
-    </a>
-    <a href="">
-        <svg class="rss">
-            <use href="/icons/rss.svg#rss"/>
-        </svg>
-    </a>
+    {% for link in links %}
+        <a href="{{link.linkUrl}}" target="_blank" rel="noopener noreferrer">
+            <svg class="{{link.class}}">
+                <use href="{{link.iconUrl}}"/>
+            </svg>
+        </a>
+    {% endfor %}
 </div>

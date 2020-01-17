@@ -13,85 +13,74 @@
       {{css | cssmin | safe}}
       {{darkTheme | cssmin | safe}}
     </style>
+    {% set js %}
+    {% include "index.js" %}
+    {% endset %}
+    <script>
+      {{ js | jsmin | safe }}
+    </script>
   </head>
   <body>
-    <header  class="menu">
+    {% set links = [
+      {
+        linkUrl: '/',
+        text: 'Home',
+        iconClass: 'home',
+        iconUrl: 'icons/home.svg#home'
+      }, {
+        linkUrl: '/projects',
+        text: 'Projects',
+        iconClass: 'briefcase',
+        iconUrl: 'icons/briefcase.svg#briefcase'
+      }, {
+        linkUrl: '/blog',
+        text: 'Blog',
+        iconClass: 'blog',
+        iconUrl: 'icons/blog.svg#blog'
+      }, {
+        linkUrl: '/about',
+        text: 'About',
+        iconClass: 'user',
+        iconUrl: 'icons/user.svg#user'
+      }, {
+        linkUrl: '/resume',
+        text: 'Resumé',
+        iconClass: 'file',
+        iconUrl: 'icons/file.svg#file'
+      }, {
+        linkUrl: '/contact',
+        text: 'Contact',
+        iconClass: 'message-circle',
+        iconUrl: 'icons/message-circle.svg#message-circle'
+      }
+    ] %}
+    <header  id="menu">
       <ul>
-        <li>
-          <a href="/">
-            <svg class="home">
-              <use href="icons/home.svg#home"/>
-            </svg>
-            <span class="menu-item-text">Home</span>
-            <svg class="chevron-right">
-              <use href="icons/chevron-right.svg#chevron-right"/>
-            </svg>
-          </a>
-        </li>
-        <li>
-          <a href="/projects">
-            <svg class="briefcase">
-              <use href="icons/briefcase.svg#briefcase"/>
-            </svg>
-            <span class="menu-item-text">Projects</span>
-            <svg class="chevron-right">
-              <use href="icons/chevron-right.svg#chevron-right"/>
-            </svg>
-          </a>
-        </li>
-        <li>
-          <a href="/blog">
-            <svg class="blog">
-              <use href="icons/blog.svg#blog"/>
-            </svg>
-            <span class="menu-item-text">Blog</span>
-            <svg class="chevron-right">
-              <use href="icons/chevron-right.svg#chevron-right"/>
-            </svg>
-          </a>
-        </li>
-        <li>
-          <a href="/about">
-            <svg class="user">
-              <use href="icons/user.svg#user"/>
-            </svg>
-            <span class="menu-item-text">About</span>
-            <svg class="chevron-right">
-              <use href="icons/chevron-right.svg#chevron-right"/>
-            </svg>
-          </a>
-        </li>
-        <li>
-          <a href="/resume">
-            <svg class="file">
-              <use href="icons/file.svg#file"/>
-            </svg>
-            <span class="menu-item-text">Resume</span>
-            <svg class="chevron-right">
-              <use href="icons/chevron-right.svg#chevron-right"/>
-            </svg>
-          </a>
-        </li>
-        <li>
-          <a href="/contact">
-            <svg class="message-circle">
-              <use href="icons/message-circle.svg#message-circle"/>
-            </svg>
-            <span class="menu-item-text">Contact</span>
-            <svg class="chevron-right">
-              <use href="icons/chevron-right.svg#chevron-right"/>
-            </svg>
-          </a>
-        </li>
+        {% for link in links %}
+          <li>
+            <a href="{{link.linkUrl}}">
+              <svg class="{{link.iconClass}}">
+                <use href="{{link.iconUrl}}"/>
+              </svg>
+              <span class="menu-item-text">{{link.text}}</span>
+              <svg class="chevron-right">
+                <use href="icons/chevron-right.svg#chevron-right"/>
+              </svg>
+            </a>
+          </li>
+        {% endfor %}
       </ul>
+      <div class="menu-toggle" onClick="toggleMenu()"></div>
     </header>
     <div class="top-bar">
       <svg class="sun">
         <use href="icons/sun.svg#sun"/>
       </svg>
     </div>
-    <div class="content">
-      {{ content | safe }}
+    <div class="content-container">
+      <div class="content">
+        {{ content | safe }}
+      </div>
     </div>
   </body>
 </html>

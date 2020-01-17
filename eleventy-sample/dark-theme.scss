@@ -1,4 +1,12 @@
-.menu {
+.text-link {
+  border-bottom: 2px solid #626ed4;
+
+  &:hover {
+    background-color: #36394c;
+  }
+}
+
+#menu {
   background-color: #2a3142;
 }
 
@@ -6,11 +14,11 @@
   background-color: #36394c;
 }
 
-.content {
+.content-container {
   background-color: #252735;
 }
 
-.menu,
+#menu,
 .top-bar,
 .content {
   color: #f8f8fa;
