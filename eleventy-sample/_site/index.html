@@ -3,24 +3,27 @@
   <head>
     <title>Home | Tony Prokop</title>
     <link href="https://fonts.googleapis.com/css?family=Sniglet&display=swap" rel="stylesheet">
-    
+
     
     <style>
-      body{margin:0;display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto 1fr;height:100vh;font-size:12px;font-family:system-ui,sans-serif}a{text-decoration:none}h1{font-size:4rem;font-family:Sniglet,cursive;font-weight:400;margin:3rem 0}p{font-size:1.5rem;margin:1rem 0}#menu{grid-column:1/2;grid-row:1/3;position:relative}#menu ul{list-style:none;padding:0;margin:0}#menu li{padding:1rem;font-size:1.5rem}#menu li a{display:flex;align-items:center}#menu li object{width:30px;height:auto}#menu .menu-item-text{flex-grow:1;padding:0 1rem;font-family:Sniglet,cursive}#menu.active .chevron-right,#menu.active .menu-item-text{opacity:1}#menu.active .menu-item-text{width:unset}#menu .chevron-right,#menu .menu-item-text{transition:all 1s;opacity:0;width:0;padding:0}#menu .menu-toggle{position:absolute;top:0;bottom:0;right:0;width:5px;cursor:grabbing}.top-bar{grid-column:2/3;grid-row:1/2;display:flex;flex-direction:row-reverse}.sun{padding:1rem}.content-container{grid-column:2/3;grid-row:2/3;overflow-y:scroll}.content{padding:0 3rem;max-width:750px;margin:auto}.blog,.briefcase,.chevron-down,.chevron-left,.chevron-right,.chevron-up,.file,.home,.message-circle,.sun,.user{width:24px;height:24px}.codepen,.facebook,.github,.linkedin,.mail,.rss,.twitter{width:24px;height:24px}.external-links{margin:3rem 0;display:flex}.external-links a{display:block;margin:0 .5rem}.external-links a:first-child{margin-left:0}.external-links a:last-child{margin-right:0}
-      .text-link{border-bottom:2px solid #626ed4}.text-link:hover{background-color:#36394c}#menu{background-color:#2a3142}.top-bar{background-color:#36394c}.content-container{background-color:#252735}#menu,.content,.top-bar{color:#f8f8fa}#menu a,#menu object svg,.content a,.content object svg,.top-bar a,.top-bar object svg{color:#f8f8fa}
+      body{margin:0;display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto 1fr;height:100vh;font-size:12px;font-family:system-ui, sans-serif}a{text-decoration:none}h1{font-size:4rem;font-family:Sniglet, cursive;font-weight:normal;margin:3rem 0}p{font-size:1.5rem;margin:1rem 0}#menu{grid-column:1 / 2;grid-row:1 / 3;position:relative}#menu ul{list-style:none;padding:0;margin:0}#menu li{padding:1rem;font-size:1.5rem;display:flex;align-items:center}#menu li object{width:30px;height:auto}#menu .menu-item-text{flex-grow:1;padding:0 1rem;font-family:Sniglet, cursive}#menu.active .menu-item-text,#menu.active .chevron-right{display:block}#menu .menu-item-text,#menu .chevron-right{display:none}.top-bar{grid-column:2 / 3;grid-row:1 / 2;display:flex;flex-direction:row-reverse}.sun{padding:1rem}.content-container{grid-column:2 / 3;grid-row:2 / 3;overflow-y:scroll}.content{padding:0 3rem;max-width:750px;margin:auto}.home,.briefcase,.blog,.user,.file,.message-circle,.chevron-up,.chevron-down,.chevron-left,.chevron-right,.sun{width:24px;height:24px}.mail,.linkedin,.twitter,.facebook,.github,.codepen,.rss{width:24px;height:24px}.external-links{margin:3rem 0;display:flex}.external-links a{display:block;margin:0 0.5rem}.external-links a:first-child{margin-left:0}.external-links a:last-child{margin-right:0}
+
+      .text-link{border-bottom:2px solid #626ed4}.text-link:hover{background-color:#36394c}#menu{background-color:#2a3142}#menu li:hover{background-color:#2f374a}.top-bar{background-color:#36394c}.content-container{background-color:#252735}#menu,.top-bar,.content{color:#f8f8fa}#menu a,#menu object svg,.top-bar a,.top-bar object svg,.content a,.content object svg{color:#f8f8fa}
+
     </style>
+
     
     <script>
-      function toggleMenu(){var e=document.getElementById("menu");e.classList.contains("active")?e.classList.remove("active"):e.classList.add("active")}
+      function openMenu(){document.getElementById("menu").classList.add("active")}function closeMenu(){document.getElementById("menu").classList.remove("active")}
     </script>
   </head>
   <body>
     
-    <header  id="menu">
+    <header id="menu" onmouseover="openMenu()" onmouseleave="closeMenu()">
       <ul>
         
-          <li>
-            <a href="/">
+          <a href="/">
+            <li>
               <svg class="home">
                 <use href="icons/home.svg#home"/>
               </svg>
@@ -28,11 +31,11 @@
               <svg class="chevron-right">
                 <use href="icons/chevron-right.svg#chevron-right"/>
               </svg>
-            </a>
-          </li>
+            </li>
+          </a>
         
-          <li>
-            <a href="/projects">
+          <a href="/projects">
+            <li>
               <svg class="briefcase">
                 <use href="icons/briefcase.svg#briefcase"/>
               </svg>
@@ -40,11 +43,11 @@
               <svg class="chevron-right">
                 <use href="icons/chevron-right.svg#chevron-right"/>
               </svg>
-            </a>
-          </li>
+            </li>
+          </a>
         
-          <li>
-            <a href="/blog">
+          <a href="/blog">
+            <li>
               <svg class="blog">
                 <use href="icons/blog.svg#blog"/>
               </svg>
@@ -52,11 +55,11 @@
               <svg class="chevron-right">
                 <use href="icons/chevron-right.svg#chevron-right"/>
               </svg>
-            </a>
-          </li>
+            </li>
+          </a>
         
-          <li>
-            <a href="/about">
+          <a href="/about">
+            <li>
               <svg class="user">
                 <use href="icons/user.svg#user"/>
               </svg>
@@ -64,11 +67,11 @@
               <svg class="chevron-right">
                 <use href="icons/chevron-right.svg#chevron-right"/>
               </svg>
-            </a>
-          </li>
+            </li>
+          </a>
         
-          <li>
-            <a href="/resume">
+          <a href="/resume">
+            <li>
               <svg class="file">
                 <use href="icons/file.svg#file"/>
               </svg>
@@ -76,11 +79,11 @@
               <svg class="chevron-right">
                 <use href="icons/chevron-right.svg#chevron-right"/>
               </svg>
-            </a>
-          </li>
+            </li>
+          </a>
         
-          <li>
-            <a href="/contact">
+          <a href="/contact">
+            <li>
               <svg class="message-circle">
                 <use href="icons/message-circle.svg#message-circle"/>
               </svg>
@@ -88,11 +91,10 @@
               <svg class="chevron-right">
                 <use href="icons/chevron-right.svg#chevron-right"/>
               </svg>
-            </a>
-          </li>
+            </li>
+          </a>
         
       </ul>
-      <div class="menu-toggle" onClick="toggleMenu()"></div>
     </header>
     <div class="top-bar">
       <svg class="sun">
@@ -157,6 +159,8 @@
         </a>
     
 </div>
+
+<img src="/img/tony_prokop.jpg"/>
       </div>
     </div>
   </body>

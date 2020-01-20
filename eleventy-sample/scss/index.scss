@@ -38,11 +38,8 @@ p {
   li {
     padding: 1rem;
     font-size: 1.5rem;
-
-    a {
-      display: flex;
-      align-items: center;
-    }
+    display: flex;
+    align-items: center;
 
     object {
       width: 30px;
@@ -59,29 +56,13 @@ p {
   &.active {
     .menu-item-text,
     .chevron-right {
-      opacity: 1;
-    }
-
-    .menu-item-text {
-      width: unset;
+      display: block;
     }
   }
 
   .menu-item-text,
   .chevron-right {
-    transition: all 1s;
-    opacity: 0;
-    width: 0;
-    padding: 0;
-  }
-
-  .menu-toggle {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 5px;
-    cursor: grabbing;
+    display: none;
   }
 }
 
