@@ -1,8 +1,7 @@
-function toggleMenu() {
-  var menu = document.getElementById("menu")
-  if (menu.classList.contains("active")) {
-    menu.classList.remove("active")
-  } else {
-    menu.classList.add("active")
-  }
+function openMenu() {
+  document.getElementById("menu").classList.add("active")
+}
+
+function closeMenu() {
+  document.getElementById("menu").classList.remove("active")
 }

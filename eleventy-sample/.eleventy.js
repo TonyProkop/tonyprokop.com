@@ -1,10 +1,11 @@
 const CleanCSS = require("clean-css")
 const Terser = require("terser")
-const sass = require("./config/sass-process")
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("icons")
+  eleventyConfig.addPassthroughCopy("css")
   eleventyConfig.addPassthroughCopy("index.js")
+  eleventyConfig.addPassthroughCopy("img")
 
   eleventyConfig.addFilter("cssmin", function(code) {
     return new CleanCSS({}).minify(code).styles
@@ -19,9 +20,6 @@ module.exports = function(eleventyConfig) {
 
     return minified.code
   })
-
-  sass("./index.scss", "./_includes/index.css")
-  sass("./dark-theme.scss", "./_includes/dark-theme.css")
 
   return {
     passthroughFileCopy: true,

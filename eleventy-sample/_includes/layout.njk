@@ -3,7 +3,8 @@
   <head>
     <title>{{ title }} | Tony Prokop</title>
     <link href="https://fonts.googleapis.com/css?family=Sniglet&display=swap" rel="stylesheet">
-    {% set css %}
+
+    {# {% set css %}
     {% include "index.css" %}
     {% endset %}
     {% set darkTheme %}
@@ -12,7 +13,12 @@
     <style>
       {{css | cssmin | safe}}
       {{darkTheme | cssmin | safe}}
+    </style> #}
+    <style>
+      {% include "css/index.css" %}
+      {% include "css/dark-theme.css" %}
     </style>
+
     {% set js %}
     {% include "index.js" %}
     {% endset %}
@@ -54,11 +60,11 @@
         iconUrl: 'icons/message-circle.svg#message-circle'
       }
     ] %}
-    <header  id="menu">
+    <header id="menu" onmouseover="openMenu()" onmouseleave="closeMenu()">
       <ul>
         {% for link in links %}
-          <li>
-            <a href="{{link.linkUrl}}">
+          <a href="{{link.linkUrl}}">
+            <li>
               <svg class="{{link.iconClass}}">
                 <use href="{{link.iconUrl}}"/>
               </svg>
@@ -66,11 +72,10 @@
               <svg class="chevron-right">
                 <use href="icons/chevron-right.svg#chevron-right"/>
               </svg>
-            </a>
-          </li>
+            </li>
+          </a>
         {% endfor %}
       </ul>
-      <div class="menu-toggle" onClick="toggleMenu()"></div>
     </header>
     <div class="top-bar">
       <svg class="sun">
