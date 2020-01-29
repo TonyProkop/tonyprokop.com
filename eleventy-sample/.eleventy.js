@@ -4,6 +4,7 @@ const Terser = require("terser")
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("icons")
   eleventyConfig.addPassthroughCopy("css")
+  eleventyConfig.addPassthroughCopy("scripts")
   eleventyConfig.addPassthroughCopy("index.js")
   eleventyConfig.addPassthroughCopy("img")
 

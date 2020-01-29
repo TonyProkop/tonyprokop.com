@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact | Tony Prokop</title>
+    <link href="https://fonts.googleapis.com/css?family=Sniglet&display=swap" rel="stylesheet">
+    <style>
+      body{margin:0;display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto 1fr;height:100vh;font-size:12px;font-family:system-ui, sans-serif}a{text-decoration:none}h1{font-size:4rem;font-family:Sniglet, cursive;font-weight:normal;margin:5rem 0 3rem}p{font-size:1.25rem;margin:2rem 0;line-height:2rem}svg{fill:none}#menu{grid-column:1 / 2;grid-row:1 / 3;position:relative}#menu a{font-style:normal}#menu ul{list-style:none;padding:0;margin:0}#menu li{padding:1rem;font-size:1.25rem;display:flex;align-items:center}#menu li object{width:30px;height:auto}#menu .menu-item-text{flex-grow:1;padding:0 1rem;font-family:Sniglet, cursive}#menu.active .menu-item-text,#menu.active .chevron-right{display:block}#menu .menu-item-text,#menu .chevron-right{display:none}.top-bar{grid-column:2 / 3;grid-row:1 / 2;display:flex;flex-direction:row-reverse}.sun{padding:1rem}.content-container{grid-column:2 / 3;grid-row:2 / 3;overflow-y:scroll}.content{padding:0 3rem;max-width:750px;margin:auto}.home,.briefcase,.blog,.user,.file,.message-circle,.chevron-up,.chevron-down,.chevron-left,.chevron-right,.sun{width:24px;height:24px}.external-links{margin:3rem 0;display:flex}.external-links a{display:block;margin:0 0.5rem;border-bottom:none}.external-links a:hover{background:none}.external-links a:first-child{margin-left:0}.external-links a:last-child{margin-right:0}.external-links .mail,.external-links .linkedin,.external-links .twitter,.external-links .facebook,.external-links .github,.external-links .codepen,.external-links .rss{width:24px;height:24px}
+
+      a{border-bottom:2px solid #626ed4;font-style:italic}a:hover{background-color:#36394c}#menu{background-color:#2a3142}#menu li:hover{background-color:#2f374a}.top-bar{background-color:#36394c}.content-container{background-color:#252735}#menu,.top-bar,.content{color:#f8f8fa}#menu a,#menu object svg,.top-bar a,.top-bar object svg,.content a,.content object svg{color:#f8f8fa}
+
+    </style>
+    
+    <script>
+      function openMenu(){document.getElementById("menu").classList.add("active")}function closeMenu(){document.getElementById("menu").classList.remove("active")}
+    </script>
+  </head>
+  <body>
+    
+    <header id="menu" onmouseover="openMenu()" onmouseleave="closeMenu()">
+      <ul>
+        
+          <a href="/">
+            <li>
+              <svg class="home">
+                <use href="/icons/home.svg#home"/>
+              </svg>
+              <span class="menu-item-text">Home</span>
+              <svg class="chevron-right">
+                <use href="/icons/chevron-right.svg#chevron-right"/>
+              </svg>
+            </li>
+          </a>
+        
+          <a href="/projects">
+            <li>
+              <svg class="briefcase">
+                <use href="/icons/briefcase.svg#briefcase"/>
+              </svg>
+              <span class="menu-item-text">Projects</span>
+              <svg class="chevron-right">
+                <use href="/icons/chevron-right.svg#chevron-right"/>
+              </svg>
+            </li>
+          </a>
+        
+          <a href="/blog">
+            <li>
+              <svg class="blog">
+                <use href="/icons/blog.svg#blog"/>
+              </svg>
+              <span class="menu-item-text">Blog</span>
+              <svg class="chevron-right">
+                <use href="/icons/chevron-right.svg#chevron-right"/>
+              </svg>
+            </li>
+          </a>
+        
+          <a href="/about">
+            <li>
+              <svg class="user">
+                <use href="/icons/user.svg#user"/>
+              </svg>
+              <span class="menu-item-text">About</span>
+              <svg class="chevron-right">
+                <use href="/icons/chevron-right.svg#chevron-right"/>
+              </svg>
+            </li>
+          </a>
+        
+          <a href="/resume">
+            <li>
+              <svg class="file">
+                <use href="/icons/file.svg#file"/>
+              </svg>
+              <span class="menu-item-text">Resumé</span>
+              <svg class="chevron-right">
+                <use href="/icons/chevron-right.svg#chevron-right"/>
+              </svg>
+            </li>
+          </a>
+        
+          <a href="/contact">
+            <li>
+              <svg class="message-circle">
+                <use href="/icons/message-circle.svg#message-circle"/>
+              </svg>
+              <span class="menu-item-text">Contact</span>
+              <svg class="chevron-right">
+                <use href="/icons/chevron-right.svg#chevron-right"/>
+              </svg>
+            </li>
+          </a>
+        
+      </ul>
+    </header>
+    <div class="top-bar">
+      <svg class="sun">
+        <use href="/icons/sun.svg#sun"/>
+      </svg>
+    </div>
+    <div class="content-container">
+      <div class="content">
+        
+<h1>Contact</h1>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+$green: #5cdb95;
+
+body {
+  margin: 0;
+  font-family: Nunito, sans-serif;
+}
+
+header {
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: $green;
+  }
+}

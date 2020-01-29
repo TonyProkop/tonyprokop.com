@@ -3,24 +3,12 @@
   <head>
     <title>{{ title }} | Tony Prokop</title>
     <link href="https://fonts.googleapis.com/css?family=Sniglet&display=swap" rel="stylesheet">
-
-    {# {% set css %}
-    {% include "index.css" %}
-    {% endset %}
-    {% set darkTheme %}
-    {% include "dark-theme.css" %}
-    {% endset %}
-    <style>
-      {{css | cssmin | safe}}
-      {{darkTheme | cssmin | safe}}
-    </style> #}
     <style>
       {% include "css/index.css" %}
       {% include "css/dark-theme.css" %}
     </style>
-
     {% set js %}
-    {% include "index.js" %}
+    {% include "scripts/index.js" %}
     {% endset %}
     <script>
       {{ js | jsmin | safe }}
@@ -32,32 +20,32 @@
         linkUrl: '/',
         text: 'Home',
         iconClass: 'home',
-        iconUrl: 'icons/home.svg#home'
+        iconUrl: '/icons/home.svg#home'
       }, {
         linkUrl: '/projects',
         text: 'Projects',
         iconClass: 'briefcase',
-        iconUrl: 'icons/briefcase.svg#briefcase'
+        iconUrl: '/icons/briefcase.svg#briefcase'
       }, {
         linkUrl: '/blog',
         text: 'Blog',
         iconClass: 'blog',
-        iconUrl: 'icons/blog.svg#blog'
+        iconUrl: '/icons/blog.svg#blog'
       }, {
         linkUrl: '/about',
         text: 'About',
         iconClass: 'user',
-        iconUrl: 'icons/user.svg#user'
+        iconUrl: '/icons/user.svg#user'
       }, {
         linkUrl: '/resume',
         text: 'Resumé',
         iconClass: 'file',
-        iconUrl: 'icons/file.svg#file'
+        iconUrl: '/icons/file.svg#file'
       }, {
         linkUrl: '/contact',
         text: 'Contact',
         iconClass: 'message-circle',
-        iconUrl: 'icons/message-circle.svg#message-circle'
+        iconUrl: '/icons/message-circle.svg#message-circle'
       }
     ] %}
     <header id="menu" onmouseover="openMenu()" onmouseleave="closeMenu()">
@@ -70,7 +58,7 @@
               </svg>
               <span class="menu-item-text">{{link.text}}</span>
               <svg class="chevron-right">
-                <use href="icons/chevron-right.svg#chevron-right"/>
+                <use href="/icons/chevron-right.svg#chevron-right"/>
               </svg>
             </li>
           </a>
@@ -79,7 +67,7 @@
     </header>
     <div class="top-bar">
       <svg class="sun">
-        <use href="icons/sun.svg#sun"/>
+        <use href="/icons/sun.svg#sun"/>
       </svg>
     </div>
     <div class="content-container">
