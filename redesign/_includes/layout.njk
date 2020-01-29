@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title }} | Tony Prokop</title>
+        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+        <style>
+            {% include "css/index.css" %}
+        </style>
+    </head>
+    <body>
+        <header>
+            <div>Tony <span>Prokop</span></div>
+        </header>
+        {{content | safe}}
+    </body>
+</html>
