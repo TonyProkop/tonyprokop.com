@@ -1,16 +1,225 @@
 $green: #5cdb95;
 
-body {
-  margin: 0;
-  font-family: Nunito, sans-serif;
+@mixin BoxShadow($dp) {
+  @if $dp==0 {
+    box-shadow: none;
+  } @else if $dp==1 {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+      0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  } @else if $dp==2 {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+      0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  } @else if $dp==3 {
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
+      0 3px 3px -2px rgba(0, 0, 0, 0.12), 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+  } @else if $dp==4 {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+      0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  } @else if $dp==6 {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14),
+      0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+  } @else if $dp==8 {
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+      0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  } @else if $dp==9 {
+    box-shadow: 0 9px 12px 1px rgba(0, 0, 0, 0.14),
+      0 3px 16px 2px rgba(0, 0, 0, 0.12), 0 5px 6px -3px rgba(0, 0, 0, 0.2);
+  } @else if $dp==12 {
+    box-shadow: 0 12px 17px 2px rgba(0, 0, 0, 0.14),
+      0 5px 22px 4px rgba(0, 0, 0, 0.12), 0 7px 8px -4px rgba(0, 0, 0, 0.2);
+  } @else if $dp==16 {
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+      0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  } @else if $dp==24 {
+    box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14),
+      0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
+  } @else {
+    @error "Invalid argument for $dp: {" + $dp + "}, look at the method definition for possible values";
+  }
 }
 
-header {
-  &::before {
+* {
+  box-sizing: border-box;
+}
+
+svg {
+  box-sizing: content-box;
+  width: 30px;
+  height: 30px;
+  padding: 0.5rem;
+  fill: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  font-size: 12px;
+}
+
+body {
+  margin: 0;
+  font-size: 1.5rem;
+  font-family: Nunito, sans-serif;
+
+  &:before {
     content: "";
     display: block;
     width: 100%;
     height: 5px;
     background-color: $green;
   }
+}
+
+.content-container {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.layer {
+  @include BoxShadow(1);
+
+  & > .layer {
+    @include BoxShadow(2);
+    & > .layer {
+      @include BoxShadow(3);
+    }
+  }
+}
+
+.icon-button {
+  @include BoxShadow(1);
+  padding: 0.5rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+.logo {
+  text-transform: uppercase;
+  font-size: 2rem;
+
+  span {
+    font-weight: bold;
+  }
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 8rem;
+}
+
+.cta-buttons {
+  display: flex;
+
+  a {
+    margin: 0 1rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+section {
+  margin-top: 10rem;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 4rem;
+
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: $green;
+  }
+}
+
+h1,
+h2,
+p {
+  margin: 3rem 0;
+}
+
+.gallery-controls {
+  svg {
+    margin: 0 0.5rem;
+    cursor: pointer;
+  }
+}
+
+#work-container {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: scroll;
+  padding: 1px; // to fix the cards not having box-shadow
+}
+
+.work-card {
+  @include BoxShadow(1);
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: calc((100% - 6rem) / 3);
+  margin: 0 1.5rem;
+  padding: 3rem;
+
+  &:hover {
+    @include BoxShadow(2);
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  img {
+    width: 100%;
+    margin: 3rem 0;
+  }
+
+  .work-name {
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin: 3rem 0 1rem;
+  }
+
+  .work-copy {
+    margin: 1rem 0;
+  }
+
+  .view-work {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.contact-email-link {
+  font-weight: bold;
+  font-size: 7rem;
+  text-decoration: underline;
+  display: block;
+  margin: 8rem 0;
 }

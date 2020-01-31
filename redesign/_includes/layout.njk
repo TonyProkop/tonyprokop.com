@@ -2,15 +2,26 @@
 <html>
     <head>
         <title>{{ title }} | Tony Prokop</title>
-        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
         <style>
             {% include "css/index.css" %}
         </style>
+        {% set js %}
+        {% include "js/index.js" %}
+        {% endset %}
+        <script>
+        {{ js | jsmin | safe }}
+        </script>
     </head>
     <body>
-        <header>
-            <div>Tony <span>Prokop</span></div>
+        <header class="layer">
+            <div class="logo">Tony<span>Prokop</span></div>
+            <svg class="moon layer">
+                <use href="/icons/moon.svg#moon"></use>
+            </svg>
         </header>
-        {{content | safe}}
+        <div class="content-container">
+            {{content | safe}}
+        </div>
     </body>
 </html>
