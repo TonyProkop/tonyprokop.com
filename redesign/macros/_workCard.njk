@@ -1,0 +1,13 @@
+{% macro workCard(imageUrl, name, copy, linkUrl) %}
+    <a href="{{ linkUrl }}" class="work-card">
+        <img src="{{ imageUrl }}" alt={{ name }} />
+        <h3 class="work-name">{{ name }}</h3>
+        <p class="work-copy">{{ copy }}</p>
+        <div class="view-work">
+            View Work
+            <svg class="chevron-right">
+                <use href="/icons/chevron-right.svg#chevron-right"/>
+            </svg>
+        </div>
+    </a>
+{% endmacro %}

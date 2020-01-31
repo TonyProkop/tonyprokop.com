@@ -2,17 +2,132 @@
 <html>
     <head>
         <title>Home | Tony Prokop</title>
-        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
         <style>
-            body{margin:0;font-family:Nunito, sans-serif}header::before{content:"";display:block;width:100%;height:5px;background-color:#5cdb95}
+            *{box-sizing:border-box}svg{box-sizing:content-box;width:30px;height:30px;padding:0.5rem;fill:none}a{text-decoration:none;color:inherit}html{font-size:12px}body{margin:0;font-size:1.5rem;font-family:Nunito, sans-serif}body:before{content:"";display:block;width:100%;height:5px;background-color:#5cdb95}.content-container{width:80vw;margin:0 auto}.layer{box-shadow:0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12),0 1px 3px 0 rgba(0,0,0,0.2)}.layer>.layer{box-shadow:0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2)}.layer>.layer>.layer{box-shadow:0 3px 4px 0 rgba(0,0,0,0.14),0 3px 3px -2px rgba(0,0,0,0.12),0 1px 8px 0 rgba(0,0,0,0.2)}.icon-button{box-shadow:0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12),0 1px 3px 0 rgba(0,0,0,0.2);padding:0.5rem}header{display:flex;justify-content:space-between;align-items:center;padding:2rem}.logo{text-transform:uppercase;font-size:2rem}.logo span{font-weight:bold}h1{text-transform:uppercase;font-size:8rem}.cta-buttons{display:flex}.cta-buttons a{margin:0 1rem}.cta-buttons a:first-child{margin-left:0}.cta-buttons a:last-child{margin-right:0}section{margin-top:10rem}.section-heading{display:flex;justify-content:space-between;align-items:center}h2{text-transform:uppercase;font-size:4rem}h2:after{content:"";display:block;width:100%;height:5px;background-color:#5cdb95}h1,h2,p{margin:3rem 0}.gallery-controls svg{margin:0 0.5rem;cursor:pointer}#work-container{display:flex;justify-content:space-between;overflow-x:scroll;padding:1px}.work-card{box-shadow:0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12),0 1px 3px 0 rgba(0,0,0,0.2);flex-grow:0;flex-shrink:0;flex-basis:calc((100% - 6rem) / 3);margin:0 1.5rem;padding:3rem}.work-card:hover{box-shadow:0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2)}.work-card:first-child{margin-left:0}.work-card:last-child{margin-right:0}.work-card img{width:100%;margin:3rem 0}.work-card .work-name{text-transform:uppercase;font-size:2rem;margin:3rem 0 1rem}.work-card .work-copy{margin:1rem 0}.work-card .view-work{font-weight:bold;display:flex;align-items:center}.contact-email-link{font-weight:bold;font-size:7rem;text-decoration:underline;display:block;margin:8rem 0}
 
         </style>
+        
+        <script>
+        function convertRemToPixels(e){return e*parseFloat(getComputedStyle(document.documentElement).fontSize)}document.addEventListener("click",(function(e){if(e.target.matches("#scroll-work-right-control")){var t=document.getElementsByClassName("work-card")[0].scrollWidth;(o=document.getElementById("work-container")).scrollLeft=o.scrollLeft+t+convertRemToPixels(6)}if(e.target.matches("#scroll-work-left-control")){var o;t=document.getElementsByClassName("work-card")[0].scrollWidth;(o=document.getElementById("work-container")).scrollLeft=o.scrollLeft-t-convertRemToPixels(6)}}));
+        </script>
     </head>
     <body>
-        <header>
-            <div>Tony <span>Prokop</span></div>
+        <header class="layer">
+            <div class="logo">Tony<span>Prokop</span></div>
+            <svg class="moon layer">
+                <use href="/icons/moon.svg#moon"></use>
+            </svg>
         </header>
-        
+        <div class="content-container">
+            
 <h1>I'm Tony Prokop, a front-end web developer.</h1>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+
+
+<div class="cta-buttons">
+    
+        <a href="mailto:prokop.tony@gmail.com">
+            <svg class="mail layer">
+                <use href="/icons/mail.svg#mail"/>
+            </svg>
+        </a>
+    
+        <a href="https://www.linkedin.com/in/tony-prokop">
+            <svg class="linkedin layer">
+                <use href="/icons/linkedin.svg#linkedin"/>
+            </svg>
+        </a>
+    
+        <a href="https://github.com/TonyProkop">
+            <svg class="github layer">
+                <use href="/icons/github.svg#github"/>
+            </svg>
+        </a>
+    
+        <a href="/#latest-work">
+            <svg class="chevron-down layer">
+                <use href="/icons/chevron-down.svg#chevron-down"/>
+            </svg>
+        </a>
+    
+</div>
+
+<section>
+    <div id="latest-work" class="section-heading">
+        <h2>Latest Work</h2>
+        <div class="gallery-controls">
+            <svg id="scroll-work-left-control" class="chevron-left layer">
+                <use href="/icons/chevron-left.svg#chevron-left"/>
+            </svg>
+            <svg id="scroll-work-right-control" class="chevron-right layer">
+                <use href="/icons/chevron-right.svg#chevron-right"/>
+            </svg>
+        </div>
+    </div>
+    <div id="work-container">
+        
+        
+    <a href="https://getflywheel.com/" class="work-card">
+        <img src="/images/flywheel.png" alt=Flywheel />
+        <h3 class="work-name">Flywheel</h3>
+        <p class="work-copy">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s</p>
+        <div class="view-work">
+            View Work
+            <svg class="chevron-right">
+                <use href="/icons/chevron-right.svg#chevron-right"/>
+            </svg>
+        </div>
+    </a>
+
+        
+    <a href="https://www.speedwaymotors.com/" class="work-card">
+        <img src="/images/speedway_motors.png" alt=Speedway Motors />
+        <h3 class="work-name">Speedway Motors</h3>
+        <p class="work-copy">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s</p>
+        <div class="view-work">
+            View Work
+            <svg class="chevron-right">
+                <use href="/icons/chevron-right.svg#chevron-right"/>
+            </svg>
+        </div>
+    </a>
+
+        
+    <a href="https://tonykatiewedding.com/" class="work-card">
+        <img src="/images/my_wedding.png" alt=My Wedding />
+        <h3 class="work-name">My Wedding</h3>
+        <p class="work-copy">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s</p>
+        <div class="view-work">
+            View Work
+            <svg class="chevron-right">
+                <use href="/icons/chevron-right.svg#chevron-right"/>
+            </svg>
+        </div>
+    </a>
+
+        
+    <a href="https://tonykatiewedding.com/" class="work-card">
+        <img src="/images/my_wedding.png" alt=My Wedding />
+        <h3 class="work-name">My Wedding</h3>
+        <p class="work-copy">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s</p>
+        <div class="view-work">
+            View Work
+            <svg class="chevron-right">
+                <use href="/icons/chevron-right.svg#chevron-right"/>
+            </svg>
+        </div>
+    </a>
+
+    </div>
+</section>
+
+<section>
+    <div class="section-heading">
+        <h2>Contact</h2>
+    </div>
+    <a href="mailto:prokop.tony@gmail.com" class="contact-email-link">prokop.tony@gmail.com</a>
+</section>
+        </div>
     </body>
 </html>

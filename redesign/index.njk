@@ -4,3 +4,61 @@ title: Home
 ---
 
 <h1>I'm Tony Prokop, a front-end web developer.</h1>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+
+{% set ctas = [
+    {
+        linkUrl: 'mailto:prokop.tony@gmail.com',
+        class: 'mail',
+        iconUrl: '/icons/mail.svg#mail'
+    }, {
+        linkUrl: 'https://www.linkedin.com/in/tony-prokop',
+        class: 'linkedin',
+        iconUrl: '/icons/linkedin.svg#linkedin'
+    }, {
+        linkUrl: 'https://github.com/TonyProkop',
+        class: 'github',
+        iconUrl: '/icons/github.svg#github'
+    }, {
+        linkUrl: '/#latest-work',
+        class: 'chevron-down',
+        iconUrl: '/icons/chevron-down.svg#chevron-down'
+    }
+] %}
+<div class="cta-buttons">
+    {% for cta in ctas %}
+        <a href="{{cta.linkUrl}}">
+            <svg class="{{cta.class}} layer">
+                <use href="{{cta.iconUrl}}"/>
+            </svg>
+        </a>
+    {% endfor %}
+</div>
+
+<section>
+    <div id="latest-work" class="section-heading">
+        <h2>Latest Work</h2>
+        <div class="gallery-controls">
+            <svg id="scroll-work-left-control" class="chevron-left layer">
+                <use href="/icons/chevron-left.svg#chevron-left"/>
+            </svg>
+            <svg id="scroll-work-right-control" class="chevron-right layer">
+                <use href="/icons/chevron-right.svg#chevron-right"/>
+            </svg>
+        </div>
+    </div>
+    <div id="work-container">
+        {% from "macros/_workCard.njk" import workCard %}
+        {{ workCard("/images/flywheel.png", "Flywheel", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", "https://getflywheel.com/") }}
+        {{ workCard("/images/speedway_motors.png", "Speedway Motors", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", "https://www.speedwaymotors.com/") }}
+        {{ workCard("/images/my_wedding.png", "My Wedding", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", "https://tonykatiewedding.com/") }}
+        {{ workCard("/images/my_wedding.png", "My Wedding", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", "https://tonykatiewedding.com/") }}
+    </div>
+</section>
+
+<section>
+    <div class="section-heading">
+        <h2>Contact</h2>
+    </div>
+    <a href="mailto:prokop.tony@gmail.com" class="contact-email-link">prokop.tony@gmail.com</a>
+</section>
