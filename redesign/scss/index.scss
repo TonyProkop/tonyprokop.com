@@ -78,17 +78,6 @@ body {
   margin: 0 auto;
 }
 
-.layer {
-  @include BoxShadow(1);
-
-  & > .layer {
-    @include BoxShadow(2);
-    & > .layer {
-      @include BoxShadow(3);
-    }
-  }
-}
-
 .icon-button {
   @include BoxShadow(1);
   padding: 0.5rem;
