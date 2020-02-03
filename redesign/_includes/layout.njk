@@ -14,11 +14,10 @@
         </script>
     </head>
     <body>
-        <header class="layer">
+        <header>
             <div class="logo">Tony<span>Prokop</span></div>
-            <svg class="moon layer">
-                <use href="/icons/moon.svg#moon"></use>
-            </svg>
+            {% from "macros/_icon.njk" import icon %}
+            {{ icon('moon') }}
         </header>
         <div class="content-container">
             {{content | safe}}
