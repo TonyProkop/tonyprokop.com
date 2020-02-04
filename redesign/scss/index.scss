@@ -163,6 +163,10 @@ p {
   padding: 1px; // to fix the cards not having box-shadow
 }
 
+.test {
+  color: red;
+}
+
 .work-card {
   @include BoxShadow(1);
   flex-grow: 0;
