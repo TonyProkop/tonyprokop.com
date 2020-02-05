@@ -37,9 +37,7 @@ $green: #5cdb95;
     @error "Invalid argument for $dp: {" + $dp + "}, look at the method definition for possible values";
   }
 }
-.again {
-  font-size: 4rem;
-}
+
 * {
   box-sizing: border-box;
 }
@@ -86,10 +84,16 @@ body {
 }
 
 header {
+  @include BoxShadow(1);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
+
+  .moon,
+  .sun {
+    @include BoxShadow(2);
+  }
 }
 
 .logo {
@@ -106,11 +110,54 @@ h1 {
   font-size: 8rem;
 }
 
+h2 {
+  text-transform: uppercase;
+  font-size: 4rem;
+
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: $green;
+  }
+}
+
+@media (max-width: 1180px) {
+  h1 {
+    font-size: 7rem;
+  }
+}
+
+@media (max-width: 1030px) {
+  h1 {
+    font-size: 6rem;
+  }
+}
+
+@media (max-width: 890px) {
+  h1 {
+    font-size: 5rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 740px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
 .cta-buttons {
   display: flex;
 
   a {
+    @include BoxShadow(1);
     margin: 0 1rem;
+    display: inherit;
 
     &:first-child {
       margin-left: 0;
@@ -132,19 +179,6 @@ section {
   align-items: center;
 }
 
-h2 {
-  text-transform: uppercase;
-  font-size: 4rem;
-
-  &:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 5px;
-    background-color: $green;
-  }
-}
-
 h1,
 h2,
 p {
@@ -153,6 +187,7 @@ p {
 
 .gallery-controls {
   svg {
+    @include BoxShadow(1);
     margin: 0 0.5rem;
     cursor: pointer;
   }
@@ -172,6 +207,7 @@ p {
   flex-basis: calc((100% - 6rem) / 3);
   margin: 0 1.5rem;
   padding: 3rem;
+  min-width: 300px;
 
   &:hover {
     @include BoxShadow(2);

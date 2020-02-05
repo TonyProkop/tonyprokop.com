@@ -21,7 +21,7 @@ title: Home
     }
 ] %}
 
-<h1>I'm Tony Prokop, a web developer.</h1>
+<h1>I'm Tony Prokop,<br />a web developer.</h1>
 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 <div class="cta-buttons">
     {% for cta in ctas %}
@@ -34,15 +34,14 @@ title: Home
 <section>
     <div id="latest-work" class="section-heading">
         <h2>Latest Work</h2>
-        <div class="gallery-controls">
+        {# <div class="gallery-controls">
             {{ icon('chevron-left') }}
             {{ icon('chevron-right') }}
-        </div>
+        </div> #}
     </div>
     <div id="work-container">
         {{ workCard("/images/flywheel.png", "Flywheel", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", "https://getflywheel.com/") }}
         {{ workCard("/images/speedway_motors.png", "Speedway Motors", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", "https://www.speedwaymotors.com/") }}
-        {{ workCard("/images/my_wedding.png", "My Wedding", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", "https://tonykatiewedding.com/") }}
         {{ workCard("/images/my_wedding.png", "My Wedding", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", "https://tonykatiewedding.com/") }}
     </div>
 </section>
