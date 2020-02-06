@@ -1,0 +1,13 @@
+@import "./mixins.scss";
+@import "./variables.scss";
+
+html.dark-mode {
+  @include BackgroundColor-DarkMode(0);
+  color: $color-white;
+
+  header,
+  .work-card,
+  .cta-buttons a {
+    @include BackgroundColor-DarkMode(1);
+  }
+}
