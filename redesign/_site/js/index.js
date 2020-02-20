@@ -31,3 +31,13 @@ document.addEventListener("click", function(event) {
     use.setAttribute("href", "/icons/moon.svg#moon")
   }
 })
+
+// var work_container = document.getElementById('work-container');
+// var clone = work_container.cloneNode(true);
+// clone.id = 'work-container-clone';
+// work_container.after(clone);
+// work_container.onscroll = function() {
+// 	var transform = "-" + work_container.scrollLeft + "px";
+// 	clone.style.marginLeft = transform;
+// 	console.log(transform);
+// }
