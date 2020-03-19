@@ -23,7 +23,7 @@ title: Home
 
 <section>
 	<h1>I'm Tony Prokop,<br />a web developer.</h1>
-	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+	<p>I design and build fast, responsive, and clean web experiences. <br />Have a project you'd like to discuss? Let's talk.</p>
 	<div class="cta-buttons">
 		{% for cta in ctas %}
 			<a href="{{ cta.linkUrl }}">
@@ -42,8 +42,37 @@ title: Home
         </div> #}
     </div>
     <div id="work-container">
-        {{ workCard("/images/flywheel.png", "Flywheel", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", "https://getflywheel.com/") }}
-        {{ workCard("/images/speedway_motors.png", "Speedway Motors", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", "https://www.speedwaymotors.com/") }}
-        {{ workCard("/images/my_wedding.png", "My Wedding", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", "https://tonykatiewedding.com/") }}
+        {{ workCard("/images/flywheel.png", "Flywheel", "My current place of work, Flywheel is a managed WordPress hosting platform that helps creatives do their best work. At Flywheel, I build features that help agencies scale their businesses.", "https://getflywheel.com/") }}
+        {{ workCard("/images/speedway_motors.png", "Speedway Motors", "Speedway Motors is an auto parts store selling to racers and rodders around the world. For 5 years I helped maintain all aspects of the ecommerce platform.", "https://www.speedwaymotors.com/") }}
+        {{ workCard("/images/my_wedding.png", "My Wedding", "A website built to consolidate information for the guests of my wedding and collect RSVPs", "https://tonykatiewedding.com/") }}
     </div>
+</section>
+
+<section>
+	<div id="contact" class="section-heading">
+		<h2>Let's Work Together</h2>
+	</div>
+	<form id="contact-container" name="contact" method="POST" data-netlify="true" netlify-honeypot="yep">
+		<input name="yep" />
+		<ul>
+			<li class="half">
+				<label for="contact-name">Name</label>
+				<input id="contact-name" type="text" name="Name" />
+			</li>
+			<li class="half">
+				<label for="contact-phone">Phone Number</label>
+				<input id="contact-phone" type="text" name="Phone" />
+			</li>
+			<li class="full">
+				<label for="contact-email">Email</label>
+				<input id="contact-email" type="text" name="Email" />
+			</li>
+			<li class="full">
+				<label for="contact-description">Tell me about your project</label>
+				<textarea id="contact-description" name="Description" rows="4"></textarea>
+			</li>
+		</ul>
+
+		<button type="submit" class="primary">Let's Talk</button>
+	</form>
 </section>
