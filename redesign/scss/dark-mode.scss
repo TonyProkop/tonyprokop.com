@@ -1,13 +1,29 @@
-@import "./mixins.scss";
 @import "./variables.scss";
 
 html.dark-mode {
-  @include BackgroundColor-DarkMode(0);
-  color: $color-white;
+	background-color: $color-dark-0;
 
-  header,
-  .work-card,
-  .cta-buttons a {
-    @include BackgroundColor-DarkMode(1);
-  }
+	body {
+		color: $color-gray-0;
+	}
+	
+	header {
+		box-shadow: none;
+	}
+
+	header,
+	.work-card,
+	.cta-buttons a {
+		background-color: $color-dark-1;
+	}
+
+	input[type='text'], textarea {
+		border-color: $color-dark-2;
+		background-color: $color-dark-1;
+		color: $color-white;
+
+		&:focus {
+			border: 3px solid $color-green;
+		}
+	}
 }

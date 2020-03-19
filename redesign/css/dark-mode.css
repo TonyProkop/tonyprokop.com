@@ -1,1 +1,1 @@
-html.dark-mode{background-color:#121212;color:#fff}html.dark-mode header,html.dark-mode .work-card,html.dark-mode .cta-buttons a{background-color:#1c1c1c}
+html.dark-mode{background-color:#121212}html.dark-mode body{color:#ededed}html.dark-mode header{box-shadow:none}html.dark-mode header,html.dark-mode .work-card,html.dark-mode .cta-buttons a{background-color:#1c1c1c}html.dark-mode input[type='text'],html.dark-mode textarea{border-color:#212121;background-color:#1c1c1c;color:#fff}html.dark-mode input[type='text']:focus,html.dark-mode textarea:focus{border:3px solid #5cdb95}
