@@ -4,20 +4,19 @@ title: Home
 ---
 
 {% from "macros/_workCard.njk" import workCard %}
-{% from "macros/_icon.njk" import icon %}
 {% set ctas = [
     {
         linkUrl: 'mailto:prokop.tony@gmail.com',
-        icon: 'mail'
+        icon: '/icons/mail.svg'
     }, {
         linkUrl: 'https://www.linkedin.com/in/tony-prokop',
-        icon: 'linkedin'
+        icon: '/icons/linkedin.svg'
     }, {
         linkUrl: 'https://github.com/TonyProkop',
-        icon: 'github'
+        icon: '/icons/github.svg'
     }, {
         linkUrl: '/#latest-work',
-        icon: 'chevron-down'
+        icon: '/icons/chevron-down.svg'
     }
 ] %}
 
@@ -27,7 +26,7 @@ title: Home
 	<div class="cta-buttons">
 		{% for cta in ctas %}
 			<a href="{{ cta.linkUrl }}">
-				{{ icon(cta.icon) }}
+				{{ cta.icon | svgContents | safe }}
 			</a>
 		{% endfor %}
 	</div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>{{ title }} | Tony Prokop</title>
         <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
@@ -11,8 +11,10 @@
     <body>
         <header>
             <div class="logo">Tony<span>Prokop</span></div>
-            {% from "macros/_icon.njk" import icon %}
-            <span id="theme-toggle">{{ icon('moon') }}</span>
+            <span id="theme-toggle">
+				{{ "/icons/moon.svg" | svgContents | safe }}
+				{{ "/icons/sun.svg" | svgContents | safe }}
+			</span>
         </header>
         <div class="content-container">
             {{content | safe}}

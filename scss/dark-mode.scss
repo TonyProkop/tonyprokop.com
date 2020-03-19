@@ -17,6 +17,14 @@ html.dark-mode {
 		background-color: $color-dark-1;
 	}
 
+	#sun {
+		display: block;
+	}
+
+	#moon {
+		display: none;
+	}
+
 	input[type='text'], textarea {
 		border-color: $color-dark-2;
 		background-color: $color-dark-1;

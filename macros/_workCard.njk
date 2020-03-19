@@ -5,9 +5,7 @@
         <p class="work-copy">{{ copy }}</p>
         <div class="view-work">
             View Work
-            <svg class="chevron-right">
-                <use href="/icons/chevron-right.svg#chevron-right"/>
-            </svg>
+			{{ "/icons/chevron-right.svg" | svgContents | safe }}
         </div>
     </a>
 {% endmacro %}
