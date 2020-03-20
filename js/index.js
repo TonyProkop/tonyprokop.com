@@ -1,14 +1,25 @@
-function convertRemToPixels(rem) {
+function convertRemToPixels (rem) {
   return rem * parseFloat(getComputedStyle(document.documentElement).fontSize)
 }
 
-document.addEventListener("click", function(event) {
-  if (event.target.matches("#moon")) {
-    document.documentElement.classList.add("dark-mode")
-  } else if (event.target.matches("#sun")) {
-    document.documentElement.classList.remove("dark-mode")
-  }
+function toggleTheme () {
+	if (document.documentElement.classList.contains("dark-mode")) {
+		document.documentElement.classList.remove("dark-mode");
+	} else {
+		document.documentElement.classList.add("dark-mode");
+	}
+}
 
+const themeToggle = document.getElementById('theme-toggle');
+themeToggle.onclick = toggleTheme;
+themeToggle.onkeypress = function (event) {
+	if (event.key === 'Enter') {
+		toggleTheme(); // This doesn't work for some reason
+		console.log(event.key);
+	}
+};
+
+document.addEventListener("click", function(event) {
   if (event.target.matches("#scroll-work-right-control")) {
     var width = document.getElementsByClassName("work-card")[0].scrollWidth
     var container = document.getElementById("work-container")
@@ -20,14 +31,4 @@ document.addEventListener("click", function(event) {
     var container = document.getElementById("work-container")
     container.scrollLeft = container.scrollLeft - width - convertRemToPixels(6)
   }
-})
-
-// var work_container = document.getElementById('work-container');
-// var clone = work_container.cloneNode(true);
-// clone.id = 'work-container-clone';
-// work_container.after(clone);
-// work_container.onscroll = function() {
-// 	var transform = "-" + work_container.scrollLeft + "px";
-// 	clone.style.marginLeft = transform;
-// 	console.log(transform);
-// }
+});

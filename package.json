@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-	"start": "gulp scss & concurrently --kill-others \"gulp watch:scss\" \"eleventy --serve\"",
+	"start": "gulp scss;  concurrently --kill-others \"gulp watch:scss\" \"eleventy --serve\"",
 	"build": "gulp scss; eleventy"
   },
   "keywords": [],

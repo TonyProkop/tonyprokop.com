@@ -12,11 +12,11 @@
     </head>
     <body>
         <header>
-            <div class="logo">Tony<span>Prokop</span></div>
-            <span id="theme-toggle">
+            <a href="/" class="logo">Tony<span>Prokop</span></a>
+            <button id="theme-toggle">
 				{{ "/icons/moon.svg" | svgContents | safe }}
 				{{ "/icons/sun.svg" | svgContents | safe }}
-			</span>
+			</button>
         </header>
         <div class="content-container">
             {{content | safe}}

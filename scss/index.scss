@@ -2,6 +2,14 @@
 
 * {
   box-sizing: border-box;
+
+  &:focus {
+	  outline-color: $color-green;
+  }
+
+  &::selection {
+	  background: $color-green;
+  }
 }
 
 svg {
@@ -19,6 +27,28 @@ a {
 
 html {
   font-size: 12px;
+
+  #theme-toggle {
+	.feather-sun {
+		display: none;
+	}
+	
+	.feather-moon {
+		display: block;
+	}
+  }
+
+  &.dark-mode {
+	#theme-toggle {
+		.feather-sun {
+			display: block;
+		}
+		
+		.feather-moon {
+			display: none;
+		}
+	}
+  }
 }
 
 body {
@@ -64,14 +94,6 @@ header {
 
 #theme-toggle svg {
   cursor: pointer;
-}
-
-#sun {
-	display: none;
-}
-
-#moon {
-	display: block;
 }
 
 h1 {
@@ -212,7 +234,7 @@ section {
 	justify-content: flex-end;
 	max-width: 750px;
 
-	button {
+	.button {
 		flex-basis: auto;
 	}
 
@@ -274,10 +296,14 @@ textarea {
 }
 
 button {
+	border: none;
+	padding: 0;
+}
+
+.button {
 	padding: 1.5rem 4rem;
 	text-transform: uppercase;
 	font-weight: bold;
-	border: none;
 	font-size: 1.5rem;
 	border-radius: 100px;
 
