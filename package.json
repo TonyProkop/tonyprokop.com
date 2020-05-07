@@ -1,22 +1,20 @@
 {
-  "name": "redesign",
+  "name": "tonyprokop.com",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Personal website of Tony Prokop.",
+  "author": "Tony Prokop",
+  "private": true,
   "scripts": {
-	"start": "gulp scss;  concurrently --kill-others \"gulp watch:scss\" \"eleventy --serve\"",
-	"build": "gulp scss; eleventy"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "serve": "nuxt serve"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@11ty/eleventy": "^0.10.0",
-    "concurrently": "^5.1.0",
-    "gulp": "^4.0.2",
-    "gulp-sass": "^4.0.2",
-    "node-sass": "^4.13.1",
-    "prettier": "^1.19.1",
-    "terser": "^4.6.3"
-  }
+  "dependencies": {
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "@nuxtjs/svg": "^0.1.11",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {}
 }
