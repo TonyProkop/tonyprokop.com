@@ -1,5 +1,6 @@
 <template>
-	<form class="form" name="contact" method="post" data-netlify="true">
+	<form class="form" name="contact" method="post" data-netlify="true" netlify-honeypot="super-secret-field">
+		<input name="super-secret-field" />
 		<div class="form-row half">
 			<div class="form-group">
 				<label for="name">Name</label>
@@ -39,6 +40,10 @@ export default {
 </script>
 
 <style scoped>
+	input[name="super-secret-field"] {
+		display: none;
+	}
+
 	.form {
 		width: 800px;
 		margin: 0 auto;
