@@ -11,6 +11,7 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 /* Plugins */
 
+import nuxt_plugin_plugin_3ca64da8 from 'nuxt_plugin_plugin_3ca64da8' // Source: ./components/plugin.js (mode: 'all')
 import nuxt_plugin_workbox_0bf01b4c from 'nuxt_plugin_workbox_0bf01b4c' // Source: ./workbox.js (mode: 'client')
 
 // Component: <ClientOnly>
@@ -42,7 +43,7 @@ Vue.use(Meta, {"keyName":"head","attribute":"data-n-head","ssrAttribute":"data-n
 
 const defaultTransition = {"name":"page","mode":"out-in","appear":true,"appearClass":"appear","appearActiveClass":"appear-active","appearToClass":"appear-to"}
 
-async function createApp (ssrContext) {
+async function createApp(ssrContext, config = {}) {
   const router = await createRouter(ssrContext)
 
   // Create Root instance
@@ -118,7 +119,7 @@ async function createApp (ssrContext) {
     ssrContext
   })
 
-  const inject = function (key, value) {
+  function inject(key, value) {
     if (!key) {
       throw new Error('inject(key, value) has no key provided')
     }
@@ -129,6 +130,10 @@ async function createApp (ssrContext) {
     key = '$' + key
     // Add into app
     app[key] = value
+    // Add into context
+    if (!app.context[key]) {
+      app.context[key] = value
+    }
 
     // Check if plugin not already installed
     const installKey = '__nuxt_' + key + '_installed__'
@@ -148,10 +153,31 @@ async function createApp (ssrContext) {
     })
   }
 
+  // Inject runtime config as $config
+  inject('config', config)
+
+  // Add enablePreview(previewData = {}) in context for plugins
+  if (process.static && process.client) {
+    app.context.enablePreview = function (previewData = {}) {
+      app.previewData = Object.assign({}, previewData)
+      inject('preview', previewData)
+    }
+  }
   // Plugin execution
+
+  if (typeof nuxt_plugin_plugin_3ca64da8 === 'function') {
+    await nuxt_plugin_plugin_3ca64da8(app.context, inject)
+  }
 
   if (process.client && typeof nuxt_plugin_workbox_0bf01b4c === 'function') {
     await nuxt_plugin_workbox_0bf01b4c(app.context, inject)
+  }
+
+  // Lock enablePreview in context
+  if (process.static && process.client) {
+    app.context.enablePreview = function () {
+      console.warn('You cannot call enablePreview() outside a plugin.')
+    }
   }
 
   // If server-side, wait for async component to be resolved first
