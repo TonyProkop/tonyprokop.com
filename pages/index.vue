@@ -6,7 +6,7 @@
 			<h1 class="title">
 				I'm Tony Prokop, a <span class="web-developer">web developer</span>.
 			</h1>
-			<img src="~/static/me.jpg" class="hero-img" alt="Tony Prokop" />
+			<img src="~/static/me.webp" class="hero-img" alt="Tony Prokop" />
 		</div>
 
 		<!-- Portfolio -->
