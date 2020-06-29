@@ -18,8 +18,8 @@ export default {
 
 <style scoped>
 .button {
-	background-color: #5E81AC;
-	color: #D8DEE9;
+	background-color: #88C0D0;
+	color: #3B4252;
 	font-size: 18px;
 	display: flex;
 	align-items: center;
@@ -29,5 +29,4 @@ export default {
 	border: none;
 	font-weight: bold;
 }
-
 </style>
