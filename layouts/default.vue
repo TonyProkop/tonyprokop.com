@@ -6,6 +6,9 @@
 export default {
 	head: {
 		title: "The Homepage of Tony Prokop | tonyprokop.com",
+		htmlAttrs: {
+			lang: 'en'
+		},
 		meta: [
 			{ hid: "description", name: "description", content: "I'm a freelance web designer and developer, located in Omaha, NE." }
 		],
