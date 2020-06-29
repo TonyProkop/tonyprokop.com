@@ -6,8 +6,11 @@
 export default {
 	head: {
 		title: "The Homepage of Tony Prokop | tonyprokop.com",
+		meta: [
+			{ hid: "description", name: "description", content: "I'm a freelance web designer and developer, located in Omaha, NE." }
+		],
 		link: [
-			{ rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap' }
+			{ rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" }
 		]
 	}
 }
