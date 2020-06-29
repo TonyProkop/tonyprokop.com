@@ -1,13 +1,13 @@
 <template>
 	<footer>
 		<div class="external-link-container">
-			<a href="mailto:prokop.tony@gmail.com">
+			<a href="mailto:prokop.tony@gmail.com" title="Email">
 				<EmailSvg />
 			</a>
-			<a href="https://www.linkedin.com/in/tony-prokop/">
+			<a href="https://www.linkedin.com/in/tony-prokop/" title="LinkedIn">
 				<LinkedInSvg />
 			</a>
-			<a href="https://github.com/TonyProkop">
+			<a href="https://github.com/TonyProkop" title="Github">
 				<GithubSvg />
 			</a>
 		</div>
