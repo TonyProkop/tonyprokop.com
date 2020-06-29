@@ -70,22 +70,22 @@ export default {
 				{
 					title: 'Flywheel',
 					link: 'https://getflywheel.com/',
-					imageFileName: 'flywheel.png'
+					imageFileName: 'flywheel.webp'
 				},
 				{
 					title: 'Speedway Motors',
 					link: 'https://www.speedwaymotors.com/',
-					imageFileName: 'speedway.png'
+					imageFileName: 'speedway.webp'
 				},
 				{
 					title: 'Advance Media',
 					link: 'https://advancemedia.netlify.app/',
-					imageFileName: 'advance-media.png'
+					imageFileName: 'advance-media.webp'
 				},
 				{
 					title: 'My Wedding',
 					link: 'https://tonykatiewedding.com/',
-					imageFileName: 'wedding.png'
+					imageFileName: 'wedding.webp'
 				},
 			],
 			services: [
