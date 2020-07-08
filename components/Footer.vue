@@ -11,7 +11,7 @@
 				<GithubSvg />
 			</a>
 		</div>
-		<div class="tagline">© 2020 Tony Prokop Web Development</div>
+		<div class="tagline">© {{ year }} Tony Prokop Web Development</div>
 	</footer>
 </template>
 
@@ -25,6 +25,12 @@ export default {
 		EmailSvg,
 		LinkedInSvg,
 		GithubSvg,
+	},
+
+	computed: {
+		year () {
+			return new Date().getFullYear();
+		}
 	}
 }
 </script>

@@ -12,7 +12,7 @@
 		<!-- Portfolio -->
 		<Section id="portfolio" :layer="1">
 			<template v-slot:guts>
-				<SectionHeading name="Portfolio" title="My Latest Work" paragraph="Lorem Ipsum is simply dummy text of the printing and typesetting industry." />
+				<SectionHeading name="Portfolio" title="My Latest Work" />
 				<div class="work-block-container">
 					<WorkBlock v-for="(workBlock, index) in workBlocks" :key="index" :title="workBlock.title" :link="workBlock.link" :imageFileName="workBlock.imageFileName" />
 				</div>
@@ -22,7 +22,7 @@
 		<!-- Services -->
 		<Section id="services">
 			<template v-slot:guts>
-				<SectionHeading name="Services" title="What I Offer" paragraph="Lorem Ipsum is simply dummy text of the printing and typesetting industry." />
+				<SectionHeading name="Services" title="What I Offer" />
 				<div class="services-container">
 					<Service v-for="(service, index) in services" :key="index" :n="index + 1" :icon="service.icon" :title="service.title" :paragraphs="service.paragraphs" />
 				</div>
