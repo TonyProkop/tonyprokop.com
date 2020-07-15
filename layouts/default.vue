@@ -5,7 +5,7 @@
 <script>
 export default {
 	head: {
-		title: "The Homepage of Tony Prokop | tonyprokop.com",
+		title: "Tony Prokop | tonyprokop.com",
 		htmlAttrs: {
 			lang: 'en'
 		},
