@@ -6,7 +6,7 @@
 			<HostingSvg v-if="icon === 'hosting'" />
 			<SupportSvg v-if="icon === 'support'" />
 		</div>
-		<h4 class="service-title">{{ title }}</h4>
+		<h3 class="service-title">{{ title }}</h3>
 		<p class="service-description" v-for="(paragraph, index) in paragraphs" :key="index">{{ paragraph }}</p>
 	</div>
 </template>

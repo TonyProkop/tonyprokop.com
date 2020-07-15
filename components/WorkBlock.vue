@@ -1,6 +1,6 @@
 <template>
 	<a :href="link" class="work-block">
-		<h4 class="title">{{title}}</h4>
+		<h3 class="title">{{title}}</h3>
 		<img :src="require(`@/static/work/${imageFileName}`)" :alt="title" class="image" />
 	</a>
 </template>

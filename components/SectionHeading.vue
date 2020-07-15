@@ -1,7 +1,7 @@
 <template>
 	<div class="section-heading">
 		<div>{{name}}</div>
-		<h3 class="title">{{title}}</h3>
+		<h2 class="title">{{title}}</h2>
 		<p class="paragraph" v-if="paragraph">{{paragraph}}</p>
 	</div>
 </template>
