@@ -126,11 +126,11 @@ export default {
 <style scoped>
 .hero {
 	/* Minus header height */
-	height: calc(100vh - 62px);
+	min-height: calc(100vh - 62px);
     display: flex;
     align-items: center;
     justify-content: center;
-	padding: 0 3rem;
+	padding: 8rem 3rem 10rem;
 }
 
 .title {
