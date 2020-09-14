@@ -51,6 +51,7 @@ export default {
 	background-color: #3B4252;
 	padding: 5rem;
 	max-width: 45rem;
+	border-radius: .5rem;
 }
 
 .icon {

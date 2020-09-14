@@ -1,17 +1,17 @@
 <template>
 	<footer>
-		<div class="external-link-container">
-			<a href="mailto:prokop.tony@gmail.com" title="Email">
-				<EmailSvg />
-			</a>
-			<a href="https://www.linkedin.com/in/tony-prokop/" title="LinkedIn">
-				<LinkedInSvg />
-			</a>
-			<a href="https://github.com/TonyProkop" title="Github">
-				<GithubSvg />
-			</a>
-		</div>
 		<div class="tagline">© {{ year }} Tony Prokop Web Development</div>
+		<div class="external-link-container">
+			<CircleIcon href="mailto:prokop.tony@gmail.com" title="Email">
+				<EmailSvg />
+			</CircleIcon>
+			<CircleIcon href="https://www.linkedin.com/in/tony-prokop/" title="LinkedIn">
+				<LinkedInSvg />
+			</CircleIcon>
+			<CircleIcon href="https://github.com/TonyProkop" title="Github">
+				<GithubSvg />
+			</CircleIcon>
+		</div>
 	</footer>
 </template>
 
@@ -19,12 +19,14 @@
 import EmailSvg from '~/static/email.svg?inline';
 import LinkedInSvg from '~/static/linkedin.svg?inline';
 import GithubSvg from '~/static/github.svg?inline';
+import CircleIcon from './CircleIcon';
 
 export default {
 	components: {
 		EmailSvg,
 		LinkedInSvg,
 		GithubSvg,
+		CircleIcon,
 	},
 
 	computed: {
@@ -35,44 +37,33 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 footer {
 	display: flex;
-	flex-direction: column;
-	align-content: center;
-	justify-content: center;
-	text-align: center;
-	padding: 6rem 0;
+	align-items: center;
+	justify-content: space-between;
+	padding: 6rem 2rem 2rem;
 }
 
 .tagline {
-	margin-top: 6rem;
 	font-size: 1.4rem;
 }
 
 .external-link-container {
 	display: flex;
-	margin: 0 auto;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .external-link-container a {
-	width: 5rem;
-	height: 5rem;
-	border-radius: 100%;
-	background-color: #3B4252;
-	text-decoration: none;
-	color: #D8DEE9;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin: 0 2rem;
-}
+	margin: 0 1rem;
 
-.external-link-container a:hover {
-	background-color: #434C5E;
-}
+	&:first-child {
+		margin-left: 0;
+	}
 
-.external-link-container a:active {
-	background-color: #4C566A;
+	&:last-child {
+		margin-right: 0;
+	}
 }
 </style>

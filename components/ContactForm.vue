@@ -71,6 +71,8 @@ export default {
 		display: block;
 		margin-bottom: 1rem;
 		flex: none;
+		text-transform: uppercase;
+		font-size: 1.4rem;
 	}
 
 	input, textarea {

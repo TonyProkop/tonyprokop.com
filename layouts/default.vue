@@ -1,11 +1,20 @@
 <template>
-  <nuxt />
+	<div class="page-container">
+		<Header />
+		<main>
+			<nuxt />
+		</main>
+		<Footer />
+	</div>
 </template>
 
 <script>
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+
 export default {
 	head: {
-		title: "Tony Prokop | tonyprokop.com",
+		title: "Tony Prokop | Web Designer and Developer",
 		htmlAttrs: {
 			lang: 'en'
 		},
@@ -15,11 +24,16 @@ export default {
 		link: [
 			{ rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" }
 		]
+	},
+	
+	components: {
+		Header,
+		Footer
 	}
 }
 </script>
 
-<style>
+<style lang="scss">
 html {
   font-family: 'Montserrat', sans-serif;
   font-size: 10px;
@@ -33,12 +47,35 @@ body {
 	color: #D8DEE9;
 }
 
+.page-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100vh;
+}
+
+main {
+	flex-grow: 1;
+}
+
 *,
 *:before,
 *:after {
   box-sizing: border-box;
   margin: 0;
+}
+
+*:not(svg):not(path) {
   color: #D8DEE9;
+}
+
+a {
+	text-decoration: none;
+
+	&:hover {
+		color: #ECEFF4;
+		text-decoration: underline;
+	}
 }
 
 *::selection {
