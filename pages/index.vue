@@ -1,18 +1,30 @@
 <template>
 	<div>
-		<Header />
-
 		<div class="hero">
-			<h1 class="title">
-				I'm Tony Prokop, a <span class="web-developer">web developer</span>.
-			</h1>
+			<div>
+				<div class="name">Tony Prokop</div>
+				<h1 class="title">
+					Helping small businesses improve their online presence.
+				</h1>
+				<Button type="submit">
+					View Latest Work
+					<ChevronRightSvg />
+				</Button>
+			</div>
 			<img src="~/static/me.webp" class="hero-img" alt="Tony Prokop" />
 		</div>
 
 		<!-- Portfolio -->
 		<Section id="portfolio" :layer="1">
 			<template v-slot:guts>
-				<SectionHeading name="Portfolio" title="My Latest Work" />
+				<SectionHeading>
+					<template v-slot:name>
+						Portfolio
+					</template>
+					<template v-slot:title>
+						My Latest Work
+					</template>
+				</SectionHeading>
 				<div class="work-block-container">
 					<WorkBlock v-for="(workBlock, index) in workBlocks" :key="index" :title="workBlock.title" :link="workBlock.link" :imageFileName="workBlock.imageFileName" />
 				</div>
@@ -22,7 +34,14 @@
 		<!-- Services -->
 		<Section id="services">
 			<template v-slot:guts>
-				<SectionHeading name="Services" title="What I Offer" />
+				<SectionHeading>
+					<template v-slot:name>
+						Services
+					</template>
+					<template v-slot:title>
+						What I Offer
+					</template>
+				</SectionHeading>
 				<div class="services-container">
 					<Service v-for="(service, index) in services" :key="index" :n="index + 1" :icon="service.icon" :title="service.title" :paragraphs="service.paragraphs" />
 				</div>
@@ -32,12 +51,19 @@
 		<!-- Contact -->
 		<Section id="contact">
 			<template v-slot:guts>
-				<SectionHeading name="Contact" title="Let's Work Together" paragraph="Think I might be a fit for your next project? I’d love to hear about it, drop me a message." />
-				<ContactForm />
+				<SectionHeading>
+					<template v-slot:name>
+						Need a website?
+					</template>
+					<template v-slot:title>
+						<a href="/contact" class="contact-link">
+							Let's work together
+							<ChevronRightSvg class="test" />
+						</a>
+					</template>
+				</SectionHeading>
 			</template>
 		</Section>
-
-		<Footer />
 	</div>
 </template>
 
@@ -123,7 +149,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .hero {
 	/* Minus header height */
 	min-height: calc(100vh - 62px);
@@ -133,17 +159,19 @@ export default {
 	padding: 8rem 3rem 10rem;
 }
 
+.name {
+	text-transform: uppercase;
+}
+
 .title {
   font-weight: 700;
   display: block;
-  font-size: 7.2rem;
+  font-size: 6.4rem;
+  margin: 6rem 6rem 6rem 0;
   margin-right: 6rem;
   flex-basis: 54rem;
   flex-grow: 0;
-}
-
-.web-developer {
-	color: #81A1C1;
+  max-width: 82.5rem;
 }
 
 .hero-img {
@@ -201,6 +229,16 @@ export default {
 @media(max-width: 675px) {
 	.services-container {
 		grid-template-columns: 1fr;
+	}
+}
+
+.contact-link {
+	width: 2rem;
+	text-decoration: none;
+	text-align: center;
+
+	svg {
+		width: 2rem;
 	}
 }
 </style>

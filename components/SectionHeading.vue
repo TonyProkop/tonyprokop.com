@@ -1,30 +1,13 @@
 <template>
 	<div class="section-heading">
-		<div>{{name}}</div>
-		<h2 class="title">{{title}}</h2>
-		<p class="paragraph" v-if="paragraph">{{paragraph}}</p>
+		<div class="name">
+			<slot name="name"></slot>
+		</div>
+		<div class="title">
+			<slot name="title"></slot>
+		</div>
 	</div>
 </template>
-
-<script>
-export default {
-	props: {
-		name: {
-			required: true,
-			type: String,
-		},
-		title: {
-			required: true,
-			type: String,
-		},
-		paragraph: {
-			required: false,
-			type: String,
-			default: '',
-		}
-	}
-}
-</script>
 
 <style scoped>
 .section-heading {
@@ -33,9 +16,13 @@ export default {
 	margin-bottom: 10rem;
 }
 
+.name {
+	font-size: 1.4rem;
+	text-transform: uppercase;
+}
+
 .name,
-.title,
-.paragraph {
+.title {
 	margin: 0 auto;
 }
 
