@@ -45,6 +45,10 @@ body {
 	font-size: 1.8rem;
 	background-color: #2E3440;
 	color: #D8DEE9;
+
+	&.menuOpen {
+		overflow: hidden;
+	}
 }
 
 .page-container {
@@ -71,12 +75,19 @@ main {
 
 a {
 	text-decoration: none;
+}
 
+a,
+button {
 	&:hover {
-		color: #ECEFF4;
-		text-decoration: underline;
+		filter: brightness(120%);
+	}
+
+	&:active {
+		filter: brightness(140%);
 	}
 }
+
 
 *::selection {
 	background-color: #8FBCBB;
@@ -90,5 +101,40 @@ p {
 
 .fa-chevron-right {
 	margin-left: 1rem;
+}
+
+.button {
+	background-color: #88C0D0;
+	color: #3B4252;
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1.5rem 3rem;
+	border-radius: 5rem;
+	border: none;
+	font-weight: 700;
+	width: fit-content;
+}
+
+.circle-icon {
+	width: 5rem;
+	height: 5rem;
+	border-radius: 100%;
+	background-color: #3B4252;
+	text-decoration: none;
+	color: #D8DEE9;
+	display: grid;
+	place-items: center;
+	border: none;
+	cursor: pointer;
+
+	&:hover {
+		filter: brightness(120%);
+	}
+
+	&:active {
+		filter: brightness(140%);
+	}
 }
 </style>

@@ -19,21 +19,19 @@
 			</div>
 		</div>
 		<div class="form-row button-row">
-			<Button type="submit" class="form-button">
+			<button type="submit" class="button form-button">
 				Send Message
 				<ChevronRightSvg />
-			</Button>
+			</button>
 		</div>
 	</form>
 </template>
 
 <script>
-import Button from "./Button.vue"
 import ChevronRightSvg from '~/static/chevron-right.svg?inline';
 
 export default {
 	components: {
-		Button,
 		ChevronRightSvg,
 	}
 }
