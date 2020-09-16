@@ -1,38 +1,34 @@
 <template>
 		<header class="header">
-			<CircleIcon href="/" title="Tony Prokop">
+			<a href="/" class="circle-icon" title="Tony Prokop">
 				<Logo />
-			</CircleIcon>
+			</a>
 			<ul class="menu">
 				<li class="item">
 					<a href="/">Home</a>
 				</li>
 				<li class="item">
-					<a href="#portfolio">Portfolio</a>
+					<a href="/#portfolio">Portfolio</a>
 				</li>
 				<li class="item">
-					<a href="#services">Services</a>
+					<a href="/#services">Services</a>
 				</li>
 				<li class="item">
 					<a href="/contact">Contact</a>
 				</li>
 			</ul>
-			<CircleIcon href="#" title="Menu">
-				<Menu />
-			</CircleIcon>
+			<Menu />
 		</header>
 </template>
 
 <script>
 import Logo from '~/static/logo.svg?inline';
-import Menu from '~/static/menu.svg?inline';
-import CircleIcon from './CircleIcon';
+import Menu from './Menu';
 
 export default {
 	components: {
 		Logo,
 		Menu,
-		CircleIcon
 	}
 }
 </script>

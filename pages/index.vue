@@ -6,10 +6,10 @@
 				<h1 class="title">
 					Helping small businesses improve their online presence.
 				</h1>
-				<Button type="submit">
+				<a href="/#portfolio" class="button">
 					View Latest Work
 					<ChevronRightSvg />
-				</Button>
+				</a>
 			</div>
 			<img src="~/static/me.webp" class="hero-img" alt="Tony Prokop" />
 		</div>
@@ -75,7 +75,6 @@ import Service from '../components/Service.vue';
 import SectionHeading from '../components/SectionHeading.vue';
 import WorkBlock from '../components/WorkBlock.vue';
 import ContactForm from '../components/ContactForm.vue';
-import Button from '../components/Button.vue';
 import ChevronRightSvg from '~/static/chevron-right.svg?inline';
 
 export default {
@@ -87,21 +86,15 @@ export default {
 		SectionHeading,
 		WorkBlock,
 		ContactForm,
-		Button,
 		ChevronRightSvg,
 	},
 	data () {
 		return {
 			workBlocks: [
 				{
-					title: 'Flywheel',
-					link: 'https://getflywheel.com/',
-					imageFileName: 'flywheel.webp'
-				},
-				{
-					title: 'Speedway Motors',
-					link: 'https://www.speedwaymotors.com/',
-					imageFileName: 'speedway.webp'
+					title: 'Asian Burmese Restaurant',
+					link: 'https://asian-burmese-restaurant.tonyprokop.com/',
+					imageFileName: 'asian-burmese-restaurant.webp'
 				},
 				{
 					title: 'Advance Media',
@@ -111,7 +104,17 @@ export default {
 				{
 					title: 'My Wedding',
 					link: 'https://tonykatiewedding.com/',
-					imageFileName: 'wedding.webp'
+					imageFileName: 'tony-katie-wedding.webp'
+				},
+				{
+					title: 'Speedway Motors',
+					link: 'https://www.speedwaymotors.com/',
+					imageFileName: 'speedway.webp'
+				},
+				{
+					title: 'Flywheel',
+					link: 'https://getflywheel.com/',
+					imageFileName: 'flywheel.webp'
 				},
 			],
 			services: [
@@ -200,7 +203,7 @@ export default {
 
 .work-block-container {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
 	column-gap: 5rem;
 	row-gap: 5rem;
 	margin: 0 auto;

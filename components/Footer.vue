@@ -2,15 +2,15 @@
 	<footer>
 		<div class="tagline">© {{ year }} Tony Prokop Web Development</div>
 		<div class="external-link-container">
-			<CircleIcon href="mailto:prokop.tony@gmail.com" title="Email">
+			<a href="mailto:prokop.tony@gmail.com" class="circle-icon" title="Email">
 				<EmailSvg />
-			</CircleIcon>
-			<CircleIcon href="https://www.linkedin.com/in/tony-prokop/" title="LinkedIn">
+			</a>
+			<a href="https://www.linkedin.com/in/tony-prokop/" class="circle-icon" title="LinkedIn">
 				<LinkedInSvg />
-			</CircleIcon>
-			<CircleIcon href="https://github.com/TonyProkop" title="Github">
+			</a>
+			<a href="https://github.com/TonyProkop" class="circle-icon" title="Github">
 				<GithubSvg />
-			</CircleIcon>
+			</a>
 		</div>
 	</footer>
 </template>
@@ -19,14 +19,12 @@
 import EmailSvg from '~/static/email.svg?inline';
 import LinkedInSvg from '~/static/linkedin.svg?inline';
 import GithubSvg from '~/static/github.svg?inline';
-import CircleIcon from './CircleIcon';
 
 export default {
 	components: {
 		EmailSvg,
 		LinkedInSvg,
 		GithubSvg,
-		CircleIcon,
 	},
 
 	computed: {
