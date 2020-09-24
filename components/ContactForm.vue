@@ -43,7 +43,7 @@ export default {
 	}
 
 	.form {
-		width: 800px;
+		max-width: 800px;
 		margin: 0 auto;
 		display: grid;
 	}
@@ -57,12 +57,23 @@ export default {
 		flex-basis: 50%;
 	}
 
+	@media(max-width: 700px) {
+		.form-row.half {
+			flex-wrap: wrap;
+		}
+
+		.form-row.half .form-group {
+			flex-basis: 100%;
+		}
+	}
+
 	.form-group {
 		width: 100%;
 	}
 
 	.gutter {
 		width: 30px;
+		height: 30px;
 	}
 
 	label {
@@ -77,11 +88,20 @@ export default {
 		display: block;
 		width: 100%;
 		border: none;
-		padding: 1rem;
+		padding: 2rem;
 		border-radius: .5rem;
 		font-size: 1.8rem;
 		color: #FFFFFF;
 		background-color: #3B4252;
+	}
+
+	input:-webkit-autofill,
+	input:-webkit-autofill:hover,
+	input:-webkit-autofill:focus {
+		border: none;
+		-webkit-text-fill-color: #FFFFFF;
+		-webkit-box-shadow: 0 0 0 1000px #3B4252 inset;
+		transition: background-color 5000s ease-in-out 0s;
 	}
 
 	.form-button {

@@ -1,8 +1,8 @@
 <template>
 	<div class="section-heading">
-		<div class="name">
+		<h2 class="name">
 			<slot name="name"></slot>
-		</div>
+		</h2>
 		<div class="title">
 			<slot name="title"></slot>
 		</div>
@@ -17,6 +17,7 @@
 }
 
 .name {
+	font-weight: 400;
 	font-size: 1.4rem;
 	text-transform: uppercase;
 }

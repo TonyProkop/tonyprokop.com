@@ -20,6 +20,13 @@ export default {
 .container {
 	max-width: 80rem;
 	margin: 0 auto;
+	padding: 0 5rem;
+}
+
+@media(max-width: 600px) {
+	.container {
+		padding: 0 3rem;
+	}
 }
 
 .heading {
