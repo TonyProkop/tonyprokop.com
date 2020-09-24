@@ -6,7 +6,7 @@
 				<h1 class="title">
 					Helping small businesses improve their online presence.
 				</h1>
-				<a href="/#portfolio" class="button">
+				<a href="/#portfolio" class="button hero-cta">
 					View Latest Work
 					<ChevronRightSvg />
 				</a>
@@ -155,7 +155,7 @@ export default {
 <style scoped lang="scss">
 .hero {
 	/* Minus header height */
-	min-height: calc(100vh - 62px);
+	min-height: calc(100vh - 90px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -178,26 +178,31 @@ export default {
 }
 
 .hero-img {
+	display: block;
 	max-width: 35rem;
 	border-radius: 0.5rem;
 }
 
-@media(max-width: 900px) {
-	.hero {
-		flex-direction: column-reverse;
-	}
-
+@media(max-width: 1216px) {
 	.title {
-		flex-basis: unset;
+		font-size: 4.8rem;
+	}
+}
+
+@media(max-width: 1035px) {
+	.name,
+	.title {
+		margin-left: 0;
 		margin-right: 0;
-		margin-top: 6rem;
 		text-align: center;
-		max-width: 54rem;
-		font-size: 6.4rem;
 	}
 
 	.hero-img {
-		max-width: 30rem;
+		display: none;
+	}
+
+	.hero-cta {
+		margin: 0 auto;
 	}
 }
 
@@ -211,12 +216,6 @@ export default {
 
 @media(max-width: 1000px) {
 	.work-block-container {
-		grid-template-columns: 1fr 1fr;
-	}
-}
-
-@media(max-width: 675px) {
-	.work-block-container {
 		grid-template-columns: 1fr;
 	}
 }
@@ -229,19 +228,28 @@ export default {
 	margin: 0 auto;
 }
 
-@media(max-width: 675px) {
+@media(max-width: 840px) {
 	.services-container {
 		grid-template-columns: 1fr;
 	}
 }
 
 .contact-link {
-	width: 2rem;
+	display: flex;
+	margin: 0 auto;
+	align-items: center;
+	justify-content: center;
 	text-decoration: none;
 	text-align: center;
 
 	svg {
 		width: 2rem;
+	}
+}
+
+@media(max-width: 653px) {
+	.contact-link {
+		font-size: 3.6rem;
 	}
 }
 </style>

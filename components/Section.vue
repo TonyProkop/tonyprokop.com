@@ -31,12 +31,18 @@ export default {
 <style scoped>
 	.guts {
 		margin: 0 auto;
-		padding: 10rem 3rem;
+		padding: 10rem 5rem;
 		max-width: 125rem;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: center;
+	}
+
+	@media(max-width: 600px) {
+		.guts {
+			padding: 10rem 3rem;
+		}
 	}
 
 	.layer-1 {

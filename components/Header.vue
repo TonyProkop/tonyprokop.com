@@ -48,6 +48,12 @@ export default {
 	padding: 0;
 }
 
+@media (max-width: 650px) {
+	.menu {
+		display: none;
+	}
+}
+
 .item {
 	list-style: none;
 	padding: 0 2rem;
