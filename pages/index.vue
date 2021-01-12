@@ -76,6 +76,7 @@ import SectionHeading from '../components/SectionHeading.vue';
 import WorkBlock from '../components/WorkBlock.vue';
 import ContactForm from '../components/ContactForm.vue';
 import ChevronRightSvg from '~/static/chevron-right.svg?inline';
+import workBlockData from "~/assets/work-blocks.json";
 
 export default {
 	components: {
@@ -91,31 +92,7 @@ export default {
 	data () {
 		return {
 			workBlocks: [
-				{
-					title: 'Asian Burmese Restaurant',
-					link: 'https://asian-burmese-restaurant.tonyprokop.com/',
-					imageFileName: 'asian-burmese-restaurant.webp'
-				},
-				{
-					title: 'Advance Media',
-					link: 'https://advancemedia.netlify.app/',
-					imageFileName: 'advance-media.webp'
-				},
-				{
-					title: 'My Wedding',
-					link: 'https://tonykatiewedding.com/',
-					imageFileName: 'tony-katie-wedding.webp'
-				},
-				{
-					title: 'Speedway Motors',
-					link: 'https://www.speedwaymotors.com/',
-					imageFileName: 'speedway.webp'
-				},
-				{
-					title: 'Flywheel',
-					link: 'https://getflywheel.com/',
-					imageFileName: 'flywheel.webp'
-				},
+				...workBlockData
 			],
 			services: [
 				{
