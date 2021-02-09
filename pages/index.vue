@@ -4,7 +4,7 @@
 			<div>
 				<div class="name">Tony Prokop</div>
 				<h1 class="title">
-					Helping small businesses improve their online presence.
+					I build websites <br/>for local businesses
 				</h1>
 				<a href="/#portfolio" class="button hero-cta">
 					View Latest Work
