@@ -95,7 +95,7 @@ button {
 }
 
 p {
-	max-width: 50rem;
+	max-width: 60rem;
 	line-height: 3rem;
 }
 
