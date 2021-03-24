@@ -1,5 +1,10 @@
 [
 	{
+		"title": "My Whisky Barrel",
+		"link": "https://mwb-omaha.com/",
+		"imageFileName": "my-whiskey-barrel.webp"
+	},
+	{
 		"title": "Amsterdam Falafel & Kabob",
 		"link": "https://amsterdam.tonyprokop.com/",
 		"imageFileName": "afk.webp"
