@@ -1,20 +1,37 @@
 <template>
 	<div>
 		<div class="hero">
-			<div>
-				<div class="name">Tony Prokop</div>
+			<div class="hero-content">
+				<div class="name">Freelance Web Designer and Developer</div>
 				<h1 class="title">
-					I build websites <br/>for local businesses
+					I build websites for local businesses.
 				</h1>
+				<p>
+					Establishing a solid online presence is hard, especially while wearing multiple hats running a business. Partner with me and don’t worry about it! I will design, build, host and maintain your website long term so you can focus on the important stuff - running your business.
+				</p>
+				<a href="/#portfolio" class="button hero-cta --primary">
+					Get in touch
+					<ChevronRightSvg />
+				</a>
 				<a href="/#portfolio" class="button hero-cta">
-					View Latest Work
+					My work
 					<ChevronRightSvg />
 				</a>
 			</div>
-			<img src="~/static/me.webp" class="hero-img" alt="Tony Prokop" />
+			<img src="~/static/hero.png" class="hero-img" alt="Tony Prokop" />
 		</div>
 
-		<!-- Portfolio -->
+		<section id="companies">
+			<p>
+				Companies I've Worked For
+			</p>
+			<div class="work-logos">
+				<WPEngine />
+				<Flywheel />
+				<Speedway />
+			</div>
+		</section>
+
 		<Section id="portfolio" :layer="1">
 			<template v-slot:guts>
 				<SectionHeading>
@@ -31,7 +48,6 @@
 			</template>
 		</Section>
 
-		<!-- Services -->
 		<Section id="services">
 			<template v-slot:guts>
 				<SectionHeading>
@@ -48,7 +64,6 @@
 			</template>
 		</Section>
 
-		<!-- Contact -->
 		<Section id="contact">
 			<template v-slot:guts>
 				<SectionHeading>
@@ -76,6 +91,9 @@ import SectionHeading from '../components/SectionHeading.vue';
 import WorkBlock from '../components/WorkBlock.vue';
 import ContactForm from '../components/ContactForm.vue';
 import ChevronRightSvg from '~/static/chevron-right.svg?inline';
+import WPEngine from '~/static/wpengine.svg?inline';
+import Flywheel from '~/static/flywheel.svg?inline';
+import Speedway from '~/static/speedway.svg?inline';
 import workBlockData from "~/assets/work-blocks.json";
 
 export default {
@@ -88,6 +106,9 @@ export default {
 		WorkBlock,
 		ContactForm,
 		ChevronRightSvg,
+		WPEngine,
+		Flywheel,
+		Speedway
 	},
 	data () {
 		return {
@@ -131,33 +152,38 @@ export default {
 
 <style scoped lang="scss">
 .hero {
-	/* Minus header height */
-	min-height: calc(100vh - 90px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-	padding: 8rem 3rem 10rem;
+	position: relative;
+	max-width: var(--max-width);
+	margin: -9rem auto 0;
+}
+
+.hero-content {
+	padding: 20rem 3rem;
 }
 
 .name {
 	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 600;
 }
 
 .title {
   font-weight: 700;
   display: block;
   font-size: 6.4rem;
-  margin: 6rem 6rem 6rem 0;
+  margin: 5rem 0;
   margin-right: 6rem;
   flex-basis: 54rem;
   flex-grow: 0;
-  max-width: 82.5rem;
+  max-width: 74rem;
 }
 
 .hero-img {
 	display: block;
-	max-width: 35rem;
-	border-radius: 0.5rem;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 60%;
 }
 
 @media(max-width: 1216px) {
@@ -180,6 +206,34 @@ export default {
 
 	.hero-cta {
 		margin: 0 auto;
+	}
+}
+
+#companies {
+	max-width: var(--max-width);
+	width: 100%;
+	text-transform: uppercase;
+	border-radius: 10px;
+	margin: 0 auto;
+	padding: 5rem;
+	box-shadow: 0px 0px 40px 30px rgba(48, 55, 50, 0.03);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	p {
+		font-size: 1.6rem;
+		font-weight: 600;
+	}
+
+	.work-logos {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		svg {
+			margin: 0 2.5rem;
+		}
 	}
 }
 

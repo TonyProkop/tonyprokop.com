@@ -1,16 +1,17 @@
 <template>
 	<div>
-		<button class="circle-icon" type="button" title="Menu" @click="toggleMenu">
+		<button type="button" title="Menu" @click="toggleMenu">
 			<Menu />
 		</button>
 		<div v-if="open" class="menu">
-			<button class="circle-icon close-button" type="button" title="Close Menu" @click="toggleMenu">
+			<button class="close-button" type="button" title="Close Menu" @click="toggleMenu">
 				<Close />
 			</button>
 			<nav v-if="open">
 				<a href="/" @click="toggleMenu">Home</a>
 				<a href="/#portfolio" @click="toggleMenu">Portfolio</a>
-				<a href="/#services" @click="toggleMenu">Services</a>
+				<a href="/#process" @click="toggleMenu">Process</a>
+				<a href="/about" @click="toggleMenu">About</a>
 				<a href="/contact" @click="toggleMenu">Contact</a>
 			</nav>
 		</div>

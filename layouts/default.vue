@@ -22,7 +22,7 @@ export default {
 			{ hid: "description", name: "description", content: "I'm a freelance web designer and developer, located in Omaha, NE." }
 		],
 		link: [
-			{ rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" }
+			{ rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;0,700;1,400&display=swap" }
 		]
 	},
 	
@@ -34,8 +34,17 @@ export default {
 </script>
 
 <style lang="scss">
+:root {
+	--clr-black: #1B1B1B;
+	--clr-gray: #2E2E2E;
+	--clr-light-gray: #F6F6F6;
+	--clr-white: #FFFFFF;
+	--clr-primary: #1ED760;
+	--max-width: 1000px;
+}
+
 html {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 10px;
   font-weight: 400;
   box-sizing: border-box;
@@ -43,8 +52,8 @@ html {
 
 body {
 	font-size: 1.8rem;
-	background-color: #2E3440;
-	color: #D8DEE9;
+	background-color: var(--clr-white);
+	color: var(--clr-black);
 
 	&.menuOpen {
 		overflow: hidden;
@@ -70,7 +79,7 @@ main {
 }
 
 *:not(svg):not(path) {
-  color: #D8DEE9;
+  color: var(--clr-black);
 }
 
 a {
@@ -104,17 +113,24 @@ p {
 }
 
 .button {
-	background-color: #88C0D0;
-	color: #3B4252;
-	font-size: 18px;
+	background-color: var(--clr-light-gray);
+	color: var(--clr-black);
+	font-size: 14px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	padding: 1.5rem 3rem;
-	border-radius: 5rem;
 	border: none;
-	font-weight: 700;
+	font-weight: 600;
 	width: fit-content;
+
+	&.--primary {
+		background-color: var(--clr-primary);
+	}
+
+	svg {
+		margin-left: 20px;
+	}
 }
 
 .circle-icon {
