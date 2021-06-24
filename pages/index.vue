@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<div class="hero">
-			<div class="hero-content">
+		<section class="hero">
+			<div class="section-content hero-content">
 				<div class="name">Freelance Web Designer and Developer</div>
 				<h1 class="title">
 					I build websites for local businesses.
@@ -19,21 +19,38 @@
 				</a>
 			</div>
 			<img src="~/static/hero.png" class="hero-img" alt="Tony Prokop" />
-		</div>
+		</section>
 
 		<section id="companies">
-			<p>
-				Companies I've Worked For
-			</p>
-			<div class="work-logos">
-				<WPEngine />
-				<Flywheel />
-				<Speedway />
+			<div class="section-content">
+				<p>
+					Companies I've Worked For
+				</p>
+				<div class="work-logos">
+					<WPEngine />
+					<Flywheel />
+					<Speedway />
+				</div>
 			</div>
 		</section>
 
-		<Section id="portfolio" :layer="1">
-			<template v-slot:guts>
+		<section id="testimonials">
+			<div class="section-content">
+				<div class="left-container">
+					<Quote />
+					<div class="person">
+						<div class="name">Greg Schmaderer</div>
+						<div class="business">My Whiskey Barrel</div>
+					</div>
+				</div>
+				<p class="quote">
+					“I worked with Tony to setup a website for my small business. Tony was consultative and responsive throughout the entire process. This enabled us to get the website built quickly. I would not hesitate to recommend Tony. He is easy to work with.”
+				</p>
+			</div>
+		</section>
+
+		<section id="portfolio">
+			<div class="section-content">
 				<SectionHeading>
 					<template v-slot:name>
 						Portfolio
@@ -45,11 +62,11 @@
 				<div class="work-block-container">
 					<WorkBlock v-for="(workBlock, index) in workBlocks" :key="index" :title="workBlock.title" :link="workBlock.link" :imageFileName="workBlock.imageFileName" />
 				</div>
-			</template>
-		</Section>
+			</div>
+		</section>
 
-		<Section id="services">
-			<template v-slot:guts>
+		<section id="services">
+			<div class="section-content">
 				<SectionHeading>
 					<template v-slot:name>
 						Services
@@ -61,11 +78,11 @@
 				<div class="services-container">
 					<Service v-for="(service, index) in services" :key="index" :n="index + 1" :icon="service.icon" :title="service.title" :paragraphs="service.paragraphs" />
 				</div>
-			</template>
+			</div>
 		</Section>
 
-		<Section id="contact">
-			<template v-slot:guts>
+		<section id="contact">
+			<div class="section-content">
 				<SectionHeading>
 					<template v-slot:name>
 						Need a website?
@@ -77,7 +94,7 @@
 						</a>
 					</template>
 				</SectionHeading>
-			</template>
+			</div>
 		</Section>
 	</div>
 </template>
@@ -85,7 +102,6 @@
 <script>
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
-import Section from '../components/Section.vue';
 import Service from '../components/Service.vue';
 import SectionHeading from '../components/SectionHeading.vue';
 import WorkBlock from '../components/WorkBlock.vue';
@@ -94,13 +110,13 @@ import ChevronRightSvg from '~/static/chevron-right.svg?inline';
 import WPEngine from '~/static/wpengine.svg?inline';
 import Flywheel from '~/static/flywheel.svg?inline';
 import Speedway from '~/static/speedway.svg?inline';
+import Quote from '~/static/quote-left-solid.svg?inline';
 import workBlockData from "~/assets/work-blocks.json";
 
 export default {
 	components: {
 		Header,
 		Footer,
-		Section,
 		Service,
 		SectionHeading,
 		WorkBlock,
@@ -108,7 +124,8 @@ export default {
 		ChevronRightSvg,
 		WPEngine,
 		Flywheel,
-		Speedway
+		Speedway,
+		Quote
 	},
 	data () {
 		return {
@@ -210,30 +227,81 @@ export default {
 }
 
 #companies {
-	max-width: var(--max-width);
-	width: 100%;
-	text-transform: uppercase;
-	border-radius: 10px;
-	margin: 0 auto;
-	padding: 5rem;
-	box-shadow: 0px 0px 40px 30px rgba(48, 55, 50, 0.03);
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	position: relative;
 
-	p {
-		font-size: 1.6rem;
-		font-weight: 600;
+	.section-content {
+		position: absolute;
+		top: -76px;
+		left: 0;
+		right: 0;
+		background: white;
+		text-transform: uppercase;
+		border-radius: 10px;
+		margin: 0 auto;
+		padding: 5rem;
+		box-shadow: 0px 0px 40px 30px rgba(48, 55, 50, 0.03);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		z-index: 10;
+
+		p {
+			font-size: 1.6rem;
+			font-weight: 600;
+		}
+
+		.work-logos {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			svg {
+				margin: 0 2.5rem;
+			}
+		}
+	}
+}
+
+#testimonials {
+	background-color: var(--clr-black);
+
+	*:not(svg):not(path) {
+		color: var(--clr-white);
 	}
 
-	.work-logos {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+	svg {
+		flex-basis: 3rem;
+		margin-right: 3rem;
+	}
 
-		svg {
-			margin: 0 2.5rem;
-		}
+	.section-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start !important;
+	}
+
+	.left-container {
+		display: flex;
+		flex-basis: 295px;
+		align-items: flex-start;
+	}
+
+	.name {
+		font-size: 2.4rem;
+		font-weight: 700;
+		text-transform: unset;
+		margin-bottom: 1rem;
+	}
+
+	.business {
+		font-size: 1.4rem;
+		font-weight: normal;
+	}
+
+	.quote {
+		font-size: 3.6rem;
+		font-style: italic;
+		font-weight: normal;
 	}
 }
 

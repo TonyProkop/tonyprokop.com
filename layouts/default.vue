@@ -40,7 +40,7 @@ export default {
 	--clr-light-gray: #F6F6F6;
 	--clr-white: #FFFFFF;
 	--clr-primary: #1ED760;
-	--max-width: 1000px;
+	--max-width: 1280px;
 }
 
 html {
@@ -103,9 +103,24 @@ button {
 	color: #ECEFF4;
 }
 
+h1,
+h2,
+h3 {
+	line-height: 1.1;
+}
+
 p {
 	max-width: 60rem;
-	line-height: 3rem;
+	line-height: 1.8;
+}
+
+section {
+  .section-content {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 12rem 3rem;
+  }
 }
 
 .fa-chevron-right {
