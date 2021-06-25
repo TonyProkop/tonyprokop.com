@@ -61,8 +61,8 @@
 				</SectionHeading>
 				<ul class="accordion">
 					<li v-for="(project, index) in projects" :key="index" class="accordion-item">
-						<input type="radio" name="project" :id="index" :value="index" :checked="index === 0">
-						<label :for="index">
+						<input type="radio" name="project" :id="`project-${index}`" :value="index" :checked="index === 0">
+						<label :for="`project-${index}`">
 							{{ project.title }}
 							<ArrowUp class="arrow-up" />
 							<ArrowDown class="arrow-down" />
@@ -84,7 +84,7 @@
 			</div>
 		</section>
 
-		<section id="services">
+		<section id="process">
 			<div class="section-content">
 				<SectionHeading>
 					<template v-slot:name>
@@ -94,9 +94,19 @@
 						My Process
 					</template>
 				</SectionHeading>
-				<div class="services-container">
-					<Service v-for="(service, index) in services" :key="index" :n="index + 1" :icon="service.icon" :title="service.title" :paragraphs="service.paragraphs" />
-				</div>
+				<ul class="accordion">
+					<li v-for="(process, index) in processes" :key="index" class="accordion-item">
+						<input type="radio" name="process" :id="`process-${index}`" :value="index" :checked="index === 0">
+						<label :for="`process-${index}`">
+							{{ process.title }}
+							<ArrowUp class="arrow-up" />
+							<ArrowDown class="arrow-down" />
+						</label>
+						<p class="content">
+							{{ process.description }}
+						</p>
+					</li>
+				</ul>
 			</div>
 		</Section>
 
@@ -121,7 +131,6 @@
 <script>
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
-import Service from '../components/Service.vue';
 import SectionHeading from '../components/SectionHeading.vue';
 import ContactForm from '../components/ContactForm.vue';
 import ChevronRightSvg from '~/static/chevron-right.svg?inline';
@@ -133,12 +142,12 @@ import ArrowUp from '~/static/arrow-up-solid.svg?inline';
 import ArrowDown from '~/static/arrow-down-solid.svg?inline';
 import ArrowRight from '~/static/arrow-right-solid.svg?inline';
 import projectData from "~/assets/projects.json";
+import processData from "~/assets/process.json";
 
 export default {
 	components: {
 		Header,
 		Footer,
-		Service,
 		SectionHeading,
 		ContactForm,
 		ChevronRightSvg,
@@ -156,35 +165,8 @@ export default {
 			projects: [
 				...projectData
 			],
-			services: [
-				{
-					icon: "design",
-					title: "Web Design",
-					paragraphs: [
-						"I work with you while creating mock-ups to ensure the product matches your vision and accomplishes your goals."
-					]
-				},
-				{
-					icon: "development",
-					title: "Custom Web Development",
-					paragraphs: [
-						"I create your website from the ground up using the latest technologies. The final product will be fast, accessible, and secure."
-					]
-				},
-				{
-					icon: "hosting",
-					title: "Fully Managed Hosting",
-					paragraphs: [
-						"I handle hosting, servers, deployments, backups, and more. You get a hassle-free website that just works."
-					]
-				},
-				{
-					icon: "support",
-					title: "Support & Maintenance",
-					paragraphs: [
-						"I work with you to iterate on your site, adding new features, applying security patches, and fixing occasional bugs."
-					]
-				},
+			processes: [
+				...processData
 			]
 		}
 	}
@@ -329,38 +311,22 @@ export default {
 	}
 }
 
-#portfolio {
-	ul {
-		margin: 0;
-		padding: 0;
-	}
+.accordion {
+	margin: 0;
+	padding: 0;
+}
 
-	li {
-		list-style: none;
-		border-top: 1px solid var(--clr-gray);
+.accordion-item {
+	list-style: none;
+	border-top: 1px solid var(--clr-gray);
 
-		&:first-child {
-			border: none;
-		}
+	&:first-child {
+		border: none;
 	}
 
 	svg {
 		max-width: 3rem;
 		max-height: 3rem;
-	}
-
-	.content {
-		display: none;
-
-		img {
-			max-width: 500px;
-			margin-right: 5rem;
-		}
-
-		p {
-			font-size: 1.6rem;
-			margin-bottom: 2rem;
-		}
 	}
 
 	.arrow-up {
@@ -376,7 +342,7 @@ export default {
 		font-weight: 600;
 	}
 
-	input[name="project"] {
+	input[type="radio"] {
 		display: none;
 
 		&:checked + label {
@@ -397,20 +363,24 @@ export default {
 			}
 		}
 	}
-}
 
-.services-container {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	column-gap: 5rem;
-	row-gap: 5rem;
-	margin: 0 auto;
-}
+	.content {
+		display: none;
 
-@media(max-width: 840px) {
-	.services-container {
-		grid-template-columns: 1fr;
+		img {
+			max-width: 500px;
+			margin-right: 5rem;
+		}
+
+		p {
+			font-size: 1.6rem;
+			margin-bottom: 2rem;
+		}
 	}
+}
+
+#process {
+	background-color: var(--clr-primary);
 }
 
 .contact-link {
