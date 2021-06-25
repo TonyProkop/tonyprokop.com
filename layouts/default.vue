@@ -41,6 +41,11 @@ export default {
 	--clr-white: #FFFFFF;
 	--clr-primary: #1ED760;
 	--max-width: 1280px;
+	--default-white-space: 3rem;
+
+	@media (min-width: 650px) {
+		--default-white-space: 5rem;
+	}
 }
 
 html {

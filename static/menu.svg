@@ -1,5 +1,5 @@
-<svg width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="20" height="3" fill="#D8DEE9"/>
-<rect width="20" height="3" transform="translate(0 7)" fill="#D8DEE9"/>
-<rect width="20" height="3" transform="translate(0 14)" fill="#D8DEE9"/>
+<svg width="20" height="17" viewBox="0 0 20 17" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+<rect width="20" height="3" />
+<rect width="20" height="3" transform="translate(0 7)" />
+<rect width="20" height="3" transform="translate(0 14)" />
 </svg>
