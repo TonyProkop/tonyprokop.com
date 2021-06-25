@@ -9,14 +9,10 @@
 				<p>
 					Establishing a solid online presence is hard, especially while wearing multiple hats running a business. Partner with me and don’t worry about it! I will design, build, host and maintain your website long term so you can focus on the important stuff - running your business.
 				</p>
-				<a href="/#portfolio" class="button hero-cta --primary">
-					Get in touch
-					<ChevronRightSvg />
-				</a>
-				<a href="/#portfolio" class="button hero-cta">
-					My work
-					<ChevronRightSvg />
-				</a>
+				<div>
+					<Button link="/portfolio" text="Get in touch" :primary="true" />
+					<Button link="/#portfolio" text="View my work" />
+				</div>
 			</div>
 			<img src="~/static/hero.png" class="hero-img" alt="Tony Prokop" />
 		</section>
@@ -73,7 +69,7 @@
 								<p>
 									{{ project.description }}
 								</p>
-								<a :href="project.link" class="button hero-cta">
+								<a :href="project.link" class="button">
 									View Live Site
 									<ArrowRight />
 								</a>
@@ -117,12 +113,10 @@
 						Need a website?
 					</template>
 					<template v-slot:title>
-						<a href="/contact" class="contact-link">
-							Let's work together
-							<ChevronRightSvg class="test" />
-						</a>
+						Let's work together.
 					</template>
 				</SectionHeading>
+				<Button link="/contact" text="Contact me" :primary="true" />
 			</div>
 		</Section>
 	</div>
@@ -131,6 +125,7 @@
 <script>
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
+import Button from '../components/Button.vue';
 import SectionHeading from '../components/SectionHeading.vue';
 import ContactForm from '../components/ContactForm.vue';
 import ChevronRightSvg from '~/static/chevron-right.svg?inline';
@@ -148,6 +143,7 @@ export default {
 	components: {
 		Header,
 		Footer,
+		Button,
 		SectionHeading,
 		ContactForm,
 		ChevronRightSvg,
@@ -225,10 +221,6 @@ export default {
 
 	.hero-img {
 		display: none;
-	}
-
-	.hero-cta {
-		margin: 0 auto;
 	}
 }
 
@@ -383,22 +375,4 @@ export default {
 	background-color: var(--clr-primary);
 }
 
-.contact-link {
-	display: flex;
-	margin: 0 auto;
-	align-items: center;
-	justify-content: center;
-	text-decoration: none;
-	text-align: center;
-
-	svg {
-		width: 2rem;
-	}
-}
-
-@media(max-width: 653px) {
-	.contact-link {
-		font-size: 3.6rem;
-	}
-}
 </style>

@@ -86,18 +86,6 @@ a {
 	text-decoration: none;
 }
 
-a,
-button {
-	&:hover {
-		filter: brightness(120%);
-	}
-
-	&:active {
-		filter: brightness(140%);
-	}
-}
-
-
 *::selection {
 	background-color: #8FBCBB;
 	color: #ECEFF4;
@@ -130,47 +118,5 @@ section {
 
 .fa-chevron-right {
 	margin-left: 1rem;
-}
-
-.button {
-	background-color: var(--clr-light-gray);
-	color: var(--clr-black);
-	font-size: 14px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 1.5rem 3rem;
-	border: none;
-	font-weight: 600;
-	width: fit-content;
-
-	&.--primary {
-		background-color: var(--clr-primary);
-	}
-
-	svg {
-		margin-left: 20px;
-	}
-}
-
-.circle-icon {
-	width: 5rem;
-	height: 5rem;
-	border-radius: 100%;
-	background-color: #3B4252;
-	text-decoration: none;
-	color: #D8DEE9;
-	display: grid;
-	place-items: center;
-	border: none;
-	cursor: pointer;
-
-	&:hover {
-		filter: brightness(120%);
-	}
-
-	&:active {
-		filter: brightness(140%);
-	}
 }
 </style>
