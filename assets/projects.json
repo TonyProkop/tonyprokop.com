@@ -1,0 +1,38 @@
+[
+	{
+		"title": "Delicious Catering",
+		"link": "https://delicious-catering.com/",
+		"imageFileName": "laptop-catering.png",
+		"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+	},
+	{
+		"title": "The Gallery & Loft",
+		"link": "https://thegalleryandloft.com/",
+		"imageFileName": "laptop-venue.png",
+		"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+	},
+	{
+		"title": "My Whisky Barrel",
+		"link": "https://mwb-omaha.com/",
+		"imageFileName": "laptop-mwb.png",
+		"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+	},
+	{
+		"title": "All Pro Handyman",
+		"link": "https://allprohandyman.tonyprokop.com",
+		"imageFileName": "laptop-handyman.png",
+		"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+	},
+	{
+		"title": "Amsterdam Falafel & Kabob",
+		"link": "https://amsterdam.tonyprokop.com/",
+		"imageFileName": "laptop-amsterdam.png",
+		"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+	},
+	{
+		"title": "My Wedding",
+		"link": "https://tonykatiewedding.tonyprokop.com/",
+		"imageFileName": "laptop-wedding.png",
+		"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+	}
+]

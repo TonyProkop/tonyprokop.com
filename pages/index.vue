@@ -59,9 +59,28 @@
 						My Latest Work
 					</template>
 				</SectionHeading>
-				<div class="work-block-container">
-					<WorkBlock v-for="(workBlock, index) in workBlocks" :key="index" :title="workBlock.title" :link="workBlock.link" :imageFileName="workBlock.imageFileName" />
-				</div>
+				<ul class="accordion">
+					<li v-for="(project, index) in projects" :key="index" class="accordion-item">
+						<input type="radio" name="project" :id="index" :value="index" :checked="index === 0">
+						<label :for="index">
+							{{ project.title }}
+							<ArrowUp class="arrow-up" />
+							<ArrowDown class="arrow-down" />
+						</label>
+						<div class="content">
+							<img :src="require(`@/static/projects/${project.imageFileName}`)" :alt="project.title">
+							<div>
+								<p>
+									{{ project.description }}
+								</p>
+								<a :href="project.link" class="button hero-cta">
+									View Live Site
+									<ArrowRight />
+								</a>
+							</div>
+						</div>
+					</li>
+				</ul>
 			</div>
 		</section>
 
@@ -72,7 +91,7 @@
 						Services
 					</template>
 					<template v-slot:title>
-						What I Offer
+						My Process
 					</template>
 				</SectionHeading>
 				<div class="services-container">
@@ -104,14 +123,16 @@ import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
 import Service from '../components/Service.vue';
 import SectionHeading from '../components/SectionHeading.vue';
-import WorkBlock from '../components/WorkBlock.vue';
 import ContactForm from '../components/ContactForm.vue';
 import ChevronRightSvg from '~/static/chevron-right.svg?inline';
 import WPEngine from '~/static/wpengine.svg?inline';
 import Flywheel from '~/static/flywheel.svg?inline';
 import Speedway from '~/static/speedway.svg?inline';
 import Quote from '~/static/quote-left-solid.svg?inline';
-import workBlockData from "~/assets/work-blocks.json";
+import ArrowUp from '~/static/arrow-up-solid.svg?inline';
+import ArrowDown from '~/static/arrow-down-solid.svg?inline';
+import ArrowRight from '~/static/arrow-right-solid.svg?inline';
+import projectData from "~/assets/projects.json";
 
 export default {
 	components: {
@@ -119,18 +140,21 @@ export default {
 		Footer,
 		Service,
 		SectionHeading,
-		WorkBlock,
 		ContactForm,
 		ChevronRightSvg,
 		WPEngine,
 		Flywheel,
 		Speedway,
-		Quote
+		Quote,
+		ArrowUp,
+		ArrowDown,
+		ArrowRight
 	},
+
 	data () {
 		return {
-			workBlocks: [
-				...workBlockData
+			projects: [
+				...projectData
 			],
 			services: [
 				{
@@ -305,17 +329,73 @@ export default {
 	}
 }
 
-.work-block-container {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	column-gap: 5rem;
-	row-gap: 5rem;
-	margin: 0 auto;
-}
+#portfolio {
+	ul {
+		margin: 0;
+		padding: 0;
+	}
 
-@media(max-width: 1000px) {
-	.work-block-container {
-		grid-template-columns: 1fr;
+	li {
+		list-style: none;
+		border-top: 1px solid var(--clr-gray);
+
+		&:first-child {
+			border: none;
+		}
+	}
+
+	svg {
+		max-width: 3rem;
+		max-height: 3rem;
+	}
+
+	.content {
+		display: none;
+
+		img {
+			max-width: 500px;
+			margin-right: 5rem;
+		}
+
+		p {
+			font-size: 1.6rem;
+			margin-bottom: 2rem;
+		}
+	}
+
+	.arrow-up {
+		display: none;
+	}
+
+	label {
+		display: flex;
+		justify-content: space-between;
+		padding: 5rem 0;
+		cursor: pointer;
+		font-size: 2.4rem;
+		font-weight: 600;
+	}
+
+	input[name="project"] {
+		display: none;
+
+		&:checked + label {
+
+			.arrow-up {
+				display: block;
+			}
+
+			.arrow-down {
+				display: none;
+			}
+
+			& + .content {
+				margin-bottom: 5rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		}
 	}
 }
 

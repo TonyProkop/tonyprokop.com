@@ -109,6 +109,11 @@ h3 {
 	line-height: 1.1;
 }
 
+h1,
+h2 {
+	font-size: 6.4rem;
+}
+
 p {
 	max-width: 60rem;
 	line-height: 1.8;
