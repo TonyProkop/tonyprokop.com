@@ -40,7 +40,7 @@ export default {
 
 <style scoped lang="scss">
 .button {
-	display: inline-flex;
+	display: flex;
 	align-items: center;
 	justify-content: center;
 	padding: 2.4rem 4rem;
@@ -48,7 +48,7 @@ export default {
 	background-color: var(--clr-light-gray);
 	color: var(--clr-black);
 	font-weight: 600;
-	max-width: 100%;
+	width: fit-content;
 	transition: all 200ms ease 0s;
 
 	&.--primary {

@@ -69,10 +69,7 @@
 								<p>
 									{{ project.description }}
 								</p>
-								<a :href="project.link" class="button">
-									View Live Site
-									<ArrowRight />
-								</a>
+								<Button :link="project.link" text="View Live Site" />
 							</div>
 						</div>
 					</li>
@@ -108,7 +105,7 @@
 
 		<section id="contact">
 			<div class="section-content">
-				<SectionHeading>
+				<SectionHeading :centered="true">
 					<template v-slot:name>
 						Need a website?
 					</template>
@@ -116,7 +113,7 @@
 						Let's work together.
 					</template>
 				</SectionHeading>
-				<Button link="/contact" text="Contact me" :primary="true" />
+				<Button class="contact-button" link="/contact" text="Contact me" :primary="true" />
 			</div>
 		</Section>
 	</div>
@@ -375,4 +372,11 @@ export default {
 	background-color: var(--clr-primary);
 }
 
+#contact {
+	.contact-button {
+		margin: 0 auto;
+		display: flex;
+		width: fit-content;
+	}
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-	<div class="section-heading">
+	<div class="section-heading" :class="{ '--centered': centered }">
 		<h2 class="name">
 			<slot name="name"></slot>
 		</h2>
@@ -9,16 +9,32 @@
 	</div>
 </template>
 
+<script>
+export default {
+	props: {
+		centered: {
+			type: Boolean,
+			default: false
+		}
+	}
+}
+</script>
+
 <style scoped>
 .section-heading {
 	width: 100%;
 	margin-bottom: 10rem;
 }
 
+.--centered {
+	text-align: center;
+}
+
 .name {
-	font-weight: 400;
+	font-weight: 600;
 	font-size: 1.4rem;
 	text-transform: uppercase;
+	color: var(--clr-gray);
 }
 
 .name,
