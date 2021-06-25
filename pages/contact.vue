@@ -10,6 +10,8 @@
 import ContactForm from '../components/ContactForm'
 
 export default {
+	layout: 'dark',
+
 	components: {
 		ContactForm
 	}

@@ -5,7 +5,7 @@
 		</div>
 		<ArrowRight />
 	</a>
-	<button v-else class="button" :class="{ '--primary': primary }">
+	<button v-else class="button" :type="type" :class="{ '--primary': primary }">
 		<div class="button-text">
 			{{ text }}
 		</div>
@@ -30,6 +30,10 @@ export default {
 			type: String,
 			required: true
 		},
+		type: {
+			type: String,
+			default: ''
+		},
 		primary: {
 			type: Boolean,
 			default: false
@@ -46,13 +50,18 @@ export default {
 	padding: 2.4rem 4rem;
 	border: none;
 	background-color: var(--clr-light-gray);
-	color: var(--clr-black);
 	font-weight: 600;
 	width: fit-content;
 	transition: all 200ms ease 0s;
+	cursor: pointer;
 
 	&.--primary {
 		background-color: var(--clr-primary);
+	}
+
+	.button-text,
+	svg {
+		color: var(--clr-black);
 	}
 
 	.button-text {

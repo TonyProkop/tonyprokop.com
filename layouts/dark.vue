@@ -24,11 +24,11 @@ export default {
 @import '~assets/base.scss';
 
 body {
-	background-color: var(--clr-white);
-	color: var(--clr-black);
+	background-color: var(--clr-black);
+	color: var(--clr-white);
 }
 
 *:not(svg):not(path) {
-  color: var(--clr-black);
+  color: var(--clr-white);
 }
 </style>

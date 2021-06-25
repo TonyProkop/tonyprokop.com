@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<section class="hero">
-			<div class="section-content hero-content">
+		<section id="hero">
+			<div class="section-content">
 				<div class="name">Freelance Web Designer and Developer</div>
 				<h1 class="title">
 					I build websites for local businesses.
@@ -9,8 +9,8 @@
 				<p>
 					Establishing a solid online presence is hard, especially while wearing multiple hats running a business. Partner with me and don’t worry about it! I will design, build, host and maintain your website long term so you can focus on the important stuff - running your business.
 				</p>
-				<div>
-					<Button link="/portfolio" text="Get in touch" :primary="true" />
+				<div class="button-container">
+					<Button link="/contact" text="Get in touch" :primary="true" />
 					<Button link="/#portfolio" text="View my work" />
 				</div>
 			</div>
@@ -19,13 +19,15 @@
 
 		<section id="companies">
 			<div class="section-content">
-				<p>
-					Companies I've Worked For
-				</p>
-				<div class="work-logos">
-					<WPEngine />
-					<Flywheel />
-					<Speedway />
+				<div class="card">
+					<p>
+						Companies I've Worked For
+					</p>
+					<div class="work-logos">
+						<WPEngine />
+						<Flywheel />
+						<Speedway />
+					</div>
 				</div>
 			</div>
 		</section>
@@ -167,39 +169,49 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.hero {
+#hero {
 	position: relative;
 	max-width: var(--max-width);
-	margin: -9rem auto 0;
-}
+	margin: -12.1rem auto 0;
 
-.hero-content {
-	padding: 20rem 3rem;
-}
+	.section-content {
+		padding-top: 25rem;
+		padding-bottom: 25rem;
+	}
 
-.name {
-	text-transform: uppercase;
-	font-size: 14px;
-	font-weight: 600;
-}
+	.name {
+		text-transform: uppercase;
+		font-size: 14px;
+		font-weight: 600;
+	}
 
-.title {
-  font-weight: 700;
-  display: block;
-  font-size: 6.4rem;
-  margin: 5rem 0;
-  margin-right: 6rem;
-  flex-basis: 54rem;
-  flex-grow: 0;
-  max-width: 74rem;
-}
+	.title {
+		font-weight: 700;
+		display: block;
+		font-size: 6.4rem;
+		margin: 5rem 0;
+		margin-right: 6rem;
+		flex-basis: 54rem;
+		flex-grow: 0;
+		max-width: 74rem;
+	}
 
-.hero-img {
-	display: block;
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	width: 60%;
+	.hero-img {
+		display: block;
+		position: absolute;
+		right: -130px;
+		bottom: 0;
+		width: 75%;
+	}
+
+	.button-container {
+		display: flex;
+		margin-top: 5rem;
+
+		.button:first-child {
+			margin-right: 3rem;
+		}
+	}
 }
 
 @media(max-width: 1216px) {
@@ -225,10 +237,16 @@ export default {
 	position: relative;
 
 	.section-content {
+		max-width: var(--max-width);
+		padding: 0 var(--default-white-space);
+		margin: 0 auto;
 		position: absolute;
 		top: -76px;
 		left: 0;
 		right: 0;
+	}
+
+	.card {
 		background: white;
 		text-transform: uppercase;
 		border-radius: 10px;
@@ -259,6 +277,7 @@ export default {
 
 #testimonials {
 	background-color: var(--clr-black);
+	padding-top: 35px;
 
 	*:not(svg):not(path) {
 		color: var(--clr-white);

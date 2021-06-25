@@ -19,20 +19,19 @@
 			</div>
 		</div>
 		<div class="form-row button-row">
-			<button type="submit" class="button form-button">
-				Send Message
-				<ChevronRightSvg />
-			</button>
+			<Button type="submit" text="Send message" :primary="true" />
 		</div>
 	</form>
 </template>
 
 <script>
 import ChevronRightSvg from '~/static/chevron-right.svg?inline';
+import Button from '../components/Button';
 
 export default {
 	components: {
 		ChevronRightSvg,
+		Button
 	}
 }
 </script>
@@ -89,18 +88,17 @@ export default {
 		width: 100%;
 		border: none;
 		padding: 2rem;
-		border-radius: .5rem;
 		font-size: 1.8rem;
-		color: #FFFFFF;
-		background-color: #3B4252;
+		color: var(--clr-white);
+		background-color: var(--clr-gray);
 	}
 
 	input:-webkit-autofill,
 	input:-webkit-autofill:hover,
 	input:-webkit-autofill:focus {
 		border: none;
-		-webkit-text-fill-color: #FFFFFF;
-		-webkit-box-shadow: 0 0 0 1000px #3B4252 inset;
+		-webkit-text-fill-color: var(--clr-white);
+		-webkit-box-shadow: 0 0 0 1000px var(--clr-gray) inset;
 		transition: background-color 5000s ease-in-out 0s;
 	}
 
