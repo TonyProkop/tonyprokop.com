@@ -175,8 +175,8 @@ export default {
 	margin: -12.1rem auto 0;
 
 	.section-content {
-		padding-top: 25rem;
-		padding-bottom: 25rem;
+		padding-top: 20rem;
+		padding-bottom: 20rem;
 	}
 
 	.name {
@@ -188,7 +188,7 @@ export default {
 	.title {
 		font-weight: 700;
 		display: block;
-		font-size: 6.4rem;
+		font-size: clamp(3.2rem, 7vw, 6.4rem);
 		margin: 5rem 0;
 		margin-right: 6rem;
 		flex-basis: 54rem;
@@ -201,7 +201,7 @@ export default {
 		position: absolute;
 		right: -130px;
 		bottom: 0;
-		width: 75%;
+		width: 70%;
 	}
 
 	.button-container {
@@ -214,20 +214,7 @@ export default {
 	}
 }
 
-@media(max-width: 1216px) {
-	.title {
-		font-size: 4.8rem;
-	}
-}
-
 @media(max-width: 1035px) {
-	.name,
-	.title {
-		margin-left: 0;
-		margin-right: 0;
-		text-align: center;
-	}
-
 	.hero-img {
 		display: none;
 	}
