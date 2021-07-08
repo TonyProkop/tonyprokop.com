@@ -90,7 +90,7 @@ export default {
 		padding: 2rem;
 		font-size: 1.8rem;
 		color: var(--clr-white);
-		background-color: var(--clr-gray);
+		background-color: var(--clr-gray-1);
 	}
 
 	input:-webkit-autofill,
@@ -98,7 +98,7 @@ export default {
 	input:-webkit-autofill:focus {
 		border: none;
 		-webkit-text-fill-color: var(--clr-white);
-		-webkit-box-shadow: 0 0 0 1000px var(--clr-gray) inset;
+		-webkit-box-shadow: 0 0 0 1000px var(--clr-gray-1) inset;
 		transition: background-color 5000s ease-in-out 0s;
 	}
 

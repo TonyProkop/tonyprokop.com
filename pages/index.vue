@@ -71,7 +71,7 @@
 								<p>
 									{{ project.description }}
 								</p>
-								<Button :link="project.link" text="View Live Site" />
+								<Button :link="project.link" text="View live site" />
 							</div>
 						</div>
 					</li>
@@ -186,22 +186,24 @@ export default {
 	}
 
 	.title {
-		font-weight: 700;
 		display: block;
-		font-size: clamp(3.2rem, 7vw, 6.4rem);
 		margin: 5rem 0;
-		margin-right: 6rem;
-		flex-basis: 54rem;
-		flex-grow: 0;
 		max-width: 74rem;
 	}
 
 	.hero-img {
 		display: block;
 		position: absolute;
-		right: -130px;
+		right: 0;
 		bottom: 0;
 		width: 70%;
+		z-index: -1;
+	}
+
+	@media (max-width: 1240px) {
+		.hero-img {
+			display: none;
+		}
 	}
 
 	.button-container {
@@ -228,9 +230,10 @@ export default {
 		padding: 0 var(--default-white-space);
 		margin: 0 auto;
 		position: absolute;
-		top: -76px;
+		top: 0;
 		left: 0;
 		right: 0;
+		transform: translateY(-50%);
 	}
 
 	.card {
@@ -241,22 +244,35 @@ export default {
 		padding: 5rem;
 		box-shadow: 0px 0px 40px 30px rgba(48, 55, 50, 0.03);
 		display: flex;
-		justify-content: space-between;
+		flex-direction: column;
 		align-items: center;
 		z-index: 10;
 
 		p {
 			font-size: 1.6rem;
 			font-weight: 600;
+			margin-bottom: calc(var(--default-white-space) / 2);
 		}
 
 		.work-logos {
 			display: flex;
+			flex-wrap: wrap;
 			justify-content: center;
 			align-items: center;
 
 			svg {
-				margin: 0 2.5rem;
+				margin: 0 2.5rem 0;
+			}
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.card {
+			justify-content: space-between;
+			flex-direction: row;
+
+			p {
+				margin-bottom: 0;
 			}
 		}
 	}
@@ -271,20 +287,31 @@ export default {
 	}
 
 	svg {
-		flex-basis: 3rem;
+		flex-basis: 5rem;
 		margin-right: 3rem;
 	}
 
 	.section-content {
 		display: flex;
-		justify-content: space-between;
-		align-items: flex-start !important;
+		flex-direction: column;
 	}
 
 	.left-container {
 		display: flex;
-		flex-basis: 295px;
-		align-items: flex-start;
+		align-items: center;
+		margin-bottom: var(--default-white-space);
+	}
+
+	@media (min-width: 1024px) {
+		.section-content {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: flex-start !important;
+		}
+
+		.left-container {
+			flex-basis: 295px;
+		}
 	}
 
 	.name {
@@ -300,7 +327,7 @@ export default {
 	}
 
 	.quote {
-		font-size: 3.6rem;
+		font-size: clamp(2.4rem, 5vw, 3.6rem);
 		font-style: italic;
 		font-weight: normal;
 	}
@@ -313,7 +340,7 @@ export default {
 
 .accordion-item {
 	list-style: none;
-	border-top: 1px solid var(--clr-gray);
+	border-top: 1px solid var(--clr-gray-2);
 
 	&:first-child {
 		border: none;
@@ -322,6 +349,7 @@ export default {
 	svg {
 		max-width: 3rem;
 		max-height: 3rem;
+		transition: all .3s ease;
 	}
 
 	.arrow-up {
@@ -341,7 +369,6 @@ export default {
 		display: none;
 
 		&:checked + label {
-
 			.arrow-up {
 				display: block;
 			}
@@ -351,16 +378,32 @@ export default {
 			}
 
 			& + .content {
+				max-height: 300px;
 				margin-bottom: 5rem;
 				display: flex;
 				align-items: center;
 				justify-content: center;
 			}
 		}
+
+		&:not(:checked) + label {
+			svg {
+				color: var(--clr-gray-2);
+			}
+
+			&:hover {
+				svg {
+					transform: rotate(-180deg);
+					color: var(--clr-gray-1);
+				}
+			}
+		}
 	}
 
 	.content {
-		display: none;
+		overflow: hidden;
+		max-height: 0;
+		transition: max-height .5s ease;
 
 		img {
 			max-width: 500px;
@@ -383,6 +426,14 @@ export default {
 		margin: 0 auto;
 		display: flex;
 		width: fit-content;
+	}
+
+	.section-heading {
+		margin: 0;
+	}
+
+	.section-heading::v-deep .title {
+		margin: 0.3em 0 0.5em;
 	}
 }
 </style>

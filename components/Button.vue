@@ -49,7 +49,7 @@ export default {
 	justify-content: center;
 	padding: 2.4rem 4rem;
 	border: none;
-	background-color: var(--clr-light-gray);
+	background-color: var(--clr-gray-3);
 	font-weight: 600;
 	width: fit-content;
 	transition: all 200ms ease 0s;

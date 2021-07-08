@@ -1,11 +1,11 @@
 <template>
 	<div class="section-heading" :class="{ '--centered': centered }">
-		<h2 class="name">
+		<p class="name">
 			<slot name="name"></slot>
-		</h2>
-		<div class="title">
+		</p>
+		<h2 class="title">
 			<slot name="title"></slot>
-		</div>
+		</h2>
 	</div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .section-heading {
 	width: 100%;
 	margin-bottom: 10rem;
@@ -28,23 +28,22 @@ export default {
 
 .--centered {
 	text-align: center;
+
+	.name,
+	.title {
+		margin: 0 auto;
+	}
 }
 
 .name {
 	font-weight: 600;
 	font-size: 1.4rem;
 	text-transform: uppercase;
-	color: var(--clr-gray);
+	color: var(--clr-gray-1);
 }
 
-.name,
-.title {
-	margin: 0 auto;
-}
 
 .title {
-	font-size: 6.4rem;
-	font-weight: 700;
 	margin: 2rem 0;
 }
 </style>
