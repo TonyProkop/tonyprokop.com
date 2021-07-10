@@ -349,7 +349,7 @@ export default {
 	svg {
 		max-width: 3rem;
 		max-height: 3rem;
-		transition: all .3s ease;
+		transition: color .3s ease;
 	}
 
 	.arrow-up {
@@ -378,7 +378,7 @@ export default {
 			}
 
 			& + .content {
-				max-height: 300px;
+				max-height: 600px;
 				margin-bottom: 5rem;
 				display: flex;
 				align-items: center;
@@ -393,7 +393,6 @@ export default {
 
 			&:hover {
 				svg {
-					transform: rotate(-180deg);
 					color: var(--clr-gray-1);
 				}
 			}
@@ -402,17 +401,29 @@ export default {
 
 	.content {
 		overflow: hidden;
+		display: flex;
+		flex-wrap: wrap;
 		max-height: 0;
 		transition: max-height .5s ease;
 
 		img {
 			max-width: 500px;
-			margin-right: 5rem;
+			width: 100%;
 		}
 
 		p {
 			font-size: 1.6rem;
-			margin-bottom: 2rem;
+			margin: 2em 0;
+		}
+	}
+
+	@media (min-width: 950px) {
+		.content {
+			flex-wrap: nowrap;
+
+			img {
+				margin-right: 5rem;
+			}
 		}
 	}
 }

@@ -79,7 +79,7 @@ export default {
 
 	&:hover,
 	&:active {
-		filter: brightness(90%);
+		filter: brightness(95%);
 
 		svg {
 			transform: translateX(10px);
