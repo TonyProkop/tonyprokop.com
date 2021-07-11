@@ -38,13 +38,14 @@ export default {
 	** Nuxt.js dev-modules
 	*/
 	buildModules: [
+		'@nuxt/image',
 		'@nuxtjs/google-analytics'
 	],
 	/*
 	** Nuxt.js modules
 	*/
 	modules: [
-		'@nuxtjs/svg',
+		'@nuxtjs/svg'
 	],
 	/*
 	** Build configuration

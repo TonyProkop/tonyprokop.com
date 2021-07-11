@@ -14,7 +14,7 @@
 					<Button link="/#portfolio" text="View my work" />
 				</div>
 			</div>
-			<img src="~/static/hero.png" class="hero-img" alt="Tony Prokop" />
+			<nuxt-img src="/hero.png" class="hero-img" alt="Tony Prokop" quality="100" />
 		</section>
 
 		<section id="companies">
@@ -66,7 +66,7 @@
 							<ArrowDown class="arrow-down" />
 						</label>
 						<div class="content">
-							<img :src="require(`@/static/projects/${project.imageFileName}`)" :alt="project.title">
+							<nuxt-img :src="`/projects/${project.imageFileName}`" :alt="project.title" />
 							<div>
 								<p>
 									{{ project.description }}
