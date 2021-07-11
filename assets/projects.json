@@ -1,38 +1,38 @@
 [
 	{
+		"title": "My Whisky Barrel",
+		"link": "https://mwb-omaha.com/",
+		"imageFileName": "laptop-mwb.png",
+		"description": "A company specializing in renting whiskey barrel products and accessories for parties. The site includes a page detailing all products available for rent, a gallery page to view customers' setups, and a contact form."
+	},
+	{
 		"title": "Delicious Catering",
 		"link": "https://delicious-catering.com/",
 		"imageFileName": "laptop-catering.png",
-		"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+		"description": "A catering company serving the Omaha metro area. This site includes a scrolling section to display different categories of food, a gallery of past events catered, and a contact form."
 	},
 	{
 		"title": "The Gallery & Loft",
 		"link": "https://thegalleryandloft.com/",
 		"imageFileName": "laptop-venue.png",
-		"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
-	},
-	{
-		"title": "My Whisky Barrel",
-		"link": "https://mwb-omaha.com/",
-		"imageFileName": "laptop-mwb.png",
-		"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+		"description": "The primary venue of Delicious Catering. This site includes a \"typewriter\" effect in the main heading showing different events that can be hosted at The Gallery & Loft. It also contains a map and contact form."
 	},
 	{
 		"title": "All Pro Handyman",
 		"link": "https://allprohandyman.tonyprokop.com",
 		"imageFileName": "laptop-handyman.png",
-		"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+		"description": "A handyman business, specializing in fence and deck construction, and routine home maintenance. The site includes a content management system so the owner can add/remove different services and change copy. It features multiple pages for each service, and a contact page."
 	},
 	{
 		"title": "Amsterdam Falafel & Kabob",
 		"link": "https://amsterdam.tonyprokop.com/",
 		"imageFileName": "laptop-amsterdam.png",
-		"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+		"description": "This site is a prototype for a restaurant in Omaha, featuring a dark theme, multi-step menu, about us section, and contact form."
 	},
 	{
 		"title": "My Wedding",
 		"link": "https://tonykatiewedding.tonyprokop.com/",
 		"imageFileName": "laptop-wedding.png",
-		"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+		"description": "A site for my wedding, with engagement photos, and countdown timer to the wedding, rsvp form, and links to registry."
 	}
 ]

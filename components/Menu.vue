@@ -37,6 +37,7 @@
 import Logo from '~/static/logo.svg?inline';
 import Menu from '~/static/menu.svg?inline';
 import Close from '~/static/close.svg?inline';
+import scrollToElement from '~/helpers/scrollToElement';
 
 export default {
 	components: {
@@ -62,13 +63,7 @@ export default {
 				this.toggleMenu();
 			}
 
-			const element = document.getElementById(id);
-			const rect = element.getBoundingClientRect();
-			window.scrollTo({
-				top: rect.top,
-				left: 0,
-				behavior: 'smooth'
-			});
+			scrollToElement(id, `/#${id}`);
 		}
 	}
 }

@@ -168,7 +168,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style  lang="scss">
 #hero {
 	position: relative;
 	max-width: var(--max-width);
@@ -429,7 +429,19 @@ export default {
 }
 
 #process {
-	background-color: var(--clr-primary);
+	background-color: var(--clr-black);
+
+	*:not(svg):not(path) {
+		color: var(--clr-white) !important;
+	}
+
+	.accordion-item {
+		border-color: var(--clr-gray);
+	}
+
+	svg {
+		color: var(--clr-gray);
+	}
 }
 
 #contact {
@@ -443,7 +455,7 @@ export default {
 		margin: 0;
 	}
 
-	.section-heading::v-deep .title {
+	.section-heading .title {
 		margin: 0.3em 0 0.5em;
 	}
 }

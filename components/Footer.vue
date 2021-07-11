@@ -44,6 +44,11 @@ footer {
 	max-width: var(--max-width);
 	margin: 0 auto;
 	padding: var(--default-white-space);
+
+	.tagline,
+	svg {
+		color: var(--clr-gray-2);
+	}
 }
 
 .tagline {
@@ -57,7 +62,7 @@ footer {
 }
 
 .external-link-container a {
-	margin: 0 1rem;
+	margin: 0 calc(var(--default-white-space) / 2);
 
 	&:first-child {
 		margin-left: 0;

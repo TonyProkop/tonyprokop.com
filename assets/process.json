@@ -1,22 +1,22 @@
 [
 	{
 		"title": "1. Discover Phase",
-		"description": "TODO"
+		"description": "Let's chat! We'll hop on a call, get to know one another, and discuss how I can help you and your business."
 	},
 	{
 		"title": "2. Design Phase",
-		"description": "I work with you while creating mock-ups to ensure the product matches your vision and accomplishes your goals."
+		"description": "I create website mock-ups, working with you along the way to ensure the product matches your vision and will accomplish your goals."
 	},
 	{
 		"title": "3. Build Phase",
-		"description": "I create your website from the ground up using the latest technologies. The final product will be fast, accessible, and secure."
+		"description": "I build your website from the ground up using the latest technologies. The final product will be fast, accessible, and secure."
 	},
 	{
 		"title": "4. Launch Phase",
-		"description": "I handle hosting, servers, deployments, backups, and more. You get a hassle-free website that just works."
+		"description": "It's time to go live! I launch your website, point your domain to it, and register the site with search providers Google and Bing."
 	},
 	{
 		"title": "5. Support & Maintenance Phase",
-		"description": "I work with you to iterate on your site, adding new features, applying security patches, and fixing occasional bugs."
+		"description": "I work with you to iterate on your site, adding any new features as you grow."
 	}
 ]
