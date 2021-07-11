@@ -1,7 +1,7 @@
 <template>
 	<div class="container">
 		<h1 class="heading">Let's Talk.</h1>
-		<p class="paragraph">Got a project you’d like to discuss? I’d love to hear about it, drop me a message</p>
+		<p class="paragraph">Got a project you’d like to discuss? I’d love to hear about it, drop me a message.</p>
 		<ContactForm />
 	</div>
 </template>
@@ -10,6 +10,8 @@
 import ContactForm from '../components/ContactForm'
 
 export default {
+	layout: 'dark',
+
 	components: {
 		ContactForm
 	}

@@ -1,35 +1,49 @@
 <template>
-	<div class="section-heading">
-		<h2 class="name">
+	<div class="section-heading" :class="{ '--centered': centered }">
+		<p class="name">
 			<slot name="name"></slot>
-		</h2>
-		<div class="title">
+		</p>
+		<h2 class="title">
 			<slot name="title"></slot>
-		</div>
+		</h2>
 	</div>
 </template>
 
-<style scoped>
+<script>
+export default {
+	props: {
+		centered: {
+			type: Boolean,
+			default: false
+		}
+	}
+}
+</script>
+
+<style scoped lang="scss">
 .section-heading {
-	text-align: center;
 	width: 100%;
 	margin-bottom: 10rem;
 }
 
+.--centered {
+	text-align: center;
+
+	.name,
+	.title {
+		margin: 0 auto;
+	}
+}
+
 .name {
-	font-weight: 400;
+	font-weight: 600;
 	font-size: 1.4rem;
 	text-transform: uppercase;
+	color: var(--clr-gray-1);
 }
 
-.name,
-.title {
-	margin: 0 auto;
-}
 
 .title {
-	font-size: 4.8rem;
-	font-weight: 700;
 	margin: 2rem 0;
 }
 </style>

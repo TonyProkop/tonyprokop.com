@@ -1,0 +1,154 @@
+:root {
+	--clr-black: #1B1B1B;
+	--clr-gray-1: #2E2E2E;
+	--clr-gray-2: #BEBEBE;
+	--clr-gray-3: #F6F6F6;
+	--clr-white: #FFFFFF;
+	--clr-primary: #1ED760;
+	--max-width: 1280px;
+	--default-white-space: 3rem;
+
+	@media (min-width: 650px) {
+		--default-white-space: 5rem;
+	}
+}
+
+html {
+  font-family: 'Raleway', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+body {
+	font-size: 1.8rem;
+
+	&.menuOpen {
+		overflow: hidden;
+	}
+}
+
+.page-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100vh;
+}
+
+main {
+	flex-grow: 1;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+	line-height: 1.1;
+}
+
+h1,
+h2 {
+	font-size: clamp(3.2rem, 8vw, 6.4rem);
+}
+
+p {
+	max-width: 60rem;
+	line-height: 1.8;
+}
+
+section {
+  .section-content {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 12rem var(--default-white-space);
+  }
+}
+
+*::selection {
+	background-color: var(--clr-primary);
+	color: var(--clr-black);
+}
+
+.form {
+	max-width: 800px;
+	margin: 0 auto;
+	display: grid;
+
+	input[name="super-secret-field"] {
+		display: none;
+	}
+
+	.form-row {
+		display: flex;
+		margin-bottom: 3rem;
+	}
+
+	.form-row.half .form-group {
+		flex-basis: 50%;
+	}
+
+	@media(max-width: 700px) {
+		.form-row.half {
+			flex-wrap: wrap;
+		}
+
+		.form-row.half .form-group {
+			flex-basis: 100%;
+		}
+	}
+
+	.form-group {
+		width: 100%;
+	}
+
+	.gutter {
+		width: 30px;
+		height: 30px;
+	}
+
+	label {
+		display: block;
+		margin-bottom: 1rem;
+		flex: none;
+		text-transform: uppercase;
+		font-size: 1.4rem;
+	}
+
+	input, textarea {
+		display: block;
+		width: 100%;
+		border: none;
+		padding: 2rem;
+		font-size: 1.8rem;
+		color: var(--clr-white);
+		background-color: var(--clr-gray-1);
+	}
+
+	input:-webkit-autofill,
+	input:-webkit-autofill:hover,
+	input:-webkit-autofill:focus {
+		border: none;
+		-webkit-text-fill-color: var(--clr-white);
+		-webkit-box-shadow: 0 0 0 1000px var(--clr-gray-1) inset;
+		transition: background-color 5000s ease-in-out 0s;
+	}
+
+	.form-button {
+		width: fit-content;
+	}
+
+	.button-row {
+		flex-direction: row-reverse;
+	}
+}
