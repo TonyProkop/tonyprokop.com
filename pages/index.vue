@@ -66,7 +66,7 @@
 							<ArrowDown class="arrow-down" />
 						</label>
 						<div class="content">
-							<nuxt-img :src="`/projects/${project.imageFileName}`" :alt="project.title" width="500" height="auto" />
+							<nuxt-img :src="`/projects/${project.imageFileName}`" :alt="project.title" width="500" height="296" />
 							<div>
 								<p>
 									{{ project.description }}
@@ -418,6 +418,7 @@ export default {
 		img {
 			max-width: 500px;
 			width: 100%;
+			height: auto;
 		}
 
 		p {
