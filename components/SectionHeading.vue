@@ -23,7 +23,7 @@ export default {
 <style scoped lang="scss">
 .section-heading {
 	width: 100%;
-	margin-bottom: 10rem;
+	margin-bottom: 5rem;
 }
 
 .--centered {
