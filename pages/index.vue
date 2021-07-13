@@ -176,7 +176,6 @@ export default {
 
 	.section-content {
 		padding-top: 20rem;
-		padding-bottom: 20rem;
 	}
 
 	.name {
@@ -234,11 +233,7 @@ export default {
 		max-width: var(--max-width);
 		padding: 0 var(--default-white-space);
 		margin: 0 auto;
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		transform: translateY(-50%);
+		background: linear-gradient(0deg, var(--clr-black) 50%, var(--clr-white) 50%);
 	}
 
 	.card {
@@ -269,6 +264,16 @@ export default {
 				margin: 0 2.5rem 0;
 			}
 		}
+
+		@media (max-width: 700px) {
+			.work-logos {
+				flex-direction: column;
+
+				svg {
+					margin-top: var(--default-white-space);
+				}
+			}
+		}
 	}
 
 	@media (min-width: 1024px) {
@@ -285,7 +290,6 @@ export default {
 
 #testimonials {
 	background-color: var(--clr-black);
-	padding-top: 35px;
 
 	*:not(svg):not(path) {
 		color: var(--clr-white);
