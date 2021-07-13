@@ -60,7 +60,7 @@
 				<ul class="accordion">
 					<li v-for="(project, index) in projects" :key="index" class="accordion-item">
 						<input type="radio" name="project" :id="`project-${index}`" :value="index" :checked="index === 0">
-						<label :for="`project-${index}`">
+						<label :for="`project-${index}`" tabindex="0">
 							{{ project.title }}
 							<ArrowUp class="arrow-up" />
 							<ArrowDown class="arrow-down" />
