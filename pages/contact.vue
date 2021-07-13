@@ -32,7 +32,6 @@ export default {
 }
 
 .heading {
-	font-size: 6.4rem;
 	margin-top: 15%;
 }
 

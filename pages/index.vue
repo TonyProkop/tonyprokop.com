@@ -66,7 +66,7 @@
 							<ArrowDown class="arrow-down" />
 						</label>
 						<div class="content">
-							<nuxt-img :src="`/projects/${project.imageFileName}`" :alt="project.title" width="500" height="296" />
+							<nuxt-img :src="`/projects/${project.imageFileName}`" :alt="project.title" width="500" height="auto" />
 							<div>
 								<p>
 									{{ project.description }}
@@ -208,7 +208,12 @@ export default {
 
 	.button-container {
 		display: flex;
-		margin-top: 5rem;
+		flex-wrap: wrap;
+		margin-top: calc(5rem - var(--default-white-space));
+
+		.button {
+			margin-top: var(--default-white-space);
+		}
 
 		.button:first-child {
 			margin-right: 3rem;
