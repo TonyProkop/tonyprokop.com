@@ -194,7 +194,7 @@ export default {
 		display: block;
 		position: absolute;
 		right: 0;
-		bottom: 0;
+		bottom: -100px;
 		width: 70%;
 		z-index: -1;
 	}
@@ -228,12 +228,12 @@ export default {
 
 #companies {
 	position: relative;
+	background: linear-gradient(0deg, var(--clr-black) 50%, transparent 50%);
 
 	.section-content {
 		max-width: var(--max-width);
 		padding: 0 var(--default-white-space);
 		margin: 0 auto;
-		background: linear-gradient(0deg, var(--clr-black) 50%, var(--clr-white) 50%);
 	}
 
 	.card {
