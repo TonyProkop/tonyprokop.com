@@ -447,6 +447,10 @@ export default {
 
 	.accordion-item {
 		border-color: var(--clr-gray);
+
+		input[type="radio"]:checked + label + .content {
+			max-height: 75px !important;
+		}
 	}
 
 	svg {
