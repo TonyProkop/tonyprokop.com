@@ -71,7 +71,7 @@
 								<p>
 									{{ project.description }}
 								</p>
-								<Button :link="project.link" text="View live site" />
+								<Button :link="project.link" :external="true" text="View live site" />
 							</div>
 						</div>
 					</li>
@@ -176,6 +176,8 @@ export default {
 
 	.section-content {
 		padding-top: 20rem;
+		z-index: 1;
+		position: relative;
 	}
 
 	.name {
@@ -196,7 +198,7 @@ export default {
 		right: 0;
 		bottom: -100px;
 		width: 70%;
-		z-index: -1;
+		z-index: 0;
 	}
 
 	@media (max-width: 1240px) {

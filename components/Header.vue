@@ -1,8 +1,8 @@
 <template>
 		<header class="header">
-			<a href="/" class="logo">
+			<nuxt-link to="/" class="logo">
 				Tony Prokop
-			</a>
+			</nuxt-link>
 			<Menu />
 		</header>
 </template>
@@ -28,7 +28,7 @@ export default {
 	width: 100%;
 	margin: 0 auto;
 	max-width: var(--max-width);
-	z-index: 1;
+	z-index: 2;
 }
 
 .logo {

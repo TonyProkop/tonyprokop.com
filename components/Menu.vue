@@ -2,16 +2,16 @@
 	<div>
 		<ul class="desktop-menu">
 			<li>
-				<a href="/">Home</a>
+				<nuxt-link to="/">Home</nuxt-link>
 			</li>
 			<li>
-				<a href="/#portfolio" @click.prevent="() => scrollToId('portfolio')">Portfolio</a>
+				<nuxt-link to="/#portfolio">Portfolio</nuxt-link>
 			</li>
 			<li>
-				<a href="/#process" @click.prevent="() => scrollToId('process')">Process</a>
+				<nuxt-link to="/#process">Process</nuxt-link>
 			</li>
 			<li>
-				<a href="/contact">Contact</a>
+				<nuxt-link to="/contact">Contact</nuxt-link>
 			</li>
 		</ul>
 		<div class="mobile-menu">
@@ -23,10 +23,10 @@
 					<Close />
 				</button>
 				<nav v-if="open">
-					<a href="/" @click="toggleMenu">Home</a>
-					<a href="/#portfolio" @click.prevent="() => scrollToId('portfolio')">Portfolio</a>
-					<a href="/#process" @click.prevent="() => scrollToId('process')">Process</a>
-					<a href="/contact" @click="toggleMenu">Contact</a>
+					<nuxt-link to="/" @click.native="toggleMenu">Home</nuxt-link>
+					<nuxt-link to="/#portfolio" @click.native="toggleMenu">Portfolio</nuxt-link>
+					<nuxt-link to="/#process" @click.native="toggleMenu">Process</nuxt-link>
+					<nuxt-link to="/contact" @click.native="toggleMenu">Contact</nuxt-link>
 				</nav>
 			</div>
 		</div>
@@ -37,7 +37,6 @@
 import Logo from '~/static/logo.svg?inline';
 import Menu from '~/static/menu.svg?inline';
 import Close from '~/static/close.svg?inline';
-import scrollToElement from '~/helpers/scrollToElement';
 
 export default {
 	components: {
@@ -56,14 +55,6 @@ export default {
 		toggleMenu () {
 			this.open = !this.open;
 			document.querySelector('body').classList.toggle('menuOpen');
-		},
-
-		scrollToId (id) {
-			if (this.open) {
-				this.toggleMenu();
-			}
-
-			scrollToElement(id, `/#${id}`);
 		}
 	}
 }

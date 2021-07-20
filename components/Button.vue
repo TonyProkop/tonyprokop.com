@@ -1,10 +1,16 @@
 <template>
-	<a v-if="link" :href="link" class="button" :class="{ '--primary': primary }">
+	<a v-if="link && external" :href="link" class="button" :class="{ '--primary': primary }">
 		<div class="button-text">
 			{{ text }}
 		</div>
 		<ArrowRight />
 	</a>
+	<nuxt-link v-else-if="link" :to="link" class="button" :class="{ '--primary': primary }">
+		<div class="button-text">
+			{{ text }}
+		</div>
+		<ArrowRight />
+	</nuxt-link>
 	<button v-else class="button" :type="type" :class="{ '--primary': primary }">
 		<div class="button-text">
 			{{ text }}
@@ -25,6 +31,10 @@ export default {
 		link: {
 			type: String,
 			default: ''
+		},
+		external: {
+			type: Boolean,
+			default: false
 		},
 		text: {
 			type: String,

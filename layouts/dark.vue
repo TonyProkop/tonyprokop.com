@@ -1,5 +1,5 @@
 <template>
-	<div class="page-container">
+	<div class="page-container --dark">
 		<Header />
 		<main>
 			<nuxt />
@@ -23,12 +23,12 @@ export default {
 <style lang="scss">
 @import '~assets/base.scss';
 
-body {
+.page-container.--dark {
 	background-color: var(--clr-black);
 	color: var(--clr-white);
-}
 
-*:not(svg):not(path) {
-  color: var(--clr-white);
+	*:not(svg):not(path) {
+	color: var(--clr-white);
+	}
 }
 </style>
