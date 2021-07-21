@@ -12,9 +12,9 @@
 		<ArrowRight />
 	</nuxt-link>
 	<button v-else class="button" :type="type" :class="{ '--primary': primary }">
-		<div class="button-text">
+		<span class="button-text">
 			{{ text }}
-		</div>
+		</span>
 		<ArrowRight />
 	</button>
 </template>
