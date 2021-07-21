@@ -1,5 +1,6 @@
 <template>
 	<form class="form" name="contact" method="post" data-netlify="true" netlify-honeypot="super-secret-field">
+		<input type="hidden" name="form-name" value="contact">
 		<input name="super-secret-field" />
 		<div class="form-row half">
 			<div class="form-group">
