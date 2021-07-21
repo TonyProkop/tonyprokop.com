@@ -451,7 +451,7 @@ export default {
 		border-color: var(--clr-gray);
 
 		input[type="radio"]:checked + label + .content {
-			max-height: 75px !important;
+			max-height: 160px !important;
 		}
 	}
 
