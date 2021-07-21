@@ -19,19 +19,19 @@
 			</div>
 		</div>
 		<div class="form-row button-row">
-			<button class="button" type="submit" text="Send message" :primary="true" />
+			<Button class="button" type="submit" text="Send message" :primary="true" />
 		</div>
 	</form>
 </template>
 
 <script>
 import ChevronRightSvg from '~/static/chevron-right.svg?inline';
-// import Button from '../components/Button';
+import Button from '../components/Button';
 
 export default {
 	components: {
 		ChevronRightSvg,
-		// Button
+		Button
 	}
 }
 </script>
