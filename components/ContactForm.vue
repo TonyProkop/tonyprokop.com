@@ -26,12 +26,12 @@
 
 <script>
 import ChevronRightSvg from '~/static/chevron-right.svg?inline';
-import Button from '../components/Button';
+// import Button from '../components/Button';
 
 export default {
 	components: {
 		ChevronRightSvg,
-		Button
+		// Button
 	}
 }
 </script>
