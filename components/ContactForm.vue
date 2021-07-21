@@ -19,7 +19,7 @@
 			</div>
 		</div>
 		<div class="form-row button-row">
-			<Button class="button" type="submit" text="Send message" :primary="true" />
+			<Button type="submit" text="Send message" :primary="true" />
 		</div>
 	</form>
 </template>
