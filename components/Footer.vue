@@ -8,6 +8,9 @@
 			<a href="https://www.linkedin.com/in/tony-prokop/" class="circle-icon" title="LinkedIn">
 				<LinkedInSvg />
 			</a>
+			<a href="https://www.facebook.com/TonyProkopWebDesignAndDevelopment" class="circle-icon" title="Facebook">
+				<FacebookSvg />
+			</a>
 			<a href="https://github.com/TonyProkop" class="circle-icon" title="Github">
 				<GithubSvg />
 			</a>
@@ -19,12 +22,14 @@
 import EmailSvg from '~/static/email.svg?inline';
 import LinkedInSvg from '~/static/linkedin.svg?inline';
 import GithubSvg from '~/static/github.svg?inline';
+import FacebookSvg from '~/static/facebook.svg?inline';
 
 export default {
 	components: {
 		EmailSvg,
 		LinkedInSvg,
 		GithubSvg,
+		FacebookSvg
 	},
 
 	computed: {
