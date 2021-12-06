@@ -12,6 +12,7 @@
     "serve": "nuxt serve"
   },
   "dependencies": {
+    "@nuxtjs/sitemap": "^2.4.0",
     "nuxt": "^2.15.7"
   },
   "devDependencies": {
