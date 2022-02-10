@@ -3,26 +3,30 @@
 		<section id="hero">
 			<div class="section-content">
 				<div class="name">Freelance Web Designer and Developer</div>
-				<h1 class="title">
-					I build websites for local businesses.
-				</h1>
+				<h1 class="title">I build websites for local businesses.</h1>
 				<p>
-					Establishing a solid online presence is hard, especially while wearing multiple hats running a business. Partner with me and don’t worry about it! I will design, build, host and maintain your website long term so you can focus on the important stuff - running your business.
+					Establishing a solid online presence is hard, especially while wearing
+					multiple hats running a business. Partner with me and don’t worry
+					about it! I will design, build, host and maintain your website long
+					term so you can focus on the important stuff - running your business.
 				</p>
 				<div class="button-container">
 					<Button link="/contact" text="Get in touch" :primary="true" />
 					<Button link="/#portfolio" text="View my work" />
 				</div>
 			</div>
-			<nuxt-img src="/hero.png" class="hero-img" alt="Tony Prokop" quality="100" />
+			<nuxt-img
+				src="/hero.png"
+				class="hero-img"
+				alt="Tony Prokop"
+				quality="100"
+			/>
 		</section>
 
 		<section id="companies">
 			<div class="section-content">
 				<div class="card">
-					<p>
-						Companies I've Worked For
-					</p>
+					<p>Companies I've Worked For</p>
 					<div class="work-logos">
 						<WPEngine />
 						<Flywheel />
@@ -42,7 +46,10 @@
 					</div>
 				</div>
 				<p class="quote">
-					“I worked with Tony to setup a website for my small business. Tony was consultative and responsive throughout the entire process. This enabled us to get the website built quickly. I would not hesitate to recommend Tony. He is easy to work with.”
+					“I worked with Tony to setup a website for my small business. Tony was
+					consultative and responsive throughout the entire process. This
+					enabled us to get the website built quickly. I would not hesitate to
+					recommend Tony. He is easy to work with.”
 				</p>
 			</div>
 		</section>
@@ -50,28 +57,43 @@
 		<section id="portfolio">
 			<div class="section-content">
 				<SectionHeading>
-					<template v-slot:name>
-						Portfolio
-					</template>
-					<template v-slot:title>
-						My Latest Work
-					</template>
+					<template v-slot:name> Portfolio </template>
+					<template v-slot:title> My Latest Work </template>
 				</SectionHeading>
 				<ul class="accordion">
-					<li v-for="(project, index) in projects" :key="index" class="accordion-item">
-						<input type="radio" name="project" :id="`project-${index}`" :value="index" :checked="index === 0">
+					<li
+						v-for="(project, index) in projects"
+						:key="index"
+						class="accordion-item"
+					>
+						<input
+							type="radio"
+							name="project"
+							:id="`project-${index}`"
+							:value="index"
+							:checked="index === 0"
+						/>
 						<label :for="`project-${index}`" tabindex="0">
 							{{ project.title }}
 							<ArrowUp class="arrow-up" />
 							<ArrowDown class="arrow-down" />
 						</label>
 						<div class="content">
-							<nuxt-img :src="`/projects/${project.imageFileName}`" :alt="project.title" width="500" height="296" />
+							<nuxt-img
+								:src="`/projects/${project.imageFileName}`"
+								:alt="project.title"
+								width="500"
+								height="296"
+							/>
 							<div>
 								<p>
 									{{ project.description }}
 								</p>
-								<Button :link="project.link" :external="true" text="View live site" />
+								<Button
+									:link="project.link"
+									:external="true"
+									text="View live site"
+								/>
 							</div>
 						</div>
 					</li>
@@ -82,16 +104,22 @@
 		<section id="process">
 			<div class="section-content">
 				<SectionHeading>
-					<template v-slot:name>
-						Services
-					</template>
-					<template v-slot:title>
-						My Process
-					</template>
+					<template v-slot:name> Services </template>
+					<template v-slot:title> My Process </template>
 				</SectionHeading>
 				<ul class="accordion">
-					<li v-for="(process, index) in processes" :key="index" class="accordion-item">
-						<input type="radio" name="process" :id="`process-${index}`" :value="index" :checked="index === 0">
+					<li
+						v-for="(process, index) in processes"
+						:key="index"
+						class="accordion-item"
+					>
+						<input
+							type="radio"
+							name="process"
+							:id="`process-${index}`"
+							:value="index"
+							:checked="index === 0"
+						/>
 						<label :for="`process-${index}`">
 							{{ process.title }}
 							<ArrowUp class="arrow-up" />
@@ -103,40 +131,41 @@
 					</li>
 				</ul>
 			</div>
-		</Section>
+		</section>
 
 		<section id="contact">
 			<div class="section-content">
 				<SectionHeading :centered="true">
-					<template v-slot:name>
-						Need a website?
-					</template>
-					<template v-slot:title>
-						Let's work together.
-					</template>
+					<template v-slot:name> Need a website? </template>
+					<template v-slot:title> Let's work together. </template>
 				</SectionHeading>
-				<Button class="contact-button" link="/contact" text="Contact me" :primary="true" />
+				<Button
+					class="contact-button"
+					link="/contact"
+					text="Contact me"
+					:primary="true"
+				/>
 			</div>
-		</Section>
+		</section>
 	</div>
 </template>
 
 <script>
-import Header from '../components/Header.vue';
-import Footer from '../components/Footer.vue';
-import Button from '../components/Button.vue';
-import SectionHeading from '../components/SectionHeading.vue';
-import ContactForm from '../components/ContactForm.vue';
-import ChevronRightSvg from '~/static/chevron-right.svg?inline';
-import WPEngine from '~/static/wpengine.svg?inline';
-import Flywheel from '~/static/flywheel.svg?inline';
-import Speedway from '~/static/speedway.svg?inline';
-import Quote from '~/static/quote-left-solid.svg?inline';
-import ArrowUp from '~/static/arrow-up-solid.svg?inline';
-import ArrowDown from '~/static/arrow-down-solid.svg?inline';
-import ArrowRight from '~/static/arrow-right-solid.svg?inline';
-import projectData from "~/assets/projects.json";
-import processData from "~/assets/process.json";
+import Header from "../components/Header.vue"
+import Footer from "../components/Footer.vue"
+import Button from "../components/Button.vue"
+import SectionHeading from "../components/SectionHeading.vue"
+import ContactForm from "../components/ContactForm.vue"
+import ChevronRightSvg from "~/static/chevron-right.svg?inline"
+import WPEngine from "~/static/wpengine.svg?inline"
+import Flywheel from "~/static/flywheel.svg?inline"
+import Speedway from "~/static/speedway.svg?inline"
+import Quote from "~/static/quote-left-solid.svg?inline"
+import ArrowUp from "~/static/arrow-up-solid.svg?inline"
+import ArrowDown from "~/static/arrow-down-solid.svg?inline"
+import ArrowRight from "~/static/arrow-right-solid.svg?inline"
+import projectData from "~/assets/projects.json"
+import processData from "~/assets/process.json"
 
 export default {
 	components: {
@@ -152,19 +181,15 @@ export default {
 		Quote,
 		ArrowUp,
 		ArrowDown,
-		ArrowRight
+		ArrowRight,
 	},
 
-	data () {
+	data() {
 		return {
-			projects: [
-				...projectData
-			],
-			processes: [
-				...processData
-			]
+			projects: [...projectData],
+			processes: [...processData],
 		}
-	}
+	},
 }
 </script>
 
@@ -222,7 +247,7 @@ export default {
 	}
 }
 
-@media(max-width: 1035px) {
+@media (max-width: 1035px) {
 	.hero-img {
 		display: none;
 	}
@@ -360,7 +385,7 @@ export default {
 	svg {
 		max-width: 3rem;
 		max-height: 3rem;
-		transition: color .3s ease;
+		transition: color 0.3s ease;
 	}
 
 	.arrow-up {
@@ -415,7 +440,7 @@ export default {
 		display: flex;
 		flex-wrap: wrap;
 		max-height: 0;
-		transition: max-height .5s ease;
+		transition: max-height 0.5s ease;
 
 		img {
 			max-width: 500px;
@@ -424,7 +449,6 @@ export default {
 		}
 
 		p {
-			font-size: 1.6rem;
 			margin: 2em 0;
 		}
 	}

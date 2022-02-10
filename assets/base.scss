@@ -22,7 +22,7 @@ html {
 }
 
 body {
-	font-size: 1.8rem;
+	font-size: 1.6rem;
 
 	&.menuOpen {
 		overflow: hidden;
@@ -57,9 +57,16 @@ h3 {
 	line-height: 1.1;
 }
 
-h1,
+h1 {
+	font-size: clamp(3.2rem, 8vw, 6.734rem);
+}
+
 h2 {
-	font-size: clamp(3.2rem, 8vw, 6.4rem);
+	font-size: clamp(3.2rem, 8vw, 5.052rem);
+}
+
+h3 {
+	font-size: clamp(3.2rem, 8vw, 3.79rem);
 }
 
 p {
@@ -77,8 +84,8 @@ section {
 }
 
 *::selection {
-	background-color: var(--clr-primary);
-	color: var(--clr-black);
+	background-color: var(--clr-black);
+	color: var(--clr-white);
 }
 
 .form {
@@ -130,10 +137,12 @@ section {
 		display: block;
 		width: 100%;
 		border: none;
-		padding: 2rem;
+		padding: 1.5rem;
 		font-size: 1.8rem;
 		color: var(--clr-white);
 		background-color: var(--clr-gray-1);
+		border-radius: 5px;
+		font-family: 'Raleway';
 	}
 
 	input:-webkit-autofill,
