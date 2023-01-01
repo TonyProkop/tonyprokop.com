@@ -32,7 +32,7 @@ export default {
         async: true,
       },
       {
-        src: "js/ga.js",
+        src: "/js/ga.js",
       }
     ]
   },
