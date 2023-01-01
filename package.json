@@ -13,8 +13,7 @@
   },
   "dependencies": {
     "@nuxtjs/sitemap": "^2.4.0",
-    "nuxt": "^2.15.7",
-    "vue-gtag": "1"
+    "nuxt": "^2.15.7"
   },
   "devDependencies": {
     "@nuxt/image": "^0.5.0",

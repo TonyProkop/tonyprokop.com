@@ -26,6 +26,15 @@ export default {
       },
       { rel: "icon", type: "image/x-icon", href: "/favicon.svg" },
     ],
+    script: [
+      {
+        src: "https://www.googletagmanager.com/gtag/js?id=G-HC3J3BJXXM",
+        async: true,
+      },
+      {
+        src: "js/ga.js",
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color
@@ -38,9 +47,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    '@/plugins/gtag'
-  ],
+  plugins: [],
   /*
    ** Nuxt.js dev-modules
    */
