@@ -51,7 +51,9 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ["@nuxt/image", "@nuxtjs/google-analytics"],
+  buildModules: [
+    "@nuxt/image"
+  ],
   /*
    ** Nuxt.js modules
    */
@@ -67,9 +69,6 @@ export default {
     splitChunks: {
       layouts: true,
     },
-  },
-  googleAnalytics: {
-    id: "UA-149488684-1",
   },
 
   sitemap: {
