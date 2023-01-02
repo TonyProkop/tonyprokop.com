@@ -3,12 +3,12 @@
 		<section id="hero">
 			<div class="section-content">
 				<div class="name">Freelance Web Designer and Developer</div>
-				<h1 class="title">I build websites for local businesses.</h1>
+				<h1 class="title">I build websites that grow business.</h1>
 				<p>
-					Establishing a solid online presence is hard, especially while wearing
-					multiple hats running a business. Partner with me and don’t worry
-					about it! I will design, build, host and maintain your website long
-					term so you can focus on the important stuff - running your business.
+					Establishing a solid online presence is hard, especially while running
+					a business. Partner with me and don't worry about it! I will design,
+					build, host and maintain your website long term so you can focus on
+					the important stuff - running your business.
 				</p>
 				<div class="button-container">
 					<Button link="/contact" text="Get in touch" :primary="true" />
