@@ -214,7 +214,7 @@ export default {
 	.title {
 		display: block;
 		margin: 5rem 0;
-		max-width: 74rem;
+		max-width: 65rem;
 	}
 
 	.hero-img {
