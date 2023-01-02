@@ -24,13 +24,6 @@ export default {
 @import "~assets/base.scss";
 
 .page-container.--small {
-	background-color: var(--clr-white);
-	color: var(--clr-black);
-
-	*:not(svg):not(path) {
-		color: var(--clr-black);
-	}
-
 	h1 {
 		font-size: 3.6rem;
 	}

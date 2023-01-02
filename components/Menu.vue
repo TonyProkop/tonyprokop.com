@@ -11,22 +11,42 @@
 				<nuxt-link to="/#process">Process</nuxt-link>
 			</li>
 			<li>
+				<nuxt-link to="/blog">Blog</nuxt-link>
+			</li>
+			<li>
 				<nuxt-link to="/contact">Contact</nuxt-link>
 			</li>
 		</ul>
 		<div class="mobile-menu">
-			<button class="open-button" type="button" title="Menu" @click="toggleMenu">
+			<button
+				class="open-button"
+				type="button"
+				title="Menu"
+				@click="toggleMenu"
+			>
 				<Menu />
 			</button>
 			<div v-if="open" class="menu">
-				<button class="close-button" type="button" title="Close Menu" @click="toggleMenu">
+				<button
+					class="close-button"
+					type="button"
+					title="Close Menu"
+					@click="toggleMenu"
+				>
 					<Close />
 				</button>
 				<nav v-if="open">
 					<nuxt-link to="/" @click.native="toggleMenu">Home</nuxt-link>
-					<nuxt-link to="/#portfolio" @click.native="toggleMenu">Portfolio</nuxt-link>
-					<nuxt-link to="/#process" @click.native="toggleMenu">Process</nuxt-link>
-					<nuxt-link to="/contact" @click.native="toggleMenu">Contact</nuxt-link>
+					<nuxt-link to="/#portfolio" @click.native="toggleMenu">
+						Portfolio
+					</nuxt-link>
+					<nuxt-link to="/#process" @click.native="toggleMenu">
+						Process
+					</nuxt-link>
+					<nuxt-link to="/blog" @click.native="toggleMenu">Blog</nuxt-link>
+					<nuxt-link to="/contact" @click.native="toggleMenu">
+						Contact
+					</nuxt-link>
 				</nav>
 			</div>
 		</div>
@@ -34,9 +54,9 @@
 </template>
 
 <script>
-import Logo from '~/static/logo.svg?inline';
-import Menu from '~/static/menu.svg?inline';
-import Close from '~/static/close.svg?inline';
+import Logo from "~/static/logo.svg?inline"
+import Menu from "~/static/menu.svg?inline"
+import Close from "~/static/close.svg?inline"
 
 export default {
 	components: {
@@ -45,18 +65,18 @@ export default {
 		Close,
 	},
 
-	data () {
+	data() {
 		return {
-			open: false
+			open: false,
 		}
 	},
 
 	methods: {
-		toggleMenu () {
-			this.open = !this.open;
-			document.querySelector('body').classList.toggle('menuOpen');
-		}
-	}
+		toggleMenu() {
+			this.open = !this.open
+			document.querySelector("body").classList.toggle("menuOpen")
+		},
+	},
 }
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-	<div class="page-container --default">
+	<div class="page-container">
 		<Header />
 		<main>
 			<nuxt />
@@ -9,26 +9,17 @@
 </template>
 
 <script>
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import Header from "../components/Header"
+import Footer from "../components/Footer"
 
 export default {
 	components: {
 		Header,
-		Footer
-	}
+		Footer,
+	},
 }
 </script>
 
 <style lang="scss">
-@import '~assets/base.scss';
-
-.page-container.--default {
-	background-color: var(--clr-white);
-	color: var(--clr-black);
-
-	*:not(svg):not(path) {
-	color: var(--clr-black);
-	}
-}
+@import "~assets/base.scss";
 </style>

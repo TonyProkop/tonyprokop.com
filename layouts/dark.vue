@@ -9,26 +9,17 @@
 </template>
 
 <script>
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import Header from "../components/Header"
+import Footer from "../components/Footer"
 
 export default {
 	components: {
 		Header,
-		Footer
-	}
+		Footer,
+	},
 }
 </script>
 
 <style lang="scss">
-@import '~assets/base.scss';
-
-.page-container.--dark {
-	background-color: var(--clr-black);
-	color: var(--clr-white);
-
-	*:not(svg):not(path) {
-	color: var(--clr-white);
-	}
-}
+@import "~assets/base.scss";
 </style>
