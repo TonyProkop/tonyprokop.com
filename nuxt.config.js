@@ -22,7 +22,7 @@ export default {
       {
         rel: "stylesheet",
         href:
-          "https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;0,700;1,400&display=swap",
+          "https://fonts.googleapis.com/css2?family=Asap+Condensed:wght@700&family=Red+Hat+Text:ital,wght@0,400;0,500;1,400&display=swap",
       },
       { rel: "icon", type: "image/x-icon", href: "/favicon.svg" },
     ],

@@ -93,7 +93,7 @@ export default {
 		list-style: none;
 		padding: 0 1.5rem;
 		font-size: 1.4rem;
-		font-weight: 600;
+		font-weight: 500;
 
 		a {
 			text-decoration: none;

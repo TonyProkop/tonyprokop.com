@@ -208,7 +208,7 @@ export default {
 	.name {
 		text-transform: uppercase;
 		font-size: 14px;
-		font-weight: 600;
+		font-weight: 500;
 	}
 
 	.title {
@@ -277,7 +277,7 @@ export default {
 
 		p {
 			font-size: 1.6rem;
-			font-weight: 600;
+			font-weight: 500;
 			margin-bottom: calc(var(--default-white-space) / 2);
 		}
 
@@ -352,7 +352,7 @@ export default {
 
 	.name {
 		font-size: 2.4rem;
-		font-weight: 700;
+		font-weight: 500;
 		text-transform: unset;
 		margin-bottom: 1rem;
 	}
@@ -398,7 +398,7 @@ export default {
 		padding: 5rem 0;
 		cursor: pointer;
 		font-size: 2.4rem;
-		font-weight: 600;
+		font-weight: 500;
 	}
 
 	input[type="radio"] {

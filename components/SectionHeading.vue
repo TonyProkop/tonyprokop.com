@@ -14,9 +14,9 @@ export default {
 	props: {
 		centered: {
 			type: Boolean,
-			default: false
-		}
-	}
+			default: false,
+		},
+	},
 }
 </script>
 
@@ -36,12 +36,11 @@ export default {
 }
 
 .name {
-	font-weight: 600;
+	font-weight: 500;
 	font-size: 1.4rem;
 	text-transform: uppercase;
 	color: var(--clr-gray-1);
 }
-
 
 .title {
 	margin: 2rem 0;
