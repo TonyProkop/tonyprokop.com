@@ -5,7 +5,10 @@
 				<nuxt-link to="/">Home</nuxt-link>
 			</li>
 			<li>
-				<nuxt-link to="/#portfolio">Portfolio</nuxt-link>
+				<nuxt-link to="/#portfolio">Work</nuxt-link>
+			</li>
+			<li>
+				<nuxt-link to="/#services">Services</nuxt-link>
 			</li>
 			<li>
 				<nuxt-link to="/#process">Process</nuxt-link>
@@ -38,7 +41,10 @@
 				<nav v-if="open">
 					<nuxt-link to="/" @click.native="toggleMenu">Home</nuxt-link>
 					<nuxt-link to="/#portfolio" @click.native="toggleMenu">
-						Portfolio
+						Work
+					</nuxt-link>
+					<nuxt-link to="/#services" @click.native="toggleMenu">
+						Services
 					</nuxt-link>
 					<nuxt-link to="/#process" @click.native="toggleMenu">
 						Process

@@ -57,8 +57,7 @@
 		<section id="portfolio">
 			<div class="section-content">
 				<SectionHeading>
-					<template v-slot:name> Portfolio </template>
-					<template v-slot:title> My Latest Work </template>
+					<template v-slot:title>Latest Work</template>
 				</SectionHeading>
 				<ul class="accordion">
 					<li
@@ -101,11 +100,24 @@
 			</div>
 		</section>
 
+		<section id="services">
+			<div class="section-content">
+				<SectionHeading>
+					<template v-slot:title> Services </template>
+				</SectionHeading>
+				<ul>
+					<li v-for="(service, index) in services" :key="index">
+						<h3>{{ service.title }}</h3>
+						<p>{{ service.description }}</p>
+					</li>
+				</ul>
+			</div>
+		</section>
+
 		<section id="process">
 			<div class="section-content">
 				<SectionHeading>
-					<template v-slot:name> Services </template>
-					<template v-slot:title> My Process </template>
+					<template v-slot:title> Process </template>
 				</SectionHeading>
 				<ul class="accordion">
 					<li
@@ -166,6 +178,7 @@ import ArrowDown from "~/static/arrow-down-solid.svg?inline"
 import ArrowRight from "~/static/arrow-right-solid.svg?inline"
 import projectData from "~/assets/projects.json"
 import processData from "~/assets/process.json"
+import serviceData from "~/assets/services.json"
 
 export default {
 	components: {
@@ -188,6 +201,7 @@ export default {
 		return {
 			projects: [...projectData],
 			processes: [...processData],
+			services: [...serviceData],
 		}
 	},
 }
@@ -380,6 +394,10 @@ export default {
 
 	&:first-child {
 		border: none;
+
+		label {
+			padding-top: 0;
+		}
 	}
 
 	svg {
@@ -464,7 +482,35 @@ export default {
 	}
 }
 
-#process {
+#services {
+	ul {
+		list-style: none;
+		padding: 0;
+		display: grid;
+		gap: 6rem;
+		grid-template-columns: auto;
+	}
+	@media (min-width: 750px) {
+		ul {
+			grid-template-columns: auto auto;
+		}
+	}
+	@media (min-width: 1000px) {
+		ul {
+			grid-template-columns: auto auto auto;
+		}
+	}
+	h3 {
+		font-family: "Red Hat Text";
+		font-weight: 500;
+		font-size: 2.4rem;
+		margin-bottom: 1rem;
+		text-transform: unset;
+	}
+}
+
+// #process {
+#services {
 	background-color: var(--clr-black);
 
 	*:not(svg):not(path) {

@@ -1,8 +1,5 @@
 <template>
 	<div class="section-heading" :class="{ '--centered': centered }">
-		<p class="name">
-			<slot name="name"></slot>
-		</p>
 		<h2 class="title">
 			<slot name="title"></slot>
 		</h2>
@@ -40,9 +37,5 @@ export default {
 	font-size: 1.4rem;
 	text-transform: uppercase;
 	color: var(--clr-gray-1);
-}
-
-.title {
-	margin: 2rem 0;
 }
 </style>
