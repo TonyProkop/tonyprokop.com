@@ -483,6 +483,20 @@ export default {
 }
 
 #services {
+	background-color: var(--clr-black);
+	*:not(svg):not(path) {
+		color: var(--clr-white) !important;
+	}
+	.accordion-item {
+		border-color: var(--clr-gray);
+
+		input[type="radio"]:checked + label + .content {
+			max-height: 160px !important;
+		}
+	}
+	svg {
+		color: var(--clr-gray);
+	}
 	ul {
 		list-style: none;
 		padding: 0;
@@ -504,29 +518,9 @@ export default {
 		font-family: "Red Hat Text";
 		font-weight: 500;
 		font-size: 2.4rem;
+		line-height: 1.3;
 		margin-bottom: 1rem;
 		text-transform: unset;
-	}
-}
-
-// #process {
-#services {
-	background-color: var(--clr-black);
-
-	*:not(svg):not(path) {
-		color: var(--clr-white) !important;
-	}
-
-	.accordion-item {
-		border-color: var(--clr-gray);
-
-		input[type="radio"]:checked + label + .content {
-			max-height: 160px !important;
-		}
-	}
-
-	svg {
-		color: var(--clr-gray);
 	}
 }
 

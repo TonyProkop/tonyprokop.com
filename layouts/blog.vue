@@ -40,19 +40,22 @@ export default {
 		font-weight: 500;
 		font-family: "Red Hat Text";
 	}
-	h1,
+	h1 {
+		margin-bottom: 3rem;
+	}
 	h2,
 	h3,
 	h4,
 	h5,
 	h6 {
-		margin-bottom: 3rem;
+		margin: 3rem 0;
 	}
 	p {
 		margin-bottom: 2rem;
 	}
 	.section-content {
 		--max-width: 750px;
+		padding-top: 5rem;
 	}
 }
 </style>
