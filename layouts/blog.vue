@@ -32,13 +32,11 @@ export default {
 		font-size: 2.4rem;
 		text-transform: unset;
 		font-weight: 500;
-		font-family: "Red Hat Text";
 	}
 	h3 {
 		font-size: 1.8rem;
 		text-transform: unset;
 		font-weight: 500;
-		font-family: "Red Hat Text";
 	}
 	h1 {
 		margin-bottom: 3rem;

@@ -2,25 +2,23 @@
 	<div>
 		<section id="hero">
 			<div class="section-content">
-				<div class="name">Freelance Web Designer and Developer</div>
-				<h1 class="title">I build websites that grow business.</h1>
-				<p>
-					Establishing a solid online presence is hard, especially while running
-					a business. Partner with me and don't worry about it! I will design,
-					build, host and maintain your website long term so you can focus on
-					the important stuff - running your business.
-				</p>
+				<p>Senior Software Engineer</p>
+				<h1 class="title">
+					Transforming Ideas into Innovative Software Solutions
+				</h1>
 				<div class="button-container">
 					<Button link="/contact" text="Get in touch" :primary="true" />
 					<Button link="/#portfolio" text="View my work" />
 				</div>
 			</div>
-			<nuxt-img
-				src="/hero.png"
-				class="hero-img"
-				alt="Tony Prokop"
-				quality="100"
-			/>
+			<div class="hero-img-container">
+				<nuxt-img
+					src="/hero-new.webp"
+					class="hero-img"
+					alt="Tony Prokop"
+					quality="100"
+				/>
+			</div>
 		</section>
 
 		<section id="companies">
@@ -209,38 +207,39 @@ export default {
 
 <style  lang="scss">
 #hero {
+	display: flex;
+	justify-content: center;
 	position: relative;
 	max-width: var(--max-width);
-	margin: -12.1rem auto 0;
+	margin: 0 auto;
 
 	.section-content {
-		padding-top: 20rem;
-		z-index: 1;
-		position: relative;
-	}
-
-	.name {
-		text-transform: uppercase;
-		font-size: 14px;
-		font-weight: 500;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 0;
+		right: 0;
 	}
 
 	.title {
 		display: block;
 		margin: 5rem 0;
-		max-width: 65rem;
+		max-width: 70rem;
+	}
+
+	.hero-img-container {
+		width: 900px;
+		height: 900px;
+		margin-top: -230px;
+		margin-left: 400px;
 	}
 
 	.hero-img {
 		display: block;
-		position: absolute;
-		right: 0;
-		bottom: -100px;
-		width: 70%;
-		z-index: 0;
+		width: 100%;
 	}
 
-	@media (max-width: 1240px) {
+	@media (max-width: 1250px) {
 		.hero-img {
 			display: none;
 		}
@@ -515,7 +514,6 @@ export default {
 		}
 	}
 	h3 {
-		font-family: "Red Hat Text";
 		font-weight: 500;
 		font-size: 2.4rem;
 		line-height: 1.3;

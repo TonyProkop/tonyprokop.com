@@ -22,7 +22,7 @@ export default {
       {
         rel: "stylesheet",
         href:
-          "https://fonts.googleapis.com/css2?family=Asap+Condensed:wght@700&family=Red+Hat+Text:ital,wght@0,400;0,500;1,400&display=swap",
+          "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap",
       },
       { rel: "icon", type: "image/x-icon", href: "/favicon.svg" },
     ],
@@ -33,8 +33,8 @@ export default {
       },
       {
         src: "/js/ga.js",
-      }
-    ]
+      },
+    ],
   },
   /*
    ** Customize the progress-bar color
@@ -51,9 +51,7 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [
-    "@nuxt/image"
-  ],
+  buildModules: ["@nuxt/image"],
   /*
    ** Nuxt.js modules
    */
@@ -65,7 +63,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) { },
+    extend(config, ctx) {},
     splitChunks: {
       layouts: true,
     },

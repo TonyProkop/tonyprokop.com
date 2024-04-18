@@ -1,10 +1,8 @@
 <template>
-		<header class="header">
-			<nuxt-link to="/" class="logo">
-				Tony Prokop
-			</nuxt-link>
-			<Menu />
-		</header>
+	<header class="header">
+		<nuxt-link to="/" class="logo"> Tony Prokop </nuxt-link>
+		<Menu />
+	</header>
 </template>
 
 <script>
@@ -33,6 +31,6 @@ export default {
 
 .logo {
 	font-size: 1.8rem;
-	font-weight: 700;
+	font-weight: 500;
 }
 </style>

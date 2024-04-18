@@ -132,7 +132,7 @@ export default {
 
 			a {
 				font-size: 3.8rem;
-				font-weight: 700;
+				font-weight: 500;
 				padding: 1rem 0;
 				color: var(--clr-white);
 			}
