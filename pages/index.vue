@@ -21,7 +21,17 @@
 			</div>
 		</section>
 
-		<section id="companies">
+		<section id="tldr">
+			<div class="section-content">
+				<p>
+					Web development professional with <span class="bold">8 years</span> of
+					full-stack experience. Passionate about building beautiful, fast,
+					accessible and intuitive user interfaces.
+				</p>
+			</div>
+		</section>
+
+		<!-- <section id="companies">
 			<div class="section-content">
 				<div class="card">
 					<p>Companies I've Worked For</p>
@@ -32,25 +42,9 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 
-		<section id="testimonials">
-			<div class="section-content">
-				<div class="left-container">
-					<Quote />
-					<div class="person">
-						<div class="name">Greg Schmaderer</div>
-						<div class="business">My Whiskey Barrel</div>
-					</div>
-				</div>
-				<p class="quote">
-					“I worked with Tony to setup a website for my small business. Tony was
-					consultative and responsive throughout the entire process. This
-					enabled us to get the website built quickly. I would not hesitate to
-					recommend Tony. He is easy to work with.”
-				</p>
-			</div>
-		</section>
+		<Testimonials />
 
 		<section id="portfolio">
 			<div class="section-content">
@@ -164,6 +158,7 @@
 import Header from "../components/Header.vue"
 import Footer from "../components/Footer.vue"
 import Button from "../components/Button.vue"
+import Testimonials from "../components/Testimonials.vue"
 import SectionHeading from "../components/SectionHeading.vue"
 import ContactForm from "../components/ContactForm.vue"
 import ChevronRightSvg from "~/static/chevron-right.svg?inline"
@@ -180,6 +175,7 @@ import serviceData from "~/assets/services.json"
 
 export default {
 	components: {
+		Testimonials,
 		Header,
 		Footer,
 		Button,
@@ -208,9 +204,9 @@ export default {
 <style  lang="scss">
 #hero {
 	display: flex;
+	background-color: var(--clr-gray-3);
 	justify-content: center;
 	position: relative;
-	max-width: var(--max-width);
 	margin: 0 auto;
 
 	.section-content {
@@ -228,18 +224,19 @@ export default {
 	}
 
 	.hero-img-container {
-		width: 900px;
-		height: 900px;
-		margin-top: -230px;
+		width: 850px;
+		height: 850px;
+		margin-top: -100px;
 		margin-left: 400px;
 	}
 
 	.hero-img {
+		width: 850px;
+		height: 850px;
 		display: block;
-		width: 100%;
 	}
 
-	@media (max-width: 1250px) {
+	@media (max-width: 900px) {
 		.hero-img {
 			display: none;
 		}
@@ -263,6 +260,17 @@ export default {
 @media (max-width: 1035px) {
 	.hero-img {
 		display: none;
+	}
+}
+
+#tldr {
+	p {
+		font-size: 2.8rem;
+		max-width: 45ch;
+		font-weight: 400;
+	}
+	.bold {
+		font-weight: 700;
 	}
 }
 

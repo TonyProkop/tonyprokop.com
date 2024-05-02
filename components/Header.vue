@@ -1,8 +1,10 @@
 <template>
-	<header class="header">
-		<nuxt-link to="/" class="logo"> Tony Prokop </nuxt-link>
-		<Menu />
-	</header>
+	<div class="header-container">
+		<header class="header">
+			<nuxt-link to="/" class="logo">Tony Prokop</nuxt-link>
+			<Menu />
+		</header>
+	</div>
 </template>
 
 <script>
@@ -18,6 +20,10 @@ export default {
 </script>
 
 <style scoped>
+.header-container {
+	background-color: var(--clr-gray-3);
+}
+
 .header {
 	display: flex;
 	justify-content: space-between;
