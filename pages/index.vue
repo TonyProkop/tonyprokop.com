@@ -21,7 +21,7 @@
 			</div>
 		</section>
 
-		<section id="tldr">
+		<!-- <section id="tldr">
 			<div class="section-content">
 				<p>
 					Web development professional with <span class="bold">8 years</span> of
@@ -29,9 +29,9 @@
 					accessible and intuitive user interfaces.
 				</p>
 			</div>
-		</section>
+		</section> -->
 
-		<!-- <section id="companies">
+		<section id="companies">
 			<div class="section-content">
 				<div class="card">
 					<p>Companies I've Worked For</p>
@@ -42,9 +42,25 @@
 					</div>
 				</div>
 			</div>
-		</section> -->
+		</section>
 
-		<Testimonials />
+		<section id="testimonials">
+			<div class="section-content">
+				<div class="left-container">
+					<Quote />
+					<div class="person">
+						<div class="name">Greg Schmaderer</div>
+						<div class="business">My Whiskey Barrel</div>
+					</div>
+				</div>
+				<p class="quote">
+					“I worked with Tony to setup a website for my small business. Tony was
+					consultative and responsive throughout the entire process. This
+					enabled us to get the website built quickly. I would not hesitate to
+					recommend Tony. He is easy to work with.”
+				</p>
+			</div>
+		</section>
 
 		<section id="portfolio">
 			<div class="section-content">
@@ -204,9 +220,9 @@ export default {
 <style  lang="scss">
 #hero {
 	display: flex;
-	background-color: var(--clr-gray-3);
 	justify-content: center;
 	position: relative;
+	max-width: var(--max-width);
 	margin: 0 auto;
 
 	.section-content {
@@ -224,19 +240,18 @@ export default {
 	}
 
 	.hero-img-container {
-		width: 850px;
-		height: 850px;
-		margin-top: -100px;
+		width: 900px;
+		height: 900px;
+		margin-top: -230px;
 		margin-left: 400px;
 	}
 
 	.hero-img {
-		width: 850px;
-		height: 850px;
 		display: block;
+		width: 100%;
 	}
 
-	@media (max-width: 900px) {
+	@media (max-width: 1250px) {
 		.hero-img {
 			display: none;
 		}
