@@ -82,6 +82,23 @@ const theme = createTheme({
         },
       },
     },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          backdropFilter: 'blur(2px)',
+          border: '1px solid #E3E4E8',
+          borderRadius: '8px',
+          boxShadow: '0 0 0 1px rgba(0,0,0,0.05),0 1px 3px rgba(0,0,0,0.05)',
+        }
+      }
+    },
+    MuiCardContent: {
+      styleOverrides: {
+        root: {
+          padding: '24px'
+        }
+      }
+    },
     MuiContainer: {
       defaultProps: {
         maxWidth: "md",
