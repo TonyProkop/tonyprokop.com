@@ -1,26 +1,40 @@
 "use client"
 
 import * as React from "react"
-import {
-  Container,
-  Stack,
-  Typography,
-} from "@mui/material"
+import { Container, Stack, Typography } from "@mui/material"
+import LocomotiveScroll from "locomotive-scroll"
 import Hero from "./components/Hero"
+import Magnetic from "./components/Magnetic"
 import Quotes from "./components/Quotes"
 import Skills from "./components/Skills"
-import Footer from "./Footer"
 
 const Home = () => {
-  return (
-    <main>
-      <Stack alignItems="center" direction="column" spacing={10}>
+  const ref = React.useRef(null)
+  React.useEffect(() => {
+    const scroll = new LocomotiveScroll({
+      el: ref.current,
+      smooth: true,
+    })
 
+    return () => {
+      scroll.destroy()
+    }
+  }, [ref])
+
+  return (
+    <main data-scroll-container ref={ref}>
+      <Stack
+        alignItems="center"
+        direction="column"
+        spacing={10}
+      >
         <Hero />
 
         <section>
           <Container>
             <Typography
+              data-scroll
+              data-scroll-speed={1}
               fontSize={28}
               sx={{
                 span: {
@@ -46,8 +60,6 @@ const Home = () => {
             <Skills />
           </Container>
         </section>
-
-        <Footer />
       </Stack>
     </main>
   )
