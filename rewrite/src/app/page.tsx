@@ -2,32 +2,14 @@
 
 import * as React from "react"
 import { Container, Stack, Typography } from "@mui/material"
-import LocomotiveScroll from "locomotive-scroll"
 import Hero from "./components/Hero"
-import Magnetic from "./components/Magnetic"
 import Quotes from "./components/Quotes"
 import Skills from "./components/Skills"
 
 const Home = () => {
-  const ref = React.useRef(null)
-  React.useEffect(() => {
-    const scroll = new LocomotiveScroll({
-      el: ref.current,
-      smooth: true,
-    })
-
-    return () => {
-      scroll.destroy()
-    }
-  }, [ref])
-
   return (
-    <main data-scroll-container ref={ref}>
-      <Stack
-        alignItems="center"
-        direction="column"
-        spacing={10}
-      >
+    <main>
+      <Stack alignItems="center" direction="column" spacing={10}>
         <Hero />
 
         <section>

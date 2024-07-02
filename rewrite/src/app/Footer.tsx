@@ -1,8 +1,9 @@
 "use client"
 
 import * as React from "react"
-import { Box, Button, Container, Link, Stack, Typography } from "@mui/material"
+import { Box, Button, Container, Divider, Typography } from "@mui/material"
 import Image from "next/image"
+import Link from 'next/link'
 import headshot from "./images/headshot-1.png"
 import Magnetic from "./components/Magnetic"
 
@@ -50,18 +51,39 @@ const Footer = () => {
             together
           </span>
         </Typography>
-        <Magnetic strength={25}>
-          <Button 
-            sx={{
-              backgroundColor: 'blue',
-              width: '200px',
-              height: '200px',
-              '&&': {
-                borderRadius: '200px',
-              },
-            }}
-          >Get in touch</Button>
-        </Magnetic>
+        <Divider
+          sx={{
+            border: "1px solid #fff",
+            marginTop: 10
+          }}
+        />
+        <Box 
+          sx={{
+            display: 'flex',
+            flexDirection: 'row-reverse'
+          }}
+        >
+          <Magnetic strength={25}>
+            <Box
+              component={Link}
+              href="/contact"
+              sx={{
+                backgroundColor: "blue",
+                display: "grid",
+                placeItems: "center",
+                color: "#fff",
+                width: "200px",
+                height: "200px",
+                marginTop: "-100px",
+                "&&": {
+                  borderRadius: "200px",
+                },
+              }}
+            >
+              Get in touch
+            </Box>
+          </Magnetic>
+        </Box>
       </Container>
     </Box>
   )
