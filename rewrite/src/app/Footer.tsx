@@ -1,11 +1,18 @@
 "use client"
 
 import * as React from "react"
-import { Box, Button, Container, Divider, Typography } from "@mui/material"
+import {
+  Box,
+  Button,
+  Container,
+  Divider,
+  Stack,
+  Typography,
+} from "@mui/material"
 import Image from "next/image"
-import Link from 'next/link'
+import Link from "next/link"
 import headshot from "./images/headshot-1.png"
-import Magnetic from "./components/Magnetic"
+import MagneticButton from "./components/MagneticButton"
 
 const Footer = () => {
   //<Link href="mailto:prokop.tony@mail.com">prokop.tony@mail.com</Link>
@@ -51,39 +58,53 @@ const Footer = () => {
             together
           </span>
         </Typography>
-        <Divider
+        <Box
           sx={{
-            border: "1px solid #fff",
-            marginTop: 10
-          }}
-        />
-        <Box 
-          sx={{
-            display: 'flex',
-            flexDirection: 'row-reverse'
+            display: "flex",
+            flexDirection: "row-reverse",
+            position: "relative",
           }}
         >
-          <Magnetic strength={25}>
-            <Box
-              component={Link}
-              href="/contact"
-              sx={{
-                backgroundColor: "blue",
-                display: "grid",
-                placeItems: "center",
-                color: "#fff",
-                width: "200px",
-                height: "200px",
-                marginTop: "-100px",
-                "&&": {
-                  borderRadius: "200px",
+          <MagneticButton
+            strength={100}
+            textStrength={50}
+            component={Link}
+            href="/contact"
+            sx={{
+              backgroundColor: "blue",
+              display: "grid",
+              placeItems: "center",
+              color: "#fff",
+              width: "200px",
+              height: "200px",
+              zIndex: 1,
+              "&&": {
+                borderRadius: "200px",
+                "&:hover": {
+                  backgroundColor: "blue",
                 },
-              }}
-            >
-              Get in touch
-            </Box>
-          </Magnetic>
+              },
+            }}
+          >
+            Get in touch
+          </MagneticButton>
+          <Divider
+            sx={{
+              position: "absolute",
+              left: 0,
+              right: 0,
+              top: "50%",
+              transform: "translateY(-50%)",
+              border: "1px solid #fff",
+            }}
+          />
         </Box>
+        <Stack direction="row">
+          <Button href="mailto:prokop.tony@gmail.com">
+            prokop.tony@gmail.com
+          </Button>
+          <Button href="tel:14029888222">(402) 988-8222</Button>
+        </Stack>
       </Container>
     </Box>
   )
