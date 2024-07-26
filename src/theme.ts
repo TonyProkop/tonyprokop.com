@@ -15,6 +15,13 @@ const theme = createTheme({
       fontSize: 48,
       fontWeight: 500,
     },
+    h2: {
+      background: "var(--primary-gradient)",
+      backgroundClip: "text",
+      color: "transparent",
+      fontSize: '40px',
+      fontWeight: 900
+    },
     body1: {
       lineHeight: 1.75,
       fontWeight: 300,

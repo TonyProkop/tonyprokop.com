@@ -9,7 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 gsap.registerPlugin(useGSAP)
 gsap.registerPlugin(ScrollTrigger)
 
-type MagneticButtonProps = ButtonProps & {
+export type MagneticButtonProps = ButtonProps & {
   children: React.ReactNode
   strength?: number
   textStrength?: number

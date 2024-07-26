@@ -1,26 +1,27 @@
-import { ReactNode, FC } from "react"
-import { Box } from "@mui/material"
+import { FC } from "react"
+import MagneticButton, { MagneticButtonProps } from "./MagneticButton"
 
-type HeaderButtonProps = {
-  children: ReactNode
-  onClick?: () => void
-}
-
-const HeaderButton: FC<HeaderButtonProps> = ({ children, onClick }) => {
+const HeaderButton: FC<MagneticButtonProps> = ({ children, onClick, sx }) => {
   return (
-    <Box
-      component="button"
+    <MagneticButton
       sx={{
-        display: "grid",
-        placeItems: 'center',
-        borderRadius: "50%",
-        backgroundColor: "var(--clr-overlay)",
-        padding: '20px',
+        "&&": {
+          display: "grid",
+          placeItems: "center",
+          borderRadius: "50%",
+          border: 'none',
+          backgroundColor: "var(--clr-overlay)",
+          padding: "20px",
+          lineHeight: 0
+        },
+        ...sx,
       }}
+      strength={15}
+      textStrength={25}
       onClick={onClick}
     >
       {children}
-    </Box>
+    </MagneticButton>
   )
 }
 

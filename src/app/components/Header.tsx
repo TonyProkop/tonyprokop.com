@@ -1,11 +1,13 @@
+"use client"
+
 import { FC } from "react"
 import { Stack } from "@mui/material"
 import Menu from "./Menu"
 import HeaderButton from "./HeaderButton"
-import Volume from "./Volume"
-import Monitor from "./Monitor"
-import Sun from "./Sun"
-import Moon from "./Moon"
+import Volume from "./icons/Volume"
+import Monitor from "./icons/Monitor"
+import Sun from "./icons/Sun"
+import Moon from "./icons/Moon"
 
 type HeaderProps = {
   theme: string
@@ -13,9 +15,6 @@ type HeaderProps = {
 }
 
 const Header: FC<HeaderProps> = ({ theme, toggleTheme }) => {
-  console.log(window.matchMedia("(prefers-color-scheme:dark)").matches)
-  console.log(window.matchMedia("(prefers-color-scheme:light)").matches)
-
   return (
     <header>
       <Stack
@@ -34,9 +33,7 @@ const Header: FC<HeaderProps> = ({ theme, toggleTheme }) => {
           {theme === "dark" && <Moon />}
           {theme === "" && <Monitor />}
         </HeaderButton>
-        <HeaderButton>
-          <Menu />
-        </HeaderButton>
+        <Menu />
       </Stack>
     </header>
   )
