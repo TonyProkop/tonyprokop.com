@@ -20,9 +20,9 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({ children, href }) => {
           outline: "none",
           display: "grid",
           placeItems: "center",
-          width: "150px",
-          height: "150px",
-          borderRadius: "150px",
+          width: "200px",
+          height: "200px",
+          borderRadius: "200px",
           zIndex: 1,
           fontWeight: "medium",
           "&:hover": {
