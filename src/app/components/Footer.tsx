@@ -4,7 +4,7 @@ import * as React from "react"
 import { Box, ButtonGroup, Container, Divider, Typography } from "@mui/material"
 import Image from "next/image"
 import Link from "next/link"
-import headshot from "../images/headshot-1.png"
+import headshot from "../images/me.png"
 import MagneticButton from "./MagneticButton"
 import RoundOnScroll from "./RoundOnScroll"
 import PrimaryButton from "./PrimaryButton"
@@ -20,6 +20,7 @@ const Footer = () => {
         <Typography
           variant="h2"
           sx={{
+            color: "var(--clr-text)",
             fontSize: "6rem",
             fontWeight: "400",
           }}
@@ -29,6 +30,8 @@ const Footer = () => {
             src={headshot}
             alt="Tony Prokop"
             sx={{
+              backgroundColor: "var(--clr-overlay)",
+              borderRadius: '100%',
               verticalAlign: "middle",
               marginRight: 2,
               height: "1lh",
@@ -48,9 +51,7 @@ const Footer = () => {
             position: "relative",
           }}
         >
-          <PrimaryButton href="/contact">
-            Get in touch
-          </PrimaryButton>
+          <PrimaryButton href="/contact">Get in touch</PrimaryButton>
           <Divider
             sx={{
               position: "absolute",
@@ -58,7 +59,7 @@ const Footer = () => {
               right: 0,
               top: "50%",
               transform: "translateY(-50%)",
-              border: "1px solid #fff",
+              border: "1px solid var(--clr-muted)",
             }}
           />
         </Box>

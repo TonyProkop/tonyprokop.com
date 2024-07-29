@@ -108,7 +108,7 @@ const Skills = () => {
   return (
     <>
       <Typography variant="h2">Tech Skills</Typography>
-      <Stack direction="row" spacing={2}>
+      <Stack direction="row" gap={2} flexWrap="wrap">
         {skills.map((s) => (
           <Stack
             key={s.name}
@@ -118,7 +118,8 @@ const Skills = () => {
             sx={{
               backgroundColor: "var(--clr-surface)",
               borderRadius: "10px",
-              padding: 1,
+              paddingBlock: 2,
+              paddingInline: 3,
             }}
           >
             <Image src={s.image} alt={s.name} height={20} />

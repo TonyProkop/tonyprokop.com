@@ -1,7 +1,7 @@
 "use client "
 
 import { useState } from "react"
-import { Box, Stack, Typography, useTheme } from "@mui/material"
+import { Box, Drawer, Stack, Typography, useTheme } from "@mui/material"
 import Link from "next/link"
 import HeaderButton from "./HeaderButton"
 import MenuIcon from "./icons/Menu"
@@ -18,64 +18,35 @@ const Menu = () => {
       <HeaderButton onClick={toggleOpen}>
         <MenuIcon />
       </HeaderButton>
-      {open && (
-        <Box
+      <Drawer open={open} onClose={toggleOpen} anchor="right">
+        <HeaderButton
           onClick={toggleOpen}
           sx={{
-            position: "fixed",
-            top: 0,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            backdropFilter: "blur(10px)",
-            zIndex: 1,
-          }}
-        />
-      )}
-      {open && (
-        <Box
-          sx={{
-            position: "fixed",
-            top: 0,
-            bottom: 0,
-            right: 0,
-            backgroundColor: "var(--clr-overlay)",
-            zIndex: 2,
+            background: "var(--primary-gradient)",
+            svg: { color: "var(--clr-base)" },
+            position: "absolute",
+            top: theme.spacing(4),
+            right: theme.spacing(4),
           }}
         >
-          <HeaderButton
-            onClick={toggleOpen}
-            sx={{
-              background: "var(--primary-gradient)",
-              svg: { color: "var(--clr-base)" },
-              position: 'fixed',
-              top: theme.spacing(4),
-              right: theme.spacing(4)
-            }}
+          <CloseIcon />
+        </HeaderButton>
+        <Stack sx={{ padding: 10 }}>
+          <Typography href="/" component={Link} sx={{ fontSize: "4rem" }}>
+            Home
+          </Typography>
+          <Typography href="/about" component={Link} sx={{ fontSize: "4rem" }}>
+            About
+          </Typography>
+          <Typography
+            href="/contact"
+            component={Link}
+            sx={{ fontSize: "4rem" }}
           >
-            <CloseIcon />
-          </HeaderButton>
-          <Stack sx={{ padding: 10 }}>
-            <Typography href="/" component={Link} sx={{ fontSize: "4rem" }}>
-              Home
-            </Typography>
-            <Typography
-              href="/about"
-              component={Link}
-              sx={{ fontSize: "4rem" }}
-            >
-              About
-            </Typography>
-            <Typography
-              href="/contact"
-              component={Link}
-              sx={{ fontSize: "4rem" }}
-            >
-              Contact
-            </Typography>
-          </Stack>
-        </Box>
-      )}
+            Contact
+          </Typography>
+        </Stack>
+      </Drawer>
     </>
   )
 }

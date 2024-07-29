@@ -5,6 +5,7 @@ import Hero from "./components/Hero"
 import Quotes from "./components/Quotes"
 import Skills from "./components/Skills"
 import PrimaryButton from "./components/PrimaryButton"
+import WorkExperience from "./components/WorkExperience"
 
 const Home = () => {
   return (
@@ -22,11 +23,17 @@ const Home = () => {
                 },
               }}
             >
-              Web development professional with <span>8 years</span> of
-              full-stack experience. I&apos;m, passionate about building beautiful,
-              fast, and intuitive user interfaces.
+              Web development professional with <b>8 years</b> of full-stack
+              experience. Passionate about building <i>beautiful</i>,{" "}
+              <i>fast</i>, and <i>intuitive</i> user interfaces.
             </Typography>
             <PrimaryButton href="/about">About me</PrimaryButton>
+          </Container>
+        </section>
+
+        <section>
+          <Container maxWidth="md">
+            <WorkExperience />
           </Container>
         </section>
 
@@ -37,7 +44,7 @@ const Home = () => {
         </section>
 
         <section>
-          <Container maxWidth="xl">
+          <Container maxWidth="md">
             <Skills />
           </Container>
         </section>

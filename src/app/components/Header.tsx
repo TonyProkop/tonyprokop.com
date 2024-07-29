@@ -1,6 +1,5 @@
 "use client"
 
-import { FC } from "react"
 import { Stack } from "@mui/material"
 import Menu from "./Menu"
 import HeaderButton from "./HeaderButton"
@@ -10,11 +9,12 @@ import Sun from "./icons/Sun"
 import Moon from "./icons/Moon"
 
 type HeaderProps = {
-  theme: string
-  toggleTheme: () => void
+  theme: string;
+  toggleTheme: () => void;
 }
 
-const Header: FC<HeaderProps> = ({ theme, toggleTheme }) => {
+const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
+
   return (
     <header>
       <Stack

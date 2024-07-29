@@ -1,6 +1,7 @@
 "use client"
+
+import { createTheme } from '@mui/material/styles'
 import { Poppins } from "next/font/google"
-import { createTheme } from "@mui/material/styles"
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -8,27 +9,37 @@ const poppins = Poppins({
   display: "swap",
 })
 
-const theme = createTheme({
+let theme = createTheme({
   typography: {
     fontFamily: poppins.style.fontFamily,
     h1: {
-      fontSize: 48,
-      fontWeight: 500,
+      background: "var(--primary-gradient)",
+      backgroundClip: "text",
+      color: "transparent",
+      fontSize: "96px",
+      fontWeight: 900,
     },
     h2: {
       background: "var(--primary-gradient)",
       backgroundClip: "text",
       color: "transparent",
-      fontSize: '40px',
-      fontWeight: 900
+      fontSize: "48px",
+      fontWeight: 700,
+    },
+    h3: {
+      fontSize: "28px",
     },
     body1: {
+      color: "var(--clr-text)",
       lineHeight: 1.75,
       fontWeight: 300,
+      fontSize: "18px",
     },
     body2: {
+      color: "var(--clr-text)",
       lineHeight: 1.75,
       fontWeight: 300,
+      fontSize: "18px",
     },
   },
 
@@ -45,7 +56,7 @@ const theme = createTheme({
             textTransform: "none",
             padding: "24px 32px",
             "&:hover, &:active": {
-              backgroundColor: "#455CE9",
+              backgroundColor: "var(--clr-love)",
               boxShadow: "inherit",
               border: "inherit",
               color: "var(--clr-text)",
@@ -80,6 +91,36 @@ const theme = createTheme({
     MuiContainer: {
       defaultProps: {
         maxWidth: "md",
+      },
+    },
+    MuiDrawer: {
+      styleOverrides: {
+        paper: {
+          backgroundColor: "var(--clr-overlay)",
+        },
+        modal: {
+          backdropFilter: "blur(10px)",
+        },
+      },
+    },
+    MuiTabs: {
+      styleOverrides: {
+        indicator: {
+          backgroundColor: "var(--clr-iris)",
+          left: 0,
+          right: "unset",
+        },
+      },
+    },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          alignItems: "flex-start",
+          color: "var(--clr-text)",
+          "&.Mui-selected": {
+            color: "var(--clr-iris)",
+          },
+        },
       },
     },
   },

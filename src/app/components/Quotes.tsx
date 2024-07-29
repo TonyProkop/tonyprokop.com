@@ -26,7 +26,7 @@ const Quotes = () => {
           <Stack spacing={4}>
             <Stack spacing={1}>
               {text.map((text: string) => (
-                <Typography key={text}>{text}</Typography>
+                <Typography key={text} variant="body2">{text}</Typography>
               ))}
             </Stack>
             <Stack alignItems="center" direction="row" gap={2}>

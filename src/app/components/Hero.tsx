@@ -26,16 +26,7 @@ const Hero = () => {
               borderRadius: "100%",
             }}
           />
-          <Typography
-            variant="h1"
-            sx={{
-              fontWeight: "bold",
-              fontSize: "96px",
-              background: "var(--primary-gradient)",
-              backgroundClip: "text",
-              color: "transparent",
-            }}
-          >
+          <Typography variant="h1">
             I’M TONY PROKOP,
             <br />A SENIOR SOFTWARE ENGINEER.
           </Typography>
