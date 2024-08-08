@@ -56,9 +56,7 @@ let theme = createTheme({
             textTransform: "none",
             padding: "24px 32px",
             "&:hover, &:active": {
-              backgroundColor: "var(--clr-love)",
-              boxShadow: "inherit",
-              border: "inherit",
+              backgroundColor: "var(--clr-overlay)",
               color: "var(--clr-text)",
             },
           },

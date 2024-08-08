@@ -10,6 +10,7 @@
   --clr-rose: #ebbcba;
   --clr-iris: #c4a7e7;
   --clr-hightlight: #403d52;
+  --clr-pine: #31748f;
   --primary-gradient: linear-gradient(135deg,
       var(--clr-gold),
       var(--clr-love) 50%);
@@ -27,6 +28,7 @@
     --clr-gold: #ea9d34;
     --clr-rose: #d7827e;
     --clr-iris: #907aa9;
+    --clr-pine: #286983;
     --clr-highlight: #dfdad9;
   }
 }
@@ -42,6 +44,7 @@ body.dark {
   --clr-gold: #f6c177;
   --clr-rose: #ebbcba;
   --clr-iris: #c4a7e7;
+  --clr-pine: #31748f;
   --clr-hightlight: #403d52;
 }
 
@@ -56,6 +59,7 @@ body.light {
   --clr-gold: #ea9d34;
   --clr-rose: #d7827e;
   --clr-iris: #907aa9;
+  --clr-pine: #286983;
   --clr-highlight: #dfdad9;
 }
 

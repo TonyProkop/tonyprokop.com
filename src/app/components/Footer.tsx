@@ -117,7 +117,7 @@ const Footer = () => {
             (402) 988-8222
           </MagneticButton>
         </ButtonGroup>
-        <Stack spacing={2} alignItems="center">
+        <Stack spacing={2} alignItems="center" marginTop={25}>
           <Stack
             direction="row"
             justifyContent="center"
@@ -130,7 +130,7 @@ const Footer = () => {
               </a>
             ))}
           </Stack>
-          <Typography sx={{ color: "var(--clr-subtle" }}>
+          <Typography sx={{ color: "var(--clr-subtle)" }}>
             Tony Prokop @ 2024
           </Typography>
         </Stack>

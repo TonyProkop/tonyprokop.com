@@ -106,7 +106,7 @@ const Skills = () => {
   ]
 
   return (
-    <>
+    <Stack spacing={5}>
       <Typography variant="h2">Tech Skills</Typography>
       <Stack direction="row" gap={2} flexWrap="wrap">
         {skills.map((s) => (
@@ -127,7 +127,7 @@ const Skills = () => {
           </Stack>
         ))}
       </Stack>
-    </>
+    </Stack>
   )
 }
 

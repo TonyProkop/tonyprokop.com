@@ -5,6 +5,7 @@ import {
   ListItem,
   ListItemText,
   ListItemIcon,
+  Stack,
   Tab,
   Tabs,
   Typography,
@@ -59,7 +60,7 @@ const WorkExperience = () => {
   ]
 
   return (
-    <>
+    <Stack spacing={5}>
       <Typography variant="h2">Work Experience</Typography>
       <Box
         sx={{
@@ -128,7 +129,7 @@ const WorkExperience = () => {
           </Box>
         ))}
       </Box>
-    </>
+    </Stack>
   )
 }
 

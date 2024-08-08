@@ -51,7 +51,7 @@ const Quotes = () => {
   //<Image src={QuoteIcon} alt="Quote" width="80" />
 
   return (
-    <>
+    <Stack spacing={5}>
       <Typography variant="h2">Testimonials</Typography>
       <Masonry columns={3} spacing={4}>
         <Quote
@@ -97,7 +97,7 @@ const Quotes = () => {
           image={Savannah}
         />
       </Masonry>
-    </>
+    </Stack>
   )
 }
 
