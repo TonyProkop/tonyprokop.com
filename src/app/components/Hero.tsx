@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { Box, Container, Typography, Stack } from "@mui/material"
-import headshot from "../images/me.png"
+import headshot from "../images/tony.webp"
 
 const Hero = () => {
   return (
@@ -18,12 +18,11 @@ const Hero = () => {
             src={headshot}
             alt="Tony Prokop"
             sx={{
-              backgroundColor: "var(--clr-overlay)",
               verticalAlign: "middle",
               marginRight: 2,
-              maxWidth: "300px",
-              height: "auto",
-              borderRadius: "100%",
+              maxWidth: '300px',
+              height: 'auto',
+              width: '100%',
             }}
           />
           <Typography variant="h1">

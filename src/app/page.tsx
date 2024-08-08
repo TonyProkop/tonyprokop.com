@@ -13,8 +13,8 @@ const Home = () => {
       <Stack alignItems="center" direction="column" spacing={10}>
         <Hero />
 
-        <section>
-          <Container>
+        <Container>
+          <section>
             <Typography
               fontSize={28}
               sx={{
@@ -28,26 +28,26 @@ const Home = () => {
               <i>fast</i>, and <i>intuitive</i> user interfaces.
             </Typography>
             <PrimaryButton href="/about">About me</PrimaryButton>
-          </Container>
-        </section>
+          </section>
+        </Container>
 
-        <section>
-          <Container maxWidth="md">
+        <Container maxWidth="md">
+          <section>
             <WorkExperience />
-          </Container>
-        </section>
+          </section>
+        </Container>
 
-        <section>
-          <Container maxWidth="xl">
+        <Container maxWidth="xl">
+          <section>
             <Quotes />
-          </Container>
-        </section>
+          </section>
+        </Container>
 
-        <section>
-          <Container maxWidth="md">
+        <Container maxWidth="md">
+          <section>
             <Skills />
-          </Container>
-        </section>
+          </section>
+        </Container>
       </Stack>
     </main>
   )

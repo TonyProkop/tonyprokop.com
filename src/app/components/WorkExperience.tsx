@@ -1,5 +1,15 @@
 import { SyntheticEvent, useState } from "react"
-import { Box, Tab, Tabs, Typography } from "@mui/material"
+import {
+  Box,
+  List,
+  ListItem,
+  ListItemText,
+  ListItemIcon,
+  Tab,
+  Tabs,
+  Typography,
+} from "@mui/material"
+import ArrowRight from "./icons/ArrowRight"
 
 const WorkExperience = () => {
   const [value, setValue] = useState(0)
@@ -16,20 +26,35 @@ const WorkExperience = () => {
       bullets: [
         'Built "Chat GPT-esc" feature which led to a 45% decrease in support live chat volume',
         "Maintain component library used by over 100 engineers",
-        "Led initiative to reduce app dependence on jQuery and Bootstrap",
+        "Added integration with Spli.io to improve feature flagging for all engineers",
+        "Led initiative upgrade jQuery and Bootstrap two major versions and reduce app dependence on them",
       ],
     },
     {
       company: "Flywheel",
       role: "Senior Software Engineer",
       date: "January 2020 - December 2022",
-      bullets: ["testing bullet 1 ", "testing bullet 2", "testing bullet3 "],
+      bullets: [
+        "Develop the majority of frontend code for Flywheel’s newest flagship product, Growth Suite",
+        "Work in a fast-paced agile environment, launching Growth Suite in under a year",
+        "Teach Vue in the company’s mentorship program",
+        "Lead the frontend guild, a group of engineers who want to improve the frontend",
+        "Maintain a JIRA board separate from product teams to coordinate frontend work",
+      ],
     },
     {
       company: "Speedway Motors",
       role: "Software Engineer",
       date: "January 2016 - December 2020",
-      bullets: ["testing bullet 1 ", "testing bullet 2", "testing bullet3 "],
+      bullets: [
+        "Lead a small team focused on optimizing the checkout flow, leading to increased conversion",
+        "Maintained a healthy sense of urgency to ship value to production several times a week",
+        "Communicated with stakeholders to gather requirements and align on goals",
+        "Focused on minimum viable product to reduce opportunity cost",
+        "Delivered code safely with test driven development, unit tests, and feature flags",
+        "Made data driven decisions based on a/b tests",
+        "Developed and maintained applications built with .NET and React",
+      ],
     },
   ]
 
@@ -47,7 +72,6 @@ const WorkExperience = () => {
           value={value}
           onChange={handleChange}
           aria-label="Work Experience"
-          sx={{ borderRight: 1, borderColor: "divider" }}
         >
           {jobs.map((job, index) => (
             <Tab
@@ -55,29 +79,53 @@ const WorkExperience = () => {
               label={job.company}
               id={`tab-${index}`}
               aria-controls={`panel-${index}`}
+              sx={{
+                textAlign: "left",
+              }}
             />
           ))}
         </Tabs>
         {jobs.map((job, index) => (
-          <div
+          <Box
             key={job.company}
             role="tabpanel"
             hidden={value !== index}
             id={`panel-${index}`}
             aria-labelledby={`tab-${index}`}
+            sx={{
+              flexBasis: "100%",
+              flexGrow: 1,
+            }}
           >
             <Typography variant="h3">
-              {job.role} @ {job.company}
+              {job.role}{" "}
+              <Box component="span" sx={{ color: "var(--clr-iris)" }}>
+                @ {job.company}
+              </Box>
             </Typography>
-            <Typography>{job.date}</Typography>
-            <ul>
+            <Typography sx={{ color: "var(--clr-subtle)" }}>
+              {job.date}
+            </Typography>
+            <List dense>
               {job.bullets.map((bullet) => (
-                <li key={bullet}>
-                  <Typography>{bullet}</Typography>
-                </li>
+                <ListItem alignItems="flex-start" key={bullet}>
+                  <ListItemIcon
+                    sx={{
+                      marginTop: 1,
+                      minWidth: "48px",
+                      svg: {
+                        width: "20px",
+                        height: "auto",
+                      },
+                    }}
+                  >
+                    <ArrowRight />
+                  </ListItemIcon>
+                  <ListItemText primary={bullet} />
+                </ListItem>
               ))}
-            </ul>
-          </div>
+            </List>
+          </Box>
         ))}
       </Box>
     </>

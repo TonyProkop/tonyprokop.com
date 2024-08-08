@@ -1,6 +1,6 @@
 "use client"
 
-import { createTheme } from '@mui/material/styles'
+import { createTheme } from "@mui/material/styles"
 import { Poppins } from "next/font/google"
 
 const poppins = Poppins({
@@ -17,7 +17,7 @@ let theme = createTheme({
       backgroundClip: "text",
       color: "transparent",
       fontSize: "96px",
-      fontWeight: 900,
+      fontWeight: 800,
     },
     h2: {
       background: "var(--primary-gradient)",
@@ -116,7 +116,9 @@ let theme = createTheme({
       styleOverrides: {
         root: {
           alignItems: "flex-start",
-          color: "var(--clr-text)",
+          color: "var(--clr-subtle)",
+          fontSize: '18px',
+          textTransform: 'none',
           "&.Mui-selected": {
             color: "var(--clr-iris)",
           },

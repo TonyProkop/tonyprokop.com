@@ -91,8 +91,3 @@ button {
 svg {
   color: var(--clr-text);
 }
-
-::selection {
-  color: var(--clr-text);
-  background-color: var(--clr-hightlight);
-}

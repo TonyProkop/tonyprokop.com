@@ -12,7 +12,10 @@ const HeaderButton: FC<MagneticButtonProps> = ({ children, onClick, sx }) => {
           border: 'none',
           backgroundColor: "var(--clr-overlay)",
           padding: "20px",
-          lineHeight: 0
+          lineHeight: 0,
+          '&:hover': {
+            backgroundColor: "var(--clr-overlay)",
+          }
         },
         ...sx,
       }}

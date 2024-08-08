@@ -1,15 +1,55 @@
 "use client"
 
 import * as React from "react"
-import { Box, ButtonGroup, Container, Divider, Typography } from "@mui/material"
+import {
+  Box,
+  ButtonGroup,
+  Container,
+  Divider,
+  Stack,
+  Typography,
+} from "@mui/material"
 import Image from "next/image"
 import Link from "next/link"
-import headshot from "../images/me.png"
+import tony from "../images/tony.webp"
 import MagneticButton from "./MagneticButton"
 import RoundOnScroll from "./RoundOnScroll"
 import PrimaryButton from "./PrimaryButton"
+import Email from "./icons/Email"
+import Github from "./icons/Github"
+import Linkedin from "./icons/Linkedin"
+import Phone from "./icons/Phone"
+import RSS from "./icons/RSS"
+import Leetcode from "./icons/Leetcode"
 
 const Footer = () => {
+  const links = [
+    {
+      component: <Email />,
+      href: "mailto:prokop.tony@gmail.com",
+    },
+    {
+      component: <Phone />,
+      href: "tel:14029888222",
+    },
+    {
+      component: <Github />,
+      href: "https://github.com/TonyProkop",
+    },
+    {
+      component: <Leetcode />,
+      href: "https://leetcode.com/u/TonyProkop/",
+    },
+    {
+      component: <Linkedin />,
+      href: "https://www.linkedin.com/in/tony-prokop/",
+    },
+    {
+      component: <RSS />,
+      href: "",
+    },
+  ]
+
   return (
     <Box component="footer">
       <Container
@@ -27,11 +67,9 @@ const Footer = () => {
         >
           <Box
             component={Image}
-            src={headshot}
+            src={tony}
             alt="Tony Prokop"
             sx={{
-              backgroundColor: "var(--clr-overlay)",
-              borderRadius: '100%',
               verticalAlign: "middle",
               marginRight: 2,
               height: "1lh",
@@ -79,6 +117,23 @@ const Footer = () => {
             (402) 988-8222
           </MagneticButton>
         </ButtonGroup>
+        <Stack spacing={2} alignItems="center">
+          <Stack
+            direction="row"
+            justifyContent="center"
+            spacing={4}
+            sx={{ marginTop: 10, svg: { color: "var(--clr-subtle)" } }}
+          >
+            {links.map((l) => (
+              <a href={l.href} key={l.href}>
+                {l.component}
+              </a>
+            ))}
+          </Stack>
+          <Typography sx={{ color: "var(--clr-subtle" }}>
+            Tony Prokop @ 2024
+          </Typography>
+        </Stack>
       </Container>
     </Box>
   )
