@@ -9,12 +9,10 @@ import {
   Stack,
   Typography,
 } from "@mui/material"
-import Image from "next/image"
-import Link from "next/link"
-import tony from "../images/tony.webp"
 import MagneticButton from "./MagneticButton"
 import RoundOnScroll from "./RoundOnScroll"
 import PrimaryButton from "./PrimaryButton"
+import Headshot from "./Headshot"
 import Email from "./icons/Email"
 import Github from "./icons/Github"
 import Linkedin from "./icons/Linkedin"
@@ -65,10 +63,7 @@ const Footer = () => {
             fontWeight: "400",
           }}
         >
-          <Box
-            component={Image}
-            src={tony}
-            alt="Tony Prokop"
+          <Headshot
             sx={{
               verticalAlign: "middle",
               marginRight: 2,

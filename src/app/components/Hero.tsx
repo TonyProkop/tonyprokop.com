@@ -1,6 +1,5 @@
-import Image from "next/image"
 import { Box, Container, Typography, Stack } from "@mui/material"
-import headshot from "../images/tony.webp"
+import Headshot from "./Headshot"
 
 const Hero = () => {
   return (
@@ -13,18 +12,7 @@ const Hero = () => {
     >
       <Container maxWidth="lg" sx={{ paddingBottom: 8 }}>
         <Stack spacing={4}>
-          <Box
-            component={Image}
-            src={headshot}
-            alt="Tony Prokop"
-            sx={{
-              verticalAlign: "middle",
-              marginRight: 2,
-              maxWidth: '300px',
-              height: 'auto',
-              width: '100%',
-            }}
-          />
+          <Headshot />
           <Typography variant="h1">
             I’M TONY PROKOP,
             <br />A SENIOR SOFTWARE ENGINEER.
