@@ -1,13 +1,14 @@
-import { ReactNode } from 'react'
-import MagneticButton from "./MagneticButton"
+import { ReactNode, forwardRef, ForwardedRef } from 'react'
+import { ButtonProps } from '@mui/material'
 import Link from "next/link"
+import MagneticButton from "./MagneticButton"
 
-type PrimaryButtonProps = {
+type PrimaryButtonProps = ButtonProps & {
   children: ReactNode;
   href: string;
 }
 
-const PrimaryButton: React.FC<PrimaryButtonProps> = ({ children, href }) => {
+const PrimaryButton = forwardRef(function PrimaryButton({ children, href, sx, ...props }: PrimaryButtonProps, ref: ForwardedRef<HTMLButtonElement>) {
   return (
     <MagneticButton
       component={Link}
@@ -29,11 +30,14 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({ children, href }) => {
             color: "var(--clr-base)",
           },
         },
+        ...sx,
       }}
+      {...props}
+      ref={ref}
     >
       {children}
     </MagneticButton>
   )
-}
+})
 
 export default PrimaryButton

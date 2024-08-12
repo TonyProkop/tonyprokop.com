@@ -53,6 +53,7 @@ const Footer = () => {
       <Container
         sx={{
           paddingBlock: 20,
+          marginTop: 10,
         }}
       >
         <Typography
@@ -112,7 +113,7 @@ const Footer = () => {
             (402) 988-8222
           </MagneticButton>
         </ButtonGroup>
-        <Stack spacing={2} alignItems="center" marginTop={25}>
+        <Stack spacing={3} alignItems="center" marginTop={25}>
           <Stack
             direction="row"
             justifyContent="center"

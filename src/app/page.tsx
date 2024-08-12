@@ -1,37 +1,25 @@
 "use client"
 
-import { Container, Stack, Typography } from "@mui/material"
+import { Container, Stack } from "@mui/material"
 import Hero from "./components/Hero"
+import About from "./components/About"
 import Quotes from "./components/Quotes"
 import Skills from "./components/Skills"
-import PrimaryButton from "./components/PrimaryButton"
 import WorkExperience from "./components/WorkExperience"
 
 const Home = () => {
   return (
     <main>
-      <Stack alignItems="center" direction="column" spacing={10}>
+      <Stack alignItems="center" direction="column" spacing={25}>
         <Hero />
 
-        <Container>
+        <Container maxWidth="lg">
           <section>
-            <Typography
-              fontSize={28}
-              sx={{
-                span: {
-                  fontWeight: "500",
-                },
-              }}
-            >
-              Web development professional with <b>8 years</b> of full-stack
-              experience. Passionate about building <i>beautiful</i>,{" "}
-              <i>fast</i>, and <i>intuitive</i> user interfaces.
-            </Typography>
-            <PrimaryButton href="/about">About me</PrimaryButton>
+            <About />
           </section>
         </Container>
 
-        <Container maxWidth="md">
+        <Container>
           <section>
             <WorkExperience />
           </section>

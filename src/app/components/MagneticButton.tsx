@@ -1,6 +1,6 @@
 "use client"
 
-import * as React from "react"
+import { ReactNode, useRef, forwardRef, ForwardedRef, useImperativeHandle } from "react"
 import { Button, ButtonProps } from "@mui/material"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
@@ -10,18 +10,20 @@ gsap.registerPlugin(useGSAP)
 gsap.registerPlugin(ScrollTrigger)
 
 export type MagneticButtonProps = ButtonProps & {
-  children: React.ReactNode
+  children: ReactNode
   strength?: number
   textStrength?: number
 }
 
-const MagneticButton: React.FC<MagneticButtonProps> = ({
+const MagneticButton = forwardRef(function MagneticButton({
   children,
   strength = 100,
   textStrength = 50,
   ...props
-}) => {
-  const ref = React.useRef<HTMLButtonElement>(null)
+}: MagneticButtonProps, outerRef: ForwardedRef<HTMLButtonElement>) {
+  const ref = useRef<HTMLButtonElement>(null)
+
+  useImperativeHandle(outerRef, () => ref.current!, [])
 
   useGSAP(
     () => {
@@ -65,6 +67,6 @@ const MagneticButton: React.FC<MagneticButtonProps> = ({
       <div className="btn-text">{children}</div>
     </Button>
   )
-}
+})
 
 export default MagneticButton
