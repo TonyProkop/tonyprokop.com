@@ -9,7 +9,6 @@ import {
   Stack,
   Typography,
 } from "@mui/material"
-import Image from "next/image"
 import Headshot from "./Headshot"
 import MagneticButton from "./MagneticButton"
 import PrimaryButton from "./PrimaryButton"
@@ -110,7 +109,7 @@ const Footer = () => {
             (402) 988-8222
           </MagneticButton>
         </ButtonGroup>
-        <Stack spacing={2} alignItems="center">
+        <Stack spacing={2} alignItems="center" marginTop={20}>
           <Stack
             direction="row"
             justifyContent="center"
@@ -123,7 +122,7 @@ const Footer = () => {
               </a>
             ))}
           </Stack>
-          <Typography sx={{ color: "var(--clr-subtle" }}>
+          <Typography sx={{ color: "var(--clr-subtle)" }}>
             Tony Prokop @ 2024
           </Typography>
         </Stack>
