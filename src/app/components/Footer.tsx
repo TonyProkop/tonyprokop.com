@@ -9,10 +9,10 @@ import {
   Stack,
   Typography,
 } from "@mui/material"
-import MagneticButton from "./MagneticButton"
-import RoundOnScroll from "./RoundOnScroll"
-import PrimaryButton from "./PrimaryButton"
+import Image from "next/image"
 import Headshot from "./Headshot"
+import MagneticButton from "./MagneticButton"
+import PrimaryButton from "./PrimaryButton"
 import Email from "./icons/Email"
 import Github from "./icons/Github"
 import Linkedin from "./icons/Linkedin"
@@ -53,7 +53,6 @@ const Footer = () => {
       <Container
         sx={{
           paddingBlock: 20,
-          marginTop: 10,
         }}
       >
         <Typography
@@ -64,13 +63,11 @@ const Footer = () => {
             fontWeight: "400",
           }}
         >
-          <Headshot
-            sx={{
-              verticalAlign: "middle",
-              marginRight: 2,
-              height: "1lh",
-              width: "auto",
-            }}
+          <Headshot sx={{
+            marginRight: 2,
+            height: "1lh",
+            width: "auto",
+          }}
           />
           <span>
             Let&apos;s work
@@ -113,7 +110,7 @@ const Footer = () => {
             (402) 988-8222
           </MagneticButton>
         </ButtonGroup>
-        <Stack spacing={3} alignItems="center" marginTop={25}>
+        <Stack spacing={2} alignItems="center">
           <Stack
             direction="row"
             justifyContent="center"
@@ -126,7 +123,7 @@ const Footer = () => {
               </a>
             ))}
           </Stack>
-          <Typography sx={{ color: "var(--clr-subtle)" }}>
+          <Typography sx={{ color: "var(--clr-subtle" }}>
             Tony Prokop @ 2024
           </Typography>
         </Stack>
