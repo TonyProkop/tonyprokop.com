@@ -1,6 +1,6 @@
 "use client"
 
-import { ReactNode, useState, useEffect } from "react"
+import { ReactNode, useState } from "react"
 import type { Metadata } from "next"
 import Cookies from "js-cookie"
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter"
@@ -10,7 +10,6 @@ import theme from "../theme"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import "./globals.css"
-import "./locomotive-scroll.css"
 
 export default function RootLayout({
   children,
@@ -30,15 +29,6 @@ export default function RootLayout({
     setThemeName(newTheme)
     Cookies.set("theme", newTheme)
   }
-
-  // useEffect(() => {
-  // (
-  //   async () => {
-  //     const LocomotiveScroll = (await import('locomotive-scroll')).default
-  //     new LocomotiveScroll();
-  //   }
-  // )()
-  // }, [])
 
   return (
     <html lang="en" className={themeName}>

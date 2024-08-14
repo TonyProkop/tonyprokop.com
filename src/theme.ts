@@ -11,6 +11,7 @@ const poppins = Poppins({
 
 let theme = createTheme({
   typography: {
+    fontSize: 18,
     fontFamily: poppins.style.fontFamily,
     h1: {
       background: "var(--primary-gradient)",
