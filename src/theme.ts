@@ -130,6 +130,33 @@ let theme = createTheme({
         },
       },
     },
+    MuiTextField: {
+      defaultProps: {
+        fullWidth: true,
+        variant: "standard",
+        InputLabelProps: {
+          shrink: true,
+        }
+      },
+      styleOverrides: {
+        root: {
+          marginBlock: '32px',
+          '.MuiFormLabel-root': {
+            transform: 'none',
+            position: 'relative',
+            '&.Mui-focused': {
+              color: 'var(--clr-text)',
+            }
+          },
+          '.MuiInputBase-root': {
+            color: 'var(--clr-text)',
+            '&:before, &:after': {
+              display: 'none',
+            }
+          }
+        },
+      },
+    }
   },
 })
 
