@@ -1,5 +1,5 @@
 import { useRef } from "react"
-import { Box, Typography } from "@mui/material"
+import { Typography } from "@mui/material"
 import PrimaryButton from "./PrimaryButton"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
@@ -16,8 +16,7 @@ const About = () => {
 
     gsap.fromTo(ref.current, {
       y: '100',
-      right: 0,
-    },{
+    }, {
       scrollTrigger: {
         trigger: ref.current,
         scrub: 0,
@@ -41,9 +40,7 @@ const About = () => {
         experience. Passionate about building <i>beautiful</i>,{" "}
         <i>fast</i>, and <i>intuitive</i> user interfaces.
       </Typography>
-      <Box >
-        <PrimaryButton href="/about" ref={ref} sx={{ y: 0, float: 'right' }}>About me</PrimaryButton>
-      </Box>
+      <PrimaryButton href="/about" ref={ref} sx={{ float: 'right' }}>About me</PrimaryButton>
     </>
   )
 }

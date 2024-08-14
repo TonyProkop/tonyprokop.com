@@ -6,6 +6,7 @@ import About from "./components/About"
 import Quotes from "./components/Quotes"
 import Skills from "./components/Skills"
 import WorkExperience from "./components/WorkExperience"
+import Contact from "./components/Contact"
 
 const Home = () => {
   return (
@@ -36,6 +37,8 @@ const Home = () => {
             <Skills />
           </section>
         </Container>
+
+        <Contact />
       </Stack>
     </main>
   )

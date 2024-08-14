@@ -91,6 +91,13 @@ let theme = createTheme({
         maxWidth: "md",
       },
     },
+    MuiDivider: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "var(--clr-muted)",
+        },
+      },
+    },
     MuiDrawer: {
       styleOverrides: {
         paper: {

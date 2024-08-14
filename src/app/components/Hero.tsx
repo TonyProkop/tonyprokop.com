@@ -10,7 +10,7 @@ const Hero = () => {
         width: "100%",
       }}
     >
-      <Container maxWidth="lg" sx={{ paddingBottom: 8 }}>
+      <Container maxWidth="lg" sx={{ paddingBlock: 8 }}>
         <Stack spacing={4}>
           <Headshot />
           <Typography variant="h1">

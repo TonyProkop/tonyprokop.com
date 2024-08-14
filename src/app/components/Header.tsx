@@ -1,6 +1,6 @@
 "use client"
 
-import { Stack } from "@mui/material"
+import { Box, Stack } from "@mui/material"
 import Menu from "./Menu"
 import HeaderButton from "./HeaderButton"
 import Volume from "./icons/Volume"
@@ -16,14 +16,13 @@ type HeaderProps = {
 const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
 
   return (
-    <header>
+    <Box component="header" sx={{ position: 'absolute', top: 0, right: 0 }}>
       <Stack
         direction="row"
         gap={2}
         justifyContent="flex-end"
         paddingInline={4}
         paddingTop={4}
-        sx={{ backgroundColor: "var(--clr-surface)" }}
       >
         <HeaderButton>
           <Volume />
@@ -35,7 +34,7 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
         </HeaderButton>
         <Menu />
       </Stack>
-    </header>
+    </Box>
   )
 }
 
