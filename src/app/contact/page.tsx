@@ -19,7 +19,7 @@ const Contact = () => {
       <Box
         component="form"
         sx={{
-          marginTop: 20,
+          marginTop: 15,
           'input[name="super-secret-field"]': {
             visibility: 'hidden'
           }

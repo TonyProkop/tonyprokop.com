@@ -13,9 +13,9 @@ const Hero = () => {
       <Container maxWidth="lg" sx={{ paddingBlock: 8 }}>
         <Stack spacing={4}>
           <Headshot />
-          <Typography variant="h1">
-            I’M TONY PROKOP,
-            <br />A SENIOR SOFTWARE ENGINEER.
+          <Typography variant="h1" sx={{ textTransform: 'uppercase' }}>
+            I’m Tony Prokop,
+            <br />a Senior Software Engineer.
           </Typography>
         </Stack>
       </Container>

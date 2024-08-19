@@ -1,0 +1,43 @@
+# MTG Multiplayer App Announcement
+I'm excited to announce a new side project I'm starting, a browser-based [Magic: The Gathering](https://magic.wizards.com/) (MTG) multiplayer application. 
+
+## Motivation
+Why start this project?  It is not because this is a new idea. There are plenty of ways to play MTG online, the closest thing to what I'm planning to build is [untap.in](https://untap.in/) I'm building this to learn new technology I'm interested in but don't have experience with. It also is an ambitious project that can expand or contract in scope depending how much time/motivation I have. There is the off chance this will result in the best way to play MTG online, but that is unlikely.
+
+I will be building this application in an open source repo over on [my github](https://github.com/TonyProkop), and will be blogging along the way as I add features for anyone that wants to follow along.
+
+## Quick Background on MTG
+For those that don't know, MTG is a strategic card game. I was introduced to the game in 2020 and have been obsessed since. It has many variations (called formats) one of which is Commander or Elder Dragon Highlander (EDH). This is the format I'll be focusing on with the project, because it is the main format I play and because it is multiplayer. This provides a unique technical challenge as opposed to traditional 1v1 formats.
+
+## Tech
+I'm planning on building this with the GOTH stack:
+- [Go](https://go.dev/) on the server
+- [Templ](https://templ.guide/) for templating
+- [HTMX](https://htmx.org/) for interactivity
+- [PostgresSQL](https://www.postgresql.org/) for the database
+
+Additionally, to make the multiplayer game work I'll likely be using [Redis](https://redis.io/) to store game sessions, [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) to pipe the game state to multiple clients, and some form of Javascript for the game specifically, since I imagine I'll need something more client side as opposed to server rendered html for that.
+
+## Features
+
+### Primary Features
+The primary features relate to being able to play a game of magic with 3 of your friends, this includes:
+- log into the app
+- create a deck via pasted decklist
+- create a lobby or game session
+- invite up to 3 friends to a game session
+- perform actions in game that you would normally take in real life, such as drawing cards, tapping cards, adding counters, shuffling, etc
+	- I have no plans to implement a game engine that executes card abilities automatically, that is a very hard (if not impossible) feat for one developer
+- chat via text everyone or individuals in game
+- reveal cards in hand to everyone or individual in game
+- show others in game hover over cards
+- track life totals and commander damage
+- log game actions and publish to each player in game
+### Optional Features
+- Save multiple decklists
+- Deck builder
+- Import decks from other websites
+- Profile information
+- Friends list
+- Leaderboards between friends
+- See who is online
