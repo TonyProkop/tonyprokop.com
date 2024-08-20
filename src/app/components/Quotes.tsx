@@ -52,7 +52,7 @@ const Quotes = () => {
 
   return (
     <Stack spacing={5}>
-      <Typography variant="h2">Testimonials</Typography>
+      <Typography variant="h2Alt">Testimonials</Typography>
       <Masonry columns={3} spacing={4}>
         <Quote
           name="Cathal Mac Donnacha"

@@ -61,7 +61,7 @@ const WorkExperience = () => {
 
   return (
     <Stack spacing={5}>
-      <Typography variant="h2">Work Experience</Typography>
+      <Typography variant="h2Alt">Work Experience</Typography>
       <Box
         sx={{
           flexGrow: 1,

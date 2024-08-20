@@ -1,5 +1,5 @@
 import type { MDXComponents } from 'mdx/types'
-import { List, ListItem, ListItemText, Typography } from '@mui/material'
+import { Link, List, ListItem, ListItemText, Typography } from '@mui/material'
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -25,6 +25,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <ListItem>
         <ListItemText>{children}</ListItemText>
       </ListItem>
+    ),
+    a: ({ children, href }) => (
+      <Link href={href}>
+        {children}
+      </Link>
     ),
     ...components,
   }

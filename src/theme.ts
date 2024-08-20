@@ -9,26 +9,71 @@ const poppins = Poppins({
   display: "swap",
 })
 
+declare module '@mui/material/styles' {
+  interface TypographyVariants {
+    h1Alt: React.CSSProperties;
+    h2Alt: React.CSSProperties;
+  }
+
+  // allow configuration using `createTheme`
+  interface TypographyVariantsOptions {
+    h1Alt?: React.CSSProperties;
+    h2Alt?: React.CSSProperties;
+  }
+}
+
+// Update the Typography's variant prop options
+declare module '@mui/material/Typography' {
+  interface TypographyPropsVariantOverrides {
+    h1Alt: true;
+    h2Alt: true;
+  }
+}
+
 let theme = createTheme({
   typography: {
-    fontSize: 18,
+    fontSize: 16,
     fontFamily: poppins.style.fontFamily,
     h1: {
+      fontSize: '3.815rem',
+      fontWeight: 400,
+    },
+    h1Alt: {
       background: "var(--primary-gradient)",
       backgroundClip: "text",
       color: "transparent",
-      fontSize: "96px",
-      fontWeight: 800,
+      fontFamily: poppins.style.fontFamily,
+      fontSize: '5.61rem',
+      fontWeight: 700,
+      letterSpacing: '-0.01562em',
+      lineHeight: 1.167,
+      textTransform: 'uppercase',
     },
     h2: {
+      fontSize: '3.052rem',
+      fontWeight: 400,
+    },
+    h2Alt: {
       background: "var(--primary-gradient)",
       backgroundClip: "text",
       color: "transparent",
-      fontSize: "48px",
-      fontWeight: 700,
+      fontFamily: poppins.style.fontFamily,
+      fontSize: '4.209rem',
+      fontWeight: 400,
+      lineHeight: 1.2,
     },
     h3: {
-      fontSize: "28px",
+      fontSize: '2.441rem',
+      fontWeight: 400,
+    },
+    h4: {
+      fontSize: '1.953rem',
+    },
+    h5: {
+      fontSize: '1.563rem',
+    },
+    h6: {
+      fontSize: '1.25rem',
     },
     body1: {
       color: "var(--clr-text)",
@@ -108,6 +153,21 @@ let theme = createTheme({
           backdropFilter: "blur(10px)",
         },
       },
+    },
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          background: "var(--primary-gradient)",
+          backgroundClip: "text",
+          color: "transparent",
+          fontWeight: 400,
+          textDecoration: 'none',
+          '&:hover, &:focus': {
+            textDecoration: 'underline',
+            textDecorationColor: "var(--clr-love)",
+          }
+        }
+      }
     },
     MuiTabs: {
       styleOverrides: {

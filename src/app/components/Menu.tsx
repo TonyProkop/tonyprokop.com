@@ -31,12 +31,15 @@ const Menu = () => {
         >
           <CloseIcon />
         </HeaderButton>
-        <Stack sx={{ padding: 10 }}>
+        <Stack sx={{ padding: 10 }} onClick={toggleOpen}>
           <Typography href="/" component={Link} sx={{ fontSize: "4rem" }}>
             Home
           </Typography>
           <Typography href="/about" component={Link} sx={{ fontSize: "4rem" }}>
             About
+          </Typography>
+          <Typography href="/blog" component={Link} sx={{ fontSize: "4rem" }}>
+            Blog
           </Typography>
           <Typography
             href="/contact"
