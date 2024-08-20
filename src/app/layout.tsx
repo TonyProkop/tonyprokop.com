@@ -21,8 +21,6 @@ export default function RootLayout({
     let newTheme = ""
     if (themeName === "dark") {
       newTheme = "light"
-    } else if (themeName === "light") {
-      newTheme = ""
     } else {
       newTheme = "dark"
     }
