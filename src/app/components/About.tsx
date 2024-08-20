@@ -28,8 +28,9 @@ const About = () => {
   return (
     <>
       <Typography
-        fontSize={40}
+        variant="h4"
         sx={{
+          fontWeight: '300',
           maxWidth: '960px',
           span: {
             fontWeight: "500",

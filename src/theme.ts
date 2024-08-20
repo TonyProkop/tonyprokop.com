@@ -35,7 +35,7 @@ let theme = createTheme({
     fontSize: 16,
     fontFamily: poppins.style.fontFamily,
     h1: {
-      fontSize: '3.815rem',
+      fontSize: '5.61rem',
       fontWeight: 400,
     },
     h1Alt: {
@@ -50,8 +50,8 @@ let theme = createTheme({
       textTransform: 'uppercase',
     },
     h2: {
-      fontSize: '3.052rem',
-      fontWeight: 400,
+      fontSize: '4.209rem',
+      fontWeight: 500,
     },
     h2Alt: {
       background: "var(--primary-gradient)",
@@ -59,31 +59,31 @@ let theme = createTheme({
       color: "transparent",
       fontFamily: poppins.style.fontFamily,
       fontSize: '4.209rem',
-      fontWeight: 400,
-      lineHeight: 1.2,
+      fontWeight: 500,
     },
     h3: {
-      fontSize: '2.441rem',
+      fontSize: '3.157rem',
       fontWeight: 400,
     },
     h4: {
-      fontSize: '1.953rem',
+      fontSize: '2.369rem',
+      fontWeight: 300,
     },
     h5: {
-      fontSize: '1.563rem',
+      fontSize: '1.777rem',
+      fontWeight: 300,
     },
     h6: {
-      fontSize: '1.25rem',
+      fontSize: '1.333rem',
+      fontWeight: 300,
     },
     body1: {
       color: "var(--clr-text)",
-      lineHeight: 1.75,
       fontWeight: 300,
       fontSize: "18px",
     },
     body2: {
       color: "var(--clr-text)",
-      lineHeight: 1.75,
       fontWeight: 300,
       fontSize: "18px",
     },

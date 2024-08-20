@@ -31,7 +31,7 @@ const Menu = () => {
         >
           <CloseIcon />
         </HeaderButton>
-        <Stack sx={{ padding: 10 }} onClick={toggleOpen}>
+        <Stack sx={{ height: '100vh', justifyContent: 'center', padding: 10 }} onClick={toggleOpen}>
           <Typography href="/" component={Link} sx={{ fontSize: "4rem" }}>
             Home
           </Typography>

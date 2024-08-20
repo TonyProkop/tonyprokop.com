@@ -7,7 +7,8 @@ const Contact = () => {
   return (
     <Container>
       <Typography
-        variant="h2"
+        variant="h1"
+        component="h2"
         sx={{
           color: "var(--clr-text)",
           fontSize: "6rem",

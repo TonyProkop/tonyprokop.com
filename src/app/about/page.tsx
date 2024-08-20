@@ -1,7 +1,10 @@
+import { Container, Typography } from '@mui/material'
 
 const About = () => {
   return (
-    <h1>About</h1>
+    <Container>
+      <Typography variant="h1">About</Typography>
+    </Container>
   )
 }
 

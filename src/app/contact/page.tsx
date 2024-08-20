@@ -6,13 +6,6 @@ const Contact = () => {
     <Container sx={{ marginBlock: 20 }}>
       <Typography
         variant="h1"
-        sx={{
-          '&': {
-            color: 'var(--clr-text)',
-            fontSize: '6rem',
-            fontWeight: '400',
-          }
-        }}
       >
         Let&apos;s chat
       </Typography>
