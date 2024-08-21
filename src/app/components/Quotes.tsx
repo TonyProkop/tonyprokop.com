@@ -24,7 +24,7 @@ const Quotes = () => {
       <Card>
         <CardContent>
           <Stack spacing={4}>
-            <Stack spacing={1}>
+            <div>
               {text.map((text: string) => (
                 <Typography
                   key={text}
@@ -34,7 +34,7 @@ const Quotes = () => {
                   &quot;{text}&quot;
                 </Typography>
               ))}
-            </Stack>
+            </div>
             <Stack alignItems="center" direction="row" gap={2}>
               <Image src={image} alt={name} height="50" />
               <Stack>

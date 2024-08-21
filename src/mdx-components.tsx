@@ -1,5 +1,6 @@
 import type { MDXComponents } from 'mdx/types'
-import { Link, List, ListItem, ListItemText, Typography } from '@mui/material'
+import { Link, List, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material'
+import ArrowRight from "./app/components/icons/ArrowRight"
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -19,11 +20,14 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <Typography>{children}</Typography>
     ),
     ul: ({ children }) => (
-      <List dense>{children}</List>
+      <List>{children}</List>
     ),
     li: ({ children }) => (
       <ListItem>
-        <ListItemText>{children}</ListItemText>
+        <ListItemIcon>
+          <ArrowRight />
+        </ListItemIcon>
+        <ListItemText primary={children} />
       </ListItem>
     ),
     a: ({ children, href }) => (

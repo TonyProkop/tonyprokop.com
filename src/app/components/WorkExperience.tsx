@@ -98,28 +98,19 @@ const WorkExperience = () => {
               flexGrow: 1,
             }}
           >
-            <Typography variant="h3">
+            <Typography component="h3" variant="body1">
               {job.role}{" "}
               <Box component="span" sx={{ color: "var(--clr-iris)" }}>
                 @ {job.company}
               </Box>
             </Typography>
-            <Typography sx={{ color: "var(--clr-subtle)" }}>
+            <Typography sx={{ color: "var(--clr-subtle)", marginTop: 0 }}>
               {job.date}
             </Typography>
-            <List dense>
+            <List>
               {job.bullets.map((bullet) => (
-                <ListItem alignItems="flex-start" key={bullet}>
-                  <ListItemIcon
-                    sx={{
-                      marginTop: 1,
-                      minWidth: "48px",
-                      svg: {
-                        width: "20px",
-                        height: "auto",
-                      },
-                    }}
-                  >
+                <ListItem key={bullet}>
+                  <ListItemIcon>
                     <ArrowRight />
                   </ListItemIcon>
                   <ListItemText primary={bullet} />

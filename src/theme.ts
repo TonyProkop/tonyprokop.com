@@ -81,11 +81,13 @@ let theme = createTheme({
       color: "var(--clr-text)",
       fontWeight: 300,
       fontSize: "18px",
+      lineHeight: 1.8,
     },
     body2: {
       color: "var(--clr-text)",
       fontWeight: 300,
       fontSize: "18px",
+      lineHeight: 1.8,
     },
   },
 
@@ -169,6 +171,28 @@ let theme = createTheme({
         }
       }
     },
+    MuiList: {
+      defaultProps: {
+        dense: true,
+      },
+    },
+    MuiListItem: {
+      defaultProps: {
+        alignItems: "flex-start",
+      }
+    },
+    MuiListItemIcon: {
+      styleOverrides: {
+        root: {
+          marginTop: '8px',
+          minWidth: "40px",
+          svg: {
+            height: "auto",
+            width: "20px",
+          },
+        },
+      },
+    },
     MuiTabs: {
       styleOverrides: {
         indicator: {
@@ -217,6 +241,22 @@ let theme = createTheme({
           }
         },
       },
+    },
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          marginTop: '16px',
+          '&:first-child': {
+            marginTop: 0,
+          },
+          '&.MuiTypography-h1, &.MuiTypography-h2, &.MuiTypography-h3, &.MuiTypography-h4, &.MuiTypography-h5, &.MuiTypography-h6': {
+            marginTop: '32px',
+            '&:first-child': {
+              marginTop: 0,
+            }
+          },
+        }
+      }
     }
   },
 })
