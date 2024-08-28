@@ -31,9 +31,7 @@
     --clr-pine: #286983;
     --clr-foam: #56949f;
     --clr-highlight: #dfdad9;
-  --primary-gradient: linear-gradient(135deg,
-      var(--clr-gold),
-      var(--clr-love) 50%);
+    --primary-gradient: linear-gradient(135deg, var(--clr-love));
   }
 }
 
@@ -69,9 +67,7 @@ body.light {
   --clr-pine: #286983;
   --clr-foam: #56949f;
   --clr-highlight: #dfdad9;
-  --primary-gradient: linear-gradient(135deg,
-      var(--clr-gold),
-      var(--clr-love) 50%);
+  --primary-gradient: linear-gradient(135deg, var(--clr-love), var(--clr-love));
 }
 
 * {
