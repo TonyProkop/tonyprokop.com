@@ -64,30 +64,34 @@ let theme = createTheme({
     h3: {
       fontSize: '3.157rem',
       fontWeight: 400,
+      lineHeight: 1.5,
     },
     h4: {
       fontSize: '2.369rem',
-      fontWeight: 300,
+      fontWeight: 400,
+      lineHeight: 1.5,
     },
     h5: {
       fontSize: '1.777rem',
-      fontWeight: 300,
+      fontWeight: 400,
+      lineHeight: 1.5,
     },
     h6: {
       fontSize: '1.333rem',
-      fontWeight: 300,
+      fontWeight: 400,
+      lineHeight: 1.5,
     },
     body1: {
       color: "var(--clr-text)",
-      fontWeight: 300,
+      fontWeight: 400,
       fontSize: "18px",
-      lineHeight: 1.8,
+      lineHeight: 1.6,
     },
     body2: {
       color: "var(--clr-text)",
-      fontWeight: 300,
+      fontWeight: 400,
       fontSize: "18px",
-      lineHeight: 1.8,
+      lineHeight: 1.6,
     },
   },
 
@@ -100,7 +104,7 @@ let theme = createTheme({
             borderRadius: 400,
             border: "1px solid rgba(255, 255, 255, 0.2)",
             color: "var(--clr-text)",
-            fontWeight: 300,
+            fontWeight: 400,
             textTransform: "none",
             padding: "24px 32px",
             "&:hover, &:active": {
@@ -208,6 +212,7 @@ let theme = createTheme({
           alignItems: "flex-start",
           color: "var(--clr-subtle)",
           fontSize: '18px',
+          fontWeight: 400,
           textTransform: 'none',
           "&.Mui-selected": {
             color: "var(--clr-iris)",

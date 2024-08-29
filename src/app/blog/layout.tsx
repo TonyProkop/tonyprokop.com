@@ -7,7 +7,7 @@ type LayoutProps = {
 
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
-    <Container maxWidth="md"
+    <Container maxWidth="sm"
       sx={{
         paddingBlock: '10vh',
         h1: {

@@ -26,11 +26,7 @@ const Home = () => {
           </section>
         </Container>
 
-        <Container maxWidth="xl">
-          <section>
-            <Quotes />
-          </section>
-        </Container>
+        <Quotes />
 
         <Container maxWidth="md">
           <section>

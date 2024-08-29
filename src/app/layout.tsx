@@ -1,6 +1,6 @@
 "use client"
 
-import { ReactNode, useState } from "react"
+import { ReactNode, useState, useEffect } from "react"
 import type { Metadata } from "next"
 import Cookies from "js-cookie"
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter"
@@ -16,17 +16,16 @@ export default function RootLayout({
 }: Readonly<{
   children: ReactNode
 }>) {
-  const [themeName, setThemeName] = useState(Cookies.get("theme") || "")
+  const [themeName, setThemeName] = useState('dark')
   const toggleTheme = () => {
-    let newTheme = ""
-    if (themeName === "dark") {
-      newTheme = "light"
-    } else {
-      newTheme = "dark"
-    }
+    let newTheme = themeName === 'dark' ? 'light' : 'dark'
     setThemeName(newTheme)
     Cookies.set("theme", newTheme)
   }
+
+  useEffect(() => {
+    setThemeName(Cookies.get("theme") || "dark")
+  }, [])
 
   return (
     <html lang="en" className={themeName}>
