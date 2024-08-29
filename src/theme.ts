@@ -35,8 +35,10 @@ let theme = createTheme({
     fontSize: 16,
     fontFamily: poppins.style.fontFamily,
     h1: {
+      color: "var(--clr-text)",
       fontSize: '5.61rem',
       fontWeight: 400,
+      lineHeight: 1.15,
     },
     h1Alt: {
       background: "var(--primary-gradient)",
@@ -50,8 +52,10 @@ let theme = createTheme({
       textTransform: 'uppercase',
     },
     h2: {
+      color: "var(--clr-text)",
       fontSize: '4.209rem',
       fontWeight: 500,
+      lineHeight: 1.15,
     },
     h2Alt: {
       background: "var(--primary-gradient)",
@@ -62,24 +66,28 @@ let theme = createTheme({
       fontWeight: 500,
     },
     h3: {
+      color: "var(--clr-text)",
       fontSize: '3.157rem',
       fontWeight: 400,
-      lineHeight: 1.5,
+      lineHeight: 1.15,
     },
     h4: {
+      color: "var(--clr-text)",
       fontSize: '2.369rem',
       fontWeight: 400,
-      lineHeight: 1.5,
+      lineHeight: 1.15,
     },
     h5: {
+      color: "var(--clr-text)",
       fontSize: '1.777rem',
       fontWeight: 400,
-      lineHeight: 1.5,
+      lineHeight: 1.15,
     },
     h6: {
+      color: "var(--clr-text)",
       fontSize: '1.333rem',
       fontWeight: 400,
-      lineHeight: 1.5,
+      lineHeight: 1.15,
     },
     body1: {
       color: "var(--clr-text)",
@@ -153,7 +161,9 @@ let theme = createTheme({
     MuiDrawer: {
       styleOverrides: {
         paper: {
+          alignItems: "center",
           backgroundColor: "var(--clr-overlay)",
+          minWidth: "30vw",
         },
         modal: {
           backdropFilter: "blur(10px)",

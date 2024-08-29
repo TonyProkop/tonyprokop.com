@@ -1,9 +1,12 @@
-import { Box, ButtonGroup, Container, Divider, Typography } from "@mui/material";
+import { Box, Button, ButtonGroup, Container, Divider, Typography } from "@mui/material";
+import useMagnetic from "../../hooks/useMagnetic";
 import Headshot from "./Headshot"
-import MagneticButton from "./MagneticButton"
 import PrimaryButton from "./PrimaryButton"
 
 const Contact = () => {
+  const emailRef = useMagnetic(25, 15)
+  const phoneRef = useMagnetic(25, 15)
+
   return (
     <Container>
       <Typography
@@ -40,20 +43,12 @@ const Contact = () => {
         <Divider sx={{ position: 'absolute', left: 0, right: 0, top: '50%', transform: 'translateY(-50%)' }} />
       </Box>
       <ButtonGroup>
-        <MagneticButton
-          href="mailto:prokop.tony@gmail.com"
-          strength={25}
-          text-strength={15}
-        >
-          prokop.tony@gmail.com
-        </MagneticButton>
-        <MagneticButton
-          href="tel:14029888222"
-          strength={25}
-          text-strength={15}
-        >
-          (402) 988-8222
-        </MagneticButton>
+        <Button ref={emailRef} href="mailto:prokop.tony@gmail.com">
+          <span className="btn-text">prokop.tony@gmail.com</span>
+        </Button>
+        <Button ref={phoneRef} href="tel:14029888222">
+          <span className="btn-text">(402) 988-8222</span>
+        </Button>
       </ButtonGroup>
     </Container>
   )

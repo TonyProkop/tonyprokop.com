@@ -1,8 +1,9 @@
 "use client "
 
-import { useState } from "react"
-import { Box, Drawer, Stack, Typography, useTheme } from "@mui/material"
-import Link from "next/link"
+import { FC, useState } from "react"
+import { Drawer, Stack, Typography, TypographyProps, useTheme } from "@mui/material"
+import Link, { LinkProps } from "next/link"
+import useMagnetic from "../../hooks/useMagnetic"
 import HeaderButton from "./HeaderButton"
 import MenuIcon from "./icons/Menu"
 import CloseIcon from "./icons/Close"
@@ -12,6 +13,16 @@ const Menu = () => {
   const theme = useTheme()
 
   const toggleOpen = () => setOpen(!open)
+
+  const MenuButton: FC<LinkProps & TypographyProps> = ({ ...props }) => {
+    const ref = useMagnetic();
+
+    return (
+      <Typography ref={ref} component={Link} {...props} sx={{ fontSize: "4rem", paddingX: 4 }} variant="h3">
+        {props.children}
+      </Typography>
+    )
+  }
 
   return (
     <>
@@ -31,23 +42,19 @@ const Menu = () => {
         >
           <CloseIcon />
         </HeaderButton>
-        <Stack sx={{ height: '100vh', justifyContent: 'center', padding: 10 }} onClick={toggleOpen}>
-          <Typography href="/" component={Link} sx={{ fontSize: "4rem" }}>
+        <Stack sx={{ height: '100vh', justifyContent: 'center', padding: 5 }} onClick={toggleOpen}>
+          <MenuButton href="/">
             Home
-          </Typography>
-          <Typography href="/about" component={Link} sx={{ fontSize: "4rem" }}>
+          </MenuButton>
+          <MenuButton href="/about" >
             About
-          </Typography>
-          <Typography href="/blog" component={Link} sx={{ fontSize: "4rem" }}>
+          </MenuButton>
+          <MenuButton href="/blog">
             Blog
-          </Typography>
-          <Typography
-            href="/contact"
-            component={Link}
-            sx={{ fontSize: "4rem" }}
-          >
+          </MenuButton>
+          <MenuButton href="/contact">
             Contact
-          </Typography>
+          </MenuButton>
         </Stack>
       </Drawer>
     </>

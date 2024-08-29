@@ -19,7 +19,7 @@ const HeaderButton: FC<MagneticButtonProps> = ({ children, onClick, sx }) => {
         },
         ...sx,
       }}
-      strength={15}
+      strength={50}
       textStrength={25}
       onClick={onClick}
     >

@@ -1,5 +1,5 @@
 import { useRef } from "react"
-import { Typography } from "@mui/material"
+import { Box, Typography } from "@mui/material"
 import PrimaryButton from "./PrimaryButton"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
@@ -41,7 +41,9 @@ const About = () => {
         experience. Passionate about building <i>beautiful</i>,{" "}
         <i>fast</i>, and <i>intuitive</i> user interfaces.
       </Typography>
-      <PrimaryButton href="/about" ref={ref} sx={{ float: 'right' }}>About me</PrimaryButton>
+      <Box ref={ref}>
+        <PrimaryButton href="/about" sx={{ float: 'right' }}>About me</PrimaryButton>
+      </Box>
     </>
   )
 }

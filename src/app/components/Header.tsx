@@ -13,9 +13,8 @@ type HeaderProps = {
 }
 
 const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
-
   return (
-    <Box component="header" sx={{ position: 'absolute', top: 0, right: 0 }}>
+    <Box component="header" sx={{ position: 'fixed', top: 0, right: 0, zIndex: 1 }}>
       <Stack
         direction="row"
         gap={2}

@@ -25,7 +25,7 @@ const Quote: React.FC<QuoteProps> = ({ active, image, name, position, text }) =>
             {text.map((text: string) => (
               <Typography
                 key={text}
-                variant="body2"
+                variant="body1"
                 sx={{ fontStyle: "italic" }}
               >
                 &quot;{text}&quot;
@@ -36,7 +36,7 @@ const Quote: React.FC<QuoteProps> = ({ active, image, name, position, text }) =>
             <Image src={image} alt={name} height="50" />
             <Stack>
               <Typography fontWeight={400}>{name}</Typography>
-              <Typography variant="body2">{position}</Typography>
+              <Typography marginTop={0} variant="body2">{position}</Typography>
             </Stack>
           </Stack>
         </Stack>
