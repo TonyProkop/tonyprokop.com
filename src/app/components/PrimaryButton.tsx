@@ -1,11 +1,15 @@
-import { forwardRef, ForwardedRef } from 'react'
-import { ButtonProps } from '@mui/material'
-import Link from "next/link"
-import MagneticButton from "./MagneticButton"
+'use client'
 
-const PrimaryButton = forwardRef(function PrimaryButton({ children, sx, ...props }: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) {
+import { Button, ButtonProps } from '@mui/material'
+import Link from "next/link"
+import useMagnetic from '../../hooks/useMagnetic'
+
+const PrimaryButton = ({ children, sx, ...props }: ButtonProps) => {
+  const ref = useMagnetic()
+
   return (
-    <MagneticButton
+    <Button
+      ref={ref}
       component={props.href ? Link : 'button'}
       sx={{
         "&&": {
@@ -27,11 +31,10 @@ const PrimaryButton = forwardRef(function PrimaryButton({ children, sx, ...props
         ...sx,
       }}
       {...props}
-      ref={ref}
     >
-      {children}
-    </MagneticButton>
+      <span className="btn-text">{children}</span>
+    </Button>
   )
-})
+}
 
 export default PrimaryButton

@@ -1,9 +1,13 @@
 import { FC } from "react"
-import MagneticButton, { MagneticButtonProps } from "./MagneticButton"
+import { Button, ButtonProps } from "@mui/material"
+import useMagnetic from "../../hooks/useMagnetic"
 
-const HeaderButton: FC<MagneticButtonProps> = ({ children, onClick, sx }) => {
+const HeaderButton: FC<ButtonProps> = ({ children, onClick, sx }) => {
+  const ref = useMagnetic(50, 25)
+
   return (
-    <MagneticButton
+    <Button
+      ref={ref}
       sx={{
         "&&": {
           display: "grid",
@@ -19,12 +23,10 @@ const HeaderButton: FC<MagneticButtonProps> = ({ children, onClick, sx }) => {
         },
         ...sx,
       }}
-      strength={50}
-      textStrength={25}
       onClick={onClick}
     >
       {children}
-    </MagneticButton>
+    </Button>
   )
 }
 

@@ -33,7 +33,7 @@ const useMagnetic = (strength: number = 100, textStrength: number = 50) => {
 
         const buttonText = ref.current.querySelector(".btn-text")
         if (buttonText) {
-          gsap.to(ref.current.querySelector(".btn-text"), {
+          gsap.to(buttonText, {
             x: x * textStrength,
             y: y * textStrength,
             rotate: "0.001deg",
@@ -46,12 +46,22 @@ const useMagnetic = (strength: number = 100, textStrength: number = 50) => {
       ref.current.addEventListener("mouseleave", () => {
         if (!ref.current) return
 
-        gsap.to([ref.current, ref.current.querySelector(".btn-text")], {
+        gsap.to(ref.current, {
           x: 0,
           y: 0,
           ease: "elastic.out",
           duration: 1.5,
         })
+
+        const buttonText = ref.current.querySelector(".btn-text")
+        if (buttonText) {
+          gsap.to(buttonText, {
+            x: 0,
+            y: 0,
+            ease: "elastic.out",
+            duration: 1.5,
+          })
+        }
       })
     },
     { scope: ref, dependencies: [ref] }
