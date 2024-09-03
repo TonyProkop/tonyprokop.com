@@ -32,6 +32,7 @@ const About = () => {
         sx={{
           fontWeight: '300',
           maxWidth: '960px',
+          lineHeight: '1.6',
           span: {
             fontWeight: "500",
           },

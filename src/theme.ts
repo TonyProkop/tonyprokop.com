@@ -110,12 +110,13 @@ let theme = createTheme({
           "&&": {
             boxShadow: "none",
             borderRadius: 400,
-            border: "1px solid rgba(255, 255, 255, 0.2)",
+            border: "1px solid var(--clr-muted)",
             color: "var(--clr-text)",
             fontWeight: 400,
             textTransform: "none",
             padding: "24px 32px",
             "&:hover, &:active": {
+              border: "1px solid var(--clr-subtle)",
               backgroundColor: "var(--clr-overlay)",
               color: "var(--clr-text)",
             },
