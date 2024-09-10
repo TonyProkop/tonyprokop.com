@@ -12,17 +12,21 @@ const useHorizontalLoop = (items: Array<HTMLElement>, config) => {
     const onChange = config.onChange
     let lastIndex = 0
     let tl = gsap.timeline({
-      repeat: config.repeat, onUpdate: onChange && function() {
+      repeat: config.repeat,
+      onUpdate: onChange && function() {
         let i = tl.closestIndex();
         if (lastIndex !== i) {
           lastIndex = i;
           onChange(items[i], i);
         }
-      }, paused: config.paused, defaults: { ease: "none" }, onReverseComplete: () => tl.totalTime(tl.rawTime() + tl.duration() * 100)
+      },
+      paused: config.paused,
+      defaults: { ease: "none" },
+      onReverseComplete: () => { tl.totalTime(tl.rawTime() + tl.duration() * 100) }
     })
     let length = items.length
     let startX = items[0].offsetLeft
-    let times: Array<number> = [] 
+    let times: Array<number> = []
     let widths: Array<number> = []
     let spaceBefore: Array<number> = []
     let xPercents: Array<number> = []

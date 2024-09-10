@@ -8,13 +8,11 @@ const Contact = () => {
   const phoneRef = useMagnetic(25, 15)
 
   return (
-    <Container>
+    <Container maxWidth="lg">
       <Typography
         variant="h1"
-        component="h2"
         sx={{
           color: "var(--clr-text)",
-          fontSize: "6rem",
           fontWeight: "400",
         }}
       >

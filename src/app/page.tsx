@@ -20,7 +20,7 @@ const Home = () => {
           </section>
         </Container>
 
-        <Container>
+        <Container maxWidth="lg">
           <section>
             <WorkExperience />
           </section>
@@ -28,7 +28,7 @@ const Home = () => {
 
         <Quotes />
 
-        <Container maxWidth="md">
+        <Container maxWidth="lg">
           <section>
             <Skills />
           </section>

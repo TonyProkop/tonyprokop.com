@@ -28,11 +28,11 @@ const About = () => {
   return (
     <>
       <Typography
-        variant="h4"
         sx={{
-          fontWeight: '300',
-          maxWidth: '960px',
-          lineHeight: '1.6',
+          fontWeight: "300",
+          fontSize: "2.75rem",
+          maxWidth: '1100px',
+          lineHeight: '1.7',
           span: {
             fontWeight: "500",
           },
