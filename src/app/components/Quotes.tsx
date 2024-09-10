@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useEffect, useState, useRef } from "react"
 import { Box, Container, IconButton, Stack, Typography } from "@mui/material"
 import Quote from './Quote'
 import Cathal from "../images/cathal.png"
@@ -9,16 +9,17 @@ import Savannah from "../images/savannah.png"
 import Shannon from "../images/shannon.png"
 import Vivek from "../images/vivek.png"
 import ArrowRight from "./icons/ArrowRight"
+import useHorizontalLoop from "../../hooks/useHorizontalLoop"
 
 const Quotes = () => {
   const [activeIndex, setActiveIndex] = useState(0)
-  const ref = useRef(null)
+  const ref = useRef(new Array())
+
+  const context = useHorizontalLoop(ref.current, { paused: true, speed: 20, center: true })
+
 
   const nextQuote = () => {
-    console.log(ref.current)
-    ref.current.forEach(quote => {
-      quote.scrollLeft = quote.scrollLeft + '500'
-    })
+    context.data[0].next()
     if (activeIndex === 4) {
       setActiveIndex(0)
     } else {
@@ -27,12 +28,22 @@ const Quotes = () => {
   }
 
   const previousQuote = () => {
+    context.data[0].previous()
     if (activeIndex === 0) {
       setActiveIndex(4)
     } else {
       setActiveIndex(activeIndex - 1)
     }
   }
+
+  const toQuote = (index: number) => {
+    context.data[0].toIndex(index)
+    setActiveIndex(index)
+  }
+
+  useEffect(() => {
+    toQuote(0)
+  }, [])
 
   const quotes = [
     {
@@ -90,15 +101,21 @@ const Quotes = () => {
           <ArrowRight />
         </IconButton>
       </Container>
-      <Stack id="scroll-me" direction="row" gap={5} sx={{ overflowX: 'clip' }}>
+      <Stack direction="row" paddingInline={2.5}>
         {
           quotes.map((quote, index) =>
-            <Box key={quote.name} ref={ref} sx={{ flexBasis: '500px', flexShrink: 0 }}>
+            <Box
+              key={quote.name}
+              ref={el => ref.current.push(el)}
+              sx={{ flexBasis: '500px', flexShrink: 0 }}
+              paddingInline={2.5}
+              onClick={() => toQuote(index)}
+            >
               <Quote active={index === activeIndex} {...quote} />
             </Box>
           )
         }
-      </Stack>
+      </Stack >
     </>
   )
 }
