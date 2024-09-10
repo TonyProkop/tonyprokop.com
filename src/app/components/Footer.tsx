@@ -43,7 +43,7 @@ const Footer = () => {
 
   return (
     <Box component="footer" marginBlock={20}>
-      <Stack spacing={2} alignItems="center">
+      <Stack spacing={4} alignItems="center">
         <Stack
           direction="row"
           justifyContent="center"

@@ -91,7 +91,7 @@ const Quotes = () => {
   ]
 
   return (
-    <>
+    <div>
       <Container maxWidth="lg">
         <Typography variant="h2Alt">Testimonials</Typography>
         <IconButton onClick={previousQuote} >
@@ -116,7 +116,7 @@ const Quotes = () => {
           )
         }
       </Stack >
-    </>
+    </div>
   )
 }
 
