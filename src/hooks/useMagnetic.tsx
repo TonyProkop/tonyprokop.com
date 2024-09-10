@@ -28,7 +28,7 @@ const useMagnetic = (strength: number = 100, textStrength: number = 50) => {
           y: y * strength,
           rotate: "0.001deg",
           ease: "power4.easeOut",
-          duration: 1.5,
+          duration: 1,
         })
 
         const buttonText = ref.current.querySelector(".btn-text")
@@ -38,7 +38,7 @@ const useMagnetic = (strength: number = 100, textStrength: number = 50) => {
             y: y * textStrength,
             rotate: "0.001deg",
             ease: "power4.easeOut",
-            duration: 1.5,
+            duration: 1,
           })
         }
       })

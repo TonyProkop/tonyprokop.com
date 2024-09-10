@@ -1,12 +1,12 @@
 import { FC } from "react"
-import { Button, ButtonProps } from "@mui/material"
+import { IconButton as MuiIconButton, IconButtonProps } from "@mui/material"
 import useMagnetic from "../../hooks/useMagnetic"
 
-const HeaderButton: FC<ButtonProps> = ({ children, onClick, sx }) => {
+const IconButton: FC<IconButtonProps> = ({ children, onClick, sx }) => {
   const ref = useMagnetic(50, 25)
 
   return (
-    <Button
+    <MuiIconButton
       ref={ref}
       sx={{
         "&&": {
@@ -19,6 +19,7 @@ const HeaderButton: FC<ButtonProps> = ({ children, onClick, sx }) => {
           lineHeight: 0,
           '&:hover': {
             backgroundColor: "var(--clr-overlay)",
+            border: 'none',
           }
         },
         ...sx,
@@ -26,8 +27,8 @@ const HeaderButton: FC<ButtonProps> = ({ children, onClick, sx }) => {
       onClick={onClick}
     >
       {children}
-    </Button>
+    </MuiIconButton>
   )
 }
 
-export default HeaderButton
+export default IconButton

@@ -261,12 +261,12 @@ let theme = createTheme({
     MuiTypography: {
       styleOverrides: {
         root: {
-          marginTop: '16px',
+          marginTop: '1rem',
           '&:first-child': {
             marginTop: 0,
           },
           '&.MuiTypography-h1, &.MuiTypography-h2, &.MuiTypography-h3, &.MuiTypography-h4, &.MuiTypography-h5, &.MuiTypography-h6': {
-            marginTop: '32px',
+            marginTop: '2rem',
             '&:first-child': {
               marginTop: 0,
             }

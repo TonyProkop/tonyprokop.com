@@ -4,7 +4,7 @@ import { FC, useState } from "react"
 import { Drawer, Stack, Typography, TypographyProps, useTheme } from "@mui/material"
 import Link, { LinkProps } from "next/link"
 import useMagnetic from "../../hooks/useMagnetic"
-import HeaderButton from "./HeaderButton"
+import IconButton from "./IconButton"
 import MenuIcon from "./icons/Menu"
 import CloseIcon from "./icons/Close"
 
@@ -15,7 +15,7 @@ const Menu = () => {
   const toggleOpen = () => setOpen(!open)
 
   const MenuButton: FC<LinkProps & TypographyProps> = ({ ...props }) => {
-    const ref = useMagnetic();
+    const ref = useMagnetic(24, 12);
 
     return (
       <Typography ref={ref} component={Link} {...props} sx={{ fontSize: "4rem", paddingX: 4 }} variant="h3">
@@ -26,11 +26,11 @@ const Menu = () => {
 
   return (
     <>
-      <HeaderButton onClick={toggleOpen}>
+      <IconButton onClick={toggleOpen}>
         <MenuIcon />
-      </HeaderButton>
+      </IconButton>
       <Drawer open={open} onClose={toggleOpen} anchor="right">
-        <HeaderButton
+        <IconButton
           onClick={toggleOpen}
           sx={{
             background: "var(--primary-gradient)",
@@ -41,7 +41,7 @@ const Menu = () => {
           }}
         >
           <CloseIcon />
-        </HeaderButton>
+        </IconButton>
         <Stack sx={{ height: '100vh', justifyContent: 'center', padding: 5 }} onClick={toggleOpen}>
           <MenuButton href="/">
             Home

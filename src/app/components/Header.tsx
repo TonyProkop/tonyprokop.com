@@ -2,7 +2,7 @@
 
 import { Box, Stack } from "@mui/material"
 import Menu from "./Menu"
-import HeaderButton from "./HeaderButton"
+import IconButton from "./IconButton"
 import Volume from "./icons/Volume"
 import Sun from "./icons/Sun"
 import Moon from "./icons/Moon"
@@ -22,12 +22,12 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
         paddingInline={4}
         paddingTop={4}
       >
-        <HeaderButton>
+        <IconButton>
           <Volume />
-        </HeaderButton>
-        <HeaderButton onClick={toggleTheme}>
+        </IconButton>
+        <IconButton onClick={toggleTheme}>
           {theme === "light" ? <Sun /> : <Moon />}
-        </HeaderButton>
+        </IconButton>
         <Menu />
       </Stack>
     </Box>
