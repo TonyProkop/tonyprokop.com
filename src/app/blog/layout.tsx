@@ -11,13 +11,22 @@ const Layout: FC<LayoutProps> = ({ children }) => {
       sx={{
         paddingBlock: '10vh',
         h1: {
-          fontSize: '3.815rem'
+          fontSize: 'clamp(2.986rem, 10vw, 3.815rem)'
         },
         h2: {
-          fontSize: '3.052rem'
+          fontSize: 'clamp(2.488rem, 8vw, 3.052rem)'
         },
         h3: {
-          fontSize: '2.441rem'
+          fontSize: 'clamp(2.074rem, 8vw, 2.441rem)'
+        },
+        h4: {
+          fontSize: 'clamp(1.728rem, 3.5vw, 1.953rem)'
+        },
+        h5: {
+          fontSize: 'clamp(1.44rem, 3.5vw, 1.563rem)'
+        },
+        h6: {
+          fontSize: 'clamp(1.2rem, 3.5vw, 1.25rem)'
         },
       }}
     >
