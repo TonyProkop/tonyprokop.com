@@ -12,7 +12,7 @@ const Headshot: FC<BoxProps> = ({ sx }) => {
       sx={{
         verticalAlign: "middle",
         marginRight: 2,
-        maxWidth: '300px',
+        maxWidth: "clamp(200px, 30vw, 300px)",
         height: 'auto',
         width: '100%',
         borderRadius: '300px',
