@@ -11,7 +11,7 @@ import Contact from "./components/Contact"
 const Home = () => {
   return (
     <main>
-      <Stack alignItems="center" direction="column" spacing={25}>
+      <Stack alignItems="center" direction="column" spacing={{ xs: 15, md: 20, lg: 30 }}>
         <Hero />
 
         <Container maxWidth="lg">
