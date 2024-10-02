@@ -22,9 +22,11 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
         paddingInline={4}
         paddingTop={4}
       >
-        <IconButton>
+        {
+          /*<IconButton>
           <Volume />
-        </IconButton>
+        </IconButton>*/
+        }
         <IconButton onClick={toggleTheme}>
           {theme === "light" ? <Sun /> : <Moon />}
         </IconButton>

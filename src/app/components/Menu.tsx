@@ -46,9 +46,6 @@ const Menu = () => {
           <MenuButton href="/">
             Home
           </MenuButton>
-          <MenuButton href="/about" >
-            About
-          </MenuButton>
           <MenuButton href="/blog">
             Blog
           </MenuButton>
