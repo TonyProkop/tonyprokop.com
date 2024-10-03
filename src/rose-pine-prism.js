@@ -18,7 +18,9 @@ const rosePinePrism = {
   "pre[class*=\"language-\"]": {
     "background": base,
     "color": text,
-    "fontSize": "18px",
+    "fontSize": "1rem",
+    "overflow-x": "auto",
+    "padding": "1rem",
   },
   "code[class*=\"language-\"]": {
     "background": base,
