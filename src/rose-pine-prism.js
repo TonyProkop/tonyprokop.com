@@ -17,10 +17,12 @@ const highlightHigh = '#56526e';
 const rosePinePrism = {
   "pre[class*=\"language-\"]": {
     "background": base,
+    "border-radius": "1rem",
     "color": text,
     "fontSize": "1rem",
     "overflow-x": "auto",
-    "padding": "1rem",
+    "padding": "3rem",
+    "margin-inline": "-3rem",
   },
   "code[class*=\"language-\"]": {
     "background": base,

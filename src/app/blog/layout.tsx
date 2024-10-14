@@ -1,5 +1,5 @@
 import { FC, ReactNode } from 'react'
-import { Container } from '@mui/material'
+import { Box, Container } from '@mui/material'
 
 type LayoutProps = {
   children: ReactNode
@@ -7,8 +7,10 @@ type LayoutProps = {
 
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
-    <Container maxWidth="sm"
+    <Box
       sx={{
+        display: 'grid',
+        gridTemplateColumns: '1fr min(calc(100% - 2rem), 750px) 1fr',
         paddingBlock: '10vh',
         h1: {
           fontSize: 'clamp(2.986rem, 10vw, 3.815rem)'
@@ -28,10 +30,13 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         h6: {
           fontSize: 'clamp(1.2rem, 3.5vw, 1.25rem)'
         },
+        '*': {
+          gridColumn: 2
+        }
       }}
     >
       {children}
-    </Container>
+    </Box>
   )
 }
 

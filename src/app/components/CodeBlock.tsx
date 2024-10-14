@@ -19,7 +19,14 @@ type CodeBlockProps = {
 
 const CodeBlock: FC<CodeBlockProps> = ({ code, language }) => {
   return (
-    <SyntaxHighlighter language={language} style={rosePinePrism}>
+    <SyntaxHighlighter language={language} style={rosePinePrism} wrapLines lineProps={(lineNumber) => {
+      const style: any = { display: "block", width: "fit-content" };
+      console.log(lineNumber);
+      if (lineNumber == 2) {
+        style.backgroundColor = "red";
+      }
+      return { style };
+    }}>
       {code}
     </SyntaxHighlighter>
   )
