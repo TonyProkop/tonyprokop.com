@@ -1,7 +1,7 @@
 "use client"
 
-import { useEffect, useState, useRef } from "react"
-import { Box, Container, IconButton, Stack, Typography } from "@mui/material"
+import { Box, Container, IconButton, Typography } from "@mui/material"
+import Carousel from 'react-material-ui-carousel'
 import Quote from './Quote'
 import Cathal from "../images/cathal.png"
 import Greg from "../images/greg.png"
@@ -9,42 +9,9 @@ import Savannah from "../images/savannah.png"
 import Shannon from "../images/shannon.png"
 import Vivek from "../images/vivek.png"
 import ArrowRight from "./icons/ArrowRight"
-import useHorizontalLoop from "../../hooks/useHorizontalLoop"
+import ArrowLeft from "./icons/ArrowLeft"
 
 const Quotes = () => {
-  const [activeIndex, setActiveIndex] = useState(0)
-  const ref = useRef(new Array())
-
-  const context = useHorizontalLoop(ref.current, { paused: true, speed: 20, center: true })
-
-
-  const nextQuote = () => {
-    context.data[0].next()
-    if (activeIndex === 4) {
-      setActiveIndex(0)
-    } else {
-      setActiveIndex(activeIndex + 1)
-    }
-  }
-
-  const previousQuote = () => {
-    context.data[0].previous()
-    if (activeIndex === 0) {
-      setActiveIndex(4)
-    } else {
-      setActiveIndex(activeIndex - 1)
-    }
-  }
-
-  const toQuote = (index: number) => {
-    context.data[0].toIndex(index)
-    setActiveIndex(index)
-  }
-
-  useEffect(() => {
-    toQuote(0)
-  }, [])
-
   const quotes = [
     {
       name: "Cathal Mac Donnacha",
@@ -91,32 +58,26 @@ const Quotes = () => {
   ]
 
   return (
-    <div>
-      <Container maxWidth="lg">
-        <Typography variant="h2Alt">Testimonials</Typography>
-        <IconButton onClick={previousQuote} >
-          <ArrowRight />
-        </IconButton>
-        <IconButton onClick={nextQuote} >
-          <ArrowRight />
-        </IconButton>
-      </Container>
-      <Stack direction="row" paddingInline={2.5}>
+    <Container maxWidth="lg">
+      <Typography variant="h2Alt">What others are saying</Typography>
+      <Carousel
+        autoPlay={false}
+        navButtonsAlwaysVisible
+        NextIcon={<ArrowRight />}
+        PrevIcon={<ArrowLeft />}
+      >
         {
-          quotes.map((quote, index) =>
+          quotes.map((quote) =>
             <Box
               key={quote.name}
-              ref={el => ref.current.push(el)}
-              sx={{ flexBasis: '500px', flexShrink: 0 }}
-              paddingInline={2.5}
-              onClick={() => toQuote(index)}
+              sx={{ margin: '0 auto' }}
             >
-              <Quote active={index === activeIndex} {...quote} />
+              <Quote {...quote} />
             </Box>
           )
         }
-      </Stack >
-    </div>
+      </Carousel>
+    </Container>
   )
 }
 

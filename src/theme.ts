@@ -64,6 +64,7 @@ let theme = createTheme({
       fontFamily: poppins.style.fontFamily,
       fontSize: 'clamp(2.488rem, 8vw, 5.653rem)',
       fontWeight: 500,
+      lineHeight: 1.15,
     },
     h3: {
       color: "var(--clr-text)",

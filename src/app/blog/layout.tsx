@@ -10,7 +10,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
     <Box
       sx={{
         display: 'grid',
-        gridTemplateColumns: '1fr min(calc(100% - 2rem), 750px) 1fr',
+        gridTemplateColumns: '1fr min(calc(100% - 2rem), 750p800x) 1fr',
         paddingBlock: '10vh',
         h1: {
           fontSize: 'clamp(2.986rem, 10vw, 3.815rem)'

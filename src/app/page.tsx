@@ -3,7 +3,7 @@
 import { Container, Stack } from "@mui/material"
 import Hero from "./components/Hero"
 import About from "./components/About"
-import Quotes from "./components/Quotes"
+import Quotes from "./components/NewQuotes"
 import Skills from "./components/Skills"
 import WorkExperience from "./components/WorkExperience"
 import Contact from "./components/Contact"
