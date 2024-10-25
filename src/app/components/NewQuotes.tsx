@@ -1,9 +1,9 @@
 "use client"
 
-import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
 import { Box, Container, IconButton, Stack, Typography } from "@mui/material"
 import Quote from './Quote'
+import { motion } from 'framer-motion'
 import Cathal from "../images/cathal.png"
 import Greg from "../images/greg.png"
 import Savannah from "../images/savannah.png"
@@ -58,91 +58,73 @@ const NewQuotes = () => {
     },
   ]
 
-  const [count, setCount] = useState(0);
+  const containerRef = useRef(null)
+  const [center, setCenter] = useState(0)
   const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3, 4]);
 
   const handleNext = () => {
-    setCount(quotes.length - 1 > count + 1 ? count + 1 : count);
-    // setPositionIndexes((prevIndexes) => {
-    //   const updatedIndexes = prevIndexes.map(
-    //     (prevIndex) => (prevIndex + 1) % 5
-    //   );
-    //   return updatedIndexes;
-    // });
+    setPositionIndexes((prevIndexes) => {
+      const updatedIndexes = prevIndexes.map(
+        (prevIndex) => (prevIndex + 4) % 5
+      );
+
+      return updatedIndexes;
+    });
   };
 
   const handleBack = () => {
-    setCount(count === 0 ? 0 : count - 1);
-    // setPositionIndexes((prevIndexes) => {
-    //   const updatedIndexes = prevIndexes.map(
-    //     (prevIndex) => (prevIndex + 4) % 5
-    //   );
-    //
-    //   return updatedIndexes;
-    // });
+    setPositionIndexes((prevIndexes) => {
+      const updatedIndexes = prevIndexes.map(
+        (prevIndex) => (prevIndex + 1) % 5
+      );
+      return updatedIndexes;
+    });
   };
 
-  const positions = ["center", "left1", "left", "right", "right1"];
+  const positions = ["left1", "left", "center", "right", "right1"];
+
+  useEffect(() => {
+    console.log(containerRef, containerRef.current, containerRef?.current?.innerWidth)
+    if (containerRef?.current?.offsetWidth !== undefined) {
+      setCenter(containerRef.current.offsetWidth / 2)
+    }
+  }, [])
 
   const imageVariants = {
-    center: { transform: "translateX(50%)", zIndex: 5, opacity: 1 },
-    left1: { transform: "translateX(0%)", zIndex: 3, opacity: 1 },
-    left: { transform: "translateX(0%)", zIndex: 2, opacity: 0 },
-    right: { transform: "translateX(100%)", zIndex: 1, opacity: 0 },
-    right1: { transform: "translateX(100%)", zIndex: 3, opacity: 1 },
+    left1: { x: `${center - 1310}px`, scale: 0.9, filter: 'blur(10px)', opacity: 0 },
+    left: { x: `${center - 780}px`, scale: 0.9, filter: 'blur(1px)', opacity: 1 },
+    center: { x: `${center - 250}px`, scale: 1, filter: 'blur(0)', opacity: 1 },
+    right: { x: `${center + 280}px`, scale: 0.9, filter: 'blur(1px)', opacity: 1 },
+    right1: { x: `${center + 810}px`, scale: 0.9, filter: 'blur(10px)', opacity: 0 },
   };
 
   return (
-    <div>
-      <Container maxWidth="lg">
+    <Container maxWidth="lg">
+      <Stack spacing={1}>
         <Typography variant="h2Alt">What others are saying</Typography>
-      </Container>
-      <IconButton onClick={handleNext}>
-        <ArrowRight />
-      </IconButton>
-      <IconButton onClick={handleBack}>
-        <ArrowLeft />
-      </IconButton>
-      <Stack direction="row" overflow="hidden" gap={4} paddingInline={4}>
-        {
-          quotes.map((quote, index) =>
-            <motion.div
-              key={quote.name}
-              animate={{ scale: `${count === index ? 1 : 0.9}`, x: `-${count*500}px`, filter: `blur(${count === index ? 0 : 3}px)` }}
-              transition={{ duration: 1 }}
-              style={{ margin: '0 auto', flexBasis: '500px', flexShrink: 0 }}
-              variants={imageVariants}
-            >
+        <IconButton onClick={handleBack}>
+          <ArrowLeft />
+        </IconButton>
+        <IconButton onClick={handleNext}>
+          <ArrowRight />
+        </IconButton>
+        <Box sx={{ display: 'grid', justifyContent: 'center' }}>
+          <Box ref={containerRef} sx={{ display: 'grid', position: 'relative', overflow: 'hidden', width: `${document.documentElement.clientWidth}px` }}>
+            {quotes.map((quote, index) =>
+              <motion.div
+                key={quote.name}
+                animate={positions[positionIndexes[index]]}
+                transition={{ duration: .5 }}
+                style={{ gridRow: '1', gridColumn: '1', width: '500px' }}
+                variants={imageVariants}
+              >
                 <Quote {...quote} />
-            </motion.div>
-          )
-        }
-        {
-          // quotes.map((quote, index) =>
-          //   <Box
-          //     key={quote.name}
-          //     sx={{ margin: '0 auto', flexBasis: '500px', flexShrink: 0 }}
-          //   >
-          //     <Quote {...quote} />
-          //   </Box>
-          // )
-        }
-        {
-          // quotes.map((quote, index) =>
-          //   <motion.div
-          //     key={quote.name}
-          //     initial="center"
-          //     animate={positions[positionIndexes[index]]}
-          //     transition={{ duration: 1 }}
-          //     style={{ margin: '0 auto', flexBasis: '500px', flexShrink: 0 }}
-          //     variants={imageVariants}
-          //   >
-          //       <Quote {...quote} />
-          //   </motion.div>
-          // )
-        }
+              </motion.div>
+            )}
+          </Box>
+        </Box>
       </Stack>
-    </div>
+    </Container>
   )
 }
 
