@@ -60,6 +60,7 @@ const quotes = [
 const NewQuotes = () => {
   const containerRef = useRef<HTMLElement>(null)
   const [center, setCenter] = useState(0)
+  const [clientWidth, setClientWidth] = useState(document.documentElement.clientWidth)
   const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3, 4]);
 
   const handleNext = () => {
@@ -84,17 +85,32 @@ const NewQuotes = () => {
   const positions = ["left1", "left", "center", "right", "right1"];
 
   useEffect(() => {
-    if (containerRef?.current?.offsetWidth !== undefined) {
-      setCenter(containerRef.current.offsetWidth / 2)
+    const setCarousePosition = () => {
+      if (containerRef?.current?.offsetWidth !== undefined) {
+        setClientWidth(document.documentElement.clientWidth)
+        setCenter(containerRef.current.offsetWidth / 2)
+      }
+    }
+
+    setCarousePosition()
+
+    window.addEventListener('resize', () => {
+      setCarousePosition()
+    })
+
+    return () => {
+      window.removeEventListener('resize', () => {
+        setCarousePosition()
+      })
     }
   }, [])
 
   const imageVariants = {
-    left1: { x: `${center - 1310}px`, scale: 0.9, filter: 'blur(10px)', opacity: 0 },
-    left: { x: `${center - 780}px`, scale: 0.9, filter: 'blur(1px)', opacity: 1 },
-    center: { x: `${center - 250}px`, scale: 1, filter: 'blur(0)', opacity: 1 },
-    right: { x: `${center + 280}px`, scale: 0.9, filter: 'blur(1px)', opacity: 1 },
-    right1: { x: `${center + 810}px`, scale: 0.9, filter: 'blur(10px)', opacity: 0 },
+    left1: { x: `${center - 1310}px`, scale: 0.9, opacity: 0 },
+    left: { x: `${center - 780}px`, scale: 0.9, opacity: 1 },
+    center: { x: `${center - 250}px`, scale: 1, opacity: 1 },
+    right: { x: `${center + 280}px`, scale: 0.9, opacity: 1 },
+    right1: { x: `${center + 810}px`, scale: 0.9, opacity: 0 },
   };
 
   return (
@@ -108,13 +124,13 @@ const NewQuotes = () => {
           <ArrowRight />
         </IconButton>
         <Box sx={{ display: 'grid', justifyContent: 'center' }}>
-          <Box ref={containerRef} sx={{ display: 'grid', position: 'relative', overflow: 'hidden', width: `${document.documentElement.clientWidth}px` }}>
+          <Box ref={containerRef} sx={{ display: 'grid', position: 'relative', overflow: 'hidden', width: `${clientWidth}px` }}>
             {quotes.map((quote, index) =>
               <motion.div
                 key={quote.name}
                 animate={positions[positionIndexes[index]]}
                 transition={{ duration: .5 }}
-                style={{ gridRow: '1', gridColumn: '1', width: '500px' }}
+                style={{ gridRow: '1', gridColumn: '1', maxWidth: '500px', width: '100%' }}
                 variants={imageVariants}
               >
                 <Quote {...quote} />
