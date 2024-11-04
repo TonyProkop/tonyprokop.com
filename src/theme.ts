@@ -55,7 +55,7 @@ let theme = createTheme({
       color: "var(--clr-text)",
       fontSize: 'clamp(2.488rem, 8vw, 5.653rem)',
       fontWeight: 500,
-      lineHeight: 1.15,
+      lineHeight: 1.3,
     },
     h2Alt: {
       background: "var(--primary-gradient)",
@@ -64,31 +64,31 @@ let theme = createTheme({
       fontFamily: poppins.style.fontFamily,
       fontSize: 'clamp(2.488rem, 8vw, 5.653rem)',
       fontWeight: 500,
-      lineHeight: 1.15,
+      lineHeight: 1.3,
     },
     h3: {
       color: "var(--clr-text)",
       fontSize: 'clamp(2.074rem, 8vw, 3.998rem)',
       fontWeight: 400,
-      lineHeight: 1.15,
+      lineHeight: 1.3,
     },
     h4: {
       color: "var(--clr-text)",
       fontSize: 'clamp(1.728rem, 3.5vw, 2.827rem)',
       fontWeight: 300,
-      lineHeight: 1.15,
+      lineHeight: 1.3,
     },
     h5: {
       color: "var(--clr-text)",
       fontSize: 'clamp(1.44rem, 8vw, 1.999rem)',
       fontWeight: 300,
-      lineHeight: 1.15,
+      lineHeight: 1.3,
     },
     h6: {
       color: "var(--clr-text)",
       fontSize: 'clamp(1.2rem, 8vw, 1.414rem)',
       fontWeight: 300,
-      lineHeight: 1.15,
+      lineHeight: 1.3,
     },
     body1: {
       color: "var(--clr-text)",
@@ -195,6 +195,11 @@ let theme = createTheme({
     MuiListItem: {
       defaultProps: {
         alignItems: "flex-start",
+      },
+      styleOverrides: {
+        root: {
+          maxWidth: '750px'
+        }
       }
     },
     MuiListItemIcon: {
