@@ -63,6 +63,7 @@ const NewQuotes = () => {
   const containerRef = useRef<HTMLElement>(null)
   const [center, setCenter] = useState(0)
   const [clientWidth, setClientWidth] = useState(document.documentElement.clientWidth)
+  const direction = useRef<'right' | 'left'>("right")
   const playInterval = useRef<window.Timeout>(null)
   const [playing, setPlaying] = useState(true)
   const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3, 4]);
@@ -130,11 +131,15 @@ const NewQuotes = () => {
       if (playInterval.current) clearInterval(playInterval.current)
     }
 
+    const move = () => {
+      direction.current === 'right' ? handleNext() : handleBack()
+    }
+
     if (playing) {
       if (playInterval.current) clear()
-      handleNext()
+      move()
       playInterval.current = setInterval(() => {
-        handleNext()
+        move()
       }, 7000)
     } else {
       clear()
@@ -143,7 +148,7 @@ const NewQuotes = () => {
     return () => {
       clear()
     }
-  }, [playing])
+  }, [direction, playing])
 
   const imageVariants = {
     left1: { x: `${center - 1310}px`, scale: 0.9, opacity: 0 },
@@ -171,13 +176,23 @@ const NewQuotes = () => {
           )}
         </Box>
         <Stack direction="row" spacing={2}>
-          <IconButton onClick={handleBack}>
+          <IconButton onClick={() => {
+            if (direction.current === 'right') {
+              direction.current = 'left'
+            }
+            handleBack()
+          }}>
             <ArrowLeft />
           </IconButton>
           <IconButton onClick={playOrPause}>
             {playing ? <Pause /> : <Play />}
           </IconButton>
-          <IconButton onClick={handleNext}>
+          <IconButton onClick={() => {
+            if (direction.current === 'left') {
+              direction.current = 'right'
+            }
+            handleNext()
+          }}>
             <ArrowRight />
           </IconButton>
         </Stack>
