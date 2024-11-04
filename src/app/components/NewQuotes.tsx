@@ -1,7 +1,8 @@
 "use client"
 
-import { useEffect, useRef, useState } from 'react'
-import { Box, Container, IconButton, Stack, Typography } from "@mui/material"
+import { useCallback, useEffect, useRef, useState } from 'react'
+import { Box, Container, Stack, Typography } from "@mui/material"
+import IconButton from './IconButton'
 import Quote from './Quote'
 import { motion } from 'framer-motion'
 import Cathal from "../images/cathal.png"
@@ -11,6 +12,8 @@ import Shannon from "../images/shannon.png"
 import Vivek from "../images/vivek.png"
 import ArrowRight from "./icons/ArrowRight"
 import ArrowLeft from "./icons/ArrowLeft"
+import Play from "./icons/Play"
+import Pause from "./icons/Pause"
 
 const quotes = [
   {
@@ -55,10 +58,13 @@ const quotes = [
   },
 ]
 
+
 const NewQuotes = () => {
   const containerRef = useRef<HTMLElement>(null)
   const [center, setCenter] = useState(0)
   const [clientWidth, setClientWidth] = useState(document.documentElement.clientWidth)
+  const playInterval = useRef<window.Timeout>(null)
+  const [playing, setPlaying] = useState(true)
   const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3, 4]);
 
   const handleNext = () => {
@@ -96,17 +102,48 @@ const NewQuotes = () => {
       setupCarousel()
     })
 
-    const interval = setInterval(() => {
-      // handleNext()
-    }, 7000)
-
     return () => {
       window.removeEventListener('resize', () => {
         setupCarousel()
       })
-      clearInterval(interval)
     }
   }, [])
+
+  const playOrPause = () => {
+    if (playing) {
+      pause()
+    } else {
+      play()
+    }
+  }
+
+  const play = () => {
+    setPlaying(true)
+  }
+
+  const pause = () => {
+    setPlaying(false)
+  }
+
+  useEffect(() => {
+    const clear = () => {
+      if (playInterval.current) clearInterval(playInterval.current)
+    }
+
+    if (playing) {
+      if (playInterval.current) clear()
+      handleNext()
+      playInterval.current = setInterval(() => {
+        handleNext()
+      }, 7000)
+    } else {
+      clear()
+    }
+
+    return () => {
+      clear()
+    }
+  }, [playing])
 
   const imageVariants = {
     left1: { x: `${center - 1310}px`, scale: 0.9, opacity: 0 },
@@ -125,7 +162,7 @@ const NewQuotes = () => {
             <motion.div
               key={quote.name}
               animate={positions[positionIndexes[index]]}
-              transition={{ duration: .5 }}
+              transition={{ duration: 0.4 }}
               style={{ gridRow: '1', gridColumn: '1', maxWidth: '500px', width: '100%' }}
               variants={imageVariants}
             >
@@ -133,14 +170,17 @@ const NewQuotes = () => {
             </motion.div>
           )}
         </Box>
-        <Box>
+        <Stack direction="row" spacing={2}>
           <IconButton onClick={handleBack}>
             <ArrowLeft />
+          </IconButton>
+          <IconButton onClick={playOrPause}>
+            {playing ? <Pause /> : <Play />}
           </IconButton>
           <IconButton onClick={handleNext}>
             <ArrowRight />
           </IconButton>
-        </Box>
+        </Stack>
       </Stack>
     </Container>
   )
