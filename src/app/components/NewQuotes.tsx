@@ -140,7 +140,7 @@ const NewQuotes = () => {
       move()
       playInterval.current = setInterval(() => {
         move()
-      }, 7000)
+      }, 4000)
     } else {
       clear()
     }
@@ -150,12 +150,14 @@ const NewQuotes = () => {
     }
   }, [direction, playing])
 
+  const maxWidth = 500
+  const gutter = 30
   const imageVariants = {
-    left1: { x: `${center - 1310}px`, scale: 0.9, opacity: 0 },
-    left: { x: `${center - 780}px`, scale: 0.9, opacity: 1 },
-    center: { x: `${center - 250}px`, scale: 1, opacity: 1 },
-    right: { x: `${center + 280}px`, scale: 0.9, opacity: 1 },
-    right1: { x: `${center + 810}px`, scale: 0.9, opacity: 0 },
+    left1: { x: `${center - (2.5 * maxWidth) - (2 * gutter)}px`, scale: 0.9, opacity: 0 },
+    left: { x: `${center - (1.5 * maxWidth) - gutter}px`, scale: 0.9, opacity: 1 },
+    center: { x: `${center - 0.5 * maxWidth}px`, scale: 1, opacity: 1 },
+    right: { x: `${center + (0.5 * maxWidth) + gutter}px`, scale: 0.9, opacity: 1 },
+    right1: { x: `${center + (1.5 * maxWidth) + (2 * gutter)}px`, scale: 0.9, opacity: 0 },
   };
 
   return (
@@ -168,7 +170,7 @@ const NewQuotes = () => {
               key={quote.name}
               animate={positions[positionIndexes[index]]}
               transition={{ duration: 0.4 }}
-              style={{ gridRow: '1', gridColumn: '1', maxWidth: '500px', width: '100%' }}
+              style={{ gridRow: '1', gridColumn: '1', maxWidth: `${maxWidth}px`, width: '100%' }}
               variants={imageVariants}
             >
               <Quote {...quote} />
