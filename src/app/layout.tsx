@@ -21,10 +21,8 @@ export default function RootLayout({
     let newTheme = '';
     if (themeName === 'dark') {
       newTheme = 'light'
-      document.getElementById("lightSwitchUp")?.play()
     } else {
       newTheme = 'dark'
-      document.getElementById("lightSwitchDown")?.play()
     }
     setThemeName(newTheme)
     Cookies.set("theme", newTheme)
@@ -48,8 +46,6 @@ export default function RootLayout({
             </Stack>
           </ThemeProvider>
         </AppRouterCacheProvider>
-        <audio id="lightSwitchUp" src="/light-switch-up.mp3" />
-        <audio id="lightSwitchDown" src="/light-switch-down.mp3" />
       </body>
     </html>
   )
