@@ -1,6 +1,6 @@
 "use client"
 
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Box, Container, Stack, Typography } from "@mui/material"
 import IconButton from './IconButton'
 import Quote from './Quote'
@@ -170,7 +170,7 @@ const NewQuotes = () => {
               key={quote.name}
               animate={positions[positionIndexes[index]]}
               transition={{ duration: 0.4 }}
-              style={{ gridRow: '1', gridColumn: '1', maxWidth: `${maxWidth}px`, width: '100%' }}
+              style={{ gridRow: '1', gridColumn: '1', maxWidth: `${maxWidth}px`, width: '100%', padding: '0 1rem' }}
               variants={imageVariants}
             >
               <Quote {...quote} />

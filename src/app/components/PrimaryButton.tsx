@@ -2,14 +2,10 @@
 
 import { Button, ButtonProps } from '@mui/material'
 import Link from "next/link"
-import useMagnetic from '../../hooks/useMagnetic'
 
 const PrimaryButton = ({ children, sx, ...props }: ButtonProps) => {
-  const ref = useMagnetic()
-
   return (
     <Button
-      ref={ref}
       component={props.href ? Link : 'button'}
       sx={{
         "&&": {

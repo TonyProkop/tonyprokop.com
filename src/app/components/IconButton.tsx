@@ -1,13 +1,9 @@
 import { FC } from "react"
 import { IconButton as MuiIconButton, IconButtonProps } from "@mui/material"
-import useMagnetic from "../../hooks/useMagnetic"
 
 const IconButton: FC<IconButtonProps> = ({ children, onClick, sx }) => {
-  const ref = useMagnetic(50, 25)
-
   return (
     <MuiIconButton
-      ref={ref}
       sx={{
         "&&": {
           display: "grid",

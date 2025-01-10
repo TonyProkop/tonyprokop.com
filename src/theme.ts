@@ -1,6 +1,7 @@
 "use client"
 
 import { createTheme } from "@mui/material/styles"
+import { createBreakpoints } from '@mui/system';
 import { Poppins } from "next/font/google"
 
 const poppins = Poppins({
@@ -29,6 +30,16 @@ declare module '@mui/material/Typography' {
     h2Alt: true;
   }
 }
+
+const breakpoints = createBreakpoints({
+  values: {
+    xs: 0,
+    sm: 600,
+    md: 900,
+    lg: 1200,
+    xl: 1536,
+  },
+});
 
 let theme = createTheme({
   typography: {
@@ -104,6 +115,8 @@ let theme = createTheme({
     },
   },
 
+  breakpoints,
+
   components: {
     MuiButton: {
       styleOverrides: {
@@ -120,6 +133,9 @@ let theme = createTheme({
               border: "1px solid var(--clr-subtle)",
               backgroundColor: "var(--clr-overlay)",
               color: "var(--clr-text)",
+            },
+            [breakpoints.down('sm')]: {
+              padding: "16px 24px",
             },
           },
         },
