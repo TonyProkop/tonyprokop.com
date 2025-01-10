@@ -150,7 +150,7 @@ const NewQuotes = () => {
     }
   }, [direction, playing])
 
-  const maxWidth = Math.min(500, window.innerWidth)
+  const maxWidth = Math.min(500, windowWidth)
   const gutter = 30
   const imageVariants = {
     left1: { x: `${center - (2.5 * maxWidth) - (2 * gutter)}px`, scale: 0.9, opacity: 0 },
