@@ -61,7 +61,7 @@ const quotes = [
 
 
 const NewQuotes = () => {
-  const windowWidth = useWindowWidth();
+  const { windowWidth, updateWindowWidth } = useWindowWidth();
   const containerRef = useRef<HTMLElement>(null)
   const [center, setCenter] = useState(0)
   const direction = useRef<'right' | 'left'>("right")
@@ -94,6 +94,7 @@ const NewQuotes = () => {
     const setupCarousel = () => {
       if (containerRef?.current?.offsetWidth !== undefined) {
         setCenter(containerRef.current.offsetWidth / 2)
+        updateWindowWidth()
       }
     }
 
@@ -108,7 +109,7 @@ const NewQuotes = () => {
         setupCarousel()
       })
     }
-  }, [])
+  }, [updateWindowWidth])
 
   const playOrPause = () => {
     if (playing) {
