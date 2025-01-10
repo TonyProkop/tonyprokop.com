@@ -9,10 +9,14 @@ import {
   Tab,
   Tabs,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material"
 import ArrowRight from "./icons/ArrowRight"
 
 const WorkExperience = () => {
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [value, setValue] = useState(0)
 
   const handleChange = (_: SyntheticEvent, newValue: number) => {
@@ -62,14 +66,12 @@ const WorkExperience = () => {
   return (
     <Stack spacing={5}>
       <Typography variant="h2Alt">Work Experience</Typography>
-      <Box
-        sx={{
-          flexGrow: 1,
-          display: "flex",
-        }}
+      <Stack
+        spacing={2}
+        direction={mobile ? "column" : "row"}
       >
         <Tabs
-          orientation="vertical"
+          orientation={ mobile ? "horizontal" : "vertical" }
           value={value}
           onChange={handleChange}
           aria-label="Work Experience"
@@ -119,7 +121,7 @@ const WorkExperience = () => {
             </List>
           </Box>
         ))}
-      </Box>
+      </Stack>
     </Stack>
   )
 }

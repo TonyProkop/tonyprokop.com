@@ -15,8 +15,8 @@ const PrimaryButton = ({ children, sx, ...props }: ButtonProps) => {
           outline: "none",
           display: "grid",
           placeItems: "center",
-          width: "clamp(125px, 20vw, 200px)",
-          height: "clamp(125px, 20vw, 200px)",
+          width: "clamp(165px, 20vw, 200px)",
+          height: "clamp(165px, 20vw, 200px)",
           borderRadius: "200px",
           zIndex: 1,
           fontWeight: "medium",
@@ -29,7 +29,7 @@ const PrimaryButton = ({ children, sx, ...props }: ButtonProps) => {
       }}
       {...props}
     >
-      <span className="btn-text">{children}</span>
+      {children}
     </Button>
   )
 }
