@@ -25,11 +25,11 @@ const Contact = () => {
         <input type="hidden" name="form-name" value="contact" />
         <input name="super-secret-field" />
         <Divider />
-        <TextField label="What's your name?" placeholder="John Doe" />
+        <TextField label="What's your name?" name="name" placeholder="John Doe" />
         <Divider />
-        <TextField label="What's your email?" placeholder="john@doe.com" />
+        <TextField label="What's your email?" name="email" placeholder="john@doe.com" />
         <Divider />
-        <TextField label="Your message" multiline minRows={6} placeholder="Hello Tony, can you help me with..." />
+        <TextField label="Your message" name="detail" multiline minRows={6} placeholder="Hello Tony, can you help me with..." />
         <Divider />
         <Stack direction="row-reverse">
           <PrimaryButton type="submit">Send it!</PrimaryButton>
