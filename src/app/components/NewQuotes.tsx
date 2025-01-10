@@ -64,7 +64,7 @@ const NewQuotes = () => {
   const [center, setCenter] = useState(0)
   const [clientWidth, setClientWidth] = useState(document.documentElement.clientWidth)
   const direction = useRef<'right' | 'left'>("right")
-  const playInterval = useRef<window.Timeout>(null)
+  const playInterval = useRef<ReturnType<typeof setInterval> | null>(null)
   const [playing, setPlaying] = useState(true)
   const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3, 4]);
 
