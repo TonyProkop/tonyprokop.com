@@ -14,6 +14,7 @@ import ArrowRight from "./icons/ArrowRight"
 import ArrowLeft from "./icons/ArrowLeft"
 import Play from "./icons/Play"
 import Pause from "./icons/Pause"
+import useWindowWidth from "../../hooks/useWindowWidth"
 
 const quotes = [
   {
@@ -60,9 +61,9 @@ const quotes = [
 
 
 const NewQuotes = () => {
+  const windowWidth = useWindowWidth();
   const containerRef = useRef<HTMLElement>(null)
   const [center, setCenter] = useState(0)
-  const [clientWidth, setClientWidth] = useState(document.documentElement.clientWidth)
   const direction = useRef<'right' | 'left'>("right")
   const playInterval = useRef<ReturnType<typeof setInterval> | null>(null)
   const [playing, setPlaying] = useState(true)
@@ -92,7 +93,6 @@ const NewQuotes = () => {
   useEffect(() => {
     const setupCarousel = () => {
       if (containerRef?.current?.offsetWidth !== undefined) {
-        setClientWidth(document.documentElement.clientWidth)
         setCenter(containerRef.current.offsetWidth / 2)
       }
     }
@@ -164,7 +164,7 @@ const NewQuotes = () => {
     <Container maxWidth="lg">
       <Stack spacing={4} alignItems="center">
         <Typography variant="h2Alt" alignSelf="flex-start">What others are saying</Typography>
-        <Box ref={containerRef} sx={{ display: 'grid', position: 'relative', overflow: 'hidden', width: `${clientWidth}px` }}>
+        <Box ref={containerRef} sx={{ display: 'grid', position: 'relative', overflow: 'hidden', width: `${windowWidth}px` }}>
           {quotes.map((quote, index) =>
             <motion.div
               key={quote.name}
