@@ -28,7 +28,9 @@
     "react-dom": "^18",
     "react-material-ui-carousel": "^3.4.2",
     "react-syntax-highlighter": "^15.5.0",
-    "sharp": "^0.33.5"
+    "sharp": "^0.33.5",
+    "vexchords": "^1.2.0",
+    "vexflow": "^4.2.5"
   },
   "devDependencies": {
     "@types/js-cookie": "^3.0.6",
