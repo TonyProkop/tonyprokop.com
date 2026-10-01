@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cx } from "@/lib/cx";
@@ -15,14 +16,14 @@ export type NavLink = { label: string; href: string };
  */
 export function Nav({
   name,
-  initials,
+  avatar,
   links,
   cta,
   search = true,
   className,
 }: {
   name: string;
-  initials: string;
+  avatar: string;
   /** Max five. */
   links: NavLink[];
   cta?: { label: string; href: string; target: string; };
@@ -36,8 +37,8 @@ export function Nav({
     <header className={cx("pf-nav", className)}>
       <div className="pf-nav-inner">
         <Link className="pf-brand" href="/">
-          <span className="pf-mark" aria-hidden="true">
-            {initials}
+          <span className="pf-avatar" aria-hidden="true">
+            <Image src={avatar} alt="" width={56} height={56} className="size-full origin-[50%_38%] scale-[1.35] object-cover" />
           </span>
           {name}
         </Link>
