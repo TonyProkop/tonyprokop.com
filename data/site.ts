@@ -1,5 +1,5 @@
 /**
- * Site-wide identity and links. Values in [brackets] are placeholders — replace them.
+ * Site-wide identity and links.
  */
 export const site = {
   name: "Tony Prokop",
@@ -8,13 +8,12 @@ export const site = {
   location: "Omaha, Nebraska",
   timeZone: "America/Chicago",
   coordinates: "41.2565° N, 95.9345° W",
-  email: "[you@yourdomain.com]",
+  email: "prokop.tony@gmail.com",
   resumeHref: "/resume.pdf",
   socials: {
     github: "https://github.com/TonyProkop",
-    linkedin: "https://www.linkedin.com/in/", // TODO: add your handle
-    bluesky: "https://bsky.app/profile/", // TODO: add your handle
-    spotify: "https://open.spotify.com/user/", // TODO: add your profile id
+    linkedin: "https://www.linkedin.com/in/tony-prokop",
+    spotify: "https://open.spotify.com/user/1256304823",
   },
 } as const;
 
