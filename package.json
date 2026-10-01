@@ -1,42 +1,26 @@
 {
-  "name": "tonyprokop.com-new",
+  "name": "tonyprokop.com",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 4000",
+    "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 4000",
-    "lint": "next lint"
+    "start": "next start",
+    "lint": "eslint"
   },
   "dependencies": {
-    "@emotion/cache": "^11.11.0",
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
-    "@gsap/react": "^2.1.1",
-    "@mdx-js/loader": "^3.0.1",
-    "@mdx-js/react": "^3.0.1",
-    "@mui/lab": "^5.0.0-alpha.170",
-    "@mui/material-nextjs": "^5.15.11",
-    "@next/mdx": "^14.2.5",
-    "@types/mdx": "^2.0.13",
-    "@types/react-syntax-highlighter": "^15.5.13",
-    "framer-motion": "^11.11.9",
-    "gsap": "^3.12.5",
-    "js-cookie": "^3.0.5",
-    "next": "14.1.4",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-material-ui-carousel": "^3.4.2",
-    "react-syntax-highlighter": "^15.5.0",
-    "sharp": "^0.33.5"
+    "next": "16.3.8",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
   },
   "devDependencies": {
-    "@types/js-cookie": "^3.0.6",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.1.4",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.8",
+    "tailwindcss": "^4",
     "typescript": "^5"
   }
 }
