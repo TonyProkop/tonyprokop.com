@@ -1,20 +1,17 @@
-import { experience } from "@/data/experience";
+import { previousCompanies } from "@/data/experience";
 
-/** Strip under the hero. Open question in DESIGN.md - this is option 2: "now" plus the previous companies. */
+/** "Previously at" strip under the hero: mono label cell, then one cell per company. */
 export function Strip() {
-  const [now, ...previous] = experience;
-  const cells = [
-    { label: "now", company: now.company, detail: `${now.title} · ${now.dates}` },
-    ...previous.map((r) => ({ label: "previously", company: r.company, detail: `${r.title} · ${r.dates}` })),
-  ];
   return (
-    <div className="grid border-t border-line md:grid-cols-3">
-      {cells.map((c, i) => (
-        <div key={i} className="flex flex-col gap-1 border-line px-5 py-7 max-md:border-b max-md:last:border-b-0 sm:px-12 md:border-l md:px-6 md:first:border-l-0 md:first:pl-12">
-          <span className="mono-label text-muted">{c.label}</span>
-          <span className="text-h3 text-ink-soft">{c.company}</span>
-          <span className="mono-label text-muted">{c.detail}</span>
-        </div>
+    <div className="grid grid-cols-[minmax(0,1fr)] border-t border-line sm:grid-cols-[180px_repeat(3,minmax(0,1fr))] sm:items-center">
+      <span className="mono-label border-b border-line px-5 py-5 text-muted sm:border-b-0 sm:py-7 sm:pl-12 sm:pr-6">previously at</span>
+      {previousCompanies.map((name) => (
+        <span
+          key={name}
+          className="text-h3 border-line px-5 py-5 text-center tracking-tight text-ink-soft not-last:border-b sm:border-b-0 sm:border-l sm:px-6 sm:py-7"
+        >
+          {name}
+        </span>
       ))}
     </div>
   );

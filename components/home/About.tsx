@@ -11,8 +11,9 @@ export function About() {
           <SectionHeader index="01" eyebrow="about" title="Engineer by trade, generalist by habit" />
           <div className="flex max-w-xl flex-col gap-6">
             <p className="text-body text-ink-soft">
-              I&apos;ve spent [X] years building products for teams of every size, mostly where the product meets the systems behind it. I like
-              small teams, short feedback loops and boring technology used well.
+              I&apos;ve spent 10 years building for the web, from eCommerce checkout funnels to a customer-facing API platform, mostly on the
+              frontend and in the places where the product meets the systems behind it. I care about interfaces that are fast, accessible and
+              intuitive.
             </p>
             <div>
               <ButtonLink href="/about" arrow>
@@ -30,7 +31,7 @@ export function About() {
             <dt className={`${factLabel} border-t border-line py-3.5`}>based in</dt>
             <dd className="m-0 border-t border-line py-3.5 text-ink">Omaha, NE · Central Time</dd>
             <dt className={`${factLabel} border-y border-line py-3.5`}>currently</dt>
-            <dd className="m-0 border-y border-line py-3.5 text-ink">[Role] at [Company]</dd>
+            <dd className="m-0 border-y border-line py-3.5 text-ink">Senior Software Engineer at WP Engine</dd>
           </dl>
         </div>
       </div>

@@ -71,7 +71,7 @@ export function ButtonLink({ variant, size, arrow, kbd, className, children, hre
     );
   }
   return (
-    <Link href={href} className={cls} {...aria}>
+    <Link href={href} className={cls} target={target} {...aria}>
       {inner}
     </Link>
   );

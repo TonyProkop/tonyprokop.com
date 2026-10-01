@@ -4,7 +4,7 @@
 export const site = {
   name: "Tony Prokop",
   initials: "TP",
-  role: "Software Engineer",
+  role: "Sr. Staff Software Engineer",
   location: "Omaha, Nebraska",
   timeZone: "America/Chicago",
   coordinates: "41.2565° N, 95.9345° W",

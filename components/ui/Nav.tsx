@@ -25,7 +25,7 @@ export function Nav({
   initials: string;
   /** Max five. */
   links: NavLink[];
-  cta?: { label: string; href: string };
+  cta?: { label: string; href: string; target: string; };
   search?: boolean;
   className?: string;
 }) {
@@ -55,7 +55,7 @@ export function Nav({
             </button>
           ) : null}
           {cta ? (
-            <ButtonLink variant="primary" size="sm" href={cta.href}>
+            <ButtonLink variant="primary" size="sm" href={cta.href} target={cta.target}>
               {cta.label}
             </ButtonLink>
           ) : null}

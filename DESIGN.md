@@ -112,7 +112,7 @@ Live data planned on About and its subpages: Spotify (now playing, top tracks), 
 
 ## Open questions
 
-1. **The strip under the hero.** Tony only has two previous companies, so five logo cells don't work. Options discussed: (1) “right now” live strip — Omaha time, reading, listening, last workout, shipping (**recommended**); (2) three wider cells — Now + two previous companies with role and years; (3) daily-stack icons; (4) real numbers only; (5) GitHub contribution graph; (6) contributed-to / featured-in. Not decided.
+1. ~~The strip under the hero~~ — decided: the original “previously at” strip with three companies (WP Engine, Flywheel, Speedway Motors), data in `data/experience.ts`.
 2. **About A vs B.** B (full sections, no “How I work”) is the latest exploration.
 3. Mobile nav menu, persisted theme toggle, 404 page, OG images — not designed yet.
 4. Contact/compose email backend and spam protection.
