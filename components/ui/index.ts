@@ -12,3 +12,4 @@ export * from "./icons";
 export { Stage } from "./Stage";
 export { CopyEmailButton } from "./CopyEmailButton";
 export { Footer } from "./Footer";
+export { AlertBanner } from "./AlertBanner";
