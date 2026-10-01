@@ -9,3 +9,6 @@ export { Nav, type NavLink } from "./Nav";
 export { SectionHeader } from "./SectionHeader";
 export { EntryRow } from "./EntryRow";
 export * from "./icons";
+export { Stage } from "./Stage";
+export { CopyEmailButton } from "./CopyEmailButton";
+export { Footer } from "./Footer";
