@@ -83,6 +83,9 @@ Multi-page, not a one-pager: each home section previews a page and links to it. 
 | `/uses` | Icon tiles by category — Languages, Frameworks & libraries, Data & infrastructure, Editor & terminal, Apps — names only, no descriptions; hardware as a simple list; sticky category index |
 | `/experience` | Role blocks: dates, place, title · company, summary, 2–3 highlights, stack badges; résumé download |
 | `/contact` | Form (name, email, company, reason, message, opt-in), email + copy, availability, reply time, socials |
+| 404 (`app/not-found.tsx`) | Inside the layout (banner, nav, ⌘K). Hero split via `components/errors/ErrorScreen`: `404 / not found`, “Nothing lives at this address”, Back to home + Search the site (⌘K); figure = `curl -I` of the requested path answering `HTTP/2 404`. Below: “Where you might have been going” list of the five main pages. Footer. |
+| 500 (`app/error.tsx`) | Same layout: `500 / server error`, “Something broke on my end”, Try again (`retry()`), Back to home, “Tell me what happened” (opens ⌘K Compose); error reference (`error.digest`) shown inline and in the figure. Errors are logged to the console until a reporting service is added. |
+| 500 fallback (`app/global-error.tsx`) | Only when the root layout itself fails. Own `<html>`/`<body>`, fonts and styles; minimal header, no nav/palette/next-link (they may be what broke). Try again, Back to home, Email me (prefilled with the reference). Theme follows the OS. |
 
 Removed on purpose: Education section; tech-stack-with-descriptions (became Uses icons); “Older sessions” page (became pagination).
 
@@ -114,7 +117,7 @@ Live data planned on About and its subpages: Spotify (now playing, top tracks), 
 
 1. ~~The strip under the hero~~ — decided: the original “previously at” strip with three companies (WP Engine, Flywheel, Speedway Motors), data in `data/experience.ts`.
 2. **About A vs B.** B (full sections, no “How I work”) is the latest exploration.
-3. Mobile nav menu, persisted theme toggle, 404 page, OG images — not designed yet.
+3. Mobile nav menu, persisted theme toggle, OG images — not designed yet.
 4. Contact/compose email backend and spam protection.
 
 ## Accessibility checklist
