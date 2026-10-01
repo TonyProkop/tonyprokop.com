@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Badge, ButtonLink, Button, Card, CodeBlock, EntryRow, Kbd, ProjectCard, SectionHeader, BrandIcon } from "@/components/ui";
-import { CommandPalette, OpenCommandPaletteButton } from "@/components/command-palette";
-import { paletteItems } from "@/data/palette";
+import { OpenCommandPaletteButton } from "@/components/command-palette";
 import { projects } from "@/data/projects";
 import { usesGroups } from "@/data/uses";
 import { site } from "@/data/site";
@@ -210,7 +209,6 @@ export default function DesignPage() {
           </div>
         </Section>
       </main>
-      <CommandPalette items={paletteItems} owner={{ name: site.name, initials: site.initials, email: site.email }} resumeHref={site.resumeHref} />
     </div>
   );
 }

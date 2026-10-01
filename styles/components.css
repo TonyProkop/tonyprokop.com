@@ -235,4 +235,26 @@ a.pf-entry:hover .pf-arrow { transform: translateX(3px); color: var(--accent-tex
   .two { grid-template-columns: minmax(0, 1fr); }
   .composer { min-height: 260px; }
 }
+
+/* ---------- Stage ---------- */
+/* Faint grid backdrop, vignetted to the edges. Children sit above the vignette. */
+.pf-stage {
+  position: relative; display: flex; align-items: center; justify-content: center;
+  background-color: var(--bg-subtle);
+  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 32px 32px; background-position: -1px -1px;
+}
+.pf-stage::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 30%, var(--bg-subtle) 78%); pointer-events: none; }
+.pf-stage > * { position: relative; z-index: 1; }
+
+/* ---------- Tile (icon + name) ---------- */
+.pf-tile {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-3); aspect-ratio: 1 / 1;
+  border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); box-shadow: var(--shadow-highlight);
+  color: var(--ink-soft); text-decoration: none; font-size: 13px; line-height: 18px; text-align: center;
+  transition: border-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out), transform var(--duration-base) var(--ease-out);
+}
+.pf-tile:hover { border-color: var(--line-strong); color: var(--ink); transform: translateY(-2px); }
+.pf-tile > span { padding: 0 var(--space-2); }
+@media (prefers-reduced-motion: reduce) { .pf-tile:hover { transform: none; } }
 }

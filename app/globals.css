@@ -81,6 +81,14 @@
   --text-body-sm--line-height: 20px;
 }
 
+/* Display steps down to 44px on phones (DESIGN.md) */
+@media (max-width: 639px) {
+  :root {
+    --text-display: 44px;
+    --text-display--line-height: 46px;
+  }
+}
+
 /* Mono voice: eyebrows, nav, form labels (lowercase) */
 @utility mono-label {
   font-family: var(--font-mono);
