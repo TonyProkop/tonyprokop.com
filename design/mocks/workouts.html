@@ -1,0 +1,874 @@
+<!doctype html>
+<!-- Static reference mock exported from the design canvas: Workouts. Not used by the app — see DESIGN.md. Dark theme; add data-theme="light" to the first div inside #dcroot to preview light. -->
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Workouts — mock</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400..600&amp;display=swap"><style id="tokens">:root, [data-theme="dark"] {
+  --bg: #0b0b0c;
+  --bg-subtle: #101012;
+  --surface: #141416;
+  --surface-hover: #1a1a1d;
+  --line: #232326;
+  --line-strong: #34343a;
+  --control-border: #66666e;
+  --ink: #ededef;
+  --ink-soft: #b4b4ba;
+  --muted: #8b8b93;
+  --faint: #4a4a50;
+  --accent: #ff7a3d;
+  --accent-text: #ff9466;
+  --on-accent: #0b0b0c;
+  --accent-soft: rgba(255, 122, 61, 0.12);
+  --on-ink: #0b0b0c;
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --danger: #ff6b6b;
+  --code-bg: #0e0e10;
+  --code-text: #d6d6da;
+  --code-dim: #7d7d86;
+  --code-key: #ff9466;
+  --code-string: #a5d6a7;
+  --code-fn: #9ecbff;
+  --shadow-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  --shadow-overlay: 0 24px 64px -16px rgba(0, 0, 0, 0.7);
+}
+[data-theme="light"] {
+  --bg: #fafaf9;
+  --bg-subtle: #f4f4f2;
+  --surface: #ffffff;
+  --surface-hover: #f2f2f0;
+  --line: #e6e6e3;
+  --line-strong: #cfcfca;
+  --control-border: #8a8a84;
+  --ink: #111113;
+  --ink-soft: #3d3d42;
+  --muted: #64646b;
+  --faint: #b8b8b2;
+  --accent: #e8590c;
+  --accent-text: #b8410a;
+  --on-accent: #0b0b0c;
+  --accent-soft: rgba(232, 89, 12, 0.10);
+  --on-ink: #fafaf9;
+  --success: #15803d;
+  --warning: #a35a00;
+  --danger: #c81e1e;
+  --code-bg: #111113;
+  --code-text: #d6d6da;
+  --code-dim: #7d7d86;
+  --code-key: #ff9466;
+  --code-string: #a5d6a7;
+  --code-fn: #9ecbff;
+  --shadow-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+  --shadow-overlay: 0 24px 64px -16px rgba(17, 17, 19, 0.18);
+}
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 144px;
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+  --container: 1120px;
+  --container-prose: 680px;
+  --nav-height: 56px;
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 420ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --font-sans: Geist, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+.display { font-family: var(--font-sans); font-size: 64px; line-height: 64px; font-weight: 600; letter-spacing: -0.045em; }
+.h1 { font-family: var(--font-sans); font-size: 44px; line-height: 48px; font-weight: 600; letter-spacing: -0.035em; }
+.h2 { font-family: var(--font-sans); font-size: 30px; line-height: 36px; font-weight: 600; letter-spacing: -0.025em; }
+.h3 { font-family: var(--font-sans); font-size: 18px; line-height: 26px; font-weight: 550; letter-spacing: -0.01em; }
+.lede { font-family: var(--font-sans); font-size: 18px; line-height: 30px; font-weight: 400; letter-spacing: -0.005em; }
+.body { font-family: var(--font-sans); font-size: 15px; line-height: 24px; font-weight: 400; letter-spacing: normal; }
+.body-sm { font-family: var(--font-sans); font-size: 13px; line-height: 20px; font-weight: 400; letter-spacing: normal; }
+.label { font-family: var(--font-mono); font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.02em; }
+.meta { font-family: var(--font-mono); font-size: 11px; line-height: 16px; font-weight: 500; letter-spacing: 0.06em; }
+.code { font-family: var(--font-mono); font-size: 13px; line-height: 21px; font-weight: 400; letter-spacing: normal; }
+</style><style id="components">@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap');
+
+/* ---------- base ---------- */
+html, body { background: var(--bg); color: var(--ink); }
+body { margin: 0; font-family: var(--font-sans); font-size: 15px; line-height: 24px; -webkit-font-smoothing: antialiased; font-feature-settings: "ss01", "cv11"; }
+::selection { background: var(--accent-soft); color: var(--ink); }
+.pf-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); padding: var(--space-4); }
+.pf-stack { display: grid; gap: var(--space-4); padding: var(--space-4); }
+
+/* focus: one solid ring everywhere */
+.pf-focus:focus-visible,
+.pf-btn:focus-visible, .pf-input:focus-visible, .pf-check input:focus-visible + .pf-check-box,
+.pf-card-link:focus-visible, .pf-entry:focus-visible, .pf-nav-link:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px;
+}
+
+/* ---------- Button ---------- */
+.pf-btn {
+  --h: 36px;
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+  height: var(--h); padding: 0 14px; border-radius: var(--radius-sm);
+  border: 1px solid transparent; background: transparent; color: var(--ink);
+  font-family: var(--font-sans); font-size: 14px; font-weight: 500; letter-spacing: -0.005em;
+  text-decoration: none; cursor: pointer; white-space: nowrap;
+  transition: background var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out);
+}
+.pf-btn:active { transform: translateY(1px); }
+.pf-btn-sm { --h: 30px; padding: 0 12px; font-size: 13px; }
+.pf-btn-lg { --h: 44px; padding: 0 18px; font-size: 15px; }
+.pf-btn-primary { background: var(--ink); color: var(--on-ink); box-shadow: var(--shadow-highlight); }
+.pf-btn-primary:hover { background: var(--ink-soft); }
+.pf-btn-accent { background: var(--accent); color: var(--on-accent); }
+.pf-btn-accent:hover { background: var(--accent-text); }
+.pf-btn-secondary { border-color: var(--line-strong); background: var(--surface); box-shadow: var(--shadow-highlight); }
+.pf-btn-secondary:hover { border-color: var(--control-border); background: var(--surface-hover); }
+.pf-btn-ghost { color: var(--ink-soft); }
+.pf-btn-ghost:hover { background: var(--surface-hover); color: var(--ink); }
+.pf-btn[disabled], .pf-btn[aria-disabled="true"] { opacity: .45; pointer-events: none; }
+.pf-btn .pf-arrow { transition: transform var(--duration-base) var(--ease-out); }
+.pf-btn:hover .pf-arrow { transform: translateX(3px); }
+.pf-btn .pf-kbd { margin-right: -6px; }
+.pf-btn-primary .pf-kbd { background: transparent; color: var(--on-ink); border-color: currentColor; opacity: .55; box-shadow: none; }
+.pf-btn-accent .pf-kbd { background: transparent; color: var(--on-accent); border-color: currentColor; opacity: .6; box-shadow: none; }
+
+/* ---------- Kbd ---------- */
+.pf-kbd {
+  display: inline-flex; align-items: center; justify-content: center; gap: 2px;
+  min-width: 20px; height: 20px; padding: 0 5px; border-radius: var(--radius-xs);
+  border: 1px solid var(--line-strong); background: var(--bg-subtle); color: var(--muted);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500; line-height: 1;
+  box-shadow: inset 0 -1px 0 0 var(--line-strong); text-transform: none; letter-spacing: 0;
+}
+
+/* ---------- Badge ---------- */
+.pf-badge {
+  display: inline-flex; align-items: center; gap: 6px; height: 22px; padding: 0 8px;
+  border-radius: var(--radius-xs); border: 1px solid var(--line); background: var(--bg-subtle); color: var(--muted);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap;
+}
+.pf-badge-accent { background: var(--accent-soft); border-color: transparent; color: var(--accent-text); }
+.pf-badge-success { color: var(--success); }
+.pf-badge-warning { color: var(--warning); }
+.pf-dot { width: 6px; height: 6px; border-radius: var(--radius-full); background: currentColor; flex: none; }
+.pf-badge-success .pf-dot { box-shadow: 0 0 0 3px color-mix(in srgb, var(--success) 22%, transparent); }
+
+/* ---------- Card ---------- */
+.pf-card {
+  position: relative; display: flex; flex-direction: column; min-width: 0;
+  border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface);
+  box-shadow: var(--shadow-highlight); color: inherit; text-decoration: none; overflow: hidden;
+  transition: border-color var(--duration-fast) var(--ease-out), background var(--duration-fast) var(--ease-out), transform var(--duration-base) var(--ease-out);
+}
+.pf-card-body { padding: var(--space-5); display: grid; gap: var(--space-2); }
+.pf-card-link { cursor: pointer; }
+.pf-card-link:hover { border-color: var(--line-strong); }
+.pf-card-title { margin: 0; font-size: 18px; line-height: 26px; font-weight: 550; letter-spacing: -0.01em; color: var(--ink); }
+.pf-card-text { margin: 0; color: var(--ink-soft); font-size: 15px; line-height: 24px; }
+.pf-card-eyebrow { font-family: var(--font-mono); font-size: 11px; line-height: 16px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+
+/* ---------- ProjectCard ---------- */
+.pf-project .pf-figure {
+  position: relative; aspect-ratio: 16 / 10; border-bottom: 1px solid var(--line); background: var(--bg-subtle); overflow: hidden;
+  background-image: radial-gradient(var(--faint) 1px, transparent 1px); background-size: 16px 16px; background-position: 8px 8px;
+}
+.pf-figure-inner { position: absolute; inset: var(--space-6) var(--space-5) 0; border: 1px solid var(--line-strong); border-bottom: 0; border-radius: var(--radius-md) var(--radius-md) 0 0; background: var(--surface); box-shadow: var(--shadow-highlight); transition: transform var(--duration-base) var(--ease-out); overflow: hidden; }
+.pf-project:hover .pf-figure-inner { transform: translateY(-4px); }
+.pf-figure-label { position: absolute; top: 10px; left: 12px; z-index: 1; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase; }
+.pf-project-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3); }
+.pf-project-index { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.pf-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: var(--space-2); }
+.pf-project-foot { display: flex; align-items: center; justify-content: space-between; padding: 12px var(--space-5); border-top: 1px solid var(--line); font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.pf-project-foot .pf-arrow { transition: transform var(--duration-base) var(--ease-out), color var(--duration-fast); }
+.pf-project:hover .pf-project-foot .pf-arrow { transform: translateX(3px); color: var(--accent-text); }
+
+/* mini window chrome used inside figures */
+.pf-chrome { display: flex; align-items: center; gap: 6px; height: 28px; padding: 0 10px; border-bottom: 1px solid var(--line); }
+.pf-chrome i { width: 8px; height: 8px; border-radius: 50%; background: var(--line-strong); display: block; }
+.pf-chrome span { margin-left: 8px; font-family: var(--font-mono); font-size: 10px; color: var(--muted); }
+
+/* ---------- Field + controls ---------- */
+.pf-field { display: grid; gap: 6px; min-width: 0; }
+.pf-label { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.02em; color: var(--ink-soft); text-transform: lowercase; }
+.pf-label small { font-size: 11px; color: var(--muted); }
+.pf-hint { font-size: 13px; line-height: 20px; color: var(--muted); margin: 0; }
+.pf-error { display: flex; align-items: center; gap: 6px; font-size: 13px; line-height: 20px; color: var(--danger); margin: 0; }
+.pf-input {
+  width: 100%; box-sizing: border-box; height: 40px; padding: 0 12px; border-radius: var(--radius-sm);
+  border: 1px solid var(--control-border); background: var(--surface); color: var(--ink);
+  font-family: var(--font-sans); font-size: 15px; line-height: 24px;
+  transition: border-color var(--duration-fast) var(--ease-out), background var(--duration-fast) var(--ease-out);
+}
+.pf-input::placeholder { color: var(--muted); }
+.pf-input:hover { border-color: var(--ink-soft); }
+.pf-input:focus-visible { border-color: var(--accent); outline-offset: 0; outline-width: 1px; }
+.pf-input[aria-invalid="true"] { border-color: var(--danger); }
+.pf-input[aria-invalid="true"]:focus-visible { outline-color: var(--danger); }
+.pf-input[disabled] { opacity: .5; cursor: not-allowed; }
+textarea.pf-input { height: auto; min-height: 112px; padding: 10px 12px; resize: vertical; }
+.pf-select-wrap { position: relative; }
+.pf-select-wrap select.pf-input { appearance: none; -webkit-appearance: none; padding-right: 36px; cursor: pointer; }
+.pf-select-wrap svg { position: absolute; right: 12px; top: 50%; translate: 0 -50%; pointer-events: none; color: var(--muted); }
+.pf-check { display: inline-flex; align-items: flex-start; gap: 10px; cursor: pointer; font-size: 15px; line-height: 24px; color: var(--ink-soft); }
+.pf-check input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.pf-check-box { flex: none; width: 16px; height: 16px; margin-top: 4px; display: grid; place-items: center; border-radius: var(--radius-xs); border: 1px solid var(--control-border); background: var(--surface); color: transparent; transition: background var(--duration-fast), border-color var(--duration-fast); }
+.pf-check input:checked + .pf-check-box { background: var(--ink); border-color: var(--ink); color: var(--on-ink); }
+.pf-check:hover .pf-check-box { border-color: var(--ink-soft); }
+
+/* ---------- CodeBlock ---------- */
+.pf-code { border-radius: var(--radius-md); background: var(--code-bg); border: 1px solid var(--line); overflow: hidden; color: var(--code-text); box-shadow: var(--shadow-highlight); }
+.pf-code-head { display: flex; align-items: center; justify-content: space-between; height: 36px; padding: 0 8px 0 14px; border-bottom: 1px solid rgba(255,255,255,0.08); font-family: var(--font-mono); font-size: 12px; color: var(--code-dim); }
+.pf-code-copy { display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 8px; border: 0; border-radius: var(--radius-xs); background: transparent; color: var(--code-dim); font: inherit; cursor: pointer; }
+.pf-code-copy:hover { background: rgba(255,255,255,0.06); color: var(--code-text); }
+.pf-code-copy:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.pf-code pre { margin: 0; padding: 14px 16px; overflow-x: auto; font-family: var(--font-mono); font-size: 13px; line-height: 21px; }
+.pf-code .ln { display: inline-block; width: 2ch; margin-right: 16px; color: var(--code-dim); text-align: right; user-select: none; opacity: .7; }
+.pf-code .k { color: var(--code-key); } .pf-code .s { color: var(--code-string); } .pf-code .f { color: var(--code-fn); } .pf-code .c { color: var(--code-dim); }
+.pf-code-inline { font-family: var(--font-mono); font-size: .88em; padding: 1px 5px; border-radius: var(--radius-xs); background: var(--bg-subtle); border: 1px solid var(--line); color: var(--ink); }
+
+/* ---------- Nav ---------- */
+.pf-nav { position: sticky; top: 0; z-index: 20; height: var(--nav-height); border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter: blur(12px) saturate(1.4); -webkit-backdrop-filter: blur(12px) saturate(1.4); }
+.pf-nav-inner { box-sizing: border-box; max-width: var(--container); height: 100%; margin: 0 auto; padding: 0 var(--space-5); display: flex; align-items: center; gap: var(--space-5); }
+.pf-brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 600; font-size: 14px; letter-spacing: -0.01em; }
+.pf-mark { width: 24px; height: 24px; display: grid; place-items: center; border-radius: var(--radius-xs); background: var(--ink); color: var(--on-ink); font-family: var(--font-mono); font-size: 11px; font-weight: 600; }
+.pf-nav-links { display: flex; gap: 2px; margin-right: auto; }
+.pf-nav-link { position: relative; padding: 6px 10px; border-radius: var(--radius-sm); color: var(--muted); text-decoration: none; font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: 0.02em; transition: color var(--duration-fast), background var(--duration-fast); }
+.pf-nav-link:hover { color: var(--ink); background: var(--surface-hover); }
+.pf-nav-link[aria-current="page"] { color: var(--ink); }
+.pf-nav-link[aria-current="page"]::after { content: ""; position: absolute; left: 10px; right: 10px; bottom: -11px; height: 1px; background: var(--accent); }
+.pf-nav-tools { display: flex; align-items: center; gap: var(--space-2); }
+.pf-search { display: inline-flex; align-items: center; gap: 10px; height: 30px; padding: 0 6px 0 10px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); color: var(--muted); font-family: var(--font-mono); font-size: 12px; cursor: pointer; }
+.pf-search:hover { border-color: var(--line-strong); color: var(--ink-soft); }
+@media (max-width: 640px) { .pf-nav-links, .pf-search { display: none; } .pf-nav-inner { padding: 0 var(--space-4); } .pf-brand { margin-right: auto; } }
+
+/* ---------- SectionHeader ---------- */
+.pf-section-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: var(--space-5); padding-bottom: var(--space-6); }
+.pf-eyebrow { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 14px; font-family: var(--font-mono); font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.02em; color: var(--muted); text-transform: lowercase; }
+.pf-eyebrow b { font-weight: 500; color: var(--accent-text); }
+.pf-eyebrow::after { content: ""; width: 32px; height: 1px; background: var(--line-strong); }
+.pf-section-title { margin: 0; font-size: 30px; line-height: 36px; font-weight: 600; letter-spacing: -0.025em; color: var(--ink); text-wrap: balance; }
+.pf-section-lede { margin: 12px 0 0; max-width: 36rem; color: var(--ink-soft); font-size: 15px; line-height: 24px; }
+@media (max-width: 640px) { .pf-section-head { grid-template-columns: 1fr; } }
+
+/* ---------- EntryRow ---------- */
+.pf-entries { border-top: 1px solid var(--line); }
+.pf-entry { display: grid; grid-template-columns: 112px minmax(0, 1fr) auto; align-items: baseline; gap: var(--space-5); padding: 18px 12px; margin: 0 -12px; border-bottom: 1px solid var(--line); color: inherit; text-decoration: none; border-radius: 0; transition: background var(--duration-fast) var(--ease-out); }
+a.pf-entry:hover { background: var(--surface-hover); }
+.pf-entry-date { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.pf-entry-title { margin: 0; font-size: 15px; line-height: 24px; font-weight: 550; color: var(--ink); letter-spacing: -0.005em; }
+.pf-entry-sub { margin: 2px 0 0; font-size: 13px; line-height: 20px; color: var(--muted); }
+.pf-entry-aside { font-family: var(--font-mono); font-size: 12px; color: var(--muted); display: inline-flex; align-items: center; gap: 8px; }
+.pf-entry .pf-arrow { transition: transform var(--duration-base) var(--ease-out), color var(--duration-fast); }
+a.pf-entry:hover .pf-arrow { transform: translateX(3px); color: var(--accent-text); }
+@media (max-width: 640px) { .pf-entry { grid-template-columns: 1fr auto; } .pf-entry-date { grid-column: 1 / -1; } }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; } }
+</style><style id="page">
+body { margin: 0; background: var(--bg); }
+a { color: var(--accent-text); } a:hover { color: var(--ink); }
+.page { min-height: 100vh; background: var(--bg); color: var(--ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+.frame { max-width: var(--container); margin: 0 auto; border-left: 1px solid var(--line); border-right: 1px solid var(--line); box-sizing: border-box; }
+.sec { padding: 96px 48px; border-top: 1px solid var(--line); }
+.pagehead { padding: 112px 48px 64px; display: flex; flex-direction: column; gap: 20px; }
+.hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); }
+.hero-copy { padding: 112px 48px 96px; display: flex; flex-direction: column; justify-content: center; gap: 28px; border-right: 1px solid var(--line); }
+.stage { position: relative; display: flex; align-items: center; justify-content: center; background-color: var(--bg-subtle); background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 32px 32px; background-position: -1px -1px; }
+.stage::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 30%, var(--bg-subtle) 78%); pointer-events: none; }
+.stage > * { position: relative; z-index: 1; }
+.hero .stage { padding: 64px 40px; }
+.g2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.g3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.g4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.split { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px; align-items: start; }
+.aside-split { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 64px; align-items: start; }
+.sticky { position: sticky; top: calc(var(--nav-height) + 32px); }
+.strip { display: grid; grid-template-columns: 180px repeat(5, minmax(0, 1fr)); align-items: center; }
+.strip > * { padding: 28px 24px; border-left: 1px solid var(--line); }
+.strip > *:first-child { border-left: 0; padding-left: 48px; }
+.facts { display: grid; grid-template-columns: 120px minmax(0, 1fr); }
+.facts > * { padding: 14px 0; border-top: 1px solid var(--line); }
+.uses-row { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 24px; padding: 18px 0; border-top: 1px solid var(--line); }
+.role { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 48px; padding: 40px 0; border-top: 1px solid var(--line); }
+.foot { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: end; }
+.band { margin: 0 -48px; }
+.more { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 12px; color: var(--accent-text); text-decoration: none; }
+.more:hover { color: var(--ink); }
+.toc a { display: block; padding: 6px 0; font-family: var(--font-mono); font-size: 12px; color: var(--muted); text-decoration: none; }
+.toc a:hover { color: var(--ink); }
+@media (max-width: 960px) {
+  .hero, .split, .g2, .g3, .aside-split, .role { grid-template-columns: minmax(0, 1fr); }
+  .g4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-copy { padding: 64px 20px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .hero .stage { padding: 40px 20px; }
+  .sec { padding: 64px 20px; }
+  .pagehead { padding: 72px 20px 48px; }
+  .split, .aside-split { gap: 40px; }
+  .role { gap: 16px; }
+  .sticky { position: static; }
+  .uses-row { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .strip > *:first-child { grid-column: 1 / -1; padding-left: 20px; border-bottom: 1px solid var(--line); }
+  .foot { grid-template-columns: minmax(0, 1fr); }
+  .band { margin: 0 -20px; padding: 72px 20px !important; }
+}
+@media (max-width: 600px) {
+  .g4 { grid-template-columns: minmax(0, 1fr); }
+  .display-fluid { font-size: 44px !important; line-height: 46px !important; }
+  .h1-fluid { font-size: 36px !important; line-height: 40px !important; }
+}
+.tiles { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }
+.tile { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; aspect-ratio: 1 / 1; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); box-shadow: var(--shadow-highlight); color: var(--ink-soft); text-decoration: none; transition: border-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out), transform var(--duration-base) var(--ease-out); }
+.tile:hover { border-color: var(--line-strong); color: var(--ink); transform: translateY(-2px); }
+.tile svg { width: 32px; height: 32px; fill: currentColor; }
+.tile span { font-size: 13px; line-height: 18px; text-align: center; padding: 0 8px; }
+.tiles-sm { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+.tiles-sm .tile svg { width: 26px; height: 26px; }
+.hw { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.hw > div { padding: 18px 20px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); display: flex; flex-direction: column; gap: 4px; }
+.bento { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.bento > .pf-card { padding: 22px; gap: 14px; }
+.span2 { grid-column: span 2; }
+.row2 { grid-row: span 2; }
+.span4 { grid-column: 1 / -1; }
+.tile-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.tile-label { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.tile-label svg { width: 14px; height: 14px; fill: currentColor; }
+.bar { height: 4px; border-radius: 2px; background: var(--line); overflow: hidden; }
+.bar > i { display: block; height: 100%; border-radius: 2px; background: var(--ink-soft); }
+.bar.accent > i { background: var(--accent); }
+.eq { display: inline-flex; align-items: flex-end; gap: 2px; height: 12px; }
+.eq i { width: 3px; background: var(--success); border-radius: 1px; animation: eq 1s var(--ease-in-out) infinite alternate; }
+.eq i:nth-child(2) { animation-delay: -0.4s; } .eq i:nth-child(3) { animation-delay: -0.7s; }
+@keyframes eq { from { height: 3px; } to { height: 12px; } }
+.mapgrid { position: relative; flex-grow: 1; min-height: 150px; border-radius: var(--radius-sm); border: 1px solid var(--line); background-color: var(--bg-subtle); background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 24px 24px; overflow: hidden; }
+.pin { position: absolute; left: 50%; top: 50%; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+.ring { position: absolute; left: 50%; top: 50%; width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 50%; border: 1px solid var(--accent); opacity: .35; }
+.lift { display: grid; grid-template-columns: minmax(0, 1.6fr) 120px 90px 100px minmax(0, 1fr); gap: 16px; align-items: center; padding: 12px 0; border-top: 1px solid var(--line); font-size: 14px; }
+.lift.head { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding-top: 0; border-top: 0; }
+.sets { display: flex; gap: 4px; }
+.sets i { width: 18px; height: 6px; border-radius: 2px; background: var(--line-strong); }
+.stat { display: flex; flex-direction: column; gap: 2px; }
+.stat b { font-size: 22px; line-height: 28px; font-weight: 600; letter-spacing: -0.02em; color: var(--ink); }
+.stat span { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.cover { position: relative; display: flex; flex-direction: column; justify-content: space-between; aspect-ratio: 2 / 3; box-sizing: border-box; padding: 12% 12% 10% 16%; border-radius: 3px 6px 6px 3px; overflow: hidden; box-shadow: var(--shadow-highlight), 0 1px 0 var(--line); }
+.cover::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 6%; background: rgba(0, 0, 0, 0.18); }
+.cover .ct { font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; }
+.cover .ca { font-family: var(--font-mono); letter-spacing: 0.04em; text-transform: uppercase; opacity: .8; }
+.c-ink { background: var(--ink); color: var(--on-ink); }
+.c-accent { background: var(--accent); color: var(--on-accent); }
+.c-raised { background: var(--surface-hover); color: var(--ink); border: 1px solid var(--line-strong); }
+.c-strong { background: var(--line-strong); color: var(--ink); }
+.c-muted { background: var(--muted); color: var(--bg); }
+.shelf { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 32px 20px; }
+.shelf-sm { grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 24px 16px; }
+.book { display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: inherit; }
+.book:hover .cover { transform: translateY(-3px); }
+.book .cover { transition: transform var(--duration-base) var(--ease-out); }
+.stars { display: inline-flex; gap: 3px; }
+.stars i { width: 8px; height: 8px; border-radius: 2px; background: var(--line-strong); }
+.stars i.on { background: var(--accent); }
+.reading { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 28px; align-items: start; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); }
+@media (prefers-reduced-motion: reduce) { .eq i { animation: none; height: 8px; } }
+@media (max-width: 960px) {
+  .tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .tiles-sm { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .hw { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .row2 { grid-row: auto; }
+  .lift { grid-template-columns: minmax(0, 1fr) 90px 80px; }
+  .lift > :nth-child(4), .lift > :nth-child(5) { display: none; }
+  .shelf { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .shelf-sm { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .tiles, .tiles-sm { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .hw { grid-template-columns: minmax(0, 1fr); }
+  .bento { grid-template-columns: minmax(0, 1fr); }
+  .span2 { grid-column: auto; }
+  .shelf { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .shelf-sm { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .reading { grid-template-columns: 100px minmax(0, 1fr); gap: 16px; padding: 16px; }
+}
+.aux { display: grid; grid-template-columns: 200px minmax(0, 1fr) auto; gap: 32px; align-items: center; padding: 36px 48px; border-top: 1px solid var(--line); }
+.aux-label { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.aux-label svg { width: 14px; height: 14px; flex: none; fill: currentColor; }
+.aux-body { display: flex; align-items: center; gap: 20px; min-width: 0; }
+.aux-title { font-size: 16px; line-height: 22px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); }
+.aux-sub { font-size: 14px; line-height: 20px; color: var(--ink-soft); }
+.aux-meta { display: flex; align-items: center; gap: 10px; margin-top: 6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { display: inline-flex; align-items: baseline; gap: 6px; padding: 4px 8px; border: 1px solid var(--line); border-radius: var(--radius-xs); background: var(--surface); font-size: 13px; color: var(--ink); }
+.chip span { font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+.inline-stats { display: flex; flex-wrap: wrap; gap: 24px; }
+.inline-stats div { display: flex; flex-direction: column; }
+.inline-stats b { font-size: 18px; line-height: 24px; font-weight: 600; letter-spacing: -0.02em; color: var(--ink); }
+.inline-stats span { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.where { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); box-shadow: var(--shadow-highlight); overflow: hidden; }
+.where .mapgrid { min-height: 360px; border: 0; border-radius: 0; border-right: 1px solid var(--line); }
+.where-info { display: flex; flex-direction: column; }
+.where-info > div { padding: 28px; }
+.where-info > div + div { border-top: 1px solid var(--line); }
+.wx { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 18px; }
+.wx > span { display: flex; flex-direction: column; gap: 2px; }
+.chart { position: relative; height: 220px; display: grid; grid-template-columns: 40px minmax(0, 1fr); }
+.chart-y { position: relative; }
+.chart-y span { position: absolute; right: 8px; transform: translateY(50%); font-family: var(--font-mono); font-size: 10px; color: var(--muted); }
+.chart-plot { position: relative; border-bottom: 1px solid var(--line-strong); display: flex; align-items: flex-end; gap: 2px; padding: 0 4px; }
+.chart-plot .gl { position: absolute; left: 0; right: 0; height: 0; border-top: 1px solid var(--line); }
+.cbar { position: relative; flex: 1; display: flex; align-items: flex-end; height: 100%; }
+.cbar i { display: block; width: 100%; max-width: 28px; margin: 0 auto; border-radius: 4px 4px 0 0; background: var(--line-strong); transition: background var(--duration-fast); }
+.cbar.now i { background: var(--accent); }
+.cbar:hover i { background: var(--ink-soft); }
+.cbar.now:hover i { background: var(--accent-text); }
+.cbar em { position: absolute; left: 50%; transform: translate(-50%, -8px); bottom: var(--h); padding: 4px 8px; border-radius: var(--radius-xs); background: var(--ink); color: var(--on-ink); font-style: normal; font-family: var(--font-mono); font-size: 11px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity var(--duration-fast); z-index: 2; }
+.cbar:hover em, .cbar:focus-visible em { opacity: 1; }
+.cbar.edge em { left: auto; right: 0; transform: translateY(-8px); }
+.cbar:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.chart-x { display: grid; grid-template-columns: 40px minmax(0, 1fr); margin-top: 8px; }
+.chart-x div { display: flex; gap: 2px; padding: 0 4px; }
+.chart-x span { flex: 1; white-space: nowrap; text-align: center; font-family: var(--font-mono); font-size: 10px; color: var(--muted); }
+.session { border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); box-shadow: var(--shadow-highlight); padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+.pr { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.pr > div { padding: 20px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); display: flex; flex-direction: column; gap: 4px; }
+@media (max-width: 960px) {
+  .aux { grid-template-columns: minmax(0, 1fr); gap: 14px; padding: 32px 20px; }
+  .where { grid-template-columns: minmax(0, 1fr); }
+  .where .mapgrid { min-height: 220px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .pr { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .aux-body { align-items: flex-start; }
+  .aux-meta { flex-wrap: wrap; row-gap: 6px; }
+  .aux-meta .bar { flex: 1 1 120px; width: auto !important; }
+  .aux-body > div:last-child { flex: 1 1 auto; }
+  .aux-meta.nowrap { flex-wrap: nowrap; }
+  .aux-meta.nowrap .bar { flex: 1 1 60px; min-width: 0; }
+  .wx { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .where-info > div { padding: 20px; }
+}
+.crumb { display: flex; align-items: center; gap: 10px; margin: 0; font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.crumb a { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); text-decoration: none; transition: color var(--duration-fast); }
+.crumb a:hover { color: var(--ink); }
+.crumb a svg { transition: transform var(--duration-base) var(--ease-out); }
+.crumb a:hover svg { transform: translateX(-2px); }
+.crumb [aria-current] { color: var(--ink); }
+.crumb .sep { color: var(--faint); }
+.lift-vol { display: flex; align-items: center; gap: 10px; }
+.sessions { display: flex; flex-direction: column; gap: 8px; }
+details.session { padding: 0; gap: 0; }
+details.session > summary { list-style: none; display: grid; grid-template-columns: minmax(0, 1fr) auto 32px; gap: 24px; align-items: center; padding: 18px 20px 18px 24px; cursor: pointer; border-radius: var(--radius-md); transition: background var(--duration-fast) var(--ease-out); }
+details.session > summary::-webkit-details-marker { display: none; }
+details.session > summary:hover { background: var(--surface-hover); }
+details.session > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+details.session[open] > summary { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+.ss-main { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.ss-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; }
+.ss-name { font-size: 18px; line-height: 24px; font-weight: 600; letter-spacing: -0.02em; color: var(--ink); }
+.ss-ex { font-size: 13px; line-height: 20px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ss-stats { display: flex; gap: 24px; }
+.ss-stats > span { display: flex; flex-direction: column; align-items: flex-end; }
+.ss-stats b { font-size: 16px; line-height: 22px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); }
+.ss-stats small { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.chev { width: 32px; height: 32px; display: grid; place-items: center; border-radius: var(--radius-sm); border: 1px solid var(--line); color: var(--muted); }
+.chev svg { transition: transform var(--duration-base) var(--ease-out); }
+details[open] .chev svg { transform: rotate(180deg); }
+details.session[open] .chev { color: var(--ink); border-color: var(--line-strong); }
+.session-body { padding: 4px 24px 20px; border-top: 1px solid var(--line); }
+.session-body .lift.head { padding-top: 14px; }
+.pager { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); }
+.pager-btns { display: flex; align-items: center; gap: 4px; }
+.pager-btns .pf-btn { min-width: 32px; padding: 0 10px; }
+@media (max-width: 960px) {
+  details.session > summary { grid-template-columns: minmax(0, 1fr) 32px; gap: 12px 16px; padding: 16px; }
+  .ss-stats { grid-column: 1 / 2; grid-row: 2; gap: 20px; }
+  .ss-stats > span { align-items: flex-start; }
+  .chev { grid-column: 2; grid-row: 1; }
+  .session-body { padding: 4px 16px 16px; }
+}
+@media (max-width: 600px) {
+  .pager { flex-direction: column; align-items: flex-start; }
+}
+</style></head><body><div id="dcroot">
+
+<div class="page" data-theme="dark">
+<header class="pf-nav"><div class="pf-nav-inner"><a class="pf-brand" href="Main.dc.html"><span class="pf-mark" aria-hidden="true">TP</span>Tony Prokop</a><nav class="pf-nav-links" aria-label="Primary"><a href="About.dc.html" class="pf-nav-link" aria-current="page">about</a><a href="Work.dc.html" class="pf-nav-link">work</a><a href="Uses.dc.html" class="pf-nav-link">uses</a><a href="Experience.dc.html" class="pf-nav-link">experience</a><a href="Contact.dc.html" class="pf-nav-link">contact</a></nav><div class="pf-nav-tools"><button type="button" class="pf-search" aria-label="Open command menu">search<kbd class="pf-kbd">⌘K</kbd></button><a href="#" class="pf-btn pf-btn-primary pf-btn-sm">Résumé</a></div></div></header>
+<main class="frame">
+<header class="pagehead" id="top">
+<nav class="crumb" aria-label="Breadcrumb"><a href="About.dc.html"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4"></path></svg>About</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">Workouts</span></nav>
+<h1 class="h1 h1-fluid" style="margin: 0; font-size: 56px; line-height: 58px; letter-spacing: -0.045em; color: var(--ink); max-width: 18ch; text-wrap: balance;">Training log</h1>
+<p class="lede" style="margin: 0; max-width: 38rem; color: var(--ink-soft);">Mostly barbell work, four mornings a week. Logged in Hevy and published here automatically — partly for accountability, partly because I like charts.</p>
+<div class="inline-stats" style="gap: 40px; margin-top: 8px;">
+<div><b>17</b><span>Sessions in Sep</span></div>
+<div><b>239,410 lb</b><span>Volume in Sep</span></div>
+<div><b>9 weeks</b><span>Current streak</span></div>
+<div><b>4×</b><span>Per week</span></div>
+</div>
+</header>
+
+<section class="sec" style="padding-top: 48px;">
+<figure style="margin: 0; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); box-shadow: var(--shadow-highlight);">
+<figcaption style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; margin-bottom: 20px;">
+<span style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 16px; font-weight: 600; color: var(--ink);">Weekly volume</span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted);">Pounds lifted per week, last 12 weeks. Orange = this week, in progress.</span></span>
+<span style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);">Fig 01</span>
+</figcaption>
+<div class="chart">
+<div class="chart-y">
+<span style="bottom: 0.0%;">0k</span>
+<span style="bottom: 16.666666666666664%;">10k</span>
+<span style="bottom: 33.33333333333333%;">20k</span>
+<span style="bottom: 50.0%;">30k</span>
+<span style="bottom: 66.66666666666666%;">40k</span>
+<span style="bottom: 83.33333333333334%;">50k</span>
+<span style="bottom: 100.0%;">60k</span>
+</div>
+<div class="chart-plot">
+<span class="gl" style="bottom: 16.666666666666664%;"></span>
+<span class="gl" style="bottom: 33.33333333333333%;"></span>
+<span class="gl" style="bottom: 50.0%;"></span>
+<span class="gl" style="bottom: 66.66666666666666%;"></span>
+<span class="gl" style="bottom: 83.33333333333334%;"></span>
+<span class="gl" style="bottom: 100.0%;"></span>
+<div class="cbar" style="--h: 68.7%;" tabindex="0" aria-label="Week of Jul 13: 41,200 lb"><i style="height: 68.7%;"></i><em>Jul 13 · 41,200 lb</em></div>
+<div class="cbar" style="--h: 76.3%;" tabindex="0" aria-label="Week of Jul 20: 45,800 lb"><i style="height: 76.3%;"></i><em>Jul 20 · 45,800 lb</em></div>
+<div class="cbar" style="--h: 65.7%;" tabindex="0" aria-label="Week of Jul 27: 39,400 lb"><i style="height: 65.7%;"></i><em>Jul 27 · 39,400 lb</em></div>
+<div class="cbar" style="--h: 78.5%;" tabindex="0" aria-label="Week of Aug 3: 47,100 lb"><i style="height: 78.5%;"></i><em>Aug 3 · 47,100 lb</em></div>
+<div class="cbar" style="--h: 82.5%;" tabindex="0" aria-label="Week of Aug 10: 49,500 lb"><i style="height: 82.5%;"></i><em>Aug 10 · 49,500 lb</em></div>
+<div class="cbar" style="--h: 51.3%;" tabindex="0" aria-label="Week of Aug 17: 30,800 lb"><i style="height: 51.3%;"></i><em>Aug 17 · 30,800 lb</em></div>
+<div class="cbar" style="--h: 81.5%;" tabindex="0" aria-label="Week of Aug 24: 48,900 lb"><i style="height: 81.5%;"></i><em>Aug 24 · 48,900 lb</em></div>
+<div class="cbar" style="--h: 93.3%;" tabindex="0" aria-label="Week of Aug 31: 55,955 lb"><i style="height: 93.3%;"></i><em>Aug 31 · 55,955 lb</em></div>
+<div class="cbar" style="--h: 94.1%;" tabindex="0" aria-label="Week of Sep 7: 56,480 lb"><i style="height: 94.1%;"></i><em>Sep 7 · 56,480 lb</em></div>
+<div class="cbar" style="--h: 94.7%;" tabindex="0" aria-label="Week of Sep 14: 56,840 lb"><i style="height: 94.7%;"></i><em>Sep 14 · 56,840 lb</em></div>
+<div class="cbar edge" style="--h: 95.6%;" tabindex="0" aria-label="Week of Sep 21: 57,365 lb"><i style="height: 95.6%;"></i><em>Sep 21 · 57,365 lb</em></div>
+<div class="cbar now edge" style="--h: 48.5%;" tabindex="0" aria-label="Week of Sep 28: 29,115 lb (in progress)"><i style="height: 48.5%;"></i><em>Sep 28 · 29,115 lb</em></div>
+</div>
+</div>
+<div class="chart-x"><span></span><div>
+<span>Jul 13</span>
+<span></span>
+<span>Jul 27</span>
+<span></span>
+<span>Aug 10</span>
+<span></span>
+<span>Aug 24</span>
+<span></span>
+<span>Sep 7</span>
+<span></span>
+<span>Sep 21</span>
+<span>Sep 28</span>
+</div></div>
+</figure>
+</section>
+
+<section class="sec">
+<div class="pf-section-head"><div><p class="pf-eyebrow">personal records</p><h2 class="pf-section-title">Current bests</h2></div></div>
+<div class="pr">
+<div><span style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);">Bench press</span><span style="font-size: 26px; line-height: 32px; font-weight: 600; letter-spacing: -0.03em; color: var(--ink);">225 lb</span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted);">1RM · Aug 12</span></div>
+<div><span style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);">Back squat</span><span style="font-size: 26px; line-height: 32px; font-weight: 600; letter-spacing: -0.03em; color: var(--ink);">315 lb</span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted);">1RM · Sep 2</span></div>
+<div><span style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);">Deadlift</span><span style="font-size: 26px; line-height: 32px; font-weight: 600; letter-spacing: -0.03em; color: var(--ink);">405 lb</span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted);">1RM · Jul 19</span></div>
+<div><span style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);">Overhead press</span><span style="font-size: 26px; line-height: 32px; font-weight: 600; letter-spacing: -0.03em; color: var(--ink);">145 lb</span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted);">1RM · Sep 9</span></div>
+</div>
+</section>
+
+<section class="sec" id="log">
+<div class="pf-section-head"><div><p class="pf-eyebrow">log</p><h2 class="pf-section-title">Every session</h2><p class="pf-section-lede">Newest first. Open a session to see each exercise.</p></div></div>
+<div class="sessions">
+
+<details class="session" open="">
+<summary>
+<span class="ss-main">
+<span class="ss-title"><span class="ss-name">Push day</span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted);">Tue, Sep 29 · 6:10 AM</span></span>
+<span class="ss-ex">Bench press · Overhead press · Incline dumbbell press · Triceps pushdown</span>
+</span>
+<span class="ss-stats">
+<span><b>12,280 lb</b><small>Volume</small></span>
+<span><b>13</b><small>Sets</small></span>
+<span><b>58 min</b><small>Time</small></span>
+</span>
+<span class="chev"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l4 4 4-4"></path></svg></span>
+</summary>
+<div class="session-body">
+<div class="lift head"><span>Exercise</span><span>Sets × reps</span><span>Weight</span><span>Sets</span><span>Volume</span></div>
+
+<div class="lift">
+<span style="font-weight: 550; color: var(--ink);">Bench press</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">4 × 8</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">185 lb</span>
+<span class="sets"><i></i><i></i><i></i><i></i></span>
+<span class="lift-vol"><span class="bar" style="flex-grow: 1;"><i style="width: 100%;"></i></span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted); min-width: 64px; text-align: right;">5,920 lb</span></span>
+</div>
+
+<div class="lift">
+<span style="font-weight: 550; color: var(--ink);">Overhead press</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">3 × 8</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">115 lb</span>
+<span class="sets"><i></i><i></i><i></i></span>
+<span class="lift-vol"><span class="bar" style="flex-grow: 1;"><i style="width: 47%;"></i></span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted); min-width: 64px; text-align: right;">2,760 lb</span></span>
+</div>
+
+<div class="lift">
+<span style="font-weight: 550; color: var(--ink);">Incline dumbbell press</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">3 × 10</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">60 lb</span>
+<span class="sets"><i></i><i></i><i></i></span>
+<span class="lift-vol"><span class="bar" style="flex-grow: 1;"><i style="width: 30%;"></i></span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted); min-width: 64px; text-align: right;">1,800 lb</span></span>
+</div>
+
+<div class="lift">
+<span style="font-weight: 550; color: var(--ink);">Triceps pushdown</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">3 × 12</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">50 lb</span>
+<span class="sets"><i></i><i></i><i></i></span>
+<span class="lift-vol"><span class="bar" style="flex-grow: 1;"><i style="width: 30%;"></i></span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted); min-width: 64px; text-align: right;">1,800 lb</span></span>
+</div>
+
+</div>
+</details>
+
+<details class="session">
+<summary>
+<span class="ss-main">
+<span class="ss-title"><span class="ss-name">Legs</span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted);">Mon, Sep 28 · 6:05 AM</span></span>
+<span class="ss-ex">Back squat · Romanian deadlift · Walking lunge · Leg curl</span>
+</span>
+<span class="ss-stats">
+<span><b>16,835 lb</b><small>Volume</small></span>
+<span><b>14</b><small>Sets</small></span>
+<span><b>64 min</b><small>Time</small></span>
+</span>
+<span class="chev"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l4 4 4-4"></path></svg></span>
+</summary>
+<div class="session-body">
+<div class="lift head"><span>Exercise</span><span>Sets × reps</span><span>Weight</span><span>Sets</span><span>Volume</span></div>
+
+<div class="lift">
+<span style="font-weight: 550; color: var(--ink);">Back squat</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">5 × 5</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">275 lb</span>
+<span class="sets"><i></i><i></i><i></i><i></i><i></i></span>
+<span class="lift-vol"><span class="bar" style="flex-grow: 1;"><i style="width: 100%;"></i></span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted); min-width: 64px; text-align: right;">6,875 lb</span></span>
+</div>
+
+<div class="lift">
+<span style="font-weight: 550; color: var(--ink);">Romanian deadlift</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">3 × 8</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">205 lb</span>
+<span class="sets"><i></i><i></i><i></i></span>
+<span class="lift-vol"><span class="bar" style="flex-grow: 1;"><i style="width: 72%;"></i></span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted); min-width: 64px; text-align: right;">4,920 lb</span></span>
+</div>
+
+<div class="lift">
+<span style="font-weight: 550; color: var(--ink);">Walking lunge</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">3 × 12</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">50 lb</span>
+<span class="sets"><i></i><i></i><i></i></span>
+<span class="lift-vol"><span class="bar" style="flex-grow: 1;"><i style="width: 26%;"></i></span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted); min-width: 64px; text-align: right;">1,800 lb</span></span>
+</div>
+
+<div class="lift">
+<span style="font-weight: 550; color: var(--ink);">Leg curl</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">3 × 12</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">90 lb</span>
+<span class="sets"><i></i><i></i><i></i></span>
+<span class="lift-vol"><span class="bar" style="flex-grow: 1;"><i style="width: 47%;"></i></span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted); min-width: 64px; text-align: right;">3,240 lb</span></span>
+</div>
+
+</div>
+</details>
+
+<details class="session">
+<summary>
+<span class="ss-main">
+<span class="ss-title"><span class="ss-name">Pull day</span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted);">Sat, Sep 26 · 8:30 AM</span></span>
+<span class="ss-ex">Deadlift · Pull-up (+lb) · Barbell row · Face pull</span>
+</span>
+<span class="ss-stats">
+<span><b>13,355 lb</b><small>Volume</small></span>
+<span><b>14</b><small>Sets</small></span>
+<span><b>55 min</b><small>Time</small></span>
+</span>
+<span class="chev"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l4 4 4-4"></path></svg></span>
+</summary>
+<div class="session-body">
+<div class="lift head"><span>Exercise</span><span>Sets × reps</span><span>Weight</span><span>Sets</span><span>Volume</span></div>
+
+<div class="lift">
+<span style="font-weight: 550; color: var(--ink);">Deadlift</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">3 × 5</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">365 lb</span>
+<span class="sets"><i></i><i></i><i></i></span>
+<span class="lift-vol"><span class="bar" style="flex-grow: 1;"><i style="width: 100%;"></i></span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted); min-width: 64px; text-align: right;">5,475 lb</span></span>
+</div>
+
+<div class="lift">
+<span style="font-weight: 550; color: var(--ink);">Pull-up (+lb)</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">4 × 8</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">25 lb</span>
+<span class="sets"><i></i><i></i><i></i><i></i></span>
+<span class="lift-vol"><span class="bar" style="flex-grow: 1;"><i style="width: 15%;"></i></span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted); min-width: 64px; text-align: right;">800 lb</span></span>
+</div>
+
+<div class="lift">
+<span style="font-weight: 550; color: var(--ink);">Barbell row</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">4 × 8</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">165 lb</span>
+<span class="sets"><i></i><i></i><i></i><i></i></span>
+<span class="lift-vol"><span class="bar" style="flex-grow: 1;"><i style="width: 96%;"></i></span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted); min-width: 64px; text-align: right;">5,280 lb</span></span>
+</div>
+
+<div class="lift">
+<span style="font-weight: 550; color: var(--ink);">Face pull</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">3 × 15</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">40 lb</span>
+<span class="sets"><i></i><i></i><i></i></span>
+<span class="lift-vol"><span class="bar" style="flex-grow: 1;"><i style="width: 33%;"></i></span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted); min-width: 64px; text-align: right;">1,800 lb</span></span>
+</div>
+
+</div>
+</details>
+
+<details class="session">
+<summary>
+<span class="ss-main">
+<span class="ss-title"><span class="ss-name">Upper</span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted);">Thu, Sep 24 · 6:00 AM</span></span>
+<span class="ss-ex">Bench press · Lat pulldown · Dumbbell shoulder press · Seated cable row</span>
+</span>
+<span class="ss-stats">
+<span><b>14,895 lb</b><small>Volume</small></span>
+<span><b>14</b><small>Sets</small></span>
+<span><b>61 min</b><small>Time</small></span>
+</span>
+<span class="chev"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l4 4 4-4"></path></svg></span>
+</summary>
+<div class="session-body">
+<div class="lift head"><span>Exercise</span><span>Sets × reps</span><span>Weight</span><span>Sets</span><span>Volume</span></div>
+
+<div class="lift">
+<span style="font-weight: 550; color: var(--ink);">Bench press</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">5 × 5</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">195 lb</span>
+<span class="sets"><i></i><i></i><i></i><i></i><i></i></span>
+<span class="lift-vol"><span class="bar" style="flex-grow: 1;"><i style="width: 100%;"></i></span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted); min-width: 64px; text-align: right;">4,875 lb</span></span>
+</div>
+
+<div class="lift">
+<span style="font-weight: 550; color: var(--ink);">Lat pulldown</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">3 × 10</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">140 lb</span>
+<span class="sets"><i></i><i></i><i></i></span>
+<span class="lift-vol"><span class="bar" style="flex-grow: 1;"><i style="width: 86%;"></i></span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted); min-width: 64px; text-align: right;">4,200 lb</span></span>
+</div>
+
+<div class="lift">
+<span style="font-weight: 550; color: var(--ink);">Dumbbell shoulder press</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">3 × 10</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">50 lb</span>
+<span class="sets"><i></i><i></i><i></i></span>
+<span class="lift-vol"><span class="bar" style="flex-grow: 1;"><i style="width: 31%;"></i></span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted); min-width: 64px; text-align: right;">1,500 lb</span></span>
+</div>
+
+<div class="lift">
+<span style="font-weight: 550; color: var(--ink);">Seated cable row</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">3 × 12</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">120 lb</span>
+<span class="sets"><i></i><i></i><i></i></span>
+<span class="lift-vol"><span class="bar" style="flex-grow: 1;"><i style="width: 89%;"></i></span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted); min-width: 64px; text-align: right;">4,320 lb</span></span>
+</div>
+
+</div>
+</details>
+
+<details class="session">
+<summary>
+<span class="ss-main">
+<span class="ss-title"><span class="ss-name">Push day</span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted);">Tue, Sep 22 · 6:10 AM</span></span>
+<span class="ss-ex">Bench press · Overhead press · Incline dumbbell press · Triceps pushdown</span>
+</span>
+<span class="ss-stats">
+<span><b>12,280 lb</b><small>Volume</small></span>
+<span><b>13</b><small>Sets</small></span>
+<span><b>61 min</b><small>Time</small></span>
+</span>
+<span class="chev"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l4 4 4-4"></path></svg></span>
+</summary>
+<div class="session-body">
+<div class="lift head"><span>Exercise</span><span>Sets × reps</span><span>Weight</span><span>Sets</span><span>Volume</span></div>
+
+<div class="lift">
+<span style="font-weight: 550; color: var(--ink);">Bench press</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">4 × 8</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">185 lb</span>
+<span class="sets"><i></i><i></i><i></i><i></i></span>
+<span class="lift-vol"><span class="bar" style="flex-grow: 1;"><i style="width: 100%;"></i></span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted); min-width: 64px; text-align: right;">5,920 lb</span></span>
+</div>
+
+<div class="lift">
+<span style="font-weight: 550; color: var(--ink);">Overhead press</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">3 × 8</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">115 lb</span>
+<span class="sets"><i></i><i></i><i></i></span>
+<span class="lift-vol"><span class="bar" style="flex-grow: 1;"><i style="width: 47%;"></i></span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted); min-width: 64px; text-align: right;">2,760 lb</span></span>
+</div>
+
+<div class="lift">
+<span style="font-weight: 550; color: var(--ink);">Incline dumbbell press</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">3 × 10</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">60 lb</span>
+<span class="sets"><i></i><i></i><i></i></span>
+<span class="lift-vol"><span class="bar" style="flex-grow: 1;"><i style="width: 30%;"></i></span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted); min-width: 64px; text-align: right;">1,800 lb</span></span>
+</div>
+
+<div class="lift">
+<span style="font-weight: 550; color: var(--ink);">Triceps pushdown</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">3 × 12</span>
+<span style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft);">50 lb</span>
+<span class="sets"><i></i><i></i><i></i></span>
+<span class="lift-vol"><span class="bar" style="flex-grow: 1;"><i style="width: 30%;"></i></span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted); min-width: 64px; text-align: right;">1,800 lb</span></span>
+</div>
+
+</div>
+</details>
+
+</div>
+<div class="pager">
+<span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted);">Showing 1–5 of 18 sessions</span>
+<nav class="pager-btns" aria-label="Pagination">
+<button disabled="" arialabel="Previous page" type="button" class="pf-btn pf-btn-ghost pf-btn-sm">← Prev</button>
+
+<button ariacurrent="page" arialabel="Page 1" type="button" class="pf-btn pf-btn-secondary pf-btn-sm">1</button>
+
+<button arialabel="Page 2" type="button" class="pf-btn pf-btn-ghost pf-btn-sm">2</button>
+
+<button arialabel="Page 3" type="button" class="pf-btn pf-btn-ghost pf-btn-sm">3</button>
+
+<button arialabel="Page 4" type="button" class="pf-btn pf-btn-ghost pf-btn-sm">4</button>
+
+<button arialabel="Next page" type="button" class="pf-btn pf-btn-ghost pf-btn-sm">Next →</button>
+</nav>
+</div>
+</section>
+<footer class="sec" style="padding-top: 64px; padding-bottom: 40px;">
+<div class="foot">
+<div style="display: flex; flex-direction: column; gap: 14px;">
+<a href="Main.dc.html" style="font-size: 44px; line-height: 46px; font-weight: 600; letter-spacing: -0.04em; color: var(--ink); text-decoration: none;">Tony Prokop</a>
+<span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted);">© 2026 · built with Next.js and Geist · last deployed [date]</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 18px; font-family: var(--font-mono); font-size: 12px;">
+<a href="About.dc.html" style="color: var(--muted); text-decoration: none;">about</a>
+<a href="Work.dc.html" style="color: var(--muted); text-decoration: none;">work</a>
+<a href="Uses.dc.html" style="color: var(--muted); text-decoration: none;">uses</a>
+<a href="Experience.dc.html" style="color: var(--muted); text-decoration: none;">experience</a>
+<a href="Contact.dc.html" style="color: var(--muted); text-decoration: none;">contact</a>
+<a href="#top" style="display: inline-flex; align-items: center; gap: 6px; color: var(--muted); text-decoration: none;">back to top <kbd class="pf-kbd">↑</kbd></a>
+</div>
+</div>
+</footer>
+</main>
+</div>
+</div></body></html>

@@ -1,0 +1,121 @@
+/*
+ * Portfolio design tokens — generated from design/tokens.json.
+ * Dark is the default theme. Light applies when the visitor's system prefers it
+ * (unless data-theme="dark" is set on <html>), or when data-theme="light" is set.
+ * Colours, radii, type and easing are exposed to Tailwind in app/globals.css.
+ */
+
+:root {
+  color-scheme: dark;
+  --bg: #0b0b0c;
+  --bg-subtle: #101012;
+  --surface: #141416;
+  --surface-hover: #1a1a1d;
+  --line: #232326;
+  --line-strong: #34343a;
+  --control-border: #66666e;
+  --ink: #ededef;
+  --ink-soft: #b4b4ba;
+  --muted: #8b8b93;
+  --faint: #4a4a50;
+  --accent: #ff7a3d;
+  --accent-text: #ff9466;
+  --on-accent: #0b0b0c;
+  --accent-soft: rgba(255, 122, 61, 0.12);
+  --on-ink: #0b0b0c;
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --danger: #ff6b6b;
+  --code-bg: #0e0e10;
+  --code-text: #d6d6da;
+  --code-dim: #7d7d86;
+  --code-key: #ff9466;
+  --code-string: #a5d6a7;
+  --code-fn: #9ecbff;
+  --shadow-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  --shadow-overlay: 0 24px 64px -16px rgba(0, 0, 0, 0.7);
+
+  --space-1: 4px;  /* Icon-to-text gap inside badges and kbd. */
+  --space-2: 8px;  /* Gap between buttons in a row; label-to-input gap. */
+  --space-3: 12px;  /* Gap in card grids; small card padding. */
+  --space-4: 16px;  /* Mobile page gutter; button horizontal padding (md). */
+  --space-5: 24px;  /* Card padding; desktop page gutter. */
+  --space-6: 32px;  /* Background grid pitch; gap between a section header and its content. */
+  --space-7: 48px;  /* Gap between blocks inside a section. */
+  --space-8: 64px;  /* Mobile section padding (top and bottom). */
+  --space-9: 96px;  /* Desktop section padding (top and bottom). */
+  --space-10: 144px;  /* Hero top padding on desktop. */
+  --container: 1120px;  /* Max content width. Sections draw their side rules at this width. */
+  --container-prose: 680px;  /* Max width for case-study and blog prose. */
+  --nav-height: 56px;  /* Sticky nav height; scroll-margin for anchored sections. */
+  --duration-fast: 120ms;  /* Hover colour and border changes. */
+  --duration-base: 200ms;  /* Card lifts, arrow nudges, menu open. */
+  --duration-slow: 420ms;  /* Section reveals on scroll (opacity + 8px rise), once only. */
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+    --bg: #fafaf9;
+    --bg-subtle: #f4f4f2;
+    --surface: #ffffff;
+    --surface-hover: #f2f2f0;
+    --line: #e6e6e3;
+    --line-strong: #cfcfca;
+    --control-border: #8a8a84;
+    --ink: #111113;
+    --ink-soft: #3d3d42;
+    --muted: #64646b;
+    --faint: #b8b8b2;
+    --accent: #e8590c;
+    --accent-text: #b8410a;
+    --on-accent: #0b0b0c;
+    --accent-soft: rgba(232, 89, 12, 0.10);
+    --on-ink: #fafaf9;
+    --success: #15803d;
+    --warning: #a35a00;
+    --danger: #c81e1e;
+    --code-bg: #111113;
+    --code-text: #d6d6da;
+    --code-dim: #7d7d86;
+    --code-key: #ff9466;
+    --code-string: #a5d6a7;
+    --code-fn: #9ecbff;
+    --shadow-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+    --shadow-overlay: 0 24px 64px -16px rgba(17, 17, 19, 0.18);
+  }
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #fafaf9;
+  --bg-subtle: #f4f4f2;
+  --surface: #ffffff;
+  --surface-hover: #f2f2f0;
+  --line: #e6e6e3;
+  --line-strong: #cfcfca;
+  --control-border: #8a8a84;
+  --ink: #111113;
+  --ink-soft: #3d3d42;
+  --muted: #64646b;
+  --faint: #b8b8b2;
+  --accent: #e8590c;
+  --accent-text: #b8410a;
+  --on-accent: #0b0b0c;
+  --accent-soft: rgba(232, 89, 12, 0.10);
+  --on-ink: #fafaf9;
+  --success: #15803d;
+  --warning: #a35a00;
+  --danger: #c81e1e;
+  --code-bg: #111113;
+  --code-text: #d6d6da;
+  --code-dim: #7d7d86;
+  --code-key: #ff9466;
+  --code-string: #a5d6a7;
+  --code-fn: #9ecbff;
+  --shadow-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+  --shadow-overlay: 0 24px 64px -16px rgba(17, 17, 19, 0.18);
+}

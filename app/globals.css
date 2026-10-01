@@ -1,26 +1,125 @@
 @import "tailwindcss";
+@import "../styles/tokens.css";
+@import "../styles/components.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*
+ * Tailwind theme mapped onto the Portfolio design tokens (see DESIGN.md).
+ * Colours point at CSS variables so both themes work with the same classes:
+ *   bg-bg, bg-surface, text-ink, text-ink-soft, text-muted, border-line, text-accent-text …
+ * Type styles are utilities with their size, line-height, weight and tracking baked in:
+ *   text-display, text-h1, text-h2, text-h3, text-lede, text-body, text-body-sm
+ * Mono styles (font + size + tracking) are custom utilities below: mono-label, mono-meta, mono-code.
+ */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-control-border: var(--control-border);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-text: var(--accent-text);
+  --color-accent-soft: var(--accent-soft);
+  --color-on-accent: var(--on-accent);
+  --color-on-ink: var(--on-ink);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-code-bg: var(--code-bg);
+  --color-code-text: var(--code-text);
+  --color-code-dim: var(--code-dim);
+  --color-code-key: var(--code-key);
+  --color-code-string: var(--code-string);
+  --color-code-fn: var(--code-fn);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* static: always emit these variables — styles/components.css reads them directly */
+@theme static {
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --container-site: 1120px;
+  --container-prose: 680px;
+
+  --text-display: 64px;
+  --text-display--line-height: 64px;
+  --text-display--font-weight: 600;
+  --text-display--letter-spacing: -0.045em;
+  --text-h1: 44px;
+  --text-h1--line-height: 48px;
+  --text-h1--font-weight: 600;
+  --text-h1--letter-spacing: -0.035em;
+  --text-h2: 30px;
+  --text-h2--line-height: 36px;
+  --text-h2--font-weight: 600;
+  --text-h2--letter-spacing: -0.025em;
+  --text-h3: 18px;
+  --text-h3--line-height: 26px;
+  --text-h3--font-weight: 550;
+  --text-h3--letter-spacing: -0.01em;
+  --text-lede: 18px;
+  --text-lede--line-height: 30px;
+  --text-lede--letter-spacing: -0.005em;
+  --text-body: 15px;
+  --text-body--line-height: 24px;
+  --text-body-sm: 13px;
+  --text-body-sm--line-height: 20px;
+}
+
+/* Mono voice: eyebrows, nav, form labels (lowercase) */
+@utility mono-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Mono voice: uppercase metadata — years, stacks, figure captions */
+@utility mono-meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@utility mono-code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 21px;
+}
+
+html {
+  background: var(--bg);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 24px;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--ink);
 }
