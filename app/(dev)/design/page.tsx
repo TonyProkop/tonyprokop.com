@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Badge, ButtonLink, Button, Card, CodeBlock, EntryRow, Kbd, Nav, ProjectCard, SectionHeader, BrandIcon } from "@/components/ui";
+import { Badge, ButtonLink, Button, Card, CodeBlock, EntryRow, Kbd, ProjectCard, SectionHeader, BrandIcon } from "@/components/ui";
 import { CommandPalette, OpenCommandPaletteButton } from "@/components/command-palette";
 import { paletteItems } from "@/data/palette";
 import { projects } from "@/data/projects";
 import { usesGroups } from "@/data/uses";
-import { navLinks, site } from "@/data/site";
+import { site } from "@/data/site";
 import { FormDemo } from "./FormDemo";
 
 export const metadata: Metadata = {
@@ -60,7 +60,6 @@ function Section({ index, title, children }: { index: string; title: string; chi
 export default function DesignPage() {
   return (
     <div className="min-h-screen w-full bg-bg text-ink">
-      <Nav name={site.name} initials={site.initials} links={navLinks} cta={{ label: "Résumé", href: site.resumeHref }} />
       <main className="mx-auto max-w-site border-x border-line">
         <header className="flex flex-col gap-5 px-5 pb-16 pt-28 sm:px-12">
           <div className="flex">
