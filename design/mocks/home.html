@@ -1,0 +1,599 @@
+<!doctype html>
+<!-- Static reference mock exported from the design canvas: Home. Not used by the app — see DESIGN.md. Dark theme; add data-theme="light" to the first div inside #dcroot to preview light. -->
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Home — mock</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400..600&amp;display=swap"><style id="tokens">:root, [data-theme="dark"] {
+  --bg: #0b0b0c;
+  --bg-subtle: #101012;
+  --surface: #141416;
+  --surface-hover: #1a1a1d;
+  --line: #232326;
+  --line-strong: #34343a;
+  --control-border: #66666e;
+  --ink: #ededef;
+  --ink-soft: #b4b4ba;
+  --muted: #8b8b93;
+  --faint: #4a4a50;
+  --accent: #ff7a3d;
+  --accent-text: #ff9466;
+  --on-accent: #0b0b0c;
+  --accent-soft: rgba(255, 122, 61, 0.12);
+  --on-ink: #0b0b0c;
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --danger: #ff6b6b;
+  --code-bg: #0e0e10;
+  --code-text: #d6d6da;
+  --code-dim: #7d7d86;
+  --code-key: #ff9466;
+  --code-string: #a5d6a7;
+  --code-fn: #9ecbff;
+  --shadow-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  --shadow-overlay: 0 24px 64px -16px rgba(0, 0, 0, 0.7);
+}
+[data-theme="light"] {
+  --bg: #fafaf9;
+  --bg-subtle: #f4f4f2;
+  --surface: #ffffff;
+  --surface-hover: #f2f2f0;
+  --line: #e6e6e3;
+  --line-strong: #cfcfca;
+  --control-border: #8a8a84;
+  --ink: #111113;
+  --ink-soft: #3d3d42;
+  --muted: #64646b;
+  --faint: #b8b8b2;
+  --accent: #e8590c;
+  --accent-text: #b8410a;
+  --on-accent: #0b0b0c;
+  --accent-soft: rgba(232, 89, 12, 0.10);
+  --on-ink: #fafaf9;
+  --success: #15803d;
+  --warning: #a35a00;
+  --danger: #c81e1e;
+  --code-bg: #111113;
+  --code-text: #d6d6da;
+  --code-dim: #7d7d86;
+  --code-key: #ff9466;
+  --code-string: #a5d6a7;
+  --code-fn: #9ecbff;
+  --shadow-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+  --shadow-overlay: 0 24px 64px -16px rgba(17, 17, 19, 0.18);
+}
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 144px;
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+  --container: 1120px;
+  --container-prose: 680px;
+  --nav-height: 56px;
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 420ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --font-sans: Geist, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+.display { font-family: var(--font-sans); font-size: 64px; line-height: 64px; font-weight: 600; letter-spacing: -0.045em; }
+.h1 { font-family: var(--font-sans); font-size: 44px; line-height: 48px; font-weight: 600; letter-spacing: -0.035em; }
+.h2 { font-family: var(--font-sans); font-size: 30px; line-height: 36px; font-weight: 600; letter-spacing: -0.025em; }
+.h3 { font-family: var(--font-sans); font-size: 18px; line-height: 26px; font-weight: 550; letter-spacing: -0.01em; }
+.lede { font-family: var(--font-sans); font-size: 18px; line-height: 30px; font-weight: 400; letter-spacing: -0.005em; }
+.body { font-family: var(--font-sans); font-size: 15px; line-height: 24px; font-weight: 400; letter-spacing: normal; }
+.body-sm { font-family: var(--font-sans); font-size: 13px; line-height: 20px; font-weight: 400; letter-spacing: normal; }
+.label { font-family: var(--font-mono); font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.02em; }
+.meta { font-family: var(--font-mono); font-size: 11px; line-height: 16px; font-weight: 500; letter-spacing: 0.06em; }
+.code { font-family: var(--font-mono); font-size: 13px; line-height: 21px; font-weight: 400; letter-spacing: normal; }
+</style><style id="components">@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap');
+
+/* ---------- base ---------- */
+html, body { background: var(--bg); color: var(--ink); }
+body { margin: 0; font-family: var(--font-sans); font-size: 15px; line-height: 24px; -webkit-font-smoothing: antialiased; font-feature-settings: "ss01", "cv11"; }
+::selection { background: var(--accent-soft); color: var(--ink); }
+.pf-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); padding: var(--space-4); }
+.pf-stack { display: grid; gap: var(--space-4); padding: var(--space-4); }
+
+/* focus: one solid ring everywhere */
+.pf-focus:focus-visible,
+.pf-btn:focus-visible, .pf-input:focus-visible, .pf-check input:focus-visible + .pf-check-box,
+.pf-card-link:focus-visible, .pf-entry:focus-visible, .pf-nav-link:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px;
+}
+
+/* ---------- Button ---------- */
+.pf-btn {
+  --h: 36px;
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+  height: var(--h); padding: 0 14px; border-radius: var(--radius-sm);
+  border: 1px solid transparent; background: transparent; color: var(--ink);
+  font-family: var(--font-sans); font-size: 14px; font-weight: 500; letter-spacing: -0.005em;
+  text-decoration: none; cursor: pointer; white-space: nowrap;
+  transition: background var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out);
+}
+.pf-btn:active { transform: translateY(1px); }
+.pf-btn-sm { --h: 30px; padding: 0 12px; font-size: 13px; }
+.pf-btn-lg { --h: 44px; padding: 0 18px; font-size: 15px; }
+.pf-btn-primary { background: var(--ink); color: var(--on-ink); box-shadow: var(--shadow-highlight); }
+.pf-btn-primary:hover { background: var(--ink-soft); }
+.pf-btn-accent { background: var(--accent); color: var(--on-accent); }
+.pf-btn-accent:hover { background: var(--accent-text); }
+.pf-btn-secondary { border-color: var(--line-strong); background: var(--surface); box-shadow: var(--shadow-highlight); }
+.pf-btn-secondary:hover { border-color: var(--control-border); background: var(--surface-hover); }
+.pf-btn-ghost { color: var(--ink-soft); }
+.pf-btn-ghost:hover { background: var(--surface-hover); color: var(--ink); }
+.pf-btn[disabled], .pf-btn[aria-disabled="true"] { opacity: .45; pointer-events: none; }
+.pf-btn .pf-arrow { transition: transform var(--duration-base) var(--ease-out); }
+.pf-btn:hover .pf-arrow { transform: translateX(3px); }
+.pf-btn .pf-kbd { margin-right: -6px; }
+.pf-btn-primary .pf-kbd { background: transparent; color: var(--on-ink); border-color: currentColor; opacity: .55; box-shadow: none; }
+.pf-btn-accent .pf-kbd { background: transparent; color: var(--on-accent); border-color: currentColor; opacity: .6; box-shadow: none; }
+
+/* ---------- Kbd ---------- */
+.pf-kbd {
+  display: inline-flex; align-items: center; justify-content: center; gap: 2px;
+  min-width: 20px; height: 20px; padding: 0 5px; border-radius: var(--radius-xs);
+  border: 1px solid var(--line-strong); background: var(--bg-subtle); color: var(--muted);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500; line-height: 1;
+  box-shadow: inset 0 -1px 0 0 var(--line-strong); text-transform: none; letter-spacing: 0;
+}
+
+/* ---------- Badge ---------- */
+.pf-badge {
+  display: inline-flex; align-items: center; gap: 6px; height: 22px; padding: 0 8px;
+  border-radius: var(--radius-xs); border: 1px solid var(--line); background: var(--bg-subtle); color: var(--muted);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap;
+}
+.pf-badge-accent { background: var(--accent-soft); border-color: transparent; color: var(--accent-text); }
+.pf-badge-success { color: var(--success); }
+.pf-badge-warning { color: var(--warning); }
+.pf-dot { width: 6px; height: 6px; border-radius: var(--radius-full); background: currentColor; flex: none; }
+.pf-badge-success .pf-dot { box-shadow: 0 0 0 3px color-mix(in srgb, var(--success) 22%, transparent); }
+
+/* ---------- Card ---------- */
+.pf-card {
+  position: relative; display: flex; flex-direction: column; min-width: 0;
+  border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface);
+  box-shadow: var(--shadow-highlight); color: inherit; text-decoration: none; overflow: hidden;
+  transition: border-color var(--duration-fast) var(--ease-out), background var(--duration-fast) var(--ease-out), transform var(--duration-base) var(--ease-out);
+}
+.pf-card-body { padding: var(--space-5); display: grid; gap: var(--space-2); }
+.pf-card-link { cursor: pointer; }
+.pf-card-link:hover { border-color: var(--line-strong); }
+.pf-card-title { margin: 0; font-size: 18px; line-height: 26px; font-weight: 550; letter-spacing: -0.01em; color: var(--ink); }
+.pf-card-text { margin: 0; color: var(--ink-soft); font-size: 15px; line-height: 24px; }
+.pf-card-eyebrow { font-family: var(--font-mono); font-size: 11px; line-height: 16px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+
+/* ---------- ProjectCard ---------- */
+.pf-project .pf-figure {
+  position: relative; aspect-ratio: 16 / 10; border-bottom: 1px solid var(--line); background: var(--bg-subtle); overflow: hidden;
+  background-image: radial-gradient(var(--faint) 1px, transparent 1px); background-size: 16px 16px; background-position: 8px 8px;
+}
+.pf-figure-inner { position: absolute; inset: var(--space-6) var(--space-5) 0; border: 1px solid var(--line-strong); border-bottom: 0; border-radius: var(--radius-md) var(--radius-md) 0 0; background: var(--surface); box-shadow: var(--shadow-highlight); transition: transform var(--duration-base) var(--ease-out); overflow: hidden; }
+.pf-project:hover .pf-figure-inner { transform: translateY(-4px); }
+.pf-figure-label { position: absolute; top: 10px; left: 12px; z-index: 1; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase; }
+.pf-project-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3); }
+.pf-project-index { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.pf-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: var(--space-2); }
+.pf-project-foot { display: flex; align-items: center; justify-content: space-between; padding: 12px var(--space-5); border-top: 1px solid var(--line); font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.pf-project-foot .pf-arrow { transition: transform var(--duration-base) var(--ease-out), color var(--duration-fast); }
+.pf-project:hover .pf-project-foot .pf-arrow { transform: translateX(3px); color: var(--accent-text); }
+
+/* mini window chrome used inside figures */
+.pf-chrome { display: flex; align-items: center; gap: 6px; height: 28px; padding: 0 10px; border-bottom: 1px solid var(--line); }
+.pf-chrome i { width: 8px; height: 8px; border-radius: 50%; background: var(--line-strong); display: block; }
+.pf-chrome span { margin-left: 8px; font-family: var(--font-mono); font-size: 10px; color: var(--muted); }
+
+/* ---------- Field + controls ---------- */
+.pf-field { display: grid; gap: 6px; min-width: 0; }
+.pf-label { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.02em; color: var(--ink-soft); text-transform: lowercase; }
+.pf-label small { font-size: 11px; color: var(--muted); }
+.pf-hint { font-size: 13px; line-height: 20px; color: var(--muted); margin: 0; }
+.pf-error { display: flex; align-items: center; gap: 6px; font-size: 13px; line-height: 20px; color: var(--danger); margin: 0; }
+.pf-input {
+  width: 100%; box-sizing: border-box; height: 40px; padding: 0 12px; border-radius: var(--radius-sm);
+  border: 1px solid var(--control-border); background: var(--surface); color: var(--ink);
+  font-family: var(--font-sans); font-size: 15px; line-height: 24px;
+  transition: border-color var(--duration-fast) var(--ease-out), background var(--duration-fast) var(--ease-out);
+}
+.pf-input::placeholder { color: var(--muted); }
+.pf-input:hover { border-color: var(--ink-soft); }
+.pf-input:focus-visible { border-color: var(--accent); outline-offset: 0; outline-width: 1px; }
+.pf-input[aria-invalid="true"] { border-color: var(--danger); }
+.pf-input[aria-invalid="true"]:focus-visible { outline-color: var(--danger); }
+.pf-input[disabled] { opacity: .5; cursor: not-allowed; }
+textarea.pf-input { height: auto; min-height: 112px; padding: 10px 12px; resize: vertical; }
+.pf-select-wrap { position: relative; }
+.pf-select-wrap select.pf-input { appearance: none; -webkit-appearance: none; padding-right: 36px; cursor: pointer; }
+.pf-select-wrap svg { position: absolute; right: 12px; top: 50%; translate: 0 -50%; pointer-events: none; color: var(--muted); }
+.pf-check { display: inline-flex; align-items: flex-start; gap: 10px; cursor: pointer; font-size: 15px; line-height: 24px; color: var(--ink-soft); }
+.pf-check input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.pf-check-box { flex: none; width: 16px; height: 16px; margin-top: 4px; display: grid; place-items: center; border-radius: var(--radius-xs); border: 1px solid var(--control-border); background: var(--surface); color: transparent; transition: background var(--duration-fast), border-color var(--duration-fast); }
+.pf-check input:checked + .pf-check-box { background: var(--ink); border-color: var(--ink); color: var(--on-ink); }
+.pf-check:hover .pf-check-box { border-color: var(--ink-soft); }
+
+/* ---------- CodeBlock ---------- */
+.pf-code { border-radius: var(--radius-md); background: var(--code-bg); border: 1px solid var(--line); overflow: hidden; color: var(--code-text); box-shadow: var(--shadow-highlight); }
+.pf-code-head { display: flex; align-items: center; justify-content: space-between; height: 36px; padding: 0 8px 0 14px; border-bottom: 1px solid rgba(255,255,255,0.08); font-family: var(--font-mono); font-size: 12px; color: var(--code-dim); }
+.pf-code-copy { display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 8px; border: 0; border-radius: var(--radius-xs); background: transparent; color: var(--code-dim); font: inherit; cursor: pointer; }
+.pf-code-copy:hover { background: rgba(255,255,255,0.06); color: var(--code-text); }
+.pf-code-copy:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.pf-code pre { margin: 0; padding: 14px 16px; overflow-x: auto; font-family: var(--font-mono); font-size: 13px; line-height: 21px; }
+.pf-code .ln { display: inline-block; width: 2ch; margin-right: 16px; color: var(--code-dim); text-align: right; user-select: none; opacity: .7; }
+.pf-code .k { color: var(--code-key); } .pf-code .s { color: var(--code-string); } .pf-code .f { color: var(--code-fn); } .pf-code .c { color: var(--code-dim); }
+.pf-code-inline { font-family: var(--font-mono); font-size: .88em; padding: 1px 5px; border-radius: var(--radius-xs); background: var(--bg-subtle); border: 1px solid var(--line); color: var(--ink); }
+
+/* ---------- Nav ---------- */
+.pf-nav { position: sticky; top: 0; z-index: 20; height: var(--nav-height); border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter: blur(12px) saturate(1.4); -webkit-backdrop-filter: blur(12px) saturate(1.4); }
+.pf-nav-inner { box-sizing: border-box; max-width: var(--container); height: 100%; margin: 0 auto; padding: 0 var(--space-5); display: flex; align-items: center; gap: var(--space-5); }
+.pf-brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 600; font-size: 14px; letter-spacing: -0.01em; }
+.pf-mark { width: 24px; height: 24px; display: grid; place-items: center; border-radius: var(--radius-xs); background: var(--ink); color: var(--on-ink); font-family: var(--font-mono); font-size: 11px; font-weight: 600; }
+.pf-nav-links { display: flex; gap: 2px; margin-right: auto; }
+.pf-nav-link { position: relative; padding: 6px 10px; border-radius: var(--radius-sm); color: var(--muted); text-decoration: none; font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: 0.02em; transition: color var(--duration-fast), background var(--duration-fast); }
+.pf-nav-link:hover { color: var(--ink); background: var(--surface-hover); }
+.pf-nav-link[aria-current="page"] { color: var(--ink); }
+.pf-nav-link[aria-current="page"]::after { content: ""; position: absolute; left: 10px; right: 10px; bottom: -11px; height: 1px; background: var(--accent); }
+.pf-nav-tools { display: flex; align-items: center; gap: var(--space-2); }
+.pf-search { display: inline-flex; align-items: center; gap: 10px; height: 30px; padding: 0 6px 0 10px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); color: var(--muted); font-family: var(--font-mono); font-size: 12px; cursor: pointer; }
+.pf-search:hover { border-color: var(--line-strong); color: var(--ink-soft); }
+@media (max-width: 640px) { .pf-nav-links, .pf-search { display: none; } .pf-nav-inner { padding: 0 var(--space-4); } .pf-brand { margin-right: auto; } }
+
+/* ---------- SectionHeader ---------- */
+.pf-section-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: var(--space-5); padding-bottom: var(--space-6); }
+.pf-eyebrow { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 14px; font-family: var(--font-mono); font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.02em; color: var(--muted); text-transform: lowercase; }
+.pf-eyebrow b { font-weight: 500; color: var(--accent-text); }
+.pf-eyebrow::after { content: ""; width: 32px; height: 1px; background: var(--line-strong); }
+.pf-section-title { margin: 0; font-size: 30px; line-height: 36px; font-weight: 600; letter-spacing: -0.025em; color: var(--ink); text-wrap: balance; }
+.pf-section-lede { margin: 12px 0 0; max-width: 36rem; color: var(--ink-soft); font-size: 15px; line-height: 24px; }
+@media (max-width: 640px) { .pf-section-head { grid-template-columns: 1fr; } }
+
+/* ---------- EntryRow ---------- */
+.pf-entries { border-top: 1px solid var(--line); }
+.pf-entry { display: grid; grid-template-columns: 112px minmax(0, 1fr) auto; align-items: baseline; gap: var(--space-5); padding: 18px 12px; margin: 0 -12px; border-bottom: 1px solid var(--line); color: inherit; text-decoration: none; border-radius: 0; transition: background var(--duration-fast) var(--ease-out); }
+a.pf-entry:hover { background: var(--surface-hover); }
+.pf-entry-date { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.pf-entry-title { margin: 0; font-size: 15px; line-height: 24px; font-weight: 550; color: var(--ink); letter-spacing: -0.005em; }
+.pf-entry-sub { margin: 2px 0 0; font-size: 13px; line-height: 20px; color: var(--muted); }
+.pf-entry-aside { font-family: var(--font-mono); font-size: 12px; color: var(--muted); display: inline-flex; align-items: center; gap: 8px; }
+.pf-entry .pf-arrow { transition: transform var(--duration-base) var(--ease-out), color var(--duration-fast); }
+a.pf-entry:hover .pf-arrow { transform: translateX(3px); color: var(--accent-text); }
+@media (max-width: 640px) { .pf-entry { grid-template-columns: 1fr auto; } .pf-entry-date { grid-column: 1 / -1; } }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; } }
+</style><style id="page">
+body { margin: 0; background: var(--bg); }
+a { color: var(--accent-text); } a:hover { color: var(--ink); }
+.page { min-height: 100vh; background: var(--bg); color: var(--ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+.frame { max-width: var(--container); margin: 0 auto; border-left: 1px solid var(--line); border-right: 1px solid var(--line); box-sizing: border-box; }
+.sec { padding: 96px 48px; border-top: 1px solid var(--line); }
+.pagehead { padding: 112px 48px 64px; display: flex; flex-direction: column; gap: 20px; }
+.hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); }
+.hero-copy { padding: 112px 48px 96px; display: flex; flex-direction: column; justify-content: center; gap: 28px; border-right: 1px solid var(--line); }
+.stage { position: relative; display: flex; align-items: center; justify-content: center; background-color: var(--bg-subtle); background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 32px 32px; background-position: -1px -1px; }
+.stage::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 30%, var(--bg-subtle) 78%); pointer-events: none; }
+.stage > * { position: relative; z-index: 1; }
+.hero .stage { padding: 64px 40px; }
+.g2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.g3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.g4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.split { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px; align-items: start; }
+.aside-split { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 64px; align-items: start; }
+.sticky { position: sticky; top: calc(var(--nav-height) + 32px); }
+.strip { display: grid; grid-template-columns: 180px repeat(5, minmax(0, 1fr)); align-items: center; }
+.strip > * { padding: 28px 24px; border-left: 1px solid var(--line); }
+.strip > *:first-child { border-left: 0; padding-left: 48px; }
+.facts { display: grid; grid-template-columns: 120px minmax(0, 1fr); }
+.facts > * { padding: 14px 0; border-top: 1px solid var(--line); }
+.uses-row { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 24px; padding: 18px 0; border-top: 1px solid var(--line); }
+.role { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 48px; padding: 40px 0; border-top: 1px solid var(--line); }
+.foot { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: end; }
+.band { margin: 0 -48px; }
+.more { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 12px; color: var(--accent-text); text-decoration: none; }
+.more:hover { color: var(--ink); }
+.toc a { display: block; padding: 6px 0; font-family: var(--font-mono); font-size: 12px; color: var(--muted); text-decoration: none; }
+.toc a:hover { color: var(--ink); }
+@media (max-width: 960px) {
+  .hero, .split, .g2, .g3, .aside-split, .role { grid-template-columns: minmax(0, 1fr); }
+  .g4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-copy { padding: 64px 20px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .hero .stage { padding: 40px 20px; }
+  .sec { padding: 64px 20px; }
+  .pagehead { padding: 72px 20px 48px; }
+  .split, .aside-split { gap: 40px; }
+  .role { gap: 16px; }
+  .sticky { position: static; }
+  .uses-row { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .strip > *:first-child { grid-column: 1 / -1; padding-left: 20px; border-bottom: 1px solid var(--line); }
+  .foot { grid-template-columns: minmax(0, 1fr); }
+  .band { margin: 0 -20px; padding: 72px 20px !important; }
+}
+@media (max-width: 600px) {
+  .g4 { grid-template-columns: minmax(0, 1fr); }
+  .display-fluid { font-size: 44px !important; line-height: 46px !important; }
+  .h1-fluid { font-size: 36px !important; line-height: 40px !important; }
+}
+.tiles { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }
+.tile { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; aspect-ratio: 1 / 1; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); box-shadow: var(--shadow-highlight); color: var(--ink-soft); text-decoration: none; transition: border-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out), transform var(--duration-base) var(--ease-out); }
+.tile:hover { border-color: var(--line-strong); color: var(--ink); transform: translateY(-2px); }
+.tile svg { width: 32px; height: 32px; fill: currentColor; }
+.tile span { font-size: 13px; line-height: 18px; text-align: center; padding: 0 8px; }
+.tiles-sm { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+.tiles-sm .tile svg { width: 26px; height: 26px; }
+.hw { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.hw > div { padding: 18px 20px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); display: flex; flex-direction: column; gap: 4px; }
+.bento { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.bento > .pf-card { padding: 22px; gap: 14px; }
+.span2 { grid-column: span 2; }
+.row2 { grid-row: span 2; }
+.span4 { grid-column: 1 / -1; }
+.tile-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.tile-label { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.tile-label svg { width: 14px; height: 14px; fill: currentColor; }
+.bar { height: 4px; border-radius: 2px; background: var(--line); overflow: hidden; }
+.bar > i { display: block; height: 100%; border-radius: 2px; background: var(--ink-soft); }
+.bar.accent > i { background: var(--accent); }
+.eq { display: inline-flex; align-items: flex-end; gap: 2px; height: 12px; }
+.eq i { width: 3px; background: var(--success); border-radius: 1px; animation: eq 1s var(--ease-in-out) infinite alternate; }
+.eq i:nth-child(2) { animation-delay: -0.4s; } .eq i:nth-child(3) { animation-delay: -0.7s; }
+@keyframes eq { from { height: 3px; } to { height: 12px; } }
+.mapgrid { position: relative; flex-grow: 1; min-height: 150px; border-radius: var(--radius-sm); border: 1px solid var(--line); background-color: var(--bg-subtle); background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 24px 24px; overflow: hidden; }
+.pin { position: absolute; left: 50%; top: 50%; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+.ring { position: absolute; left: 50%; top: 50%; width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 50%; border: 1px solid var(--accent); opacity: .35; }
+.lift { display: grid; grid-template-columns: minmax(0, 1.6fr) 120px 90px 100px minmax(0, 1fr); gap: 16px; align-items: center; padding: 12px 0; border-top: 1px solid var(--line); font-size: 14px; }
+.lift.head { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding-top: 0; border-top: 0; }
+.sets { display: flex; gap: 4px; }
+.sets i { width: 18px; height: 6px; border-radius: 2px; background: var(--line-strong); }
+.stat { display: flex; flex-direction: column; gap: 2px; }
+.stat b { font-size: 22px; line-height: 28px; font-weight: 600; letter-spacing: -0.02em; color: var(--ink); }
+.stat span { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.cover { position: relative; display: flex; flex-direction: column; justify-content: space-between; aspect-ratio: 2 / 3; box-sizing: border-box; padding: 12% 12% 10% 16%; border-radius: 3px 6px 6px 3px; overflow: hidden; box-shadow: var(--shadow-highlight), 0 1px 0 var(--line); }
+.cover::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 6%; background: rgba(0, 0, 0, 0.18); }
+.cover .ct { font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; }
+.cover .ca { font-family: var(--font-mono); letter-spacing: 0.04em; text-transform: uppercase; opacity: .8; }
+.c-ink { background: var(--ink); color: var(--on-ink); }
+.c-accent { background: var(--accent); color: var(--on-accent); }
+.c-raised { background: var(--surface-hover); color: var(--ink); border: 1px solid var(--line-strong); }
+.c-strong { background: var(--line-strong); color: var(--ink); }
+.c-muted { background: var(--muted); color: var(--bg); }
+.shelf { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 32px 20px; }
+.shelf-sm { grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 24px 16px; }
+.book { display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: inherit; }
+.book:hover .cover { transform: translateY(-3px); }
+.book .cover { transition: transform var(--duration-base) var(--ease-out); }
+.stars { display: inline-flex; gap: 3px; }
+.stars i { width: 8px; height: 8px; border-radius: 2px; background: var(--line-strong); }
+.stars i.on { background: var(--accent); }
+.reading { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 28px; align-items: start; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); }
+@media (prefers-reduced-motion: reduce) { .eq i { animation: none; height: 8px; } }
+@media (max-width: 960px) {
+  .tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .tiles-sm { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .hw { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .row2 { grid-row: auto; }
+  .lift { grid-template-columns: minmax(0, 1fr) 90px 80px; }
+  .lift > :nth-child(4), .lift > :nth-child(5) { display: none; }
+  .shelf { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .shelf-sm { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .tiles, .tiles-sm { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .hw { grid-template-columns: minmax(0, 1fr); }
+  .bento { grid-template-columns: minmax(0, 1fr); }
+  .span2 { grid-column: auto; }
+  .shelf { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .shelf-sm { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .reading { grid-template-columns: 100px minmax(0, 1fr); gap: 16px; padding: 16px; }
+}
+</style></head><body><div id="dcroot">
+
+<div class="page" data-theme="dark">
+<header class="pf-nav"><div class="pf-nav-inner"><a class="pf-brand" href="Main.dc.html"><span class="pf-mark" aria-hidden="true">TP</span>Tony Prokop</a><nav class="pf-nav-links" aria-label="Primary"><a href="About.dc.html" class="pf-nav-link">about</a><a href="Work.dc.html" class="pf-nav-link">work</a><a href="Uses.dc.html" class="pf-nav-link">uses</a><a href="Experience.dc.html" class="pf-nav-link">experience</a><a href="Contact.dc.html" class="pf-nav-link">contact</a></nav><div class="pf-nav-tools"><button type="button" class="pf-search" aria-label="Open command menu">search<kbd class="pf-kbd">⌘K</kbd></button><a href="#" class="pf-btn pf-btn-primary pf-btn-sm">Résumé</a></div></div></header>
+<main class="frame">
+<section class="hero" id="top">
+<div class="hero-copy">
+<div style="display: flex">
+<span class="pf-badge pf-badge-success"><span class="pf-dot" aria-hidden="true"></span>Open to new roles</span>
+</div>
+<h1 class="display display-fluid" style="margin: 0; color: var(--ink); text-wrap: balance;">I build fast, careful software.</h1>
+<p class="lede" style="margin: 0; max-width: 36rem; color: var(--ink-soft);">I'm Tony Prokop, a software engineer in Omaha, Nebraska. I work across the stack — product UI, APIs and the infrastructure underneath — and I care most about the parts people feel: speed, reliability and polish.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px;">
+<a href="Work.dc.html" class="pf-btn pf-btn-primary pf-btn-lg">View my work<svg class="pf-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></a>
+<a href="Contact.dc.html" class="pf-btn pf-btn-secondary pf-btn-lg">Get in touch</a>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px; font-family: var(--font-mono); font-size: 12px; color: var(--muted);">
+<a href="#" style="color: var(--muted); text-decoration: none;">github ↗</a>
+<a href="#" style="color: var(--muted); text-decoration: none;">linkedin ↗</a>
+<a href="#" style="color: var(--muted); text-decoration: none;">résumé.pdf ↓</a>
+<span style="display: inline-flex; align-items: center; gap: 6px;">press <kbd class="pf-kbd">⌘K</kbd> to jump anywhere</span>
+</div>
+</div>
+<div class="stage">
+<div style="width: 100%; max-width: 460px; display: flex; flex-direction: column; gap: 10px;">
+<span style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);">Fig 00 — about.ts</span>
+<figure class="pf-code" style="margin: 0px;"><figcaption class="pf-code-head"><span>about.ts</span><button type="button" class="pf-code-copy" aria-label="Copy code">copy</button></figcaption><pre><code><span class="ln">1</span><span><span class="k">export</span> <span class="k">const</span> me = {</span>
+<span class="ln">2</span><span>  name: <span class="s">"Tony Prokop"</span>,</span>
+<span class="ln">3</span><span>  role: <span class="s">"Software Engineer"</span>,</span>
+<span class="ln">4</span><span>  based: <span class="s">"[City, State]"</span>,</span>
+<span class="ln">5</span><span>  focus: [<span class="s">"product"</span>, <span class="s">"performance"</span>, <span class="s">"DX"</span>],</span>
+<span class="ln">6</span><span>  shipping: <span class="s">"[Current project]"</span>,</span>
+<span class="ln">7</span><span>  openTo: [<span class="s">"full-time"</span>, <span class="s">"contract"</span>],</span>
+<span class="ln">8</span><span>}</span></code></pre></figure>
+</div>
+</div>
+</section>
+
+<div class="strip" style="border-top: 1px solid var(--line);">
+<span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted);">previously at</span>
+<span style="font-size: 17px; font-weight: 600; letter-spacing: -0.02em; color: var(--ink-soft); text-align: center;">[Company]</span>
+<span style="font-size: 17px; font-weight: 600; letter-spacing: -0.02em; color: var(--ink-soft); text-align: center;">[Company]</span>
+<span style="font-size: 17px; font-weight: 600; letter-spacing: -0.02em; color: var(--ink-soft); text-align: center;">[Company]</span>
+<span style="font-size: 17px; font-weight: 600; letter-spacing: -0.02em; color: var(--ink-soft); text-align: center;">[Company]</span>
+<span style="font-size: 17px; font-weight: 600; letter-spacing: -0.02em; color: var(--ink-soft); text-align: center;">[Company]</span>
+</div>
+
+<section class="sec" id="about">
+<div class="split">
+<div style="display: flex; flex-direction: column;">
+<div class="pf-section-head"><div><p class="pf-eyebrow"><b>01</b> / about</p><h2 class="pf-section-title">Engineer by trade, generalist by habit</h2></div></div>
+<div style="display: flex; flex-direction: column; gap: 24px; max-width: 38rem;">
+<p class="body" style="margin: 0; color: var(--ink-soft); font-size: 16px; line-height: 27px;">I've spent [X] years building products for teams of every size, mostly where the product meets the systems behind it. I like small teams, short feedback loops and boring technology used well.</p>
+<div><a href="About.dc.html" class="pf-btn pf-btn-secondary">More about me<svg class="pf-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></a></div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 20px;">
+<div style="position: relative; aspect-ratio: 4 / 3; border: 1px solid var(--line); border-radius: var(--radius-lg); background-color: var(--bg-subtle); background-image: radial-gradient(var(--faint) 1px, transparent 1px); background-size: 16px 16px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+<span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted);">[ portrait photo ]</span>
+<span style="position: absolute; left: 14px; bottom: 12px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);">Fig 01 — [City], 2026</span>
+</div>
+<div class="facts">
+<span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted);">based in</span>
+<span style="font-size: 15px; color: var(--ink);">Omaha, NE · Central Time</span>
+<span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted); border-bottom: 1px solid var(--line);">currently</span>
+<span style="font-size: 15px; color: var(--ink); border-bottom: 1px solid var(--line);">[Role] at [Company]</span>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec" id="work">
+<div class="pf-section-head"><div><p class="pf-eyebrow"><b>02</b> / selected work</p><h2 class="pf-section-title">Things I've shipped recently</h2><p class="pf-section-lede">Two recent favourites. Every project has a write-up of what I built, what broke and what I'd do differently.</p></div><div style="display: contents;"><a href="Work.dc.html" class="pf-btn pf-btn-ghost">All projects<svg class="pf-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></a></div></div>
+<div class="g2">
+<a href="#" class="pf-card pf-card-link pf-project"><div class="pf-figure"><span class="pf-figure-label">Fig 02</span><div class="pf-figure-inner"><div style="display: contents;"><div style="height: 100%;">
+<div class="pf-chrome"><i></i><i></i><i></i><span>project-one — dashboard</span></div>
+<div style="display: grid; grid-template-columns: 72px minmax(0, 1fr); height: calc(100% - 29px);">
+<div style="border-right: 1px solid var(--line); padding: 12px 10px; display: flex; flex-direction: column; gap: 8px;">
+<div style="height: 6px; width: 80%; border-radius: 3px; background: var(--ink-soft);"></div>
+<div style="height: 6px; width: 60%; border-radius: 3px; background: var(--line-strong);"></div>
+<div style="height: 6px; width: 70%; border-radius: 3px; background: var(--line-strong);"></div>
+<div style="height: 6px; width: 50%; border-radius: 3px; background: var(--line-strong);"></div>
+</div>
+<div style="padding: 14px; display: flex; flex-direction: column; gap: 12px;">
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px;">
+<div style="height: 40px; border: 1px solid var(--line); border-radius: 6px;"></div>
+<div style="height: 40px; border: 1px solid var(--line); border-radius: 6px;"></div>
+<div style="height: 40px; border: 1px solid var(--accent); border-radius: 6px; background: var(--accent-soft);"></div>
+</div>
+<div style="flex-grow: 1; display: flex; align-items: flex-end; gap: 6px; padding-top: 8px;">
+<div style="flex: 1; height: 30%; border-radius: 3px 3px 0 0; background: var(--line-strong);"></div>
+<div style="flex: 1; height: 45%; border-radius: 3px 3px 0 0; background: var(--line-strong);"></div>
+<div style="flex: 1; height: 38%; border-radius: 3px 3px 0 0; background: var(--line-strong);"></div>
+<div style="flex: 1; height: 62%; border-radius: 3px 3px 0 0; background: var(--line-strong);"></div>
+<div style="flex: 1; height: 55%; border-radius: 3px 3px 0 0; background: var(--line-strong);"></div>
+<div style="flex: 1; height: 80%; border-radius: 3px 3px 0 0; background: var(--accent);"></div>
+<div style="flex: 1; height: 70%; border-radius: 3px 3px 0 0; background: var(--line-strong);"></div>
+</div>
+</div>
+</div>
+</div></div></div></div><div class="pf-card-body"><div class="pf-project-head"><h3 class="pf-card-title">[Project one]</h3><span class="pf-project-index">01</span></div><p class="pf-card-text">A local-first sync engine. Edits apply instantly and reconcile in the background; cut perceived latency from 900 ms to under 50.</p><div class="pf-tags"><span class="pf-badge pf-badge-neutral">TypeScript</span><span class="pf-badge pf-badge-neutral">CRDT</span><span class="pf-badge pf-badge-neutral">SQLite</span></div></div><div class="pf-project-foot"><span>2026 · lead engineer</span><span style="display: inline-flex; align-items: center; gap: 8px;"><span class="pf-badge pf-badge-success"><span class="pf-dot" aria-hidden="true"></span>Live</span><svg class="pf-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></span></div></a>
+<a href="#" class="pf-card pf-card-link pf-project"><div class="pf-figure"><span class="pf-figure-label">Fig 03</span><div class="pf-figure-inner"><div style="display: contents;"><div style="height: 100%; background: var(--code-bg); padding: 16px 18px; box-sizing: border-box; font-family: var(--font-mono); font-size: 12px; line-height: 20px; color: var(--code-text);">
+<div><span style="color: var(--code-key);">$</span> ledger replay --since 7d</div>
+<div style="color: var(--code-dim);">› reading 1,284,019 events</div>
+<div style="color: var(--code-dim);">› 0 conflicts · 3 partitions</div>
+<div style="color: var(--code-string);">✓ replayed in 3.2s</div>
+<div style="margin-top: 10px;"><span style="color: var(--code-key);">$</span> ledger diff prod staging</div>
+<div style="color: var(--code-dim);">› balances match across 48,210 accounts</div>
+<div><span style="color: var(--code-key);">$</span> <span style="display: inline-block; width: 7px; height: 14px; vertical-align: -2px; background: var(--accent);"></span></div>
+</div></div></div></div><div class="pf-card-body"><div class="pf-project-head"><h3 class="pf-card-title">[Project two]</h3><span class="pf-project-index">02</span></div><p class="pf-card-text">Event-sourced billing pipeline that replays a week of history in seconds. Open source, used by [N] teams.</p><div class="pf-tags"><span class="pf-badge pf-badge-neutral">Rust</span><span class="pf-badge pf-badge-neutral">Postgres</span><span class="pf-badge pf-badge-neutral">Kafka</span></div></div><div class="pf-project-foot"><span>2025 · open source</span><span style="display: inline-flex; align-items: center; gap: 8px;"><span class="pf-badge pf-badge-warning"><span class="pf-dot" aria-hidden="true"></span>Beta</span><svg class="pf-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></span></div></a>
+</div>
+</section>
+
+<section class="sec" id="uses" style="background: var(--bg-subtle);">
+<div class="pf-section-head"><div><p class="pf-eyebrow"><b>03</b> / uses</p><h2 class="pf-section-title">What's on my desk</h2><p class="pf-section-lede">The languages, tools and apps I reach for every day.</p></div><div style="display: contents;"><a href="Uses.dc.html" class="pf-btn pf-btn-ghost">Everything I use<svg class="pf-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></a></div></div>
+<div class="tiles tiles-sm">
+<a class="tile" href="#" title="TypeScript"><svg viewBox="0 0 24 24" role="img" aria-label="TypeScript"><path d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z"></path></svg><span>TypeScript</span></a>
+<a class="tile" href="#" title="Go"><svg viewBox="0 0 24 24" role="img" aria-label="Go"><path d="M1.811 10.231c-.047 0-.058-.023-.035-.059l.246-.315c.023-.035.081-.058.128-.058h4.172c.046 0 .058.035.035.07l-.199.303c-.023.036-.082.07-.117.07zM.047 11.306c-.047 0-.059-.023-.035-.058l.245-.316c.023-.035.082-.058.129-.058h5.328c.047 0 .07.035.058.07l-.093.28c-.012.047-.058.07-.105.07zm2.828 1.075c-.047 0-.059-.035-.035-.07l.163-.292c.023-.035.07-.07.117-.07h2.337c.047 0 .07.035.07.082l-.023.28c0 .047-.047.082-.082.082zm12.129-2.36c-.736.187-1.239.327-1.963.514-.176.046-.187.058-.34-.117-.174-.199-.303-.327-.548-.444-.737-.362-1.45-.257-2.115.175-.795.514-1.204 1.274-1.192 2.22.011.935.654 1.706 1.577 1.835.795.105 1.46-.175 1.987-.77.105-.13.198-.27.315-.434H10.47c-.245 0-.304-.152-.222-.35.152-.362.432-.97.596-1.274a.315.315 0 01.292-.187h4.253c-.023.316-.023.631-.07.947a4.983 4.983 0 01-.958 2.29c-.841 1.11-1.94 1.8-3.33 1.986-1.145.152-2.209-.07-3.143-.77-.865-.655-1.356-1.52-1.484-2.595-.152-1.274.222-2.419.993-3.424.83-1.086 1.928-1.776 3.272-2.02 1.098-.2 2.15-.07 3.096.571.62.41 1.063.97 1.356 1.648.07.105.023.164-.117.2m3.868 6.461c-1.064-.024-2.034-.328-2.852-1.029a3.665 3.665 0 01-1.262-2.255c-.21-1.32.152-2.489.947-3.529.853-1.122 1.881-1.706 3.272-1.95 1.192-.21 2.314-.095 3.33.595.923.63 1.496 1.484 1.648 2.605.198 1.578-.257 2.863-1.344 3.962-.771.783-1.718 1.273-2.805 1.495-.315.06-.63.07-.934.106zm2.78-4.72c-.011-.153-.011-.27-.034-.387-.21-1.157-1.274-1.81-2.384-1.554-1.087.245-1.788.935-2.045 2.033-.21.912.234 1.835 1.075 2.21.643.28 1.285.244 1.905-.07.923-.48 1.425-1.228 1.484-2.233z"></path></svg><span>Go</span></a>
+<a class="tile" href="#" title="Rust"><svg viewBox="0 0 24 24" role="img" aria-label="Rust"><path d="M23.8346 11.7033l-1.0073-.6236a13.7268 13.7268 0 00-.0283-.2936l.8656-.8069a.3483.3483 0 00-.1154-.578l-1.1066-.414a8.4958 8.4958 0 00-.087-.2856l.6904-.9587a.3462.3462 0 00-.2257-.5446l-1.1663-.1894a9.3574 9.3574 0 00-.1407-.2622l.49-1.0761a.3437.3437 0 00-.0274-.3361.3486.3486 0 00-.3006-.154l-1.1845.0416a6.7444 6.7444 0 00-.1873-.2268l.2723-1.153a.3472.3472 0 00-.417-.4172l-1.1532.2724a14.0183 14.0183 0 00-.2278-.1873l.0415-1.1845a.3442.3442 0 00-.49-.328l-1.076.491c-.0872-.0476-.1742-.0952-.2623-.1407l-.1903-1.1673A.3483.3483 0 0016.256.955l-.9597.6905a8.4867 8.4867 0 00-.2855-.086l-.414-1.1066a.3483.3483 0 00-.5781-.1154l-.8069.8666a9.2936 9.2936 0 00-.2936-.0284L12.2946.1683a.3462.3462 0 00-.5892 0l-.6236 1.0073a13.7383 13.7383 0 00-.2936.0284L9.9803.3374a.3462.3462 0 00-.578.1154l-.4141 1.1065c-.0962.0274-.1903.0567-.2855.086L7.744.955a.3483.3483 0 00-.5447.2258L7.009 2.348a9.3574 9.3574 0 00-.2622.1407l-1.0762-.491a.3462.3462 0 00-.49.328l.0416 1.1845a7.9826 7.9826 0 00-.2278.1873L3.8413 3.425a.3472.3472 0 00-.4171.4171l.2713 1.1531c-.0628.075-.1255.1509-.1863.2268l-1.1845-.0415a.3462.3462 0 00-.328.49l.491 1.0761a9.167 9.167 0 00-.1407.2622l-1.1662.1894a.3483.3483 0 00-.2258.5446l.6904.9587a13.303 13.303 0 00-.087.2855l-1.1065.414a.3483.3483 0 00-.1155.5781l.8656.807a9.2936 9.2936 0 00-.0283.2935l-1.0073.6236a.3442.3442 0 000 .5892l1.0073.6236c.008.0982.0182.1964.0283.2936l-.8656.8079a.3462.3462 0 00.1155.578l1.1065.4141c.0273.0962.0567.1914.087.2855l-.6904.9587a.3452.3452 0 00.2268.5447l1.1662.1893c.0456.088.0922.1751.1408.2622l-.491 1.0762a.3462.3462 0 00.328.49l1.1834-.0415c.0618.0769.1235.1528.1873.2277l-.2713 1.1541a.3462.3462 0 00.4171.4161l1.153-.2713c.075.0638.151.1255.2279.1863l-.0415 1.1845a.3442.3442 0 00.49.327l1.0761-.49c.087.0486.1741.0951.2622.1407l.1903 1.1662a.3483.3483 0 00.5447.2268l.9587-.6904a9.299 9.299 0 00.2855.087l.414 1.1066a.3452.3452 0 00.5781.1154l.8079-.8656c.0972.0111.1954.0203.2936.0294l.6236 1.0073a.3472.3472 0 00.5892 0l.6236-1.0073c.0982-.0091.1964-.0183.2936-.0294l.8069.8656a.3483.3483 0 00.578-.1154l.4141-1.1066a8.4626 8.4626 0 00.2855-.087l.9587.6904a.3452.3452 0 00.5447-.2268l.1903-1.1662c.088-.0456.1751-.0931.2622-.1407l1.0762.49a.3472.3472 0 00.49-.327l-.0415-1.1845a6.7267 6.7267 0 00.2267-.1863l1.1531.2713a.3472.3472 0 00.4171-.416l-.2713-1.1542c.0628-.0749.1255-.1508.1863-.2278l1.1845.0415a.3442.3442 0 00.328-.49l-.49-1.076c.0475-.0872.0951-.1742.1407-.2623l1.1662-.1893a.3483.3483 0 00.2258-.5447l-.6904-.9587.087-.2855 1.1066-.414a.3462.3462 0 00.1154-.5781l-.8656-.8079c.0101-.0972.0202-.1954.0283-.2936l1.0073-.6236a.3442.3442 0 000-.5892zm-6.7413 8.3551a.7138.7138 0 01.2986-1.396.714.714 0 11-.2997 1.396zm-.3422-2.3142a.649.649 0 00-.7715.5l-.3573 1.6685c-1.1035.501-2.3285.7795-3.6193.7795a8.7368 8.7368 0 01-3.6951-.814l-.3574-1.6684a.648.648 0 00-.7714-.499l-1.473.3158a8.7216 8.7216 0 01-.7613-.898h7.1676c.081 0 .1356-.0141.1356-.088v-2.536c0-.074-.0536-.0881-.1356-.0881h-2.0966v-1.6077h2.2677c.2065 0 1.1065.0587 1.394 1.2088.0901.3533.2875 1.5044.4232 1.8729.1346.413.6833 1.2381 1.2685 1.2381h3.5716a.7492.7492 0 00.1296-.0131 8.7874 8.7874 0 01-.8119.9526zM6.8369 20.024a.714.714 0 11-.2997-1.396.714.714 0 01.2997 1.396zM4.1177 8.9972a.7137.7137 0 11-1.304.5791.7137.7137 0 011.304-.579zm-.8352 1.9813l1.5347-.6824a.65.65 0 00.33-.8585l-.3158-.7147h1.2432v5.6025H3.5669a8.7753 8.7753 0 01-.2834-3.348zm6.7343-.5437V8.7836h2.9601c.153 0 1.0792.1772 1.0792.8697 0 .575-.7107.7815-1.2948.7815zm10.7574 1.4862c0 .2187-.008.4363-.0243.651h-.9c-.09 0-.1265.0586-.1265.1477v.413c0 .973-.5487 1.1846-1.0296 1.2382-.4576.0517-.9648-.1913-1.0275-.4717-.2704-1.5186-.7198-1.8436-1.4305-2.4034.8817-.5599 1.799-1.386 1.799-2.4915 0-1.1936-.819-1.9458-1.3769-2.3153-.7825-.5163-1.6491-.6195-1.883-.6195H5.4682a8.7651 8.7651 0 014.907-2.7699l1.0974 1.151a.648.648 0 00.9182.0213l1.227-1.1743a8.7753 8.7753 0 016.0044 4.2762l-.8403 1.8982a.652.652 0 00.33.8585l1.6178.7188c.0283.2875.0425.577.0425.8717zm-9.3006-9.5993a.7128.7128 0 11.984 1.0316.7137.7137 0 01-.984-1.0316zm8.3389 6.71a.7107.7107 0 01.9395-.3625.7137.7137 0 11-.9405.3635z"></path></svg><span>Rust</span></a>
+<a class="tile" href="#" title="React"><svg viewBox="0 0 24 24" role="img" aria-label="React"><path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z"></path></svg><span>React</span></a>
+<a class="tile" href="#" title="Next.js"><svg viewBox="0 0 24 24" role="img" aria-label="Next.js"><path d="M18.665 21.978C16.758 23.255 14.465 24 12 24 5.377 24 0 18.623 0 12S5.377 0 12 0s12 5.377 12 12c0 3.583-1.574 6.801-4.067 9.001L9.219 7.2H7.2v9.596h1.615V9.251l9.85 12.727Zm-3.332-8.533 1.6 2.061V7.2h-1.6v6.245Z"></path></svg><span>Next.js</span></a>
+<a class="tile" href="#" title="PostgreSQL"><svg viewBox="0 0 24 24" role="img" aria-label="PostgreSQL"><path d="M23.5594 14.7228a.5269.5269 0 0 0-.0563-.1191c-.139-.2632-.4768-.3418-1.0074-.2321-1.6533.3411-2.2935.1312-2.5256-.0191 1.342-2.0482 2.445-4.522 3.0411-6.8297.2714-1.0507.7982-3.5237.1222-4.7316a1.5641 1.5641 0 0 0-.1509-.235C21.6931.9086 19.8007.0248 17.5099.0005c-1.4947-.0158-2.7705.3461-3.1161.4794a9.449 9.449 0 0 0-.5159-.0816 8.044 8.044 0 0 0-1.3114-.1278c-1.1822-.0184-2.2038.2642-3.0498.8406-.8573-.3211-4.7888-1.645-7.2219.0788C.9359 2.1526.3086 3.8733.4302 6.3043c.0409.818.5069 3.334 1.2423 5.7436.4598 1.5065.9387 2.7019 1.4334 3.582.553.9942 1.1259 1.5933 1.7143 1.7895.4474.1491 1.1327.1441 1.8581-.7279.8012-.9635 1.5903-1.8258 1.9446-2.2069.4351.2355.9064.3625 1.39.3772a.0569.0569 0 0 0 .0004.0041 11.0312 11.0312 0 0 0-.2472.3054c-.3389.4302-.4094.5197-1.5002.7443-.3102.064-1.1344.2339-1.1464.8115-.0025.1224.0329.2309.0919.3268.2269.4231.9216.6097 1.015.6331 1.3345.3335 2.5044.092 3.3714-.6787-.017 2.231.0775 4.4174.3454 5.0874.2212.5529.7618 1.9045 2.4692 1.9043.2505 0 .5263-.0291.8296-.0941 1.7819-.3821 2.5557-1.1696 2.855-2.9059.1503-.8707.4016-2.8753.5388-4.1012.0169-.0703.0357-.1207.057-.1362.0007-.0005.0697-.0471.4272.0307a.3673.3673 0 0 0 .0443.0068l.2539.0223.0149.001c.8468.0384 1.9114-.1426 2.5312-.4308.6438-.2988 1.8057-1.0323 1.5951-1.6698zM2.371 11.8765c-.7435-2.4358-1.1779-4.8851-1.2123-5.5719-.1086-2.1714.4171-3.6829 1.5623-4.4927 1.8367-1.2986 4.8398-.5408 6.108-.13-.0032.0032-.0066.0061-.0098.0094-2.0238 2.044-1.9758 5.536-1.9708 5.7495-.0002.0823.0066.1989.0162.3593.0348.5873.0996 1.6804-.0735 2.9184-.1609 1.1504.1937 2.2764.9728 3.0892.0806.0841.1648.1631.2518.2374-.3468.3714-1.1004 1.1926-1.9025 2.1576-.5677.6825-.9597.5517-1.0886.5087-.3919-.1307-.813-.5871-1.2381-1.3223-.4796-.839-.9635-2.0317-1.4155-3.5126zm6.0072 5.0871c-.1711-.0428-.3271-.1132-.4322-.1772.0889-.0394.2374-.0902.4833-.1409 1.2833-.2641 1.4815-.4506 1.9143-1.0002.0992-.126.2116-.2687.3673-.4426a.3549.3549 0 0 0 .0737-.1298c.1708-.1513.2724-.1099.4369-.0417.156.0646.3078.26.3695.4752.0291.1016.0619.2945-.0452.4444-.9043 1.2658-2.2216 1.2494-3.1676 1.0128zm2.094-3.988-.0525.141c-.133.3566-.2567.6881-.3334 1.003-.6674-.0021-1.3168-.2872-1.8105-.8024-.6279-.6551-.9131-1.5664-.7825-2.5004.1828-1.3079.1153-2.4468.079-3.0586-.005-.0857-.0095-.1607-.0122-.2199.2957-.2621 1.6659-.9962 2.6429-.7724.4459.1022.7176.4057.8305.928.5846 2.7038.0774 3.8307-.3302 4.7363-.084.1866-.1633.3629-.2311.5454zm7.3637 4.5725c-.0169.1768-.0358.376-.0618.5959l-.146.4383a.3547.3547 0 0 0-.0182.1077c-.0059.4747-.054.6489-.115.8693-.0634.2292-.1353.4891-.1794 1.0575-.11 1.4143-.8782 2.2267-2.4172 2.5565-1.5155.3251-1.7843-.4968-2.0212-1.2217a6.5824 6.5824 0 0 0-.0769-.2266c-.2154-.5858-.1911-1.4119-.1574-2.5551.0165-.5612-.0249-1.9013-.3302-2.6462.0044-.2932.0106-.5909.019-.8918a.3529.3529 0 0 0-.0153-.1126 1.4927 1.4927 0 0 0-.0439-.208c-.1226-.4283-.4213-.7866-.7797-.9351-.1424-.059-.4038-.1672-.7178-.0869.067-.276.1831-.5875.309-.9249l.0529-.142c.0595-.16.134-.3257.213-.5012.4265-.9476 1.0106-2.2453.3766-5.1772-.2374-1.0981-1.0304-1.6343-2.2324-1.5098-.7207.0746-1.3799.3654-1.7088.5321a5.6716 5.6716 0 0 0-.1958.1041c.0918-1.1064.4386-3.1741 1.7357-4.4823a4.0306 4.0306 0 0 1 .3033-.276.3532.3532 0 0 0 .1447-.0644c.7524-.5706 1.6945-.8506 2.802-.8325.4091.0067.8017.0339 1.1742.081 1.939.3544 3.2439 1.4468 4.0359 2.3827.8143.9623 1.2552 1.9315 1.4312 2.4543-1.3232-.1346-2.2234.1268-2.6797.779-.9926 1.4189.543 4.1729 1.2811 5.4964.1353.2426.2522.4522.2889.5413.2403.5825.5515.9713.7787 1.2552.0696.087.1372.1714.1885.245-.4008.1155-1.1208.3825-1.0552 1.717-.0123.1563-.0423.4469-.0834.8148-.0461.2077-.0702.4603-.0994.7662zm.8905-1.6211c-.0405-.8316.2691-.9185.5967-1.0105a2.8566 2.8566 0 0 0 .135-.0406 1.202 1.202 0 0 0 .1342.103c.5703.3765 1.5823.4213 3.0068.1344-.2016.1769-.5189.3994-.9533.6011-.4098.1903-1.0957.333-1.7473.3636-.7197.0336-1.0859-.0807-1.1721-.151zm.5695-9.2712c-.0059.3508-.0542.6692-.1054 1.0017-.055.3576-.112.7274-.1264 1.1762-.0142.4368.0404.8909.0932 1.3301.1066.887.216 1.8003-.2075 2.7014a3.5272 3.5272 0 0 1-.1876-.3856c-.0527-.1276-.1669-.3326-.3251-.6162-.6156-1.1041-2.0574-3.6896-1.3193-4.7446.3795-.5427 1.3408-.5661 2.1781-.463zm.2284 7.0137a12.3762 12.3762 0 0 0-.0853-.1074l-.0355-.0444c.7262-1.1995.5842-2.3862.4578-3.4385-.0519-.4318-.1009-.8396-.0885-1.2226.0129-.4061.0666-.7543.1185-1.0911.0639-.415.1288-.8443.1109-1.3505.0134-.0531.0188-.1158.0118-.1902-.0457-.4855-.5999-1.938-1.7294-3.253-.6076-.7073-1.4896-1.4972-2.6889-2.0395.5251-.1066 1.2328-.2035 2.0244-.1859 2.0515.0456 3.6746.8135 4.8242 2.2824a.908.908 0 0 1 .0667.1002c.7231 1.3556-.2762 6.2751-2.9867 10.5405zm-8.8166-6.1162c-.025.1794-.3089.4225-.6211.4225a.5821.5821 0 0 1-.0809-.0056c-.1873-.026-.3765-.144-.5059-.3156-.0458-.0605-.1203-.178-.1055-.2844.0055-.0401.0261-.0985.0925-.1488.1182-.0894.3518-.1226.6096-.0867.3163.0441.6426.1938.6113.4186zm7.9305-.4114c.0111.0792-.049.201-.1531.3102-.0683.0717-.212.1961-.4079.2232a.5456.5456 0 0 1-.075.0052c-.2935 0-.5414-.2344-.5607-.3717-.024-.1765.2641-.3106.5611-.352.297-.0414.6111.0088.6356.1851z"></path></svg><span>PostgreSQL</span></a>
+<a class="tile" href="#" title="Docker"><svg viewBox="0 0 24 24" role="img" aria-label="Docker"><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 003.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z"></path></svg><span>Docker</span></a>
+<a class="tile" href="#" title="Terraform"><svg viewBox="0 0 24 24" role="img" aria-label="Terraform"><path d="M1.44 0v7.575l6.561 3.79V3.787zm21.12 4.227l-6.561 3.791v7.574l6.56-3.787zM8.72 4.23v7.575l6.561 3.787V8.018zm0 8.405v7.575L15.28 24v-7.578z"></path></svg><span>Terraform</span></a>
+<a class="tile" href="#" title="Neovim"><svg viewBox="0 0 24 24" role="img" aria-label="Neovim"><path d="M2.214 4.954v13.615L7.655 24V10.314L3.312 3.845 2.214 4.954zm4.999 17.98l-4.557-4.548V5.136l.59-.596 3.967 5.908v12.485zm14.573-4.457l-.862.937-4.24-6.376V0l5.068 5.092.034 13.385zM7.431.001l12.998 19.835-3.637 3.637L3.787 3.683 7.43 0z"></path></svg><span>Neovim</span></a>
+<a class="tile" href="#" title="Ghostty"><svg viewBox="0 0 24 24" role="img" aria-label="Ghostty"><path d="M12 0C6.7 0 2.4 4.3 2.4 9.6v11.146c0 1.772 1.45 3.267 3.222 3.254a3.18 3.18 0 0 0 1.955-.686 1.96 1.96 0 0 1 2.444 0 3.18 3.18 0 0 0 1.976.686c.75 0 1.436-.257 1.98-.686.715-.563 1.71-.587 2.419-.018.59.476 1.355.743 2.182.699 1.705-.094 3.022-1.537 3.022-3.244V9.601C21.6 4.3 17.302 0 12 0M6.069 6.562a1 1 0 0 1 .46.131l3.578 2.065v.002a.974.974 0 0 1 0 1.687L6.53 12.512a.975.975 0 0 1-.976-1.687L7.67 9.602 5.553 8.38a.975.975 0 0 1 .515-1.818m7.438 2.063h4.7a.975.975 0 1 1 0 1.95h-4.7a.975.975 0 0 1 0-1.95"></path></svg><span>Ghostty</span></a>
+<a class="tile" href="#" title="Raycast"><svg viewBox="0 0 24 24" role="img" aria-label="Raycast"><path d="M6.004 15.492v2.504L0 11.992l1.258-1.249Zm2.504 2.504H6.004L12.008 24l1.253-1.253zm14.24-4.747L24 11.997 12.003 0 10.75 1.251 15.491 6h-2.865L9.317 2.692 8.065 3.944l2.06 2.06H8.691v9.31H18v-1.432l2.06 2.06 1.252-1.252-3.312-3.32V8.506ZM6.63 5.372 5.38 6.625l1.342 1.343 1.251-1.253Zm10.655 10.655-1.247 1.251 1.342 1.343 1.253-1.251zM3.944 8.059 2.692 9.31l3.312 3.314v-2.506zm9.936 9.937h-2.504l3.314 3.312 1.25-1.252z"></path></svg><span>Raycast</span></a>
+<a class="tile" href="#" title="Linear"><svg viewBox="0 0 24 24" role="img" aria-label="Linear"><path d="M2.886 4.18A11.982 11.982 0 0 1 11.99 0C18.624 0 24 5.376 24 12.009c0 3.64-1.62 6.903-4.18 9.105L2.887 4.18ZM1.817 5.626l16.556 16.556c-.524.33-1.075.62-1.65.866L.951 7.277c.247-.575.537-1.126.866-1.65ZM.322 9.163l14.515 14.515c-.71.172-1.443.282-2.195.322L0 11.358a12 12 0 0 1 .322-2.195Zm-.17 4.862 9.823 9.824a12.02 12.02 0 0 1-9.824-9.824Z"></path></svg><span>Linear</span></a>
+<a class="tile" href="#" title="Notion"><svg viewBox="0 0 24 24" role="img" aria-label="Notion"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"></path></svg><span>Notion</span></a>
+<a class="tile" href="#" title="Figma"><svg viewBox="0 0 24 24" role="img" aria-label="Figma"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z"></path></svg><span>Figma</span></a>
+<a class="tile" href="#" title="Spotify"><svg viewBox="0 0 24 24" role="img" aria-label="Spotify"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"></path></svg><span>Spotify</span></a>
+<a class="tile" href="#" title="Claude"><svg viewBox="0 0 24 24" role="img" aria-label="Claude"><path d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"></path></svg><span>Claude</span></a>
+</div>
+</section>
+
+<section class="sec" id="experience">
+<div class="pf-section-head"><div><p class="pf-eyebrow"><b>04</b> / experience</p><h2 class="pf-section-title">Where I've worked</h2></div><div style="display: contents;"><a href="Experience.dc.html" class="pf-btn pf-btn-ghost">Full experience<svg class="pf-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></a></div></div>
+<div class="pf-entries">
+<a class="pf-entry" href="Experience.dc.html"><span class="pf-entry-date">2024 — now</span><div><p class="pf-entry-title">Senior Software Engineer · [Company]</p><p class="pf-entry-sub">Lead on the sync and storage platform.</p></div><span class="pf-entry-aside">[City]<svg class="pf-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></span></a>
+<a class="pf-entry" href="Experience.dc.html"><span class="pf-entry-date">2021 — 2024</span><div><p class="pf-entry-title">Software Engineer · [Company]</p><p class="pf-entry-sub">Billing pipeline and the internal design system.</p></div><span class="pf-entry-aside">Remote<svg class="pf-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></span></a>
+<a class="pf-entry" href="Experience.dc.html"><span class="pf-entry-date">2019 — 2021</span><div><p class="pf-entry-title">Full-stack Engineer · [Company]</p><p class="pf-entry-sub">Engineer #3; shipped v1 and hired the next five.</p></div><span class="pf-entry-aside">[City]<svg class="pf-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></span></a>
+</div>
+</section>
+
+<section class="sec" id="testimonials" style="background: var(--bg-subtle);">
+<div class="pf-section-head"><div><p class="pf-eyebrow"><b>05</b> / kind words</p><h2 class="pf-section-title">What people I've worked with say</h2></div></div>
+<div class="g3">
+<div class="pf-card"><div class="pf-card-body"><div class="pf-card-eyebrow">Fig 06.1</div><div style="display: contents;"><div style="display: flex; flex-direction: column; gap: 24px; height: 100%;">
+<p style="margin: 0; font-size: 17px; line-height: 28px; letter-spacing: -0.01em; color: var(--ink);">“Tony Prokop is the engineer you hand the scary project to. They turned a rewrite everyone was afraid of into a series of small, boring, safe releases.”</p>
+<div style="display: flex; align-items: center; gap: 12px; margin-top: auto;">
+<span style="width: 36px; height: 36px; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--surface-hover); border: 1px solid var(--line-strong); font-family: var(--font-mono); font-size: 12px; color: var(--ink-soft);">AB</span>
+<span style="display: flex; flex-direction: column;"><span style="font-size: 14px; font-weight: 550; color: var(--ink);">[Name]</span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted);">[Title], [Company]</span></span>
+</div>
+</div></div></div></div>
+<div class="pf-card"><div class="pf-card-body"><div class="pf-card-eyebrow">Fig 06.2</div><div style="display: contents;"><div style="display: flex; flex-direction: column; gap: 24px; height: 100%;">
+<p style="margin: 0; font-size: 17px; line-height: 28px; letter-spacing: -0.01em; color: var(--ink);">“Rare mix of product sense and systems depth. Their design docs became the template the whole org now uses.”</p>
+<div style="display: flex; align-items: center; gap: 12px; margin-top: auto;">
+<span style="width: 36px; height: 36px; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--surface-hover); border: 1px solid var(--line-strong); font-family: var(--font-mono); font-size: 12px; color: var(--ink-soft);">CD</span>
+<span style="display: flex; flex-direction: column;"><span style="font-size: 14px; font-weight: 550; color: var(--ink);">[Name]</span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted);">[Title], [Company]</span></span>
+</div>
+</div></div></div></div>
+<div class="pf-card"><div class="pf-card-body"><div class="pf-card-eyebrow">Fig 06.3</div><div style="display: contents;"><div style="display: flex; flex-direction: column; gap: 24px; height: 100%;">
+<p style="margin: 0; font-size: 17px; line-height: 28px; letter-spacing: -0.01em; color: var(--ink);">“The best mentor I've had. Patient in code review, fast in an incident and always the first to write the postmortem.”</p>
+<div style="display: flex; align-items: center; gap: 12px; margin-top: auto;">
+<span style="width: 36px; height: 36px; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--surface-hover); border: 1px solid var(--line-strong); font-family: var(--font-mono); font-size: 12px; color: var(--ink-soft);">EF</span>
+<span style="display: flex; flex-direction: column;"><span style="font-size: 14px; font-weight: 550; color: var(--ink);">[Name]</span><span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted);">[Title], [Company]</span></span>
+</div>
+</div></div></div></div>
+</div>
+</section>
+
+<section class="sec" id="contact" style="padding-top: 0; padding-bottom: 0;">
+<div class="stage band" style="flex-direction: column; gap: 24px; padding: 112px 24px; text-align: center;">
+<p class="pf-eyebrow" style="margin: 0;"><b>06</b> / contact</p>
+<h2 class="display" style="margin: 0; font-size: 56px; line-height: 58px; color: var(--ink); text-wrap: balance;">Let's build something.</h2>
+<p class="lede" style="margin: 0; max-width: 32rem; color: var(--ink-soft);">Hiring, a contract or just a question — I read everything and usually reply within two days.</p>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;">
+<a href="Contact.dc.html" class="pf-btn pf-btn-accent pf-btn-lg">Get in touch<svg class="pf-arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></a>
+<button type="button" class="pf-btn pf-btn-secondary pf-btn-lg">Copy email<kbd class="pf-kbd">C</kbd></button>
+</div>
+</div>
+</section>
+<footer class="sec" style="padding-top: 64px; padding-bottom: 40px;">
+<div class="foot">
+<div style="display: flex; flex-direction: column; gap: 14px;">
+<a href="Main.dc.html" style="font-size: 44px; line-height: 46px; font-weight: 600; letter-spacing: -0.04em; color: var(--ink); text-decoration: none;">Tony Prokop</a>
+<span style="font-family: var(--font-mono); font-size: 12px; color: var(--muted);">© 2026 · built with Next.js and Geist · last deployed [date]</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 18px; font-family: var(--font-mono); font-size: 12px;">
+<a href="About.dc.html" style="color: var(--muted); text-decoration: none;">about</a>
+<a href="Work.dc.html" style="color: var(--muted); text-decoration: none;">work</a>
+<a href="Uses.dc.html" style="color: var(--muted); text-decoration: none;">uses</a>
+<a href="Experience.dc.html" style="color: var(--muted); text-decoration: none;">experience</a>
+<a href="Contact.dc.html" style="color: var(--muted); text-decoration: none;">contact</a>
+<a href="#top" style="display: inline-flex; align-items: center; gap: 6px; color: var(--muted); text-decoration: none;">back to top <kbd class="pf-kbd">↑</kbd></a>
+</div>
+</div>
+</footer>
+</main>
+</div>
+</div></body></html>

@@ -1,3 +1,13 @@
+# tonyprokop.com
+
+Personal portfolio for Tony Prokop — Next.js 16, React 19, Tailwind CSS v4.
+
+## Design
+
+- `DESIGN.md` — principles, tokens, components, pages and open decisions.
+- `design/mocks/` — static HTML exports of every designed page (open in a browser).
+- `/design` — live preview of the tokens and components (`npm run dev`, then visit http://localhost:3000/design).
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
