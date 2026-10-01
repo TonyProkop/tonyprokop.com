@@ -173,17 +173,6 @@ export const paletteItems: PaletteItem[] = [
     "icon": "link"
   },
   {
-    "id": "ln-bluesky",
-    "group": "Links",
-    "title": "Bluesky",
-    "subtitle": "Posts",
-    "keywords": "social",
-    "href": site.socials.bluesky,
-    "icon": {
-      "brand": "bluesky"
-    }
-  },
-  {
     "id": "ln-spotify",
     "group": "Links",
     "title": "Spotify",
