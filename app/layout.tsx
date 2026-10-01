@@ -30,7 +30,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col">
         <AlertBanner label="Under construction">This site is actively being worked on, so expect rough edges and placeholder content.</AlertBanner>
-        <Nav name={site.name} initials={site.initials} links={navLinks} cta={{ label: "Résumé", href: site.resumeHref }} />
+        <Nav name={site.name} initials={site.initials} links={navLinks} cta={{ label: "Résumé", href: site.resumeHref, target: "_blank" }} />
         {children}
         <CommandPalette items={paletteItems} owner={{ name: site.name, initials: site.initials, email: site.email }} resumeHref={site.resumeHref} />
       </body>

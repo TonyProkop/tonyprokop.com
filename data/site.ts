@@ -9,7 +9,7 @@ export const site = {
   timeZone: "America/Chicago",
   coordinates: "41.2565° N, 95.9345° W",
   email: "prokop.tony@gmail.com",
-  resumeHref: "/resume.pdf",
+  resumeHref: "/Resume - Tony Prokop.pdf",
   socials: {
     github: "https://github.com/TonyProkop",
     linkedin: "https://www.linkedin.com/in/tony-prokop",
