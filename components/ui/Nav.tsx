@@ -52,7 +52,7 @@ export function Nav({
         <div className="pf-nav-tools">
           {search ? (
             <button type="button" className="pf-search" aria-label="Open command menu" onClick={() => openCommandPalette()}>
-              search <Kbd>⌘K</Kbd>
+              search <Kbd>⌘ K</Kbd>
             </button>
           ) : null}
           {cta ? (
