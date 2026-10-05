@@ -10,8 +10,6 @@ const aboutCode = `export const me = {
   openTo: ["full-time", "contract"],
 }`;
 
-const linkClass = "text-muted hover:text-ink";
-
 export function Hero() {
   return (
     <section id="top" className="grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)]">
@@ -35,17 +33,8 @@ export function Hero() {
           </ButtonLink>
         </div>
         <div className="mono-label flex flex-wrap items-center gap-x-5 gap-y-2 text-muted">
-          <a href={site.socials.github} target="_blank" rel="noreferrer" className={linkClass}>
-            github ↗
-          </a>
-          <a href={site.socials.linkedin} target="_blank" rel="noreferrer" className={linkClass}>
-            linkedin ↗
-          </a>
-          <a href={site.resumeHref} className={linkClass}>
-            résumé.pdf ↓
-          </a>
           <span className="hidden items-center gap-1.5 sm:inline-flex">
-            press <Kbd>⌘K</Kbd> to jump anywhere
+            press <Kbd>⌘ K</Kbd> to jump anywhere
           </span>
         </div>
       </div>
