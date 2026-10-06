@@ -1,0 +1,354 @@
+[
+  {
+    "id": "OL62599835M",
+    "title": "The Eye of the Bedlam Bride",
+    "author": "Matt Dinniman",
+    "cover": "/books/OL62599835M.jpg",
+    "url": "https://openlibrary.org/books/OL62599835M",
+    "shelf": "reading",
+    "startedAt": "2026-10-05"
+  },
+  {
+    "id": "OL62551286M",
+    "title": "Carl’s Doomsday Scenario",
+    "author": "Matt Dinniman",
+    "cover": "/books/OL62551286M.jpg",
+    "url": "https://openlibrary.org/books/OL62551286M",
+    "shelf": "read",
+    "finishedAt": "2026-02-16"
+  },
+  {
+    "id": "OL61594642M",
+    "title": "Dungeon Crawler Carl",
+    "author": "Matt Dinniman",
+    "cover": "/books/OL61594642M.jpg",
+    "url": "https://openlibrary.org/books/OL61594642M",
+    "shelf": "read",
+    "finishedAt": "2026-01-31"
+  },
+  {
+    "id": "OL20141524W",
+    "title": "Empire of Silence",
+    "author": "Christopher Ruocchio",
+    "cover": "/books/OL20141524W.jpg",
+    "url": "https://openlibrary.org/works/OL20141524W",
+    "shelf": "want"
+  },
+  {
+    "id": "OL30154743M",
+    "title": "The Sword of Kaigen",
+    "author": "M. L. Wang",
+    "cover": "/books/OL30154743M.jpg",
+    "url": "https://openlibrary.org/books/OL30154743M",
+    "shelf": "read",
+    "finishedAt": "2026-04-09"
+  },
+  {
+    "id": "OL62599822M",
+    "title": "The Butcher’s Masquerade",
+    "author": "Matt Dinniman",
+    "cover": "/books/OL62599822M.jpg",
+    "url": "https://openlibrary.org/books/OL62599822M",
+    "shelf": "read",
+    "finishedAt": "2026-06-10"
+  },
+  {
+    "id": "OL62599817M",
+    "title": "The Gate of the Feral Gods",
+    "author": "Matt Dinniman",
+    "cover": "/books/OL62599817M.jpg",
+    "url": "https://openlibrary.org/books/OL62599817M",
+    "shelf": "read",
+    "finishedAt": "2026-05-15"
+  },
+  {
+    "id": "OL62599809M",
+    "title": "The Dungeon Anarchist’s Cookbook",
+    "author": "Matt Dinniman",
+    "cover": "/books/OL62599809M.jpg",
+    "url": "https://openlibrary.org/books/OL62599809M",
+    "shelf": "read",
+    "finishedAt": "2026-04-26"
+  },
+  {
+    "id": "OL29858946M",
+    "title": "A Court of Wings and Ruin",
+    "author": "Sarah J. Maas",
+    "cover": "/books/OL29858946M.jpg",
+    "url": "https://openlibrary.org/books/OL29858946M",
+    "shelf": "read",
+    "finishedAt": "2026-01-23"
+  },
+  {
+    "id": "OL28974438M",
+    "title": "Last Argument Of Kings",
+    "author": "Joe Abercrombie",
+    "cover": "/books/OL28974438M.jpg",
+    "url": "https://openlibrary.org/books/OL28974438M",
+    "shelf": "read",
+    "finishedAt": "2025-11-30"
+  },
+  {
+    "id": "OL29858944M",
+    "title": "A Court of Mist and Fury",
+    "author": "Sarah J. Maas",
+    "cover": "/books/OL29858944M.jpg",
+    "url": "https://openlibrary.org/books/OL29858944M",
+    "shelf": "read",
+    "finishedAt": "2025-11-10"
+  },
+  {
+    "id": "OL62545945M",
+    "title": "A Court of Thorns and Roses",
+    "author": "Sarah J. Maas",
+    "cover": "/books/OL62545945M.jpg",
+    "url": "https://openlibrary.org/books/OL62545945M",
+    "shelf": "read",
+    "finishedAt": "2025-09-12"
+  },
+  {
+    "id": "OL50987839M",
+    "title": "Before They are Hanged",
+    "author": "Joe Abercrombie",
+    "cover": "/books/OL50987839M.jpg",
+    "url": "https://openlibrary.org/books/OL50987839M",
+    "shelf": "read",
+    "finishedAt": "2025-08-20"
+  },
+  {
+    "id": "OL26295928M",
+    "title": "Fahrenheit 451",
+    "author": "Ray Bradbury",
+    "cover": "/books/OL26295928M.jpg",
+    "url": "https://openlibrary.org/books/OL26295928M",
+    "shelf": "read",
+    "finishedAt": "2025-02-04"
+  },
+  {
+    "id": "OL54478482M",
+    "title": "Tress of the Emerald Sea",
+    "author": "Brandon Sanderson",
+    "cover": "/books/OL54478482M.jpg",
+    "url": "https://openlibrary.org/books/OL54478482M",
+    "shelf": "read",
+    "finishedAt": "2025-01-29"
+  },
+  {
+    "id": "OL24088391M",
+    "title": "Warbreaker",
+    "author": "Brandon Sanderson",
+    "cover": "/books/OL24088391M.jpg",
+    "url": "https://openlibrary.org/books/OL24088391M",
+    "shelf": "read",
+    "finishedAt": "2025-01-20"
+  },
+  {
+    "id": "OL29638130M",
+    "title": "I am legend",
+    "author": "Richard Matheson",
+    "cover": "/books/OL29638130M.jpg",
+    "url": "https://openlibrary.org/books/OL29638130M",
+    "shelf": "read",
+    "finishedAt": "2024-09-02"
+  },
+  {
+    "id": "OL25053846M",
+    "title": "Inheritance (Inheritance Cycle #4)",
+    "author": "Christopher Paolini",
+    "cover": "/books/OL25053846M.jpg",
+    "url": "https://openlibrary.org/books/OL25053846M",
+    "shelf": "read",
+    "finishedAt": "2024-08-26"
+  },
+  {
+    "id": "OL19906309M",
+    "title": "Brisingr",
+    "author": "Christopher Paolini",
+    "cover": "/books/OL19906309M.jpg",
+    "url": "https://openlibrary.org/books/OL19906309M",
+    "shelf": "read",
+    "finishedAt": "2024-06-07"
+  },
+  {
+    "id": "OL23273586M",
+    "title": "Eldest",
+    "author": "Christopher Paolini",
+    "cover": "/books/OL23273586M.jpg",
+    "url": "https://openlibrary.org/books/OL23273586M",
+    "shelf": "read",
+    "finishedAt": "2024-04-23"
+  },
+  {
+    "id": "OL58619167M",
+    "title": "ERAGON",
+    "author": "Christopher Paolini",
+    "cover": "/books/OL58619167M.jpg",
+    "url": "https://openlibrary.org/books/OL58619167M",
+    "shelf": "read",
+    "finishedAt": "2024-01-17"
+  },
+  {
+    "id": "OL28124888M",
+    "title": "The Slow Regard of Silent Things",
+    "author": "Patrick Rothfuss",
+    "cover": "/books/OL28124888M.jpg",
+    "url": "https://openlibrary.org/books/OL28124888M",
+    "shelf": "read",
+    "finishedAt": "2023-12-22"
+  },
+  {
+    "id": "OL7501953M",
+    "title": "Dune",
+    "author": "Frank Herbert",
+    "cover": "/books/OL7501953M.jpg",
+    "url": "https://openlibrary.org/books/OL7501953M",
+    "shelf": "read",
+    "finishedAt": "2023-11-19"
+  },
+  {
+    "id": "OL24669863M",
+    "title": "Dune Messiah",
+    "author": "Frank Herbert",
+    "cover": "/books/OL24669863M.jpg",
+    "url": "https://openlibrary.org/books/OL24669863M",
+    "shelf": "read",
+    "finishedAt": "2023-12-01"
+  },
+  {
+    "id": "OL7501961M",
+    "title": "Children of Dune",
+    "author": "Frank Herbert",
+    "cover": "/books/OL7501961M.jpg",
+    "url": "https://openlibrary.org/books/OL7501961M",
+    "shelf": "read",
+    "finishedAt": "2023-12-20"
+  },
+  {
+    "id": "OL24383834M",
+    "title": "The Way of Kings",
+    "author": "Brandon Sanderson",
+    "cover": "/books/OL24383834M.jpg",
+    "url": "https://openlibrary.org/books/OL24383834M",
+    "shelf": "read"
+  },
+  {
+    "id": "OL27264311M",
+    "title": "Words of Radiance",
+    "author": "Brandon Sanderson",
+    "cover": "/books/OL27264311M.jpg",
+    "url": "https://openlibrary.org/books/OL27264311M",
+    "shelf": "read"
+  },
+  {
+    "id": "OL27420261M",
+    "title": "Edgedancer",
+    "author": "Brandon Sanderson",
+    "cover": "/books/OL27420261M.jpg",
+    "url": "https://openlibrary.org/books/OL27420261M",
+    "shelf": "read"
+  },
+  {
+    "id": "OL26421466M",
+    "title": "Oathbringer",
+    "author": "Brandon Sanderson",
+    "cover": "/books/OL26421466M.jpg",
+    "url": "https://openlibrary.org/books/OL26421466M",
+    "shelf": "read"
+  },
+  {
+    "id": "OL35036035M",
+    "title": "Dawnshard",
+    "author": "Brandon Sanderson",
+    "cover": "/books/OL35036035M.jpg",
+    "url": "https://openlibrary.org/books/OL35036035M",
+    "shelf": "read"
+  },
+  {
+    "id": "OL28217699M",
+    "title": "Rhythm of War",
+    "author": "Brandon Sanderson",
+    "cover": "/books/OL28217699M.jpg",
+    "url": "https://openlibrary.org/books/OL28217699M",
+    "shelf": "read"
+  },
+  {
+    "id": "OL50789375M",
+    "title": "Wind and Truth",
+    "author": "Tor Fall 2024 Author to Be Announced",
+    "cover": "/books/OL50789375M.jpg",
+    "url": "https://openlibrary.org/books/OL50789375M",
+    "shelf": "read"
+  },
+  {
+    "id": "OL10236414M",
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "cover": "/books/OL10236414M.jpg",
+    "url": "https://openlibrary.org/books/OL10236414M",
+    "shelf": "read"
+  },
+  {
+    "id": "OL43079986M",
+    "title": "The Fellowship of the Ring",
+    "author": "J.R.R. Tolkien",
+    "cover": "/books/OL43079986M.jpg",
+    "url": "https://openlibrary.org/books/OL43079986M",
+    "shelf": "read"
+  },
+  {
+    "id": "OL58723054M",
+    "title": "The Two Towers",
+    "author": "J.R.R. Tolkien",
+    "cover": "/books/OL58723054M.jpg",
+    "url": "https://openlibrary.org/books/OL58723054M",
+    "shelf": "read"
+  },
+  {
+    "id": "OL59016899M",
+    "title": "The return of king",
+    "author": "J.R.R. Tolkien",
+    "cover": "/books/OL59016899M.jpg",
+    "url": "https://openlibrary.org/books/OL59016899M",
+    "shelf": "read"
+  },
+  {
+    "id": "OL35447857M",
+    "title": "The Name of the Wind",
+    "author": "Patrick Rothfuss",
+    "cover": "/books/OL35447857M.jpg",
+    "url": "https://openlibrary.org/books/OL35447857M",
+    "shelf": "read"
+  },
+  {
+    "id": "OL24586431M",
+    "title": "The Wise Man’s Fear",
+    "author": "Patrick Rothfuss",
+    "cover": "/books/OL24586431M.jpg",
+    "url": "https://openlibrary.org/books/OL24586431M",
+    "shelf": "read"
+  },
+  {
+    "id": "OL27186692M",
+    "title": "The Blade Itself",
+    "author": "Joe Abercrombie",
+    "cover": "/books/OL27186692M.jpg",
+    "url": "https://openlibrary.org/books/OL27186692M",
+    "shelf": "read"
+  },
+  {
+    "id": "OL3174961M",
+    "title": "Nineteen eighty-four",
+    "author": "George Orwell",
+    "cover": "/books/OL3174961M.jpg",
+    "url": "https://openlibrary.org/books/OL3174961M",
+    "shelf": "read"
+  },
+  {
+    "id": "OL1168007W",
+    "title": "Animal Farm",
+    "author": "George Orwell",
+    "cover": "/books/OL1168007W.jpg",
+    "url": "https://openlibrary.org/works/OL1168007W",
+    "shelf": "read"
+  }
+]
