@@ -5,8 +5,7 @@ const aboutCode = `export const me = {
   name: "${site.name}",
   role: "${site.role}",
   based: "Omaha, NE",
-  focus: ["product", "performance", "DX"],
-  shipping: "[Current project]",
+  shipping: "WP Engine's Customer API (CAPI)",
   openTo: ["full-time", "contract"],
 }`;
 
@@ -21,8 +20,8 @@ export function Hero() {
         </div>
         <h1 className="text-display text-balance text-ink">I build fast, careful software.</h1>
         <p className="text-lede max-w-xl text-ink-soft">
-          I&apos;m {site.name}, a software engineer in Omaha, Nebraska. I work across the stack - product UI, APIs and the infrastructure
-          underneath - and I care most about the parts people feel: speed, reliability and polish.
+          I&apos;m {site.name}, a software engineer based in Omaha, Nebraska. I work across the stack - UI/UX, APIs, database and the infrastructure
+          they run on. I care most about the parts people feel: performance, reliability and polish.
         </p>
         <div className="flex flex-wrap gap-2">
           <ButtonLink href="/work" variant="primary" size="lg" arrow>
