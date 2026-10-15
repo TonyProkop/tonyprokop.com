@@ -1,5 +1,5 @@
 import type { SVGProps } from "react";
-import { brandIcons, type BrandIconName } from "@/lib/brand-icons";
+import { brandIcons, type BrandIconData, type BrandIconName } from "@/lib/brand-icons";
 
 type IconProps = SVGProps<SVGSVGElement> & { size?: number };
 
@@ -55,6 +55,14 @@ export function AlertIcon({ size = 14, ...rest }: IconProps) {
     </svg>
   );
 }
+
+/** Generic terminal glyph; placeholder for tools without a brand mark. */
+export const TerminalIcon = (p: IconProps) => (
+  <Stroke size={24} {...p}>
+    <rect x="3" y="4.5" width="18" height="15" rx="2.5" />
+    <path d="M7.5 10l2.5 2-2.5 2M12.5 14.5h4" />
+  </Stroke>
+);
 
 export const SearchIcon = (p: IconProps) => (
   <Stroke size={18} {...p}>
@@ -127,13 +135,32 @@ export const LinkIcon = (p: IconProps) => (
   </Stroke>
 );
 
-/** A monochrome brand mark from Simple Icons. Inherits text colour. */
-export function BrandIcon({ name, size = 16, title, ...rest }: SVGProps<SVGSVGElement> & { name: BrandIconName; size?: number; title?: string }) {
-  const icon = brandIcons[name];
+/** True when a hex colour is too dark to read on the dark theme. */
+const isDark = (hex: string) => {
+  const [r, g, b] = [0, 2, 4].map((i) => parseInt(hex.slice(i, i + 2), 16));
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b < 70;
+};
+
+/**
+ * A brand mark from Simple Icons. Monochrome by default (inherits text colour); with `brand` it uses the
+ * official brand colour, and near-black brands fall back to the ink colour on the dark theme.
+ */
+export function BrandIcon({ name, size = 16, title, brand, className, style, ...rest }: SVGProps<SVGSVGElement> & { name: BrandIconName; size?: number; title?: string; brand?: boolean }) {
+  const icon: BrandIconData = brandIcons[name];
   const label = title ?? icon.title;
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" role="img" aria-label={label} {...rest}>
-      <path d={icon.path} />
+    <svg
+      width={size}
+      height={size}
+      viewBox={icon.viewBox ?? "0 0 24 24"}
+      fill="currentColor"
+      role="img"
+      aria-label={label}
+      className={brand && isDark(icon.hex) ? ["pf-brand-dark", className].filter(Boolean).join(" ") : className}
+      style={brand ? { color: `var(--brand-dark, #${icon.hex})`, ...style } : style}
+      {...rest}
+    >
+      {icon.layers ? icon.layers.map((l) => <path key={l.d} d={l.d} fill={brand ? l.fill : undefined} />) : <path d={icon.path} />}
     </svg>
   );
 }

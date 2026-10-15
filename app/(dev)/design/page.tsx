@@ -202,7 +202,7 @@ export default function DesignPage() {
           <div className="mt-10 grid grid-cols-3 gap-3 sm:grid-cols-6">
             {usesGroups[0].items.concat(usesGroups[1].items).slice(0, 6).map((it) => (
               <span key={it.label} className="flex aspect-square flex-col items-center justify-center gap-3 rounded-md border border-line bg-surface text-ink-soft">
-                <BrandIcon name={it.icon} size={30} />
+                <BrandIcon name={it.icon!} size={30} />
                 <span className="text-body-sm">{it.label}</span>
               </span>
             ))}

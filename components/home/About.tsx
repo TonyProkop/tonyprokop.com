@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { ButtonLink, SectionHeader } from "@/components/ui";
 import { Section } from "./Section";
+import { site } from "@/data/site";
 
-const factLabel = "mono-label text-muted";
+const factLabel = "mono-label flex items-center text-muted";
 
 export function About() {
   return (
@@ -38,7 +39,7 @@ export function About() {
             <dt className={`${factLabel} border-t border-line py-3.5`}>based in</dt>
             <dd className="m-0 border-t border-line py-3.5 text-ink">Omaha, NE · Central Time</dd>
             <dt className={`${factLabel} border-y border-line py-3.5`}>currently</dt>
-            <dd className="m-0 border-y border-line py-3.5 text-ink">Senior Software Engineer at WP Engine</dd>
+            <dd className="m-0 border-y border-line py-3.5 text-ink">{site.role}</dd>
           </dl>
         </div>
       </div>

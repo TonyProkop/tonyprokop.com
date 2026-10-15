@@ -1,6 +1,6 @@
 import type { BrandIconName } from "@/lib/brand-icons";
 
-export type UsesGroup = { name: string; slug: string; items: Array<{ icon: BrandIconName; label: string }> };
+export type UsesGroup = { name: string; slug: string; items: Array<{ icon?: BrandIconName; label: string }> };
 
 /** Sample /uses list from the mocks — icons only, no descriptions. Replace with your real tools. */
 export const usesGroups: UsesGroup[] = [
@@ -17,17 +17,25 @@ export const usesGroups: UsesGroup[] = [
         "label": "JavaScript"
       },
       {
+        "icon": "html5",
+        "label": "HTML"
+      },
+      {
+        "icon": "css",
+        "label": "CSS"
+      },
+      {
         "icon": "go",
         "label": "Go"
       },
       {
-        "icon": "rust",
-        "label": "Rust"
+        "icon": "ruby",
+        "label": "Ruby"
       },
       {
-        "icon": "python",
-        "label": "Python"
-      }
+        "icon": "csharp",
+        "label": "C#"
+      },
     ]
   },
   {
@@ -39,25 +47,41 @@ export const usesGroups: UsesGroup[] = [
         "label": "React"
       },
       {
-        "icon": "nextdotjs",
-        "label": "Next.js"
+        "icon": "vuedotjs",
+        "label": "Vue"
       },
       {
-        "icon": "nodedotjs",
-        "label": "Node.js"
+        "icon": "mui",
+        "label": "Material UI"
       },
       {
         "icon": "tailwindcss",
         "label": "Tailwind CSS"
       },
       {
-        "icon": "trpc",
-        "label": "tRPC"
+        "icon": "nextdotjs",
+        "label": "Next.js"
       },
       {
-        "icon": "graphql",
-        "label": "GraphQL"
-      }
+        "icon": "reactquery",
+        "label": "TanStack Query"
+      },
+      {
+        "icon": "tanstack",
+        "label": "TanStack Router"
+      },
+      {
+        "icon": "nodedotjs",
+        "label": "Node.js"
+      },
+      {
+        "icon": "rubyonrails",
+        "label": "Ruby on Rails"
+      },
+      {
+        "icon": "dotnet",
+        "label": ".NET"
+      },
     ]
   },
   {
@@ -73,12 +97,12 @@ export const usesGroups: UsesGroup[] = [
         "label": "Redis"
       },
       {
-        "icon": "sqlite",
-        "label": "SQLite"
+        "icon": "googlecloud",
+        "label": "Google Cloud Platform"
       },
       {
-        "icon": "apachekafka",
-        "label": "Kafka"
+        "icon": "aws",
+        "label": "AWS"
       },
       {
         "icon": "docker",
@@ -87,14 +111,6 @@ export const usesGroups: UsesGroup[] = [
       {
         "icon": "terraform",
         "label": "Terraform"
-      },
-      {
-        "icon": "vercel",
-        "label": "Vercel"
-      },
-      {
-        "icon": "githubactions",
-        "label": "GitHub Actions"
       }
     ]
   },
@@ -107,16 +123,11 @@ export const usesGroups: UsesGroup[] = [
         "label": "Neovim"
       },
       {
-        "icon": "cursor",
-        "label": "Cursor"
-      },
-      {
-        "icon": "zedindustries",
-        "label": "Zed"
-      },
-      {
         "icon": "ghostty",
         "label": "Ghostty"
+      },
+      {
+        "label": "Herdr"
       },
       {
         "icon": "git",
@@ -141,20 +152,12 @@ export const usesGroups: UsesGroup[] = [
         "label": "Raycast"
       },
       {
-        "icon": "linear",
-        "label": "Linear"
-      },
-      {
         "icon": "notion",
         "label": "Notion"
       },
       {
         "icon": "obsidian",
         "label": "Obsidian"
-      },
-      {
-        "icon": "arc",
-        "label": "Arc"
       },
       {
         "icon": "figma",
@@ -167,16 +170,30 @@ export const usesGroups: UsesGroup[] = [
       {
         "icon": "1password",
         "label": "1Password"
+      },
+      {
+        "icon": "postman",
+        "label": "Postman"
+      },
+      {
+        "icon": "googlechrome",
+        "label": "Chrome"
+      },
+      {
+        "icon": "slack",
+        "label": "Slack"
+      },
+      {
+        "icon": "zoom",
+        "label": "Zoom"
       }
     ]
   }
 ];
 
 export const hardware: string[] = [
-  "[Laptop model]",
-  "[Monitor]",
-  "[Keyboard]",
-  "[Mouse / trackpad]",
-  "[Headphones]",
-  "[Desk + chair]"
+  "MacBook Pro M4",
+  "LG UltraFine",
+  "Kinesis Advantage360",
+  "Autonomous sit-stand desk"
 ];
