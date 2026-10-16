@@ -79,7 +79,7 @@ export default async function ProjectPage({ params }: PageProps<"/work/[slug]">)
   return (
     <div className="mx-auto w-full max-w-site flex-1 border-x border-line">
       <main>
-        <header id="top" className="flex flex-col gap-5 px-5 pt-18 pb-12 lg:px-12 lg:pt-28">
+        <header id="top" className="flex flex-col gap-5 px-5 pt-8 pb-12 lg:px-12 lg:pt-10">
           <div className="flex items-center justify-between gap-4">
             <nav aria-label="Breadcrumb" className="mono-label flex items-center gap-2.5 text-muted">
               <Link href="/work" className="inline-flex items-center gap-1.5 hover:text-ink">
