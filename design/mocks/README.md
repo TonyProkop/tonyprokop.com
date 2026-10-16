@@ -10,10 +10,13 @@ Static reference exports of every page designed on the canvas. Open any file dir
 | `bookshelf.html` | Bookshelf: reading goal, currently reading, read this year, want to read | `/about/bookshelf` |
 | `workouts.html` | Workouts: stats, weekly volume chart, personal records, paginated collapsible session log (first page) | `/about/workouts` |
 | `work.html` | Work: filters, project cards, side projects | `/work` |
+| `project.html` | Project detail: header with prev/next, gallery, results, problem / what I did / decisions, “At a glance” panel, quote, previous/next cards | `/work/[slug]` |
+| `project-no-links.html` | Same page for an internal tool: no live or source link, no quote | `/work/[slug]` |
+| `project-phone.html` | Project detail at 390px | `/work/[slug]` |
 | `uses.html` | Uses: icon grids by category, hardware list | `/uses` |
 | `experience.html` | Experience: role blocks with highlights and stack | `/experience` |
 | `contact.html` | Contact: form, email, availability, socials | `/contact` |
 | `palette-*.html` | ⌘K command palette: search, compose, details (error state), sent | overlay on any page |
 | `palette-phone-*.html` | Same palette at 390px | overlay on any page |
 
-The live, clickable versions (pagination, compose flow, theme toggle, live clock) are on the design canvas linked in `DESIGN.md`.
+The live, clickable versions (pagination, compose flow, theme toggle, live clock, project prev/next and gallery) are on the design canvas linked in `DESIGN.md`.
