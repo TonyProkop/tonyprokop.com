@@ -80,6 +80,7 @@ Multi-page, not a one-pager: each home section previews a page and links to it. 
 | `/about/bookshelf` | Breadcrumb back to About. 2026 goal bar, currently reading (cover, progress), read this year (ratings, month, year filter), want to read |
 | `/about/workouts` | Breadcrumb back to About. Sessions/volume/streak stats, weekly volume bar chart (12 weeks, this week in accent, hover values), personal records, **paginated** log (5 per page) of **collapsible** session cards (`<details>`) with sets × reps, weight and volume per exercise |
 | `/work` | Filters, all project cards, side projects / OSS list |
+| `/work/[slug]` | Breadcrumb back to Work + previous/next arrows (`01 / 04`). Status badge, year · role · company, title, one-line summary. Actions: **Visit live site ↗** only when there is one, **View source ↗** only for public repos, otherwise “internal tool · no public link”; “Read the write-up ↓”. Screenshot gallery (framed figure on a grid stage, `Fig 01` caption, thumbnails to switch). Three-number results strip. Write-up: 01 The problem, 02 What I did (numbered), 03 Key decisions (cards). Sticky “At a glance” panel: role, timeline, team, company, stack (Simple Icons chips), links. Optional 04 quote. Previous / Next cards (thumbnail, title, summary; wrap around) + “all projects →”. On phones the panel moves above the write-up and the cards stack. |
 | `/uses` | Icon tiles by category — Languages, Frameworks & libraries, Data & infrastructure, Editor & terminal, Apps — names only, no descriptions; hardware as a simple list; sticky category index **Exception to the monochrome rule:** `/uses` tiles (and the Uses strip on the home page) use the official brand colour (`<BrandIcon brand>`); near-black brands switch to ink on the dark theme. Multi-colour logos are handled manually. |
 | `/experience` | Role blocks: dates, place, title · company, summary, 2–3 highlights, stack badges; résumé download |
 | `/contact` | Form (name, email, company, reason, message, opt-in), email + copy, availability, reply time, socials |
@@ -105,7 +106,7 @@ Removed on purpose: Education section; tech-stack-with-descriptions (became Uses
 `data/` holds typed sample content from the mocks. Replace as real content arrives:
 
 - `site.ts` — name, initials, location (Omaha, Nebraska), time zone (America/Chicago), email **[placeholder]**, socials (GitHub set; others TODO), résumé path.
-- `projects.ts`, `experience.ts` — sample; Tony has **two** previous companies.
+- `projects.ts`, `experience.ts` — sample; Tony has **two** previous companies. Each project page also needs: slug, role, timeline, team, optional live/source URLs, 3 metrics, problem, contributions, decisions, optional quote, screenshots with captions.
 - `uses.ts` — sample tool list (icons from Simple Icons) + hardware placeholders.
 - `books.ts` — real titles but not Tony's list; covers are typographic placeholders until a cover source is chosen.
 - `workouts.ts` — generated sample log (18 sessions, Aug 31 – Sep 29 2026); volume = sets × reps × weight.
