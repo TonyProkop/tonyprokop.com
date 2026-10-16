@@ -1,4 +1,4 @@
-import { Aws, CSharp, Chrome, ClaudeIcon, CloudflareIcon, Css, DockerIcon, Dotnet, Elasticsearch, Figma, GhosttyIcon, GitIcon, GithubIcon, Go, GoogleCloud, HerokuIcon, Html5, Javascript, MaterialUi, Neovim, NextjsIcon, NodejsIcon, NotionIcon, ObsidianIcon, Postgresql, PostmanIcon, RailsIcon, ReactQueryIcon, RedisIcon, Ruby, SlackIcon, SpotifyIcon, TailwindIcon, TanstackIcon, TerraformIcon, TypescriptIcon, ZoomIcon, _React, _Vue } from "@dev.icons/react";
+import { Aws, CSharp, Chrome, ClaudeIcon, CloudflareIcon, Css, DockerIcon, Dotnet, Elasticsearch, Figma, GhosttyIcon, GitIcon, GithubIcon, Go, GoogleCloud, HerokuIcon, Html5, Javascript, MaterialUi, Neovim, NextjsIcon, NodejsIcon, NotionIcon, ObsidianIcon, Postgresql, PostmanIcon, RailsIcon, RedisIcon, Ruby, SlackIcon, SpotifyIcon, TailwindIcon, TanstackIcon, TerraformIcon, TypescriptIcon, ZoomIcon, _React, _Vue } from "@dev.icons/react";
 import type { Icon } from "@dev.icons/react";
 
 export type UsesGroup = { name: string; slug: string; items: Array<{ icon?: Icon; label: string }> };
