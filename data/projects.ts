@@ -87,7 +87,7 @@ export const projects: Project[] = [
   {
     slug: "flywheel",
     index: "02",
-    title: "Flywheel Growth Suite",
+    title: "Flywheel",
     description: "Flywheel's flagship product, built as the primary frontend engineer and shipped end to end in under 8 months.",
     tags: ["Vue", "JavaScript", "Rails", "PostgreSQL"],
     meta: "2020 - 2022 · sr. engineer",
