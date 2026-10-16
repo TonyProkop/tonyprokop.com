@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowIcon, Badge, ButtonLink, Footer } from "@/components/ui";
+import { Gallery } from "@/components/work/Gallery";
 import { ProjectFigure } from "@/components/work/ProjectFigure";
 import { projects, type Project } from "@/data/projects";
 import { navLinks, site } from "@/data/site";
@@ -131,19 +132,7 @@ export default async function ProjectPage({ params }: PageProps<"/work/[slug]">)
         </header>
 
         <section aria-label="Screenshots" className="px-5 pb-12 lg:px-12 lg:pb-16">
-          <figure className="m-0">
-            <div className="pf-stage aspect-[4/3] overflow-hidden rounded-md border border-line shadow-[var(--shadow-highlight)] sm:aspect-video sm:rounded-lg">
-              <div className="aspect-[16/10] w-[88%] overflow-hidden rounded-md border border-line-strong bg-surface shadow-[var(--shadow-overlay)] sm:w-[76%]">
-                <ProjectFigure slug={p.slug} title={p.title} sizes="(min-width: 1120px) 820px, 90vw" />
-              </div>
-            </div>
-            <figcaption className="mono-label mt-3 flex flex-col justify-between gap-1 text-muted sm:flex-row sm:gap-4">
-              <span>
-                <b className="font-medium text-ink-soft">Fig 01</b> - {p.figureCaption}
-              </span>
-              <span>1 of 1</span>
-            </figcaption>
-          </figure>
+          <Gallery slug={p.slug} title={p.title} captions={p.figureCaptions} />
         </section>
 
         <div aria-label="Results" className="grid border-t border-line lg:grid-cols-3">

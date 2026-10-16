@@ -32,8 +32,8 @@ export type Project = {
   did: string[];
   decisions: { title: string; body: string }[];
   stack: Tech[];
-  /** Caption for Fig 01 (the screenshot or sketch on the project card). */
-  figureCaption: string;
+  /** One caption per figure, in order. Fig 01 is also the figure on the project card. */
+  figureCaptions: string[];
   quote?: { text: string; name: string; title: string };
 };
 
@@ -82,7 +82,7 @@ export const projects: Project[] = [
     ],
     decisions: decisionPlaceholders,
     stack: [{ label: "TypeScript", icon: TypescriptIcon }, { label: "React", icon: _React }, { label: "Material UI", icon: MaterialUi }, { label: "Ruby on Rails", icon: RailsIcon }, { label: "Go", icon: Go }, { label: "PostgreSQL", icon: Postgresql }, { label: "Google Cloud", icon: GoogleCloud }],
-    figureCaption: "The WP Engine homepage",
+    figureCaptions: ["The WP Engine homepage", "The portal dashboard: updates, plan overview and account health", "The My Sites list in the customer portal", "A single site's overview"],
   },
   {
     slug: "flywheel",
@@ -119,7 +119,7 @@ export const projects: Project[] = [
     ],
     decisions: decisionPlaceholders,
     stack: [{ label: "JavaScript", icon: Javascript }, { label: "Vue", icon: _Vue }, { label: "Ruby on Rails", icon: RailsIcon }, { label: "PostgreSQL", icon: Postgresql }],
-    figureCaption: "The Flywheel homepage",
+    figureCaptions: ["The Flywheel homepage"],
   },
   {
     slug: "speedway-motors",
@@ -156,7 +156,7 @@ export const projects: Project[] = [
     ],
     decisions: decisionPlaceholders,
     stack: [{ label: "React", icon: _React }, { label: "JavaScript", icon: Javascript }, { label: "C#", icon: CSharp }, { label: ".NET", icon: Dotnet }, { label: "Elasticsearch", icon: Elasticsearch }],
-    figureCaption: "The Speedway Motors homepage",
+    figureCaptions: ["The Speedway Motors homepage"],
   },
   {
     slug: "fretta",
@@ -192,7 +192,7 @@ export const projects: Project[] = [
     ],
     decisions: decisionPlaceholders,
     stack: [{ label: "[Stack]" }],
-    figureCaption: "The Fretta landing page and a round in progress",
+    figureCaptions: ["The Fretta landing page and a round in progress"],
   },
   {
     slug: "grocery-prices",
@@ -228,7 +228,7 @@ export const projects: Project[] = [
     ],
     decisions: decisionPlaceholders,
     stack: [{ label: "[Stack]" }],
-    figureCaption: "[Screenshot of the price tracker]",
+    figureCaptions: ["[Screenshot of the price tracker]"],
   },
   {
     slug: "number-charts",
@@ -264,7 +264,7 @@ export const projects: Project[] = [
     ],
     decisions: decisionPlaceholders,
     stack: [{ label: "[Stack]" }],
-    figureCaption: "[Screenshot of a number chart]",
+    figureCaptions: ["[Screenshot of a number chart]"],
   },
 ];
 
