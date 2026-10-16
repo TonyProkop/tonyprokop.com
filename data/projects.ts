@@ -267,12 +267,3 @@ export const projects: Project[] = [
     figureCaptions: ["[Screenshot of a number chart]"],
   },
 ];
-
-export type SideProject = { year: string; title: string; subtitle: string; aside: string; href?: string };
-
-/** Experiments, libraries and contributions. Placeholders until real entries exist. */
-export const sideProjects: SideProject[] = [
-  { year: "[Year]", title: "[Library or tool name]", subtitle: "[One line on what it does]", aside: "[stars / users]" },
-  { year: "[Year]", title: "[Contribution to a project]", subtitle: "[What you fixed or added]", aside: "PR" },
-  { year: "[Year]", title: "[Weekend experiment]", subtitle: "[One line]", aside: "demo" },
-];

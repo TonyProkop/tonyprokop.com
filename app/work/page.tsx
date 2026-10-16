@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { EntryRow, Footer, SectionHeader } from "@/components/ui";
+import { Footer } from "@/components/ui";
 import { ProjectGrid } from "@/components/work/ProjectGrid";
-import { projectCategories, projects, sideProjects } from "@/data/projects";
+import { projectCategories, projects } from "@/data/projects";
 import { navLinks, site } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -21,14 +21,6 @@ export default function Work() {
           <p className="text-lede max-w-xl text-ink-soft">Selected projects from the last few years. Each one links to a write-up: the problem, what I built, what broke and what I&apos;d do differently.</p>
         </header>
         <ProjectGrid projects={projects.map(({ slug, index, title, description, tags, meta, status, statusTone, category, href }) => ({ slug, index, title, description, tags, meta, status, statusTone, category, href }))} categories={projectCategories} />
-        <section aria-label="Side projects" className="border-t border-line px-5 py-16 sm:px-12 lg:py-24">
-          <SectionHeader eyebrow="smaller things" title="Side projects and open source" lede="Experiments, libraries and contributions. Most are small; a few are used by more people than I expected." />
-          <div className="pf-entries">
-            {sideProjects.map((s) => (
-              <EntryRow key={s.title} date={s.year} title={s.title} subtitle={s.subtitle} aside={s.aside} href={s.href} />
-            ))}
-          </div>
-        </section>
       </main>
       <Footer name={site.name} links={navLinks} />
     </div>
