@@ -1,4 +1,4 @@
-import type { BrandIconName } from "@/lib/brand-icons";
+import type { ReactElement } from "react";
 
 export type PaletteGroup = "Pages" | "Projects" | "Actions" | "Links";
 
@@ -28,7 +28,7 @@ export type PaletteItem = {
   href?: string;
   /** Global shortcut shown on the row, e.g. ["G", "A"]. Only list shortcuts that are wired up. */
   keys?: string[];
-  icon: PaletteGlyph | { brand: BrandIconName };
+  icon: PaletteGlyph | ReactElement;
   action?: PaletteAction;
 };
 

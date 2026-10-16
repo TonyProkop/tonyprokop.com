@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BrandIcon, ButtonLink, SectionHeader } from "@/components/ui";
+import { ButtonLink, SectionHeader } from "@/components/ui";
 import { usesGroups } from "@/data/uses";
 import { Section } from "./Section";
 
@@ -27,7 +27,7 @@ export function UsesPreview() {
       <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
         {items.map((it) => (
           <Link key={it.label} href="/uses" className="pf-tile" title={it.label}>
-            <BrandIcon name={it.icon!} size={26} brand aria-hidden="true" />
+            {it.icon ? <it.icon size={26} aria-hidden="true" /> : null}
             <span>{it.label}</span>
           </Link>
         ))}

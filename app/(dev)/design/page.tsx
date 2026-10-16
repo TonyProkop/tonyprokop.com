@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Badge, ButtonLink, Button, Card, CodeBlock, EntryRow, Kbd, ProjectCard, SectionHeader, BrandIcon } from "@/components/ui";
+import { Badge, ButtonLink, Button, Card, CodeBlock, EntryRow, Kbd, ProjectCard, SectionHeader } from "@/components/ui";
 import { OpenCommandPaletteButton } from "@/components/command-palette";
 import { projects } from "@/data/projects";
 import { usesGroups } from "@/data/uses";
@@ -202,7 +202,7 @@ export default function DesignPage() {
           <div className="mt-10 grid grid-cols-3 gap-3 sm:grid-cols-6">
             {usesGroups[0].items.concat(usesGroups[1].items).slice(0, 6).map((it) => (
               <span key={it.label} className="flex aspect-square flex-col items-center justify-center gap-3 rounded-md border border-line bg-surface text-ink-soft">
-                <BrandIcon name={it.icon!} size={30} />
+                {it.icon ? <it.icon size={30} /> : null}
                 <span className="text-body-sm">{it.label}</span>
               </span>
             ))}

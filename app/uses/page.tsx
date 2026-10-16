@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { BrandIcon, Footer, TerminalIcon } from "@/components/ui";
+import { Footer, TerminalIcon } from "@/components/ui";
 import { navLinks, site } from "@/data/site";
 import { hardware, usesGroups } from "@/data/uses";
 
@@ -54,7 +54,7 @@ export default function Uses() {
                 <ul className="grid grid-cols-3 gap-3 md:grid-cols-4 lg:grid-cols-6">
                   {g.items.map((it) => (
                     <li key={it.label} className="pf-tile" title={it.label}>
-                      {it.icon ? <BrandIcon name={it.icon} size={28} brand aria-hidden="true" /> : <TerminalIcon size={28} />}
+                      {it.icon ? <it.icon size={28} aria-hidden="true" /> : <TerminalIcon size={28} />}
                       <span>{it.label}</span>
                     </li>
                   ))}

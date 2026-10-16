@@ -1,6 +1,7 @@
-import type { BrandIconName } from "@/lib/brand-icons";
+import { Aws, CSharp, Chrome, ClaudeIcon, CloudflareIcon, Css, DockerIcon, Dotnet, Elasticsearch, Figma, GhosttyIcon, GitIcon, GithubIcon, Go, GoogleCloud, HerokuIcon, Html5, Javascript, MaterialUi, Neovim, NextjsIcon, NodejsIcon, NotionIcon, ObsidianIcon, Postgresql, PostmanIcon, RailsIcon, ReactQueryIcon, RedisIcon, Ruby, SlackIcon, SpotifyIcon, TailwindIcon, TanstackIcon, TerraformIcon, TypescriptIcon, ZoomIcon, _React, _Vue } from "@dev.icons/react";
+import type { Icon } from "@dev.icons/react";
 
-export type UsesGroup = { name: string; slug: string; items: Array<{ icon?: BrandIconName; label: string }> };
+export type UsesGroup = { name: string; slug: string; items: Array<{ icon?: Icon; label: string }> };
 
 /** Sample /uses list from the mocks — icons only, no descriptions. Replace with your real tools. */
 export const usesGroups: UsesGroup[] = [
@@ -9,31 +10,31 @@ export const usesGroups: UsesGroup[] = [
     "slug": "languages",
     "items": [
       {
-        "icon": "typescript",
+        "icon": TypescriptIcon,
         "label": "TypeScript"
       },
       {
-        "icon": "javascript",
+        "icon": Javascript,
         "label": "JavaScript"
       },
       {
-        "icon": "html5",
+        "icon": Html5,
         "label": "HTML"
       },
       {
-        "icon": "css",
+        "icon": Css,
         "label": "CSS"
       },
       {
-        "icon": "go",
+        "icon": Go,
         "label": "Go"
       },
       {
-        "icon": "ruby",
+        "icon": Ruby,
         "label": "Ruby"
       },
       {
-        "icon": "csharp",
+        "icon": CSharp,
         "label": "C#"
       },
     ]
@@ -43,43 +44,39 @@ export const usesGroups: UsesGroup[] = [
     "slug": "frameworks",
     "items": [
       {
-        "icon": "react",
+        "icon": _React,
         "label": "React"
       },
       {
-        "icon": "vuedotjs",
+        "icon": _Vue,
         "label": "Vue"
       },
       {
-        "icon": "mui",
+        "icon": MaterialUi,
         "label": "Material UI"
       },
       {
-        "icon": "tailwindcss",
+        "icon": TailwindIcon,
         "label": "Tailwind CSS"
       },
       {
-        "icon": "nextdotjs",
+        "icon": NextjsIcon,
         "label": "Next.js"
       },
       {
-        "icon": "reactquery",
-        "label": "TanStack Query"
+        "icon": TanstackIcon,
+        "label": "TanStack Query/Router"
       },
       {
-        "icon": "tanstack",
-        "label": "TanStack Router"
-      },
-      {
-        "icon": "nodedotjs",
+        "icon": NodejsIcon,
         "label": "Node.js"
       },
       {
-        "icon": "rubyonrails",
+        "icon": RailsIcon,
         "label": "Ruby on Rails"
       },
       {
-        "icon": "dotnet",
+        "icon": Dotnet,
         "label": ".NET"
       },
     ]
@@ -89,28 +86,40 @@ export const usesGroups: UsesGroup[] = [
     "slug": "infra",
     "items": [
       {
-        "icon": "postgresql",
+        "icon": Postgresql,
         "label": "PostgreSQL"
       },
       {
-        "icon": "redis",
+        "icon": RedisIcon,
         "label": "Redis"
       },
       {
-        "icon": "googlecloud",
+        "icon": GoogleCloud,
         "label": "Google Cloud Platform"
       },
       {
-        "icon": "aws",
+        "icon": Aws,
         "label": "AWS"
       },
       {
-        "icon": "docker",
+        "icon": HerokuIcon,
+        "label": "Heroku"
+      },
+      {
+        "icon": CloudflareIcon,
+        "label": "Cloudflare"
+      },
+      {
+        "icon": DockerIcon,
         "label": "Docker"
       },
       {
-        "icon": "terraform",
+        "icon": TerraformIcon,
         "label": "Terraform"
+      },
+      {
+        "icon": Elasticsearch,
+        "label": "Elasticsearch"
       }
     ]
   },
@@ -119,26 +128,26 @@ export const usesGroups: UsesGroup[] = [
     "slug": "editor",
     "items": [
       {
-        "icon": "neovim",
+        "icon": Neovim,
         "label": "Neovim"
       },
       {
-        "icon": "ghostty",
+        "icon": GhosttyIcon,
         "label": "Ghostty"
       },
       {
         "label": "Herdr"
       },
       {
-        "icon": "git",
+        "icon": GitIcon,
         "label": "Git"
       },
       {
-        "icon": "github",
+        "icon": GithubIcon,
         "label": "GitHub"
       },
       {
-        "icon": "claude",
+        "icon": ClaudeIcon,
         "label": "Claude"
       }
     ]
@@ -148,43 +157,41 @@ export const usesGroups: UsesGroup[] = [
     "slug": "apps",
     "items": [
       {
-        "icon": "raycast",
         "label": "Raycast"
       },
       {
-        "icon": "notion",
+        "icon": NotionIcon,
         "label": "Notion"
       },
       {
-        "icon": "obsidian",
+        "icon": ObsidianIcon,
         "label": "Obsidian"
       },
       {
-        "icon": "figma",
+        "icon": Figma,
         "label": "Figma"
       },
       {
-        "icon": "spotify",
+        "icon": SpotifyIcon,
         "label": "Spotify"
       },
       {
-        "icon": "1password",
         "label": "1Password"
       },
       {
-        "icon": "postman",
+        "icon": PostmanIcon,
         "label": "Postman"
       },
       {
-        "icon": "googlechrome",
+        "icon": Chrome,
         "label": "Chrome"
       },
       {
-        "icon": "slack",
+        "icon": SlackIcon,
         "label": "Slack"
       },
       {
-        "icon": "zoom",
+        "icon": ZoomIcon,
         "label": "Zoom"
       }
     ]

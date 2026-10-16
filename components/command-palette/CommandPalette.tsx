@@ -7,7 +7,6 @@ import { Checkbox, Field, Input, Select } from "@/components/ui/Field";
 import { Kbd } from "@/components/ui/Kbd";
 import {
   BookIcon,
-  BrandIcon,
   CheckIcon,
   CopyIcon,
   DownloadIcon,
@@ -47,7 +46,7 @@ const GLYPHS: Record<PaletteGlyph, ReactNode> = {
 
 function ItemIcon({ icon }: { icon: PaletteItem["icon"] }) {
   if (typeof icon === "string") return <>{GLYPHS[icon]}</>;
-  return <BrandIcon name={icon.brand} size={15} aria-hidden="true" />;
+  return <>{icon}</>;
 }
 
 function isExternal(href?: string) {

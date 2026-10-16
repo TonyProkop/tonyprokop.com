@@ -1,3 +1,4 @@
+import { GithubIcon, SpotifyIcon } from "@dev.icons/react";
 import type { PaletteItem } from "@/components/command-palette/types";
 import { projects } from "./projects";
 import { site } from "./site";
@@ -159,9 +160,7 @@ export const paletteItems: PaletteItem[] = [
     "subtitle": "@TonyProkop",
     "keywords": "code source repos",
     "href": site.socials.github,
-    "icon": {
-      "brand": "github"
-    }
+    "icon": <GithubIcon size={15} aria-hidden="true" />
   },
   {
     "id": "ln-linkedin",
@@ -179,9 +178,7 @@ export const paletteItems: PaletteItem[] = [
     "subtitle": "What I'm listening to",
     "keywords": "music",
     "href": site.socials.spotify,
-    "icon": {
-      "brand": "spotify"
-    }
+    "icon": <SpotifyIcon size={15} aria-hidden="true" />
   }
 ];
 

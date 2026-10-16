@@ -1,23 +1,27 @@
+import { Aws, Bootstrap, CSharp, Dotnet, Elasticsearch, Go, GoogleCloud, HerokuIcon, Javascript, Jquery, MaterialUi, MysqlIcon, Postgresql, RailsIcon, TypescriptIcon, _React, _Vue } from "@dev.icons/react";
+import type { Icon } from "@dev.icons/react";
+
 /** Roles from the résumé (public/Resume - Tony Prokop.pdf). Newest first. */
-export type Role = { dates: string; title: string; company: string; place?: string; summary: string; highlights: string[]; stack: string[] };
+export type Tech = { label: string; icon?: Icon };
+export type Role = { dates: string; title: string; company: string; place?: string; summary: string; highlights: string[]; stack: Tech[] };
 
 export const experience: Role[] = [
   {
     dates: "2022 — now",
-    title: "Senior Software Engineer",
+    title: "Full-Stack Software Engineer, Sr. Staff",
     company: "WP Engine",
     summary: "Core architecture for the next generation of the customer-facing API, and the frontend platform on top of it.",
     highlights: [
-      "Built the API architecture so teams across the org can contribute in parallel, tuned for the demand of agentic workloads.",
+      "Built core API infrastructure to scale and meet the demand of agentic workloads upon release of the WP Engine MCP.",
       "Led a refactor of the core application to a single page app across 12 engineering teams; page load performance up 100%.",
       "Shipped an AI chatbot that cut overall support chat volume by 45%.",
       "Maintain the component library used daily by 50+ engineers, and lead the frontend guild.",
     ],
-    stack: ["TypeScript", "React", "Go", "Google Cloud"],
+    stack: [{ label: "TypeScript", icon: TypescriptIcon }, { label: "React", icon: _React }, { label: "Material UI", icon: MaterialUi }, { label: "Ruby on Rails", icon: RailsIcon }, { label: "Go", icon: Go }, { label: "PostgreSQL", icon: Postgresql }, { label: "Google Cloud", icon: GoogleCloud }],
   },
   {
     dates: "2020 — 2022",
-    title: "Senior Software Engineer",
+    title: "Full-Stack Software Engineer, Sr.",
     company: "Flywheel",
     summary: "Primary frontend engineer on Growth Suite, Flywheel's flagship product.",
     highlights: [
@@ -26,7 +30,7 @@ export const experience: Role[] = [
       "Designed and taught Vue training modules through the mentorship program for junior and mid-level developers.",
       "Ran a dedicated technical Jira board for frontend architecture work outside normal product sprints.",
     ],
-    stack: ["Vue", "JavaScript", "Ruby on Rails"],
+    stack: [{ label: "JavaScript", icon: Javascript }, { label: "Vue", icon: _Vue }, { label: "Ruby on Rails", icon: RailsIcon }, { label: "PostgreSQL", icon: Postgresql }, { label: "Heroku", icon: HerokuIcon }],
   },
   {
     dates: "2014 — 2020",
@@ -39,7 +43,7 @@ export const experience: Role[] = [
       "Improved search clickthrough by iterating on the company's custom Elasticsearch engine.",
       "Built a shipping quote calculator for the cart that aggregates warehouses and carriers.",
     ],
-    stack: ["C#", ".NET", "JavaScript", "Elasticsearch"],
+    stack: [{ label: "Bootstrap", icon: Bootstrap }, { label: "jQuery", icon: Jquery }, { label: "React", icon: _React }, { label: "JavaScript", icon: Javascript }, { label: "C#", icon: CSharp }, { label: ".NET", icon: Dotnet }, { label: "MySQL", icon: MysqlIcon }, { label: "Elasticsearch", icon: Elasticsearch }, { label: "AWS", icon: Aws }],
   },
 ];
 

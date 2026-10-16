@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  experimental: {
+    optimizePackageImports: ["@dev.icons/react", "@dev.icons/react/mono"],
+  },
 };
 
 export default nextConfig;

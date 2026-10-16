@@ -66,7 +66,7 @@ Source: `design/tokens.json` → `styles/tokens.css` (CSS variables, both themes
 | `Nav` | Monogram + name, mono links (current = accent underline), ⌘K button, one CTA. Mobile menu still to build. |
 | `SectionHeader` | `index`, `eyebrow`, `title`, `lede`, `action`. |
 | `EntryRow` | Hairline row: mono date, title/subtitle, aside, arrow when linked. Wrap lists in `.pf-entries`. |
-| Icons | `components/ui/icons.tsx`; brand marks from Simple Icons (CC0) in `lib/brand-icons.ts` — monochrome, never hand-drawn. Generic icons are Lucide-style 1.5px strokes. |
+| Icons | `components/ui/icons.tsx`; brand marks are [Devicons](https://devicons.io) components (`@dev.icons/react`) imported directly where used, in their own colours — never hand-drawn, no colour overrides. Generic icons are Lucide-style 1.5px strokes. |
 | `CommandPalette` | `components/command-palette`. See below. |
 
 ## Pages (information architecture)
@@ -82,6 +82,7 @@ Multi-page, not a one-pager: each home section previews a page and links to it. 
 | `/work` | Filters, all project cards, side projects / OSS list |
 | `/work/[slug]` | Breadcrumb back to Work + previous/next arrows (`01 / 04`). Status badge, year · role · company, title, one-line summary. Actions: **Visit live site ↗** only when there is one, **View source ↗** only for public repos, otherwise “internal tool · no public link”; “Read the write-up ↓”. Screenshot gallery (framed figure on a grid stage, `Fig 01` caption, thumbnails to switch). Three-number results strip. Write-up: 01 The problem, 02 What I did (numbered), 03 Key decisions (cards). Sticky “At a glance” panel: role, timeline, team, company, stack (Simple Icons chips), links. Optional 04 quote. Previous / Next cards (thumbnail, title, summary; wrap around) + “all projects →”. On phones the panel moves above the write-up and the cards stack. |
 | `/uses` | Icon tiles by category — Languages, Frameworks & libraries, Data & infrastructure, Editor & terminal, Apps — names only, no descriptions; hardware as a simple list; sticky category index **Exception to the monochrome rule:** `/uses` tiles (and the Uses strip on the home page) use the official brand colour (`<BrandIcon brand>`); near-black brands switch to ink on the dark theme. Multi-colour logos are handled manually. |
+| `/uses` | Icon tiles by category — Languages, Frameworks & libraries, Data & infrastructure, Editor & terminal, Apps — names only, no descriptions; hardware as a simple list; sticky category index **Exception to the monochrome rule:** `/uses` tiles (and the Uses strip on the home page) render Devicons components as-is, in their own colours. Tools Devicons lacks (React, Vue, Raycast, 1Password) show no icon. |
 | `/experience` | Role blocks: dates, place, title · company, summary, 2–3 highlights, stack badges; résumé download |
 | `/contact` | Form (name, email, company, reason, message, opt-in), email + copy, availability, reply time, socials |
 | 404 (`app/not-found.tsx`) | Inside the layout (banner, nav, ⌘K). Hero split via `components/errors/ErrorScreen`: `404 / not found`, “Nothing lives at this address”, Back to home + Search the site (⌘K); figure = `curl -I` of the requested path answering `HTTP/2 404`. Below: “Where you might have been going” list of the five main pages. Footer. |

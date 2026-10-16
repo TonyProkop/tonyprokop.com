@@ -260,6 +260,3 @@ a.pf-entry:hover .pf-arrow { transform: translateX(3px); color: var(--accent-tex
 @media (prefers-reduced-motion: reduce) { .pf-tile:hover { transform: none; } }
 }
 
-/* Near-black brand marks (/uses only) switch to the ink colour on the dark theme. Same theme rules as tokens.css. */
-:root:not([data-theme="light"]) .pf-brand-dark { --brand-dark: var(--ink); }
-@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .pf-brand-dark { --brand-dark: initial; } }
